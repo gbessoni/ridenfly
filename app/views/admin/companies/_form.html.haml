@@ -1,0 +1,38 @@
+= simple_form_for([:admin, @company]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, label: 'Company name'
+    = f.input :contact_first_name
+    = f.input :contact_last_name
+    = f.input :email
+    = f.input :address
+    = f.input :street
+    = f.input :state
+    = f.input :zipcode
+    = f.input :phone
+    = f.input :mobile, label: 'Cell'
+    = f.input :dispatch_phone, label: 'Dispatch Phone For Customers on day of Travel'
+    = f.input :website, label: 'Web Site'
+    = f.input :description, label: 'Company Description'
+    / = f.input :reservation_notification
+    = f.input :blackout_dates, label: 'Blackout dates (provide list of dates, separated by comma) Use MM/DD/YYYY format:'
+    = f.input :airports, label: 'Which airports do you service?'
+    = f.input :hours_of_operation, label: 'Hours of Operation'
+    = f.input :hours_in_advance_to_accept_rez, label: 'Hours in Advance To Accept Reservations'
+    = f.input :pickup_info, label: 'Arrival & Airport Pick-up Info'
+    = f.input :after_hours_info, label: 'After Hours Waiting Time & Info'
+    = f.input :excess_luggage_charge
+    = f.input :luggage_insured, label: 'Insured'
+    = f.input :child_rate
+    = f.input :child_car_seats_included
+    = f.input :luggage_limitation_policy
+    = f.input :company_reservation_policy
+    = f.input :company_cancellation_policy
+    = f.input :child_safety_policy
+    = f.input :pet_car_seat_policy
+    / = f.input :vehicle_types
+    = f.input :other_vehicle_types
+
+  .form-actions
+    = f.button :submit

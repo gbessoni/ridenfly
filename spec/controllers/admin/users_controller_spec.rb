@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Admin::UsersController, :type => :controller do
+RSpec.describe Admin::UsersController do
 
   # This should return the minimal set of attributes required to create a valid
   # Admin::User. As you add validations to Admin::User, be sure to

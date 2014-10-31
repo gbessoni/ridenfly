@@ -1,0 +1,97 @@
+%p
+  %b Name:
+  = @company.name
+%p
+  %b Contact first name:
+  = @company.contact_first_name
+%p
+  %b Contact last name:
+  = @company.contact_last_name
+%p
+  %b Email:
+  = @company.email
+%p
+  %b Address:
+  = @company.address
+%p
+  %b Street:
+  = @company.street
+%p
+  %b State:
+  = @company.state
+%p
+  %b Zipcode:
+  = @company.zipcode
+%p
+  %b Phone:
+  = @company.phone
+%p
+  %b Mobile:
+  = @company.mobile
+%p
+  %b Dispatch phone:
+  = @company.dispatch_phone
+%p
+  %b Website:
+  = @company.website
+%p
+  %b Description:
+  = @company.description
+%p
+  %b Reservation notification:
+  = @company.reservation_notification
+%p
+  %b Blackout dates:
+  = @company.blackout_dates
+%p
+  %b Airports:
+  = @company.airports
+%p
+  %b Hours of operation:
+  = @company.hours_of_operation
+%p
+  %b Hours in advance to accept rez:
+  = @company.hours_in_advance_to_accept_rez
+%p
+  %b Pickup info:
+  = @company.pickup_info
+%p
+  %b After hours info:
+  = @company.after_hours_info
+%p
+  %b Excess luggage charge:
+  = @company.excess_luggage_charge
+%p
+  %b Luggage insured:
+  = @company.luggage_insured
+%p
+  %b Child rate:
+  = @company.child_rate
+%p
+  %b Child car seats included:
+  = @company.child_car_seats_included
+%p
+  %b Luggage limitation policy:
+  = @company.luggage_limitation_policy
+%p
+  %b Company reservation policy:
+  = @company.company_reservation_policy
+%p
+  %b Company cancellation policy:
+  = @company.company_cancellation_policy
+%p
+  %b Child safety policy:
+  = @company.child_safety_policy
+%p
+  %b Pet car seat policy:
+  = @company.pet_car_seat_policy
+%p
+  %b Vehicle types:
+  = @company.vehicle_types
+%p
+  %b Other vehicle types:
+  = @company.other_vehicle_types
+
+= link_to 'Edit', edit_admin_company_path(@company)
+\|
+= link_to 'Back', admin_companies_path
