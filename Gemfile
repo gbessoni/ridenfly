@@ -49,7 +49,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano3-unicorn'
-  # gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rvm'
   gem 'spring'
   gem 'thin'
   gem 'quiet_assets'
