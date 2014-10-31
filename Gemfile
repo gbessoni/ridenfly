@@ -43,6 +43,7 @@ gem 'oj'
 gem 'datetimepicker-rails', git: 'https://github.com/zpaulovics/datetimepicker-rails.git'
 gem 'devise'
 gem 'haml-rails'
+gem 'nested-hstore'
 
 group :development do
   gem 'capistrano-rails'

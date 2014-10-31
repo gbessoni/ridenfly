@@ -34,6 +34,10 @@ GEM
       activemodel (= 4.1.7)
       activesupport (= 4.1.7)
       arel (~> 5.0.0)
+    activerecord-postgres-hstore (0.7.7)
+      activerecord (>= 3.1)
+      pg-hstore (>= 1.1.5)
+      rake
     activesupport (4.1.7)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -128,6 +132,10 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    nested-hstore (0.0.5)
+      activerecord
+      activerecord-postgres-hstore
+      activesupport
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -140,6 +148,7 @@ GEM
     oj (2.10.4)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    pg-hstore (1.2.0)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     pry (0.10.1)
@@ -272,6 +281,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  nested-hstore
   oauth2
   oj
   pg

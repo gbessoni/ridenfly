@@ -83,3 +83,9 @@ production:
   database: ridenfly_production
   username: ridenfly
   password: <%= ENV['RIDENFLY_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: ridenfly_staging
+  username: ridenfly
+  password: <%= ENV['RIDENFLY_DATABASE_PASSWORD'] %>
