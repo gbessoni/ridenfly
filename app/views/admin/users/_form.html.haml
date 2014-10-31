@@ -2,6 +2,9 @@
   = f.error_notification
 
   .form-inputs
+    = f.input :email
+    = f.input :password, type: :password
+    = f.input :password_confirmation, type: :password
 
   .form-actions
     = f.button :submit
