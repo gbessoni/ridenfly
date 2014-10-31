@@ -1,4 +1,4 @@
-== README
+## README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -28,7 +28,7 @@ Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
 
-== Devise
+## Devise
 
 ===============================================================================
 
@@ -66,7 +66,7 @@ Some setup you must do manually if you haven't yet:
 
 ===============================================================================
 
-== SimpleForm
+## SimpleForm
 
 ===============================================================================
 
@@ -80,3 +80,12 @@ Some setup you must do manually if you haven't yet:
     = simple_form_for(@user, html: {class: 'form-horizontal' }) do |form|
 
 ===============================================================================
+
+## Old system account types
+
+    class Admin < User
+    class Affiliate < User
+    class Company < User
+    class Csr < User
+    class Customer < User
+    class Seo < User
