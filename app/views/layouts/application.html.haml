@@ -16,20 +16,21 @@
     = csrf_meta_tags
   %body
     .navbar.navbar-inverse.navbar-fixed-top
-      .container
-        .navbar-header
-          %button.navbar-toggle{:type => "button", :data => {:toggle => "collapse", :target => ".navbar-collapse"} }
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to "Ridenfly Admin", root_url, :class => "navbar-brand"
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => admin_users_url}= 'Users'
-            %li
-              %a{:href => admin_companies_url}= 'Companis'
+      - if user_signed_in?
+        .container
+          .navbar-header
+            %button.navbar-toggle{:type => "button", :data => {:toggle => "collapse", :target => ".navbar-collapse"} }
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to "Ridenfly Admin", root_url, :class => "navbar-brand"
+          .collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li
+                %a{:href => admin_users_url}= 'Users'
+              %li
+                %a{:href => admin_companies_url}= 'Companis'
 
     .container
       - flash.each do |name, msg|
