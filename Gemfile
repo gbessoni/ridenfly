@@ -42,6 +42,7 @@ gem 'ransack'
 gem 'oj'
 gem 'datetimepicker-rails', git: 'https://github.com/zpaulovics/datetimepicker-rails.git'
 gem 'devise'
+gem 'haml-rails'
 
 group :development do
   gem 'capistrano-rails'

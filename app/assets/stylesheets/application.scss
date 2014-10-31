@@ -1,0 +1,14 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 50px;
+}
+
+/* forms */
+
+.simple_form {
+  @extend .form-horizontal;
+  @extend .well;
+  @extend .col-lg-8;
+}
