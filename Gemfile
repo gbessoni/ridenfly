@@ -41,6 +41,7 @@ gem 'bootstrap-will_paginate'
 gem 'ransack'
 gem 'oj'
 gem 'datetimepicker-rails', git: 'https://github.com/zpaulovics/datetimepicker-rails.git'
+gem 'devise'
 
 group :development do
   gem 'capistrano-rails'
