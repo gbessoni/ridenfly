@@ -30,7 +30,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'doorkeeper'
 gem 'foreigner'
-gem 'simple_form'
+gem 'simple_form', '3.1.0.rc1'
 gem 'bootstrap-sass'
 gem 'bootstrap-generators'
 gem 'settingslogic'

@@ -1,10 +1,10 @@
 = simple_form_for([:admin, @user]) do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :email
-    = f.input :password, type: :password
-    = f.input :password_confirmation, type: :password
+  = f.input :email
+  = f.input :password, type: :password
+  = f.input :password_confirmation, type: :password
 
-  .form-actions
-    = f.button :submit
+  = f.actions do |f|
+    = f.submit 'Save'
+    = f.action 'Back', admin_users_path

@@ -5,10 +5,23 @@ body {
   padding-top: 50px;
 }
 
+/* table */
+.std {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-hover;
+}
+
 /* forms */
 
 .simple_form {
   @extend .form-horizontal;
   @extend .well;
   @extend .col-lg-8;
+}
+
+.form-group {
+  textarea.text {
+    height: 70px !important;
+  }
 }

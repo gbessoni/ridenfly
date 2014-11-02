@@ -1,23 +1,25 @@
 %h1 Listing companies
 
-%table.table
-  %tr
-    %th Name
-    %th Contact first name
-    %th Contact last name
-    %th Email
-    %th Actions
-
-  - @companies.each do |company|
+%table.std
+  %thead
     %tr
-      %td= company.name
-      %td= company.contact_first_name
-      %td= company.contact_last_name
-      %td= company.email
-      %td
-        = link_to 'Show', [:admin, company]
-        = link_to 'Edit', edit_admin_company_path(company)
-        = link_to 'Destroy', [:admin, company], :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Name
+      %th Contact first name
+      %th Contact last name
+      %th Email
+      %th Actions
+
+  %tbody
+    - @companies.each do |company|
+      %tr
+        %td= company.name
+        %td= company.contact_first_name
+        %td= company.contact_last_name
+        %td= company.email
+        %td
+          = link_to 'Show', [:admin, company]
+          = link_to 'Edit', edit_admin_company_path(company)
+          = link_to 'Destroy', [:admin, company], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

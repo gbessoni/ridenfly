@@ -1,18 +1,17 @@
 %h1 Listing users
 
-%table.table
-  %tr
-    %th= 'Email (login)'
-    %th= 'Actions'
-
-  - @users.each do |user|
+%table.std
+  %thead
     %tr
-      %td= user.email
-      %td
-        = link_to 'Show', [:admin, user]
-        = link_to 'Edit', edit_admin_user_path(user)
-        = link_to 'Destroy', [:admin, user], :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+      %th= 'Email (login)'
+      %th= 'Actions'
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td
+          = link_to 'Show', [:admin, user]
+          = link_to 'Edit', edit_admin_user_path(user)
+          = link_to 'Destroy', [:admin, user], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 = link_to 'New User', new_admin_user_path
