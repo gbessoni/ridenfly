@@ -2,27 +2,25 @@ require 'rails_helper'
 
 RSpec.describe Admin::UsersController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Admin::User. As you add validations to Admin::User, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    {email: 'test@email.com', password: 'pass.123', password_confirmation: 'pass.123'}
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    {email: 'email'}
+  end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # Admin::UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
+  before do
+    sign_in create(:admin)
+  end
 
   describe "GET index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:users)).to eq([user])
+      expect(assigns(:users)).to include(user)
     end
   end
 
@@ -65,7 +63,7 @@ RSpec.describe Admin::UsersController do
 
       it "redirects to the created user" do
         post :create, {:user => valid_attributes}, valid_session
-        expect(response).to redirect_to(User.last)
+        expect(response).to redirect_to([:admin, User.last])
       end
     end
 
@@ -85,14 +83,13 @@ RSpec.describe Admin::UsersController do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {email: 'some_new@email.com'}
       }
 
       it "updates the requested user" do
         user = User.create! valid_attributes
         put :update, {:id => user.to_param, :user => new_attributes}, valid_session
-        user.reload
-        skip("Add assertions for updated state")
+        expect(user.reload.email).to eql('some_new@email.com')
       end
 
       it "assigns the requested user as @user" do
@@ -104,7 +101,7 @@ RSpec.describe Admin::UsersController do
       it "redirects to the user" do
         user = User.create! valid_attributes
         put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
-        expect(response).to redirect_to(user)
+        expect(response).to redirect_to([:admin, user])
       end
     end
 

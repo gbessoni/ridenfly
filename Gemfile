@@ -66,6 +66,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'simplecov'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
   gem 'webmock', require: false
 end

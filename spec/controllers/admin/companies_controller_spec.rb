@@ -2,21 +2,19 @@ require 'rails_helper'
 
 RSpec.describe Admin::CompaniesController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Admin::Company. As you add validations to Admin::Company, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    build(:company).attributes
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    {name: ''}
+  end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # Admin::CompaniesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
+  before do
+    sign_in create(:admin)
+  end
 
   describe "GET index" do
     it "assigns all companies as @companies" do
@@ -65,7 +63,7 @@ RSpec.describe Admin::CompaniesController do
 
       it "redirects to the created company" do
         post :create, {:company => valid_attributes}, valid_session
-        expect(response).to redirect_to(Company.last)
+        expect(response).to redirect_to([:admin, Company.last])
       end
     end
 
@@ -85,14 +83,13 @@ RSpec.describe Admin::CompaniesController do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: 'new name'}
       }
 
       it "updates the requested company" do
         company = Company.create! valid_attributes
         put :update, {:id => company.to_param, :company => new_attributes}, valid_session
-        company.reload
-        skip("Add assertions for updated state")
+        expect(company.reload.name).to eql 'new name'
       end
 
       it "assigns the requested company as @company" do
@@ -104,7 +101,7 @@ RSpec.describe Admin::CompaniesController do
       it "redirects to the company" do
         company = Company.create! valid_attributes
         put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
-        expect(response).to redirect_to(company)
+        expect(response).to redirect_to([:admin, company])
       end
     end
 
