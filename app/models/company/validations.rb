@@ -11,5 +11,6 @@ module Company::Validations
   included do
     validates *REQUIRED_FIELDS, presence: true
     validates :user, presence: true
+    validates :phone, :dispatch_phone, phone_number_format: true
   end
 end

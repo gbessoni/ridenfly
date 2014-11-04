@@ -22,6 +22,7 @@ module Ridenfly
 
     config.autoload_paths += %W(
       #{config.root}/lib
+      #{config.root}/app/validators
     )
 
     config.generators do |g|
