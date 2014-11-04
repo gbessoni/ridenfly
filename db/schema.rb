@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104104401) do
+ActiveRecord::Schema.define(version: 20141104124720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20141104104401) do
     t.text     "pickup_info"
     t.text     "after_hours_info"
     t.string   "excess_luggage_charge"
-    t.boolean  "luggage_insured"
+    t.boolean  "luggage_insured",                default: false
     t.string   "child_rate"
-    t.boolean  "child_car_seats_included"
+    t.boolean  "child_car_seats_included",       default: false
     t.text     "luggage_limitation_policy"
     t.text     "company_reservation_policy"
     t.text     "company_cancellation_policy"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20141104104401) do
     t.text     "other_vehicle_types"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.hstore   "vehicle_types",                  array: true
+    t.hstore   "vehicle_types",                                  array: true
   end
 
   create_table "users", force: true do |t|
