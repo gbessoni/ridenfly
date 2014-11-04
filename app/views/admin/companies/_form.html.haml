@@ -5,7 +5,6 @@
   = f.input :contact_first_name
   = f.input :contact_last_name
   = f.input :email
-  = f.input :address
   = f.input :street
   = f.input :state
   = f.input :zipcode
@@ -14,7 +13,21 @@
   = f.input :dispatch_phone, label: 'Dispatch Phone For Customers on day of Travel'
   = f.input :website, label: 'Web Site'
   = f.input :description, label: 'Company Description'
-  / = f.input :reservation_notification
+
+  = f.input :reservation_notification, label: 'Where would you like Reservations Sent:' do
+    %table.std
+      %thead
+        %tr
+          %th 
+          %th Check all that apply
+      %tbody
+        %tr
+          %td= f.label :notification_fax, 'Fax'
+          %td= f.check_box :notification_fax
+        %tr
+          %td= f.label :notification_email, 'Email'
+          %td= f.check_box :notification_email
+
   = f.input :blackout_dates, label: 'Blackout dates (provide list of dates, separated by comma) Use MM/DD/YYYY format:'
   = f.input :airports, label: 'Which airports do you service?'
   = f.input :hours_of_operation, label: 'Hours of Operation'
@@ -22,15 +35,29 @@
   = f.input :pickup_info, label: 'Arrival & Airport Pick-up Info'
   = f.input :after_hours_info, label: 'After Hours Waiting Time & Info'
   = f.input :excess_luggage_charge
-  = f.input :luggage_insured, label: 'Insured', :as => :radio_buttons, wrapper: :horizontal_radio_and_checkboxes
+  = f.input :luggage_insured, label: 'Insured', as: :radio_buttons, wrapper: :horizontal_radio_and_checkboxes
   = f.input :child_rate
-  = f.input :child_car_seats_included, :as => :radio_buttons, wrapper: :horizontal_radio_and_checkboxes
+  = f.input :child_car_seats_included, as: :radio_buttons, wrapper: :horizontal_radio_and_checkboxes
   = f.input :luggage_limitation_policy
   = f.input :company_reservation_policy
   = f.input :company_cancellation_policy
   = f.input :child_safety_policy
   = f.input :pet_car_seat_policy
-  / = f.input :vehicle_types
+
+  = f.input :vehicle_types, label: 'Vehicle Types:' do
+    %table.std
+      %thead
+        %tr
+          %th 
+          %th How Many in Fleet
+          %th Total Passenger Capacity
+      %tbody
+        = f.fields_for :vehicle_types do |vtf|
+          %tr
+            %td= vtf.object.name
+            %td= vtf.text_field :how_many
+            %td= vtf.text_field :total_passengers
+
   = f.input :other_vehicle_types
 
   = f.actions do |f|

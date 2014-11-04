@@ -44,6 +44,7 @@ gem 'datetimepicker-rails', git: 'https://github.com/zpaulovics/datetimepicker-r
 gem 'devise'
 gem 'haml-rails'
 gem 'nested-hstore'
+gem 'virtus'
 
 group :development do
   gem 'capistrano-rails'

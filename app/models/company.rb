@@ -1,10 +1,22 @@
 class Company < ActiveRecord::Base
-  REQUIRED_FIELDS = [
-    :name, :contact_first_name, :contact_last_name,
-    :email, :address, :street, :state, :zipcode, :phone,
-    :dispatch_phone, :website, :description, :airports, :hours_of_operation,
-    :pickup_info, :hours_in_advance_to_accept_rez
-  ]
+  store_accessor :reservation_notification, :notification_fax, :notification_email
 
-  validates *REQUIRED_FIELDS, presence: true
+  include Company::Validations
+
+  def vehicle_types
+    list = read_attribute(:vehicle_types) || []
+    if list.present?
+      list.map{ |vt| Company::VehicleType.new(vt) }
+    else
+      Company::VehicleType.predefined
+    end
+  end
+
+  def vehicle_types_attributes=(list)
+    vts = vehicle_types.map(&:attributes)
+    list.each do |id, attrs|
+      vts[id.to_i].merge! attrs.symbolize_keys
+    end
+    write_attribute(:vehicle_types, vts)
+  end
 end
