@@ -3,7 +3,13 @@ require 'rails_helper'
 RSpec.describe Admin::CompaniesController do
 
   let(:valid_attributes) do
-    build(:company).attributes
+    build(:company).attributes.merge(
+      user_attributes: {
+        email: build(:user).email,
+        password: 'somepassword',
+        password_confirmation: 'somepassword'
+      }
+    )
   end
 
   let(:invalid_attributes) do
@@ -94,13 +100,13 @@ RSpec.describe Admin::CompaniesController do
 
       it "assigns the requested company as @company" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
+        put :update, {:id => company.to_param, :company => new_attributes}, valid_session
         expect(assigns(:company)).to eq(company)
       end
 
       it "redirects to the company" do
         company = Company.create! valid_attributes
-        put :update, {:id => company.to_param, :company => valid_attributes}, valid_session
+        put :update, {:id => company.to_param, :company => new_attributes}, valid_session
         expect(response).to redirect_to([:admin, company])
       end
     end

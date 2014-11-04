@@ -9,7 +9,7 @@
   = @company.contact_last_name
 %p
   %b Email:
-  = @company.email
+  = @company.user.email
 %p
   %b Street:
   = @company.street
@@ -35,8 +35,11 @@
   %b Description:
   = @company.description
 %p
-  %b Reservation notification:
-  = @company.reservation_notification
+  %b Reservation notification - fax:
+  = @company.notification_fax
+%p
+  %b Reservation notification - email:
+  = @company.notification_email
 %p
   %b Blackout dates:
   = @company.blackout_dates
@@ -84,7 +87,19 @@
   = @company.pet_car_seat_policy
 %p
   %b Vehicle types:
-  = @company.vehicle_types
+  %table.std
+    %thead
+      %tr
+        %th 
+        %th How Many in Fleet
+        %th Total Passenger Capacity
+    %tbody
+      - @company.vehicle_types.each do |vehicle_type|
+        %tr
+          %td= vehicle_type.name
+          %td= vehicle_type.how_many
+          %td= vehicle_type.total_passengers
+
 %p
   %b Other vehicle types:
   = @company.other_vehicle_types

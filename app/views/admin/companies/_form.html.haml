@@ -4,7 +4,12 @@
   = f.input :name, label: 'Company name'
   = f.input :contact_first_name
   = f.input :contact_last_name
-  = f.input :email
+
+  = f.simple_fields_for :user do |uf|
+    = uf.input :email
+    = uf.input :password, type: :password
+    = uf.input :password_confirmation, type: :password
+
   = f.input :street
   = f.input :state
   = f.input :zipcode
@@ -23,10 +28,10 @@
       %tbody
         %tr
           %td= f.label :notification_fax, 'Fax'
-          %td= f.check_box :notification_fax
+          %td= f.check_box :notification_fax, {}, true
         %tr
           %td= f.label :notification_email, 'Email'
-          %td= f.check_box :notification_email
+          %td= f.check_box :notification_email, {}, true
 
   = f.input :blackout_dates, label: 'Blackout dates (provide list of dates, separated by comma) Use MM/DD/YYYY format:'
   = f.input :airports, label: 'Which airports do you service?'

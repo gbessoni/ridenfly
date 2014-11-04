@@ -14,7 +14,7 @@ class Admin::CompaniesController < Admin::ApplicationController
 
   # GET /admin/companies/new
   def new
-    @company = Company.new
+    @company = Company.new user: User.new
   end
 
   # GET /admin/companies/1/edit
@@ -76,7 +76,8 @@ class Admin::CompaniesController < Admin::ApplicationController
         :excess_luggage_charge, :luggage_insured, :child_rate, :child_car_seats_included, :luggage_limitation_policy,
         :company_reservation_policy, :company_cancellation_policy, :child_safety_policy, :pet_car_seat_policy,
         :vehicle_types, :other_vehicle_types, :notification_fax, :notification_email,
-        {vehicle_types_attributes: [:how_many, :total_passengers, :id]}
+        {vehicle_types_attributes: [:how_many, :total_passengers, :id]},
+        {user_attributes: [:email, :password, :password_confirmation, :id]}
       )
     end
 end

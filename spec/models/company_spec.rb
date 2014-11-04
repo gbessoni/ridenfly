@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Company do
+  it { expect(subject).to belong_to :user }
+
   describe "validations" do
     described_class::REQUIRED_FIELDS.each do |name|
       it { expect(subject).to validate_presence_of(name) }

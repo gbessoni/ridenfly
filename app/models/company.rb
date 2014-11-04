@@ -3,6 +3,10 @@ class Company < ActiveRecord::Base
 
   include Company::Validations
 
+  belongs_to :user
+
+  accepts_nested_attributes_for :user
+
   def vehicle_types
     list = read_attribute(:vehicle_types) || []
     if list.present?
