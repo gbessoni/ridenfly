@@ -15,7 +15,7 @@
         %td= company.name
         %td= company.contact_first_name
         %td= company.contact_last_name
-        %td= company.email
+        %td= company.user.email
         %td
           = link_to 'Show', [:admin, company]
           = link_to 'Edit', edit_admin_company_path(company)

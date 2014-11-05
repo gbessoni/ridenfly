@@ -3,7 +3,6 @@ FactoryGirl.define do
     name "MyString"
     contact_first_name "MyString"
     contact_last_name "MyString"
-    sequence(:email)      { |n| "company_#{n}@example.com" }
     street "MyString"
     state "MyString"
     zipcode "123123"
