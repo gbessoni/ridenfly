@@ -1,0 +1,3385 @@
+--- 
+- !ruby/object:Company 
+  attributes: 
+    web: www.capitalorlandotransportation.com
+    type: Company
+    id: "77"
+    login: samina786
+    luggage_limitation_policy: ""
+    started_business_date: 2007-07-31 09:03:00
+    company_commission_percentage: "0"
+    service_fee: "2"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 268035d005a9de0183c8d04bb5aa86f8d763ed4c
+    updated_at: 2009-09-09 20:56:15
+    insured: ""
+    luggage: ""
+    cell_phone: () -
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: ""
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: management@capitalorlandotransportation.com
+    phone: 321-299-3610
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: Orlando, FL (MCO)
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Chaudhry
+    name: Capital Orlando Transportation
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: 993372896b1693cfb03527c4785b29afdf3a0994
+    car_seats_pets: ""
+    created_at: 2007-07-18 17:44:00
+    blackout: 
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: 
+    first_name: Tariq
+    biz_hours_end: 
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Travel to and from Orlando Airport in comfort. Being the one of largest ground transportation company in Florida, you can be assured of professional service and standards.  We service all Orlando Hotels.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Travel to and from Orlando Airport in comfort. Being one of the largest ground transportation company in Florida, you can be assured of professional service and standards. We service all Orlando/Disney Hotels.
+    company_information: ""
+    vehicle_types: Private Shuttle Van
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.atlantashuttle.net
+    type: Company
+    id: "164"
+    login: atlhotelcon
+    luggage_limitation_policy: 2 bags per person
+    started_business_date: 2007-08-15 18:00:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: If your service is needed before 5:00am or after 12:00am midnight, a $10.00 fee is added.
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: Rate includes all passengers requested fare, taxes and fees.
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: "\"I arrived at the airport on-time and I know I paid the lowest shuttle van service, because I searched for days comparing transportation companies, I highly recomment them.\" - Todd P. Norcross, GA"
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 0eff3a7c77cf880308400f8a961f631b40cce3c2
+    updated_at: 2014-11-04 12:49:19
+    insured: ""
+    luggage: 2 Bags per Person.
+    cell_phone: () -
+    fax: ":(404)795-0609"
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "Look for Atlanta Hotel Connections Blue Vans at Green section # 11"
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: service@atlantashuttle.net
+    phone: (404)641-0962, (770)801-8000
+    cancellation_policy: 24 hour cancellation policy.  You'll be refunded the full amount paid online.  NO SHOWS WILL BE CHARGED FULL AMOUNT OF QUOTED ONLINE PLUS GRATUITY.
+    confirm_reservation_policy: A representative will call you 24-48 hours prior to your flight date.
+    airports_serviced: Atlanta, GA (ATL)
+    excess_luggage_charge: ""
+    hours_in_advance: "12"
+    results_image: 
+    last_name: Asfaw
+    name: ATL Airport Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: "A representive will call to schedule pick up from your home or office or hotel for rides to the airport.  If you are flying into ATL and are being picked up, please look for Atlanta Hotel Connections Blue Vans at Green section # 11."
+    salt: 717657a466b368538759128363802e1c1008d33e
+    car_seats_pets: Pets are allowed.  Please bring a car seat for each child under the age of 4.
+    created_at: 2007-08-15 18:00:00
+    blackout: ""
+    children_safety_policy: Please bring child safety seat.
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "600"
+    first_name: Lou
+    biz_hours_end: "2300"
+    additional_info: |
+      Metro Atlanta Airport Shuttle serving all metro Hotels, Offices & Homes. Hours of operations:  5 am - 12:00am (EST) 7 days per week.  We are the Premier Atlanta Airport shuttle service provider located at Hartsfield-Jackson International Airport.
+
+    more_info_2: 
+    survey_score: 
+    description: We are the Premier Atlanta Airport shuttle service provider servicing Hartsfield-Jackson International Airport and Perimeter Hotels.
+    policies_bullet_points: |
+      Home and Office pick up and drop  off                                               * Choice of shared Vans, dedicated Vans        * Cash or major credit cards Accepted:   
+
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Shared or private shuttle van service to and from Atlanta Hartsfield Airport and all metro Atlanta area hotels.
+    company_information: Atlanta Hotel Connection  is  operated by experienced, courteous, friendly and knowledgeable drivers.  We understand the needs and demands of business and leisure travelers.
+    vehicle_types: Shared-Ride Shuttle Van, Private Shuttle Van
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: You will need to bring a car seat for children under the age of 4.
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "263"
+    login: coxsackie
+    luggage_limitation_policy: ""
+    started_business_date: 2007-11-07 13:20:00
+    company_commission_percentage: "0"
+    service_fee: "2"
+    after_hour_and_waiting_time: There is an additional charge for before and after working hours.  Our working hours are 6AM to 5PM.  Anything before or after those hours, there is a $10.00 additional charge.
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: Price includes up to 3 persons, $10.00 additional.
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 656e23ce346d52a29aea5954caa532cbc45eb171
+    updated_at: 2009-09-09 20:56:15
+    insured: ""
+    luggage: ""
+    cell_phone: () -
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: ""
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: coxsackie2001@yahoo.com
+    phone: (518) 731-8242
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: coxsackie_transport.jpg
+    last_name: Parks
+    name: Coxsackie Transport
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: 264b651434ade6dc775adc59f634efd3dfb2345b
+    car_seats_pets: ""
+    created_at: 2007-11-07 13:20:00
+    blackout: 
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: There is an additional charge for before and after working hours.  Our working hours are 6AM to 5PM.  Anything before or after those hours, there is a $10.00 additional charge.
+    biz_hours_start: 
+    first_name: Wayne
+    biz_hours_end: 
+    additional_info: There is an additional charge for before and after working hours.  Our working hours are 6AM to 5PM.  Anything before or after those hours, there is a $10.00 additional charge.
+    more_info_2: 
+    survey_score: 
+    description: As one of the leaders for shuttle service to and from Albany International Airport, it is our goal not only to provide safe, reliable transportation, but to provide affordable and friendly service as well.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: 15% Gratuity Please.
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.eastbayconnection.net/
+    type: Company
+    id: "322"
+    login: eastbay
+    luggage_limitation_policy: We allow 2 large bags and 1 carry on per passenger
+    started_business_date: 2007-12-07 13:12:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: "Our last shuttle leaves the airport at 11:30pm. We only have private sedans available after that time. "
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: "You may pay the driver at the time you get picked up by the following types of payment: cash, debit card, travelers check and major credit cards."
+    more_info_1: 
+    survey_score_count: "18"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 382f3e6f90f2deda3161f2521c7da1736cc97c9e
+    updated_at: 2014-08-01 17:55:16
+    insured: "Yes"
+    luggage: We allow 2 large bags and 1 carry on per passenger
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Passengers should gather their bags and call us from baggage claim. We will direct them to the vehicle at that point. 925-609-1920 / 1-800-675-3278 (Press 2 for dispatch)
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@eastbayconnection.net, 9256091937@fax.com
+    phone: (800) 675-3278 ext 2
+    cancellation_policy: In order to cancel reservations please call (925) 609-1920 at least 24 hours prior to your pickup time. Otherwise the full fare will be charged. RideShare service is closed between the hours of Midnight and 3:00. Sedans are available to meet your needs, j
+    confirm_reservation_policy: "In order to ensure we have room in our schedule please give us 48 hours notice so we are able to accommodate your travel needs.        "
+    airports_serviced: 
+    excess_luggage_charge: $10 per bag/ box
+    hours_in_advance: "48"
+    results_image: eastbayconnection.jpg
+    last_name: Alefi
+    name: East Bay Connection
+    children_rate: Rates are per seat/passenger. (No special rate)
+    customer_airport_pick_up_instructions: Passengers are required to call us as soon as they arrive at the airport before they claim their luggage at 1-800-675-3278 (choose option 2) to inform us of their arrival. The dispatcher will let you know which van number to look out for.
+    salt: ff649eba2070db6b3bcb42af73fad3019c40ed9f
+    car_seats_pets: If you have a pet traveling with you then it is necessary to reserve an exclusive van or sedan for transportation to or from the airport. Please call (925) 609-1920 for a quote or to make reservations.
+    created_at: 2007-12-07 13:12:00
+    blackout: ""
+    children_safety_policy: Child car seats are not provided in the vehicles. You must provide your own if needed for the trip to and from the airport. If you are unable to take the car seat with you then we would be glad to hold onto it until you return from your trip.
+    fares_and_gratuity_fees_taxes: |-
+      East Bay Connection Airport Shuttle Service offers you more   
+      * Lowest Fares and Best Service.
+    biz_hours_start: "1200"
+    first_name: Amid
+    biz_hours_end: "1200"
+    additional_info: East Bay Connection Airport Shuttle Service was established in 1989 and has since served the residents of Contra Costa and Solano Counties.
+    more_info_2: 
+    survey_score: "3.5"
+    description: East Bay Connection Airport Shuttle Service was established in 1989 and has since served the residents of Contra Costa and Solano Counties. Our mission has been to provide dependable, efficient, safe, and environmentally friendly transportation to and fro
+    policies_bullet_points: |
+      The fare that we quote for our shared ride services does not include a gratuity.  Our  last pickup is at 11:30PM.  There will be a $5.00 surcharge for pickups between 3:00 a.m. and 4:30 a.m. and between 11:00 p.m. and midnight.
+
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: There will be a $5.00 surcharge for pickups between 3:00 a.m. and 4:30 a.m. and between 10:00 p.m. and midnight.
+    company_information: Your Dependable On-time Door-to-Door Shuttle Service.
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: "Gratuity is not included in the quoted fares, but is optional and appreciated by our drivers. (Suggested gratuity: 15% - 20%)"
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "344"
+    login: airconnection
+    luggage_limitation_policy: ""
+    started_business_date: 2007-12-12 18:13:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: econoline1.jpg
+    survey_score_count: "39"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: "\"Fantastic service....\" Frank E."
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 85de8002d3f200b14ef0bb201be7aaf4fff530a6
+    updated_at: 2014-04-01 10:00:18
+    insured: ""
+    luggage: Each passenger is limited to two standard pieces of luggage (under 50 pounds and measuring less than 70" L+W+H), plus a small carry on. Addition pieces and / or items overweight are subject to a $10.00 one-way fee.
+    cell_phone: ""
+    fax: "7573212815"
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Walk up airport shuttle service is available at our booth, outside baggage claim.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: 7573212815@fax.com,   airport1@jamesrivertrans.com
+    phone: (877) 422-1105
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "14"
+    results_image: econoline1.jpg
+    last_name: Shapiro
+    name: Norfolk Airport Connection
+    children_rate: ""
+    customer_airport_pick_up_instructions: Walk up airport shuttle service is available at our booth, outside baggage claim.
+    salt: 80530a1388286f290306f0415d99a727766b4082
+    car_seats_pets: ""
+    created_at: 2007-12-12 18:13:00
+    blackout: |-
+      12/25/2008
+      08/27/2011
+      08/28/2011
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: Gratuities are not included in the quoted rates and are greatly appreciated for excellent customer service. Gratuities may be added when you make reservations or purchase your ticket at the booth.
+    biz_hours_start: "100"
+    first_name: Barry
+    biz_hours_end: "100"
+    additional_info: We offer shuttle service 24 hours a day.  We are conveniently located in the Norfolk Airport ground transportation/baggage claim area.
+    more_info_2: econoline2.jpg
+    survey_score: "3.5"
+    description: Our expert uniformed drivers and quality vehicles will take you where you need to go in 15 minutes or less.  You can share a ride at a very economical and we are conveniently located right near the baggage claim at the Norfolk International Airport.
+    policies_bullet_points: The posted charges do not include tolls, entrance fees or parking fees. These items will be added to the standard rate.
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: " You can share a ride at a very economical price of choose a private vehicle all to yourself.  Carey VIP Airport Shuttle is located in a booth outside baggage claim at the Norfolk International Airport."
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "410"
+    login: ohconnection
+    luggage_limitation_policy: ""
+    started_business_date: 2008-01-07 16:14:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: Service available 24 hours a day, 7 days a week.  Your schedule is our schedule.
+    more_info_1: 
+    survey_score_count: "10"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 79d0b981254a9d3badd5c925c36f29c31eec7b38
+    updated_at: 2013-09-09 12:12:32
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: After claiming your luggage, please contact our dispatch office at (216) 324-8999
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: office@ohconnection.com
+    phone: 216-324-8999
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: sharedride-van.gif
+    last_name: Please add
+    name: OH Connection
+    children_rate: ""
+    customer_airport_pick_up_instructions: After claiming your luggage, please contact our dispatch office at (216) 324-8999
+    salt: 2de52c0b7baa990b01a988bf4de9c48ba68daab0
+    car_seats_pets: ""
+    created_at: 2008-01-07 16:14:00
+    blackout: 12/25/2008
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Peter
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "3"
+    description: Forget dragging your bags up and down subway stairs or waiting hours for overpriced taxis.  We are offering a comfortable, reliable, and economic service in the Greater Cleveland area since 1998.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Our door to door airport shuttle provides transfers between the Cleveland Hopkins International Airport and different destinations at exceptional rates. We serve hotels, businesses and homes.
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "428"
+    login: etsair
+    luggage_limitation_policy: ""
+    started_business_date: 2008-01-16 08:58:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "24"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: "\"I booked with ETS Air Shuttle on Ride Fly and saved $5 each way.  Great rates on this website, thank you.\" Jared M. Bronx, NY."
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: bd80cf625a10a786a2edb50e4e6753dcf4dfdb6a
+    updated_at: 2014-08-22 10:31:00
+    insured: ""
+    luggage: 2 bags per person is allowed.
+    cell_phone: 718-221-5341
+    fax: 718-221-5341
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "ARRIVALS: Just pick up the courtesy phones located in the ground transportation/baggage claim area, dial 14 to speak directly with our reservation department, tell them where you want to go and one of our drivers will come inside to help you."
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: marshandre@msn.com
+    phone: (718) 221-5341
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "16"
+    results_image: etsairshuttle.gif
+    last_name: Forbes
+    name: ETS Air Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: "ARRIVALS: Just pick up the courtesy phones located in the ground transportation/baggage claim area, dial 14 to speak directly with our reservation department, tell them where you want to go and one of our drivers will come inside to help you."
+    salt: 4b88f963dfa2f4e7a7027a8ea5f31dec3054e360
+    car_seats_pets: We do not provide child safety seats.
+    created_at: 2008-01-16 08:58:00
+    blackout: 12/25/2008
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "500"
+    first_name: David
+    biz_hours_end: "2100"
+    additional_info: The most affordable way to and from JFK, LGA and Newark Airports from the Five Boroughs.  Save 30% on RideFlyReservations.com.
+    more_info_2: 
+    survey_score: "3"
+    description: Serving the New York City Metropolitan for over 10 years.  SHARED RIDE SERVICE FROM AIRPORT TO RESIDENCE & HOTEL.  Reserve now and receive the lowest rate.
+    policies_bullet_points: Shared Ride Service. Private Charters to NYC. Newark-LGA, JFK-LGA Airport-to-Airport Shuttle Service.
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Shared-ride, private charter service and Airport to Airport Shuttle Service.
+    company_information: |-
+      Serving the New York City Metropolitan for over 10 years.
+      SHARED RIDE SERVICE FROM AIRPORT TO RESIDENCE & HOTEL.
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: Please bring child safety seats.
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "6538"
+    login: shuttleone
+    luggage_limitation_policy: ""
+    started_business_date: 2008-06-24 10:41:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "1"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: db9676644689a744a39cbe6f12e727ac56a71ac8
+    updated_at: 2014-04-21 11:27:55
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Please report to our desk prior to retrieving luggage. Our desk is located next to baggage claim number 4 (opposite door number 6) Our driver will proceed with passenger to baggage claim and help with luggage. With carry on only, please report directly to
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: shuttleoneservices@hotmail.com, 3304945894@fax.com
+    phone: 800-SOS-4-SOS
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "18"
+    results_image: 
+    last_name: Taki
+    name: Shuttle One
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: ea402054b1de98f0b324085157d16818a34ef289
+    car_seats_pets: ""
+    created_at: 2008-06-24 10:41:00
+    blackout: 12/25/2008
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Basel
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "4"
+    description: Shuttle One Services SOS  is the only transportation company located inside the terminal of the Akron Canton Airport, providing Door-to-Door service to your home, office or hotel.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "6660"
+    login: tennco
+    luggage_limitation_policy: ""
+    started_business_date: 2008-06-25 12:56:00
+    company_commission_percentage: "10"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "3"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: f33725d442ef47b3729333a10f83698c32979e19
+    updated_at: 2013-01-17 12:04:44
+    insured: ""
+    luggage: TennCo Express Airport Shuttle Luggage Policy is three(3) average size pieces per person as per airlines specifications.
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |
+      Retrieve luggage from Baggage Claim.	Proceed to the third lane out from the building lower level. Shuttle runs every 30 minutes Pick-up@Column# 14 Yellow.
+
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: 9015221019@fax.com
+    phone: 901.553.8990, 901-859-6668
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "2147483647"
+    results_image: tennco_shuttle.jpg
+    last_name: x
+    name: Tennco Express Airport Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: |-
+      Retrieve luggage from Baggage Claim.	Proceed to the third lane out from the building lower level. Shuttle runs every 30 minutes Pick-up@Column# 14 Yellow.  For departure reservations, please
+      call 901.522.0001
+    salt: ae2075dfdfe1ce97f6c94a91c27b106d88d06109
+    car_seats_pets: ""
+    created_at: 2008-06-25 12:56:00
+    blackout: 12/25/2008
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "730"
+    first_name: x
+    biz_hours_end: "2130"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "3.5"
+    description: "Convenient, Reliable, Reasonable and Flexible: Downtown Memphis Hotel Shuttle Service to and from the Memphis International Airport, $16 one way or $26 round trip.  Pickup hourly at all downtown hotels."
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "6872"
+    login: cocoabeach
+    luggage_limitation_policy: ""
+    started_business_date: 2008-06-27 12:59:00
+    company_commission_percentage: "10"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: |-
+      Cocoa Beach/Port Canaveral Area
+      To/From Orlando International Airport - $40 for the first passenger, $12 each additional.
+    more_info_1: 
+    survey_score_count: "2"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 71949812b3481596a3523227cac95b686d8cca14
+    updated_at: 2011-07-25 08:05:32
+    insured: ""
+    luggage: ""
+    cell_phone: x
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Cocoa Beach Shuttles are available of both the A and B sides of the Main Terminal, on the Ground Transportation Level (Level 1), at Commercial Lanes spaces A15 on the A-Side, and B13 on the B-side.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: cocoashuttle@bellsouth.net, 3216324135@fax.com, melissa@cbshuttle.com, danh@cbshuttle.com
+    phone: (888) 784-4144, 321-631-4144
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: ford-econo-200.jpg
+    last_name: x
+    name: Cocoa Beach Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: Cocoa Beach Shuttles are available of both the A and B sides of the Main Terminal, on the Ground Transportation Level (Level 1), at Commercial Lanes spaces A15 on the A-Side, and B13 on the B-side.
+    salt: 42b4354c678d39bd823a6045584d7d88beeb75cb
+    car_seats_pets: ""
+    created_at: 2008-06-27 12:59:00
+    blackout: 12/25/2008
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: $40 for the first passenger, $12 each additional.
+    biz_hours_start: "700"
+    first_name: x
+    biz_hours_end: "1930"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "3"
+    description: Whether your destination is to a Port Canaveral cruise ship, Cocoa Beach hotel, Cape Canaveral Hotel, or gambling ship. Our commitment is to provide you with quality Cocoa Beach transportation, Port Canaveral transportation, and Cape Canaveral.
+    policies_bullet_points: During those 20 years we have established a reputation for excellence. Our goal here at Cocoa Beach Shuttle is to provide  professional  transportation for our clients and visitors to the area.
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Shared-Ride Shuttle Van Service.
+    company_information: Cocoa Beach Shuttle has been providing service to the Cocoa Beach / Port Canaveral area for over 20 years.
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "7276"
+    login: robertshawaii
+    luggage_limitation_policy: ""
+    started_business_date: 2008-07-02 11:55:00
+    company_commission_percentage: "15"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: Transfer from Airport to Waikiki is based on the per person rate including two standard size luggage, any additional luggage subject to charge. Departure transfers from Waikiki to Airport is based on a per person rate, including two standard size luggage,
+    more_info_1: HATS_employee.jpg
+    survey_score_count: "3"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 4c23cd9220d5b890417e8e234486800478dc9961
+    updated_at: 2010-07-08 04:01:11
+    insured: ""
+    luggage: "Baggage rates per person based on 2 standard bags maximum - standard size follows airline regulation of 62\xE2\x80\x9D (L+W+H) and 50 lbs weight restriction."
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |
+      Once you have claimed your bags and are ready for the transfer, please call the Dispatch office: Honolulu, Oahu: (808) 831-1555 or Kahului, Maui: (808) 871-4838.  Verify where the pick up location would be and the vehicle will be there shortly.
+
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: reservations@robertshawaii.com, 8085227872@fax.com
+    phone: (808) 831-1555 (OAHU) OR (808) 871-4838 (MAUI)
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: "Baggage rates per person based on 2 standard bags maximum - standard size follows airline regulation of 62\xE2\x80\x9D (L+W+H) and 50 lbs weight restriction."
+    hours_in_advance: "24"
+    results_image: RH-Mini.jpg
+    last_name: x
+    name: Roberts Hawaii Airport Express
+    children_rate: ""
+    customer_airport_pick_up_instructions: |
+      Once you have claimed your bags and are ready for the transfer, please call the Dispatch office: Honolulu, Oahu: (808) 831-1555 or Kahului, Maui: (808) 871-4838.  Verify where the pick up location would be and the vehicle will be there shortly.
+
+    salt: 628a23e9155dead0e0ed8e12818df1a0380e5836
+    car_seats_pets: ""
+    created_at: 2008-07-02 11:55:00
+    blackout: 12/25/2008
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Kathy
+    biz_hours_end: "100"
+    additional_info: |-
+      The Official State-Authorized Honolulu Airport Shuttle.
+      
+      There are a lot of Waikiki - Honolulu Airport shuttle services out there, but there's only one that is authorized by the State of Hawaii: Roberts Hawaii.
+    more_info_2: airport_shuttle_sign.gif
+    survey_score: "4"
+    description: The Official State-Authorized Honolulu Airport Shuttle.  Airport Express is our upgrade service to the scheduled shuttle service.  No waiting, less hotel stops, nicer vehicles, unbeatable price.  Reserve today, limited availability!
+    policies_bullet_points: |
+      Golf Bags	$4.52
+      Surfboards	$17.87
+      Windsurfer	$39.35
+      Bicycles	$26.86
+      Excess baggage (over 2 per person)	$4.52
+      
+
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: "**PLEASE BE ADVISED THAT THIS TRANSFER MAY HAVE ADDITIONAL HOTEL STOPS PRIOR TO ARRIVING AT YOUR HOTEL, TRANSFER IS BASED ON SHARE BASIS WITH OTHERS**"
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://wwwobxbeachlimo.com
+    type: Company
+    id: "8109"
+    login: beachlimo
+    luggage_limitation_policy: ""
+    started_business_date: 2008-07-11 05:38:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: bb9ce25365131b094fc23ddfde49f43fc3153f3b
+    updated_at: 2009-09-09 20:56:16
+    insured: ""
+    luggage: ""
+    cell_phone: x
+    fax: x
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: ""
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@obxbeachlimo.com
+    phone: (252) 255-5466
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "120"
+    results_image: 
+    last_name: x
+    name: Outer Banks Airport Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: 478148b960f1013131430aa76a1be271303743c7
+    car_seats_pets: ""
+    created_at: 2008-07-11 05:38:00
+    blackout: 
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: x
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: 
+    description: BEACH LIMOUSINE PROVIDES AIRPORT SERVICE TO AND FROM THE  OUTER BANKS  TO OR  FROM  ANY  AIRPORT ON EAST COAST
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.com
+    type: Company
+    id: "8556"
+    login: century
+    luggage_limitation_policy: ""
+    started_business_date: 2008-07-15 12:20:00
+    company_commission_percentage: "15"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: e344b188aeef744d322ae78c49f7c5c519fb7a35
+    updated_at: 2008-11-20 11:45:41
+    insured: ""
+    luggage: ""
+    cell_phone: x
+    fax: x
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: ""
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: 3154543121@fax.com
+    phone: (315) 454-3263
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: x
+    name: Century Transportation
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: 87094fcfd7e7d4010810e76808fc1fc54fabbf2a
+    car_seats_pets: ""
+    created_at: 2008-07-15 12:20:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Bill
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: 
+    description: Century Transportation has an exclusive agreement to provide ground transportation services at Syracuse Hancock International Airport. As such, they are the only company that is permitted to stage their vehicles at the Airport and operate dispatch centers
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "11827"
+    login: cme
+    luggage_limitation_policy: x
+    started_business_date: 2008-08-12 10:14:00
+    company_commission_percentage: "20"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: |-
+      FROM ASPEN/SNOWMASS - 5 HOUR TRAVEL TIME.
+      FROM SUMMIT COUNTY - 2 HOUR TRAVEL TIME.
+      FROM VAIL - 2 1/2 HOUR TRAVEL TIME.  
+      Due to new security and check in procedures all guests should
+      plan on arriving at the airport 90 minutes prior to flight departure
+    more_info_1: CME-IMAGE.jpg
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 18931ce248de5045367b8a08e0d2cf9684979cc1
+    updated_at: 2013-12-11 11:10:13
+    insured: ""
+    luggage: ""
+    cell_phone: x
+    fax: x
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "Upon arrival at DIA or Eagle Airport, please check in at the Colorado Mountain Express counter, located in the Baggage Claim area. "
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: guestservice@ridecme.com patrecem@ridecme.com
+    phone: 877-949-4227, 800-525-6363, 970-754-3725
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "48"
+    results_image: CME_LOGO.jpg
+    last_name: x
+    name: Colorado Mountain Express
+    children_rate: ""
+    customer_airport_pick_up_instructions: Upon arrival at DIA or Eagle Airport, please check in at the Colorado Mountain Express counter, located in the Baggage Claim area.
+    salt: c028fbb80398dc65fd607df1153824af8d6936d6
+    car_seats_pets: ""
+    created_at: 2008-08-12 10:14:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "500"
+    first_name: x
+    biz_hours_end: "2330"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: |-
+      FROM ASPEN/SNOWMASS - 5 HOUR TRAVEL TIME.
+      FROM SUMMIT COUNTY - 2 HOUR TRAVEL TIME.
+      FROM VAIL - 2 1/2 HOUR TRAVEL TIME.  
+      Due to new security and check in procedures all guests should
+      plan on arriving at the airport 90 minutes prior to flight departure
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: |-
+      FROM ASPEN/SNOWMASS - 5 HOUR TRAVEL TIME.
+      FROM SUMMIT COUNTY - 2 HOUR TRAVEL TIME.
+      FROM VAIL - 2 1/2 HOUR TRAVEL TIME.  
+      Due to new security and check in procedures all guests should
+      plan on arriving at the airport 90 minutes prior to flight departure
+    company_information: |-
+      FROM ASPEN/SNOWMASS - 5 HOUR TRAVEL TIME.
+      FROM SUMMIT COUNTY - 2 HOUR TRAVEL TIME.
+      FROM VAIL - 2 1/2 HOUR TRAVEL TIME.  
+      Due to new security and check in procedures all guests should
+      plan on arriving at the airport 90 minutes prior to flight departure
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "11971"
+    login: shuttleu
+    luggage_limitation_policy: ""
+    started_business_date: 2008-08-13 13:45:00
+    company_commission_percentage: "10"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: dd18e3874b9ce7eff4a1281d34f550e9000ad3a9
+    updated_at: 2011-03-17 09:30:34
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: ""
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: jay@shuttleu.com, reservations@shuttleu.com
+    phone: 928-442-1000
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "0"
+    results_image: shuttleu_logo.jpg
+    last_name: x
+    name: Shuttle U Prescott
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: 6d8f0cc97fbb149cdfa24c3d3a251e3962426077
+    car_seats_pets: ""
+    created_at: 2008-08-13 13:45:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Jay
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: "Prescott to Phoenix Airport Transportation: Sky Harbor Airport Shuttle"
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "20735"
+    login: bluestarbus
+    luggage_limitation_policy: ""
+    started_business_date: 2008-10-20 12:11:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "1"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 5b8b365d86149b4baf735fe0991dce22f853110f
+    updated_at: 2014-08-13 02:14:26
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "Step outside baggage claim, take the walkway to the left and go to island #3. Proceed to Scheduled Buses and Vans pickup area where you'll Blue Star Bus."
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@bluestarbus.com, tonybilic@bluestarbus.com
+    phone: 800-247-2272
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "18"
+    results_image: 
+    last_name: Bilic
+    name: Blue Star Bus
+    children_rate: ""
+    customer_airport_pick_up_instructions: "Step outside baggage claim, take the walkway to the left and go to island #3. Proceed to Scheduled Buses and Vans pickup area where you'll Blue Star Bus."
+    salt: 9eb2b6514900a5cb5877dce2a3fcebe85601ae04
+    car_seats_pets: ""
+    created_at: 2008-10-20 12:11:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "300"
+    first_name: Tony
+    biz_hours_end: "2345"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "4"
+    description: Providing door to door transportation to/from PDX 7 days a week, 365 days a year.    Exclusive transportation provider for Portland International Airport.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "26862"
+    login: alpineexpress
+    luggage_limitation_policy: ""
+    started_business_date: 2009-01-22 09:49:00
+    company_commission_percentage: "10"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 154adb9575fe7e883e283ab275c367e0cb20809d
+    updated_at: 2010-03-11 12:44:53
+    insured: ""
+    luggage: ""
+    cell_phone: x
+    fax: x
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Please check in at the Alpine Express counter in the baggage claim area passengers check in with us as soon as they get off the plane. We will confirm how many people have arrived and where we are dropping them off, as well as their departure information.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@alpineexpressshuttle.com, 9706416622@fax.com
+    phone: 800-822-4844
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Runge
+    name: Alpine Express
+    children_rate: ""
+    customer_airport_pick_up_instructions: Please check in at the Alpine Express counter in the baggage claim area passengers check in with us as soon as they get off the plane. We will confirm how many people have arrived and where we are dropping them off, as well as their departure information.
+    salt: 53be128ae3373ac57c944c4b572658b51fd18d33
+    car_seats_pets: ""
+    created_at: 2009-01-22 09:49:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Sue
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Comfortable and reliable transportation between Gunnison and Crested Butte. Travel time is roughly 45 minutes.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "26890"
+    login: sunport
+    luggage_limitation_policy: ""
+    started_business_date: 2009-02-16 11:17:00
+    company_commission_percentage: "10"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 8e2ed566ad4fecd44b6a264cd27c946ac23c2bdf
+    updated_at: 2009-07-08 20:34:50
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "At the Airport\x97Our counter is open between 9am-10pm and is located on the ground level inside the terminal across from baggage claim #3. A big yellow \x93Sunport Shuttle\x94 sign is on the wall behind the counter."
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: sales@sunportshuttle.com
+    phone: (866) 505-4966
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Tomasi
+    name: Sunport Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: "At the Airport\x97Our counter is open between 9am-10pm and is located on the ground level inside the terminal across from baggage claim #3. A big yellow \x93Sunport Shuttle\x94 sign is on the wall behind the counter."
+    salt: 3ef650747815ae64c3c52d9eb7136331e7d7e737
+    car_seats_pets: ""
+    created_at: 2009-02-16 11:17:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "400"
+    first_name: Jeree
+    biz_hours_end: "2200"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: If you are flying into Albuquerque and need fast convenient transportation to your hotel or Bed and Breakfast, let us know and we'll be ready when you arrive.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "26954"
+    login: davisairporter
+    luggage_limitation_policy: ""
+    started_business_date: 2009-03-13 15:06:00
+    company_commission_percentage: "8.5"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: bad91300bf53ff3ec671d3f6f29ad08917ab6f30
+    updated_at: 2013-10-10 07:44:10
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Sacramento Airport - Pick-up locations are at Ground Transportation (Terminal A) and Shuttles (other Terminals).  San Francisco SFO Airport pickup locations are on the lower level of the Int'l Terminal at Courtyards 2 and 3.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: shuttle@davisairporter.com, 5307505311@fax.com
+    phone: 800-565-5153
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: x
+    name: Davis Airporter
+    children_rate: ""
+    customer_airport_pick_up_instructions: Sacramento Airport - Pick-up locations are at Ground Transportation (Terminal A) and Shuttles (other Terminals).  San Francisco SFO Airport pickup locations are on the lower level of the Int'l Terminal at Courtyards 2 and 3.
+    salt: 3e50f7c9e2ddfee5717f6e1bbdd40cc96406443a
+    car_seats_pets: ""
+    created_at: 2009-03-13 15:06:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Aida
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Davis Airporter offers fast, no-worry shuttle services to and from Sacramento/San Francisco International Airports. Book today to receive the lowest rates available.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "27583"
+    login: axisexpress
+    luggage_limitation_policy: ""
+    started_business_date: 2009-06-08 13:04:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: a8c187d3327d43f59c10e3e9c39dfbf70a852106
+    updated_at: 2014-01-23 11:18:47
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "Arrival Boston Logan Airport: Call 877-770-8846 after you have claimed your luggage and are ready for pickup.  Agent will assist you on how to find your van."
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: reservations@axiscoachusa.com
+    phone: "877-770-8846 "
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "1000"
+    results_image: 
+    last_name: Hartnett
+    name: Axis Express Airport Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: "Arrival Boston Logan Airport: Call 877-770-8846 after you have claimed your luggage and are ready for pickup.  Agent will assist you on how to find your van."
+    salt: f40afa8036a64c6a09b2373b9f565fa48034a08d
+    car_seats_pets: ""
+    created_at: 2009-06-08 13:04:00
+    blackout: |
+      12/24/2009
+      12/25/2009
+      11/26/2009
+      12/31/2009
+      01/01/2010
+      06/24/2011
+      06/25/2011
+      06/26/2011
+      07/01/2011
+      07/02/2011
+      07/03/2011
+      07/04/2011
+      07/29/2011
+      07/30/2011
+      07/31/2011
+      09/17/2011
+      09/18/2011
+      09/24/2011
+      09/25/2011
+
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Paul
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: ""
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "27923"
+    login: savonshuttle
+    luggage_limitation_policy: ""
+    started_business_date: 2009-07-02 13:16:00
+    company_commission_percentage: "15"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 5e82bc58e99bdf310d35c02b0f8445c2adfe39f4
+    updated_at: 2009-07-02 13:17:22
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Once you have collected your luggage look for the transportation kiosk across from the main terminal in the rental car return lot, and let the agent there know you have a Sav-on Shuttle reservation.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@sav-onshuttle.com, johnanthony300@hotmail.com
+    phone: 800-642-0167
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Watts
+    name: Sav-on Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: Once you have collected your luggage look for the transportation kiosk across from the main terminal in the rental car return lot, and let the agent there know you have a Sav-on Shuttle reservation.
+    salt: c351f9592ea20518c18a5b12f6f3d4f78651db06
+    car_seats_pets: ""
+    created_at: 2009-07-02 13:16:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: 
+    first_name: John
+    biz_hours_end: 
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: "Sav-on Shuttle has been providing guestss dependable, affordable and professional Door\x96to\x96Door transportation service since 1997. We are based by Long Beach Airport."
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "28799"
+    login: careyindiana
+    luggage_limitation_policy: ""
+    started_business_date: 2009-08-26 14:58:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 8c4c05928bc9c1b7a4ce40dcd972e19af92f713e
+    updated_at: 2013-10-10 07:43:23
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: All pick-ups at the Indianapolis International Airport are made only at the Ground Transportation Center (GTC). The Ground Transportation Center is located on the first (1st) level of the parking garage outside of baggage claim area two (2). Carey Indiana
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: 3172406180@fax.com, john.mellinger@carey.com
+    phone: 317-241-7100
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "18"
+    results_image: 
+    last_name: x
+    name: Carey Indiana
+    children_rate: ""
+    customer_airport_pick_up_instructions: All pick-ups at the Indianapolis International Airport are made only at the Ground Transportation Center (GTC). The Ground Transportation Center is located on the first (1st) level of the parking garage outside of baggage claim area two (2). Carey Indiana
+    salt: 33aa140446a6f003fd2ec0e0fa36469b6decb05c
+    car_seats_pets: ""
+    created_at: 2009-08-26 14:58:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Chris
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Share a ride service is low cost transportation, which utilizes a fleet of vans, sedans, limousines, and minibuses to transport people to and from the Indianapolis International Airport. The share-a-ride service requires that the customer allow us to make
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "29619"
+    login: deluxeshuttle
+    luggage_limitation_policy: ""
+    started_business_date: 2009-10-09 13:45:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 15df4a9789a57f9381dc086cbcadf8c739890e1d
+    updated_at: 2013-10-10 07:42:15
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |-
+      Walk to the transportation center which is located on the ground 
+      floor of the parking garage directly across from the baggage claim, where your driver will meet you.  Please call 504-561-1000
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@deluxeshuttle.com, info@limolivery.com
+    phone: 504-561-1000; 877 592-2226
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "12"
+    results_image: 
+    last_name: x
+    name: Deluxe Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: |-
+      Walk to the transportation center which is located on the ground 
+      floor of the parking garage directly across from the baggage claim, where your driver will meet you.  Please call 504-561-1000
+    salt: 1fcc733d98a982be2991e61171b53816165c2dc3
+    car_seats_pets: ""
+    created_at: 2009-10-09 13:45:00
+    blackout: |
+      12/15/2010
+      12/16/2010
+      12/17/2010
+      12/18/2010
+      03/18/2010
+      03/19/2010
+      04/23/2010
+      04/24/2010
+      04/25/2010
+      04/29/2010
+      04/30/2010
+      05/01/2010
+      05/02/2010
+      07/01/2010
+      07/02/2010
+      07/03/2010
+      07/04/2010
+      07/05/2010
+      01/14/2011
+      02/25/2011
+      02/26/2011
+      02/27/2011
+      03/02/2011
+      03/03/2011
+      03/04/2011
+      03/05/2011
+      03/06/2011
+      03/07/2011
+      03/08/2011
+      06/30/2011
+      07/01/2011
+      07/02/2011
+      07/03/2011
+      09/18/2011
+      12/25/2011
+      10/05/2011
+      10/09/2011
+      10/10/2011
+      10/13/2011
+      10/14/2011
+      10/16/2011
+      10/22/2011
+      11/24/2011
+      12/24/2011
+      12/15/2011
+      12/16/2011
+      12/17/2011
+      12/18/2011
+      12/24/2011
+      12/19/2011
+      12/20/2011
+      12/24/2011
+      01/01/2012
+      01/03/2012
+      01/04/2012
+      01/05/2012
+      01/06/2012
+      01/07/2012
+      01/08/2012
+      01/09/2012
+      01/10/2012
+
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: x
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: |-
+      Welcome to Deluxe Shuttle, New Orleans only luxury airport shuttle service.
+      We have taken the standard airport shuttle model and added our unique blend of professionalism and service, making Deluxe Shuttle the economical choice for distinguished traveler
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "29997"
+    login: disneylandexpress
+    luggage_limitation_policy: ""
+    started_business_date: 2009-10-27 19:53:00
+    company_commission_percentage: "20"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 7f0433701e8d0c8b0110daf9009aaf727bf4a5b2
+    updated_at: 2013-10-10 07:41:35
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |-
+      LAX - Disneyland Resort Express picks up outside of baggage claim, center island, under the overhead GREEN sign
+      SNA - The Disneyland Resort Express picks up outside of baggage claim, at the Ground Transportation Center.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: anaheim.reservations@coachusa.com, andrew.novak@coachusa.com
+    phone: 714-978-8855
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "12"
+    results_image: 
+    last_name: Trujillo
+    name: Disneyland Resort Express
+    children_rate: ""
+    customer_airport_pick_up_instructions: |-
+      LAX - Disneyland Resort Express picks up outside of baggage claim, center island, under the overhead GREEN sign
+      SNA - The Disneyland Resort Express picks up outside of baggage claim, at the Ground Transportation Center.
+    salt: 51983be48c07d694d4eb94abcede0c3009679538
+    car_seats_pets: ""
+    created_at: 2009-10-27 19:53:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Traci
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: The Disneyland Resort Express provides airport transportation from Los Angeles International Airport & John Wayne/ Orange County Airport to the Anaheim Resort Hotels. The Disneyland Resort Express offers large motor coaches equipped with air-condition.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "30023"
+    login: a1towncar
+    luggage_limitation_policy: ""
+    started_business_date: 2009-10-29 15:26:00
+    company_commission_percentage: "20"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: c519c44ad408730267200b75284f93497791dcbc
+    updated_at: 2010-08-02 07:46:40
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: When arriving at Tucson International airport a driver will meet you with a sign with your name on it.  If you do not see him before getting to the baggage carousel, call 520-203-2218.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: reservation@a1towncars.com
+    phone: 520-203-2218
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: x
+    name: A1 Town Cars
+    children_rate: ""
+    customer_airport_pick_up_instructions: When arriving at Tucson International airport a driver will meet you with a sign with your name on it.  If you do not see him before getting to the baggage carousel, call 520-203-2218.
+    salt: ae0b80338214b4dbd723ba309b33518de73fb1f8
+    car_seats_pets: ""
+    created_at: 2009-10-29 15:26:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: x
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: "At A1 Town Cars we specialize in airport transportation and we're all about service and comfort. Our cars are clean and verry comfortable and our drivers are courteous and professional. "
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "30539"
+    login: tamlimo
+    luggage_limitation_policy: ""
+    started_business_date: 2009-11-17 15:14:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: d17679e9fc5037af3228b33c0af13641e280d8fb
+    updated_at: 2014-09-26 11:27:15
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Meet your driver at luggage claim who will be holding a sign with your name.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: tamlimo@gmail.com
+    phone: 713-366-2169
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "12"
+    results_image: 
+    last_name: Mengistu
+    name: TamLimo
+    children_rate: ""
+    customer_airport_pick_up_instructions: Meet your driver at luggage claim who will be holding a sign with your name.
+    salt: f0873be0702de5e6ab6acfbed5963405ac1d115b
+    car_seats_pets: ""
+    created_at: 2009-11-17 15:14:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Tamirat
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: "For your convenience, we offer excellent rates, reliable and professional chauffeurs, and the newest model vehicles. "
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "30549"
+    login: galvestonlimo
+    luggage_limitation_policy: ""
+    started_business_date: 2009-11-17 21:31:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: d1f07e4c4c06004ee522f8b6f78ae2613f4861fa
+    updated_at: 2013-10-10 07:39:45
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "Terminal A-- On the North side of the airport- outside baggage area by the Hotel shuttles. Terminal B: Outside the baggage area by the Taxi Stand. Terminal C:- Outside baggage area by Super Shuttle\r\n\
+      Terminal E: Outside baggage, take a right and go to the "
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: DN121@aol.com
+    phone: 409-740-5466
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: x
+    name: Galveston Limousine
+    children_rate: ""
+    customer_airport_pick_up_instructions: "Terminal A-- On the North side of the airport- outside baggage area by the Hotel shuttles. Terminal B: Outside the baggage area by the Taxi Stand. Terminal C:- Outside baggage area by Super Shuttle\r\n\
+      Terminal E: Outside baggage, take a right and go to the "
+    salt: 4b9f45c32b3fb144c948161755c4919af7801df1
+    car_seats_pets: ""
+    created_at: 2009-11-17 21:31:00
+    blackout: |
+      06/23/2010
+      06/24/2010
+      06/25/2010
+      06/26/2010
+      06/27/2010
+      06/28/2010
+
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: x
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: ""
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "31426"
+    login: airexpshuttle
+    luggage_limitation_policy: ""
+    started_business_date: 2009-12-18 20:31:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 0e846391ac336d77410b5e600320c8347ebd64b5
+    updated_at: 2013-10-10 07:38:26
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Please call (239) 961-7100 and provide the dispatch with your door number when you are ready for pickup.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: sales@air-exp.com
+    phone: 239-961-7100
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: x
+    name: Airport Express Shuttle, LLC
+    children_rate: ""
+    customer_airport_pick_up_instructions: Please call (239) 961-7100 and provide the dispatch with your door number when you are ready for pickup.
+    salt: 4703048a9ea30281fb0a82f21930a0ed4ddcf7c3
+    car_seats_pets: ""
+    created_at: 2009-12-18 20:31:00
+    blackout: |-
+      03/18/2010
+      03/22/2010
+      03/23/2010
+      03/24/2010
+      03/25/2010
+      03/26/2010
+      04/09/2010
+      04/10/2010
+      04/11/2010
+      04/12/2010
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: x
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Serving all destinations To & From Fort Myers International Airport (RSW), all of Lee & Collier Counties in Southwest Florida. Service also to Tampa, Miami, West Palm Beach and Ft. Lauderdale Airports. Service to the Port of Miami, Port of the Everglade.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://louisvilletransport.com/
+    type: Company
+    id: "31730"
+    login: executivetransportation
+    luggage_limitation_policy: ""
+    started_business_date: 2009-12-29 21:45:00
+    company_commission_percentage: "15"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 32a6b20b910a383d83ccdf3eeefcf8c247e3d298
+    updated_at: 2014-10-06 09:13:36
+    insured: ""
+    luggage: ""
+    cell_phone: 502-817-3647
+    fax: " 502-897-2835"
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: "After collecting your luggage please call Please call 502-639-7667. To reach our shuttle departure area, proceed outside the baggage claim area and walk out the doors and walk to the ground transportation both. "
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: executive@louisvilletransport.com
+    phone: 502-639-7667
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Simpson
+    name: Executive Transportation
+    children_rate: ""
+    customer_airport_pick_up_instructions: "After collecting your luggage please call Please call 502-639-7667. To reach our shuttle departure area, proceed outside the baggage claim area and walk out the doors and walk to the ground transportation both. "
+    salt: 2f4affde9700b8e19371fbcd00c0e1a6ef4205cd
+    car_seats_pets: ""
+    created_at: 2009-12-29 21:45:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: James
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Leave the frustration and worry behind in trying to hail a taxi or split fares. Relax and enjoy a smooth ride from Louisville International Airport to any destination in the Louisville Metro Area.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "32189"
+    login: marindoor
+    luggage_limitation_policy: ""
+    started_business_date: 2010-01-13 12:21:00
+    company_commission_percentage: "10"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 52906944b02bfc6934ffbedbccee0a97fde86c3a
+    updated_at: 2011-10-12 14:20:21
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Call our dispatch office once you land (415) 457-2717, and on our representatives will instruct you where to meet your van.  Typically wait time is between 15-45 minutes.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: 4155261593@fax.com, driveus@marindoortodoor.com, marindoortodoor@yahoo.com
+    phone: "(415) 457-2717 "
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: x
+    name: Marin Door to Door
+    children_rate: ""
+    customer_airport_pick_up_instructions: Call our dispatch office once you land (415) 457-2717, and on our representatives will instruct you where to meet your van.  Typically wait time is between 15-45 minutes.
+    salt: 380569a6ea742bb0d81c667d4a0151261d675d72
+    car_seats_pets: ""
+    created_at: 2010-01-13 12:21:00
+    blackout: 12/25/2010
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: x
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Marin Door To Door is the North Bay's convenient way to go to the San Francisco or Oakland airport, Amtrak Emeryville train station, or the Port of San Francisco cruise ships. Avoid the hassle of driving to the bus stop, or to your departure airport.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "33613"
+    login: supertrans
+    luggage_limitation_policy: ""
+    started_business_date: 2010-02-23 10:57:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 63acdc465f20479ef5831e47c706461d8b9fdd81
+    updated_at: 2013-10-10 07:35:51
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |
+      From JFK, EWR or PHL airport Call from baggage claim 1-800-309-2000 (from any cell or payphone) for pick up instruction.
+
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: supertranspa@yahoo.com,  2153330104@fax.com
+    phone: 215-333-1441
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "48"
+    results_image: 
+    last_name: x
+    name: Super Trans
+    children_rate: ""
+    customer_airport_pick_up_instructions: |
+      From JFK, EWR or PHL airport Call from baggage claim 1-800-309-2000 (from any cell or payphone) for pick up instruction.
+
+    salt: 36eadec7075b2fc801eda1d0e34fbaaa8284460c
+    car_seats_pets: ""
+    created_at: 2010-02-23 10:57:00
+    blackout: |
+      02/26/2010
+      02/27/2010
+      02/28/2010
+      03/01/2010
+
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "830"
+    first_name: x
+    biz_hours_end: "2100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Super Trans carries PUC required liability insurance, has on staff safety training and requires drug and alcohol testing of all employees. We are the professional Philly Shuttle Transportation Company you have been looking for.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "34417"
+    login: airportexecshuttle
+    luggage_limitation_policy: ""
+    started_business_date: 2010-03-15 08:47:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 6be93e7811ccda0fe3ac1f4b17a54fcae27519f5
+    updated_at: 2013-10-10 07:34:53
+    insured: ""
+    luggage: ""
+    cell_phone: 859-392-2520
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: When arriving at the airport the passenger will need to check in with our shuttle desk which is located INSIDE baggage claim.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: reservations@executivetransportation.org
+    phone: 800-990-8841, 859-261-8841
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "18"
+    results_image: 
+    last_name: x
+    name: Executive Shuttle Transportation
+    children_rate: ""
+    customer_airport_pick_up_instructions: When arriving at the airport the passenger will need to check in with our shuttle desk which is located INSIDE baggage claim.
+    salt: 8cb57c888af6713904ffec7e0739b69014592543
+    car_seats_pets: ""
+    created_at: 2010-03-15 08:47:00
+    blackout: |-
+      11/03/2011
+      11/02/2011
+      11/04/2011
+      11/05/2011
+      11/06/2011
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Lisa
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: BOOKING AIRPORT TRANSPORTATION SERVICE at Executive Transportation Services making life easy and simple are as important as ensuring your ride is as comfortable as possible in one of our roomy airport shuttles.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.redlinevans.com
+    type: Company
+    id: "47992"
+    login: redlinevan
+    luggage_limitation_policy: ""
+    started_business_date: 2010-12-06 09:05:00
+    company_commission_percentage: "15"
+    service_fee: "4"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 8069adc458d17b92496aec1d353bfdc076999176
+    updated_at: 2011-06-29 08:17:39
+    insured: ""
+    luggage: ""
+    cell_phone: 516-661-2442
+    fax: 555-555-5555
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Collect your luggage, then call our dispatcher at 718-810-6443 or 718-RED-LINE (718-733-5463).  Please wait for the driver at the information desk near baggage claim.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: redlineservce@yahoo.com, 7182914847@fax.com
+    phone: 718-810-6443, 718-733-5463
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "9000"
+    results_image: 
+    last_name: x
+    name: Red Line Van
+    children_rate: ""
+    customer_airport_pick_up_instructions: Collect your luggage, then call our dispatcher at 718-810-6443 or 718-RED-LINE (718-733-5463).  Please wait for the driver at the information desk near baggage claim.
+    salt: a45b9bb3fecd558a2cc0b246e8a35cb5c45e84a0
+    car_seats_pets: ""
+    created_at: 2010-12-06 09:05:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Andre
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Red Line Van Corporation provides discount airport shuttle service for JFK, LGA and EWR airports.  Our 11 pax vans come equipped with personal TV/Movies as well as Free WiFi.  Sit back and relax and let Red Line get you to and from the airport, stress-fre
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.jamesrivertrans.com
+    type: Company
+    id: "10013873"
+    login: jamesriver
+    luggage_limitation_policy: 2 check, 1 carry on
+    started_business_date: 2012-08-02 07:19:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: d16458d8485e328a949706efae6868915588c512
+    updated_at: 2013-10-10 07:32:38
+    insured: ""
+    luggage: ""
+    cell_phone: 804-229-2013
+    fax: 804-249-4844
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: James River Transportation has a counter inside Richmond International Airport. We are located on the first floor, just to the right of the escalators leading to the gates upstairs.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: ric1@jamesrivertrans.com
+    phone: 804-249-1052
+    cancellation_policy: 24 hours
+    confirm_reservation_policy: ""
+    airports_serviced: Richmond, VA (RIC)
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Hall
+    name: James River Transportation
+    children_rate: ""
+    customer_airport_pick_up_instructions: James River Transportation has a counter inside Richmond International Airport. We are located on the first floor, just to the right of the escalators leading to the gates upstairs.
+    salt: b8fe57e18a9b25e8f9d0240b23bc1a2728ad2baf
+    car_seats_pets: ""
+    created_at: 2012-08-02 07:19:00
+    blackout: ""
+    children_safety_policy: Please provide your own car seat
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Jason
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: James River Transportation has a counter inside Richmond International Airport. We are located on the first floor, just to the right of the escalators leading to the gates upstairs.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: Private Shuttle Van, Private Town Car
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.citylimousineservices.com
+    type: Company
+    id: "10013874"
+    login: emerald
+    luggage_limitation_policy: ""
+    started_business_date: 2012-08-02 07:26:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: a0ac0e41f24fd43d5e1ed8bd1af6d3b5f0557661
+    updated_at: 2013-10-10 07:32:16
+    insured: ""
+    luggage: ""
+    cell_phone: 619-540-7000
+    fax: 866-316-3320
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Our driver will greet arriving passengers in the terminal with a Name Sign and they will also load your luggage. For those frequent travelers with carry-on luggage, we also offer efficient curb-side pick-ups as well. We monitor all arriving flights on lin
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: emeraldcitylimo@cox.net
+    phone: 877-789-7171
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Reed
+    name: Emerald City Limousine
+    children_rate: ""
+    customer_airport_pick_up_instructions: Our driver will greet arriving passengers in the terminal with a Name Sign and they will also load your luggage. For those frequent travelers with carry-on luggage, we also offer efficient curb-side pick-ups as well. We monitor all arriving flights on lin
+    salt: dd7c8223e8d697f3f828c0064f75e1d64971ef38
+    car_seats_pets: ""
+    created_at: 2012-08-02 07:26:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Debbie/Greg
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: We provide VIP service to all of our clients at the San Diego Lindbergh International Airport. We can also serve Los Angeles International Airport (LAX), Ontario, John Wayne/Orange County, and Long Beach airports to and from the San Diego area. Our driver
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "10017242"
+    login: Scoot
+    luggage_limitation_policy: x
+    started_business_date: 2013-03-07 08:53:00
+    company_commission_percentage: "0"
+    service_fee: "5"
+    after_hour_and_waiting_time: x
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: x
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: x
+    customer_testimonials: x
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 97e5d0435d5efda6402c8abfc03c813e809e2614
+    updated_at: 2014-10-07 04:17:59
+    insured: ""
+    luggage: ""
+    cell_phone: ""
+    fax: ""
+    remember_token: 
+    exclusions: x
+    arrival_and_airport_pickup_info: "Once you arrive Sky Harbor or Mesa Gateway airport and before you collect your luggage, please call: 855-WE-SKOOT or 855-937-5668 to speak to one of our friendly dispatchers who will instruct you which vehicle to board so you can be on your way."
+    inclusions: x
+    more_info_3: 
+    password_hash: 
+    email: affiliates@openground.in
+    phone: 855-WE-SKOOT
+    cancellation_policy: x
+    confirm_reservation_policy: x
+    airports_serviced: 
+    excess_luggage_charge: x
+    hours_in_advance: "4"
+    results_image: 2.jpg
+    last_name: x
+    name: SKOOT
+    children_rate: x
+    customer_airport_pick_up_instructions: "Once you arrive Sky Harbor or Mesa Gateway airport and before you collect your luggage, please call: 855-WE-SKOOT or 855-937-5668 to speak to one of our friendly dispatchers who will instruct you which vehicle to board so you can be on your way."
+    salt: 4794f40f7e8d6eafac13a113432ec0595582de77
+    car_seats_pets: ""
+    created_at: 2013-03-07 08:53:00
+    blackout: |-
+      11/28/2013
+      12/25/2013
+    children_safety_policy: x
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "300"
+    first_name: x
+    biz_hours_end: "2300"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: SKOOT is a company out of Southern Nevada, which focuses on providing efficient, affordable and environmentally friendly shuttle service to/from Sky Harbor and Mesa Gateway Airports  Book today and enjoy Less Stops at the same Low Shared Ride Rates.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: x
+    company_information: x
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: x
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: x
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: ""
+    type: Company
+    id: "10022073"
+    login: skootdtw
+    luggage_limitation_policy: ""
+    started_business_date: 2013-11-11 15:28:00
+    company_commission_percentage: "0"
+    service_fee: "0"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: cb311c8317ee4f99f684722f06fc5e1123dc621d
+    updated_at: 2014-10-07 04:16:04
+    insured: ""
+    luggage: ""
+    cell_phone: "8609649001"
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Please call 855-937-5668 when you collect your luggage and proceed to Ground Transportation Shuttle Pickup area across the skywalk.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: affiliates@openground.in
+    phone: 855-937-5668
+    cancellation_policy: ""
+    confirm_reservation_policy: ""
+    airports_serviced: 
+    excess_luggage_charge: ""
+    hours_in_advance: "2"
+    results_image: 
+    last_name: Bessoni
+    name: SKOOT Detroit
+    children_rate: ""
+    customer_airport_pick_up_instructions: Please call 855-937-5668 when you collect your luggage and proceed to Ground Transportation Shuttle Pickup area across the skywalk.
+    salt: 4f5bc279fa8bc43de72b88a253e54cbc7bd9ded4
+    car_seats_pets: ""
+    created_at: 2013-11-11 15:28:00
+    blackout: |-
+      11/11/2013
+      11/12/2013
+      11/13/2013
+      11/14/2013
+      11/15/2013
+      11/16/2013
+      11/17/2013
+      11/28/2013
+      12/25/2013
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "400"
+    first_name: Greg
+    biz_hours_end: "2200"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: "SKOOT Detroit is the exclusive provider of shared ride shuttle service that departs downtown Detroit hotels every hour from 4AM to 10PM.  "
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.americanairporter.com
+    type: Company
+    id: "10025424"
+    login: american airporter
+    luggage_limitation_policy: 2 suitcases & 1 carry-on per passenger.
+    started_business_date: 2014-03-29 09:48:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: ffe0e573a016d8d9fb911a5ddd4db43631f2721e
+    updated_at: 2014-04-30 20:15:19
+    insured: ""
+    luggage: |-
+      $2.00 for each extra suitcase
+      $5.00 for each trunk, golf bag, snowboard, pair of skis
+      $10.00 for each bicycle
+    cell_phone: ""
+    fax: 415-202-0726
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: After collecting your baggage, proceed to upper level (Departure Level, go outside the front doors and cross to the middle island boarding area. Ask the man with the blue jacket for American Airporter Shuttle.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: support@americanairporter.com
+    phone: 415-202-0733
+    cancellation_policy: Must cancell at least 6 hours prior to scheduled pickup time to qualify for refund.
+    confirm_reservation_policy: "Yes"
+    airports_serviced: 
+    excess_luggage_charge: |-
+      $2.00 for each extra suitcase
+      $5.00 for each trunk, golf bag, snowboard, pair of skis
+      $10.00 for each bicycle
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Fay
+    name: American Airporter Shuttle
+    children_rate: |-
+      Under 2 yrs. free
+      2-12 yrs. $8.00
+    customer_airport_pick_up_instructions: After collecting your baggage, proceed to upper level (Departure Level, go outside the front doors and cross to the middle island boarding area. Ask the man with the blue jacket for American Airporter Shuttle.
+    salt: 33057229d8bc8b57e0d4fdc41584a79a60ef8e01
+    car_seats_pets: ""
+    created_at: 2014-04-29 09:48:00
+    blackout: ""
+    children_safety_policy: Child seats legally required
+    fares_and_gratuity_fees_taxes: |-
+      $16.00 for 1st person, $12.00 for each additional person for the same address from/to SFO
+      
+      $70.00 for Charter ($70.00 per hour up to 7 passengers, $90.00 per hour for 8-9 passengers by thehour for all Bay Area or California)
+    biz_hours_start: "100"
+    first_name: Bruce
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: "We specialize in prompt, courteous service at very competitive rates with top of the line vehicles, and reliable, experienced drivers.\r\n\
+      \r\n\
+      In addition to airport shuttle transportation, we also offer Sightseeing Tours.\r\n\
+      This is an ideal way to see all the "
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: ""
+    company_information: ""
+    vehicle_types: 
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://smartshuttle805.com
+    type: Company
+    id: "10025830"
+    login: masood
+    luggage_limitation_policy: 2 bags not weighing more than 50 lbs.
+    started_business_date: 2014-05-14 08:57:00
+    company_commission_percentage: "8.5"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: $5.00
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: f7eb795c2ee53cde1b8cdf6270be92df1f068541
+    updated_at: 2014-06-04 09:14:13
+    insured: "YES"
+    luggage: 2 bags not weighing more than 50 lbs.
+    cell_phone: 805-603-9296
+    fax: 805-383-5546
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: ""
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: Customerservice@smartshuttle805.com,  eyasumoto@gmail.com, sarap@venturatransit.com
+    phone: 805-482-0202
+    cancellation_policy: 24 hour cancellation
+    confirm_reservation_policy: "24 hour "
+    airports_serviced: Burbank, CA (BUR), Los Angeles, CA (LAX), Long Beach, CA (LGB), Orange County, CA (SNA), San Francisco, CA (SFO), San Jose, CA (SJC)
+    excess_luggage_charge: $10.00 each extra bag
+    hours_in_advance: "12"
+    results_image: 
+    last_name: Babaeian
+    name: Smart Shuttle
+    children_rate: ""
+    customer_airport_pick_up_instructions: ""
+    salt: 942cbc6adb9500dcb95087cfc5075a4cf80e0a4f
+    car_seats_pets: ""
+    created_at: 2014-05-14 08:57:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Masood
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: The easiest and most convenient service to the airport form your home, hotel or office. We are committed to providing you the best and safest transportation to and from the airport or any other destination. Our friendly drivers and low rates take the hass
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Shared Ride shuttle, Sedan, Limo, Taxi, Charters, Tours
+    company_information: The easiest and most convenient service to the airport form your home, hotel or office. We are committed to providing you the best and safest transportation to and from the airport or any other destination. Our friendly drivers and low rates take the hass
+    vehicle_types: Shared-Ride Shuttle Van, Private Town Car, Limousine, Motor Coach
+    remember_token_expires_at: 
+    gratuity: 20% gratuity not included in fare
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: "Yes"
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.abcshuttle.com
+    type: Company
+    id: "10025860"
+    login: abdi
+    luggage_limitation_policy: 2 pieces of luggage. $2 for each additional piece.
+    started_business_date: 2014-05-15 08:53:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 52f98d3aac46e7e8d01ebd581fff1e15c57577f0
+    updated_at: 2014-07-25 16:39:53
+    insured: ""
+    luggage: 2 pieces of luggage. $2 for additional pieces
+    cell_phone: 720-621-2102
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |-
+      Make sure to call us when you have collected your luggage and are ready to go at 1-800-288-0668 to inform the driver:
+      
+      WEST TERMINAL:
+      British Airways, Air Canada, Lufthansa
+      Mexican Airways, American Airlines,North West, Ted Airline, Uni
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: info@abcshuttle.com
+    phone: 303-761-0111
+    cancellation_policy: We charge if less than 24 hours cancellation
+    confirm_reservation_policy: "yes"
+    airports_serviced: Denver, CO (DEN), Steamboat Springs, CO (HDN), Eagle County, CO (EGE), Gunnison-Crested Butte, CO (GUC)
+    excess_luggage_charge: $2.00
+    hours_in_advance: "12"
+    results_image: 
+    last_name: Buni
+    name: ABC Shuttle
+    children_rate: Children under 13 years receive 1/2 off regular fare
+    customer_airport_pick_up_instructions: |-
+      Depending on your carrier choose your location, but make sure to call us when you touch down at 1-800-288-0668 to inform the driver:
+      
+      WEST TERMINAL:
+      British Airways, Air Canada, Lufthansa
+      Mexican Airways, American Airlines,North West, Ted Airline, Uni
+    salt: 4403ff0735f86f37d6d649ecf4c7e1a8c5072de9
+    car_seats_pets: ""
+    created_at: 2014-05-15 08:53:00
+    blackout: |-
+      07/31/2014
+      08/01/2014
+      08/02/2014
+      08/03/2014
+    children_safety_policy: We DO NOT pick minors up alone
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "330"
+    first_name: Abdi
+    biz_hours_end: "2300"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: We provide excellent service to Denver International Airport travelers. ABC Shuttle has satisfied the airport transportation needs of many thousands of travelers since we started in 1983.  Our shared-ride shuttle service offers the convenience of door-to-
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Suburban and Ford E351
+    company_information: ""
+    vehicle_types: Shared-Ride Shuttle Van, SUV
+    remember_token_expires_at: 
+    gratuity: Not included
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: Bring your child seat
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.airlineshuttlecorp.com
+    type: Company
+    id: "10026648"
+    login: shuttlecorp
+    luggage_limitation_policy: 2 bags per person, not to exceed 50lbs each
+    started_business_date: 2014-06-10 13:30:00
+    company_commission_percentage: "10"
+    service_fee: "5"
+    after_hour_and_waiting_time: ""
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 60f3aabcfa316e50fa9cc3add118b7836316b5df
+    updated_at: 2014-07-02 12:17:07
+    insured: "Yes"
+    luggage: 2 bags per person-not to exceed 50lbs each
+    cell_phone: N/A
+    fax: 702-736-0651
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: In Terminal 1, Airline Shuttle Corp is located outside Door 8 in Baggage Claim. In Terminal 3, Airline Shuttle Corp is located outside Door 51 in Baggage Claim.
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: reservations@airlineshuttlecorp.com
+    phone: 702-798-1512
+    cancellation_policy: tickets are non-refundable
+    confirm_reservation_policy: ""
+    airports_serviced: Las Vegas, NV (LAS)
+    excess_luggage_charge: N/A
+    hours_in_advance: "12"
+    results_image: 
+    last_name: Alonzo
+    name: Airline Shuttle Corp
+    children_rate: Children under 5 years of age when accompanied by an adult passenger and not occupying a seat to the exclusion of other passengers, will be carried without charge. Children under 5 years of age occupying a seat to the exclusion of other passengers will be
+    customer_airport_pick_up_instructions: In Terminal 1, Airline Shuttle Corp is located outside Door 8 in Baggage Claim. In Terminal 3, Airline Shuttle Corp is located outside Door 51 in Baggage Claim.
+    salt: e56754d1d0616d34b55704d57e123f6b70ab3d97
+    car_seats_pets: ""
+    created_at: 2014-06-10 13:30:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Mary
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Airline Shuttle Corp is a one stop shop for your complete, shuttle bus transportation solution while you are in Las Vegas. We offer charter, corporate and curbside service. No matter your needs, we have something for you.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: 20 passenger minibus, 11 passenger van
+    company_information: Airline Shuttle Corp is a one stop shop for your complete, shuttle bus transportation solution while you are in Las Vegas. We offer charter, corporate and curbside service. No matter your needs, we have something for you.
+    vehicle_types: Shared-Ride Shuttle Van
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: ""
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://www.shuttlelimoservice.com/
+    type: Company
+    id: "10030492"
+    login: muladen
+    luggage_limitation_policy: "Our Luggage Policy\r\n\
+      \r\n\
+      Because space on our vans is limited, and you\x92ll be sharing the ride with other customers, we do have some basic limitations on how much each customer can bring onto the van. Most customers, however, will not be affected by the restr"
+    started_business_date: 2014-10-20 11:21:00
+    company_commission_percentage: "18"
+    service_fee: "5"
+    after_hour_and_waiting_time: 25-minute-pickup-window
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: ac4a7986e4212ad3718d6f88275a8e703f415e57
+    updated_at: 2014-10-20 11:39:05
+    insured: "Yes"
+    luggage: "Our policy is similar to that of most major airlines. For each passenger, at no extra cost, we accept:\r\n\
+      ?2 checked luggage pieces, such as standard suitcases and large duffel bags, each weighing 50 pounds (roughly 23 kg) or less; and \r\n\
+      ?2 carry-on items, "
+    cell_phone: 720-335-7605
+    fax: ""
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: |-
+      East Pick-up
+      
+      for passengers arriving on the following airlines, you will meet your assigned driver on level 5 ( baggage claim) out side of door 511 in island 1
+      
+      West Pick-up
+      
+      for passengers arriving on the following airlines, you will meet your ass
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: dasiamula@aol.com
+    phone: 720-335-7605
+    cancellation_policy: "\x93Shuttle Limo Service cannot refund payment if cancelled with less than two (2) hours notice prior to pick-up time or in the event of an abandoned reservation.\x94\r\n\
+      \r\n\
+      This means we only need two hours notice prior to your scheduled pick-up to cancel and prov"
+    confirm_reservation_policy: "We understand your travel plans may change. With that in mind, Shuttle Limo Service has a very simple cancellation policy: just give us 2 hours notice prior to your pickup time and we will give you a full refund. Refunds normally show up on your account w"
+    airports_serviced: Denver, CO (DEN)
+    excess_luggage_charge: Additional pieces of luggage, over-sized items, and specialty items (e.g golf clubs and bags, bicycles, surfboards, snowboards, skis, small pet crates, etc) may be permitted with a small fee, or require a private van reservation. An exclusive van is requi
+    hours_in_advance: "2"
+    results_image: 
+    last_name: Mula
+    name: Shuttle Limo Service LLC
+    children_rate: Included in Rate
+    customer_airport_pick_up_instructions: |-
+      East Pick-up
+      
+      for passengers arriving on the following airlines, you will meet your assigned driver on level 5 ( baggage claim) out side of door 511 in island 1
+      
+      West Pick-up
+      
+      for passengers arriving on the following airlines, you will meet your ass
+    salt: 4aab076faa73c2de4cb93239f3ecd49ad40e9e48
+    car_seats_pets: "Ride Share: pets will be allowed if restrained or in a carrier. Pets taking up a seat will be charged full adult fare. Service dogs will be allowed on Shared Ride Shuttles at no charge."
+    created_at: 2014-10-20 11:21:00
+    blackout: ""
+    children_safety_policy: Under Colorado law, children weighing less than 40 pounds (18 kg) must be in an infant carrier seat; and children weighing between 40 and 80 pounds (18-36 kg) must be in a child safety seat.  Customers must provide their own child seats.
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: 
+    first_name: Dasia
+    biz_hours_end: 
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: |-
+      Shuttle Limo Service, 
+      Our goal is to deliver Executive Luxury Chauffeur Service in Denver. 
+      
+      We offer high-end, luxury chauffeur car services in the Denver area at affordable rates that are similar to taxicab fares. Our professional drivers are highly
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Private Town Car Sedan or Private SUV
+    company_information: |-
+      Shuttle Limo Service, 
+      Our goal is to deliver Executive Luxury Chauffeur Service in Denver. 
+      
+      We offer high-end, luxury chauffeur car services in the Denver area at affordable rates that are similar to taxicab fares. Our professional drivers are highly
+    vehicle_types: Private Town Car, SUV
+    remember_token_expires_at: 
+    gratuity: At the discretion of the customer at time of travel.
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: Under Colorado law, children weighing less than 40 pounds (18 kg) must be in an infant carrier seat; and children weighing between 40 and 80 pounds (18-36 kg) must be in a child safety seat.
+  attributes_cache: {}
+
+- !ruby/object:Company 
+  attributes: 
+    web: http://supremeairportshuttle.com/
+    type: Company
+    id: "10030683"
+    login: alshookh
+    luggage_limitation_policy: 2 luggage free after that $5 per extra per bag.  All bags are a 50lb maximum.
+    started_business_date: 2014-10-29 09:38:00
+    company_commission_percentage: "15"
+    service_fee: "5"
+    after_hour_and_waiting_time: Dispatch Phone For Customers on day of Travel:	800-590-0000
+    password_reset_code: 
+    iata: 
+    flat_fare_rate: ""
+    more_info_1: 
+    survey_score_count: "0"
+    base_rate_city_airport: 
+    fuel_surcharge: ""
+    customer_testimonials: ""
+    upcharge_for_vehicle_upgrade: 
+    base_rate_round_trip_city_airport: 
+    crypted_password: 8cb3ae314b4ae5d2fd15253a1e79e8f706ed894b
+    updated_at: 2014-10-30 14:38:07
+    insured: ""
+    luggage: 2 luggage free after that $5 per extra per bag.  All bags are a 50lb maximum.
+    cell_phone: 240-893-2931
+    fax: 301-740-9968
+    remember_token: 
+    exclusions: ""
+    arrival_and_airport_pickup_info: Dispatch Phone For Customers on day of Travel:	800-590-0000
+    inclusions: ""
+    more_info_3: 
+    password_hash: 
+    email: 3017409968@fax.com
+    phone: 800-590-0000
+    cancellation_policy: 3 hours cancellation for inbound service
+    confirm_reservation_policy: ""
+    airports_serviced: Washington, DC (DCA) Reagan, Washington, DC (IAD) Dulles
+    excess_luggage_charge: 2 luggage free after that $5 per extra per bag.  All bags are a 50lb maximum.
+    hours_in_advance: "24"
+    results_image: 
+    last_name: Shookh
+    name: Supreme Airport Shuttle
+    children_rate: Under 3 Years Old is Free
+    customer_airport_pick_up_instructions: Dispatch Phone For Customers on day of Travel:	800-590-0000
+    salt: 9905df6847d0b6fefa04bf96150a19b76ba879ff
+    car_seats_pets: ""
+    created_at: 2014-10-29 09:38:00
+    blackout: ""
+    children_safety_policy: ""
+    fares_and_gratuity_fees_taxes: ""
+    biz_hours_start: "100"
+    first_name: Al
+    biz_hours_end: "100"
+    additional_info: ""
+    more_info_2: 
+    survey_score: "0"
+    description: Supreme Airport Shuttle provides shared shuttle airport rides to and from both Ronald Reagan National (DCA) and Washington Dulles International (IAD). 25 Years of experience offering safe, efficient, and affordable transportation to and from the DC Metro.
+    policies_bullet_points: ""
+    deposit_percentage: "100"
+    tax: 
+    transportation_type: Shared Ride Airport Shuttle Van 1 - 10 Passengers
+    company_information: Supreme Airport Shuttle provides shared shuttle airport rides to and from both Ronald Reagan National (DCA) and Washington Dulles International (IAD). 25 Years of experience offering safe, efficient, and affordable transportation to and from the DC Metro.
+    vehicle_types: Shared-Ride Shuttle Van
+    remember_token_expires_at: 
+    gratuity: ""
+    contact: 
+    affilate_commision_percentage: "10"
+    password_salt: 
+    type_of_service_provider: 
+    child_car_seats: Yes, Child Car Seats are allowed
+  attributes_cache: {}
+

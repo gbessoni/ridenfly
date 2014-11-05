@@ -89,3 +89,7 @@ Some setup you must do manually if you haven't yet:
     class Csr < User
     class Customer < User
     class Seo < User
+
+## Export yaml from old system
+
+    File.open('companies.yaml', 'w'){|f| f.write Company.all(:conditions => [ "id in (?)",  Rate.all(:select  => 'distinct(company_id)').map(&:company_id)]).to_yaml }
