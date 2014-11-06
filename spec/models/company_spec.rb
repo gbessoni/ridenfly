@@ -35,7 +35,7 @@ RSpec.describe Company do
 
   describe "#vehicle_types_attributes=" do
     let(:attrs) do
-      {'1' => { 'how_many' => '1', 'total_passengers' => '2' }}
+      {'1' => { 'how_many' => '1', 'num_of_passengers' => '2' }}
     end
     let(:vehicle_type) { subject.vehicle_types.find{|vt| vt.id == 1} }
 
@@ -44,7 +44,7 @@ RSpec.describe Company do
     it "has new values" do
       expect(vehicle_type.id).to eql 1
       expect(vehicle_type.how_many).to eql '1'
-      expect(vehicle_type.total_passengers).to eql '2'
+      expect(vehicle_type.num_of_passengers).to eql '2'
     end
   end
 end

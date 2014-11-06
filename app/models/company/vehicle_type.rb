@@ -1,10 +1,10 @@
 class Company::VehicleType
   include Virtus.model
 
-  attribute :id,                       Integer
-  attribute :name,                     String
-  attribute :how_many,                 String
-  attribute :total_passengers, String
+  attribute :id,               Integer
+  attribute :name,             String
+  attribute :how_many,         String
+  attribute :num_of_passengers, String
 
   PREDEFINED = [
     'Shared-Ride Shuttle Van',
