@@ -12,4 +12,25 @@ class Export::Rate < Export::Base
     hotel_landmark_state: 'Hotel / Landmark state',
     trip_duration: 'Trip duration',
   }
+
+  def to_csv
+    generate do |csv|
+      csv << header
+      resources.each do |resource|
+        csv << build_row(resource)
+      end
+    end
+  end
+
+  def header
+    self.class.columns.values
+  end
+
+  def build_row(resource)
+    resource.attributes.values_at(*columns)
+  end
+
+  def columns
+    self.class.columns.keys.map(&:to_s)
+  end
 end
