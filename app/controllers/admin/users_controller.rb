@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::ApplicationController
   # GET /admin/users
   # GET /admin/users.json
   def index
-    @users = paginate_model User
+    @users = paginate_model User.order(:email)
   end
 
   # GET /admin/users/1
@@ -69,6 +69,10 @@ class Admin::UsersController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(
+        :email, :password, :password_confirmation, roles: []
+      ).tap do |list|
+        list[:roles] = list[:roles].reject(&:blank?) if list[:roles].present?
+      end
     end
 end

@@ -8,6 +8,11 @@ module User::Roles
   ADMIN   = 'admin'
   COMPANY = 'company'
 
+  ROLES = [
+    ADMIN,
+    COMPANY
+  ]
+
   def admin?
     roles.include?(ADMIN)
   end

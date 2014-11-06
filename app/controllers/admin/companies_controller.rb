@@ -4,7 +4,7 @@ class Admin::CompaniesController < Admin::ApplicationController
   # GET /admin/companies
   # GET /admin/companies.json
   def index
-    @companies = paginate_model Company
+    @companies = paginate_model Company.order(:name)
   end
 
   # GET /admin/companies/1

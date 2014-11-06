@@ -2,6 +2,7 @@
   = f.error_notification
 
   = f.input :email
+  = f.input :roles, collection: User::ROLES, input_html: { :multiple => true, :size => 4, style: 'height: auto;' }
   = f.input :password, type: :password
   = f.input :password_confirmation, type: :password
 
