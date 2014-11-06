@@ -20,7 +20,7 @@ YAML.load(companies_data).each do |company|
   cc = company['attributes']
 
   email = cc['email'].split(',').first
-  email = email.split(' ').first
+  email = email.split(' ').first.downcase
   p email
 
   c = Company.joins(:user).where(
@@ -58,6 +58,16 @@ YAML.load(companies_data).each do |company|
   c.after_hours_info = cc['after_hour_and_waiting_time']
 
   c.excess_luggage_charge = cc['excess_luggage_charge']
+  c.luggage_insured = (cc['insured'] == "Yes")
+  c.child_rate = cc['children_rate']
+  c.child_car_seats_included = cc['child_car_seats']
+
+  c.luggage_limitation_policy = cc['luggage_limitation_policy']
+  c.company_reservation_policy = cc['confirm_reservation_policy']
+  c.company_cancellation_policy = cc['cancellation_policy']
+  c.child_safety_policy = cc['children_safety_policy']
+  c.pet_car_seat_policy = cc['car_seats_pets']
+  c.other_vehicle_types = cc['upcharge_for_vehicle_upgrade']
 
   c.save!
 end
