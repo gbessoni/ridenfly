@@ -1,0 +1,39 @@
+%h1.page-header
+  Listing rates (#{@rates.total_entries})
+  = link_to_new 'New Rate', new_admin_rate_path
+
+%table.std
+  %thead
+    %tr
+      %th Airport
+      %th Vehicle type passenger
+      %th Service type
+      %th Base rate
+      %th Additional passenger
+      %th Zipcode
+      %th Hotel landmark name
+      %th Hotel landmark street
+      %th Hotel landmark city
+      %th Hotel landmark state
+      %th Trip duration
+      %th Actions
+
+  %tbody
+    - @rates.each do |rate|
+      %tr
+        %td= rate.airport_id
+        %td= rate.vehicle_type_passenger
+        %td= rate.service_type
+        %td= rate.base_rate
+        %td= rate.additional_passenger
+        %td= rate.zipcode
+        %td= rate.hotel_landmark_name
+        %td= rate.hotel_landmark_street
+        %td= rate.hotel_landmark_city
+        %td= rate.hotel_landmark_state
+        %td= rate.trip_duration
+        %td
+          = link_to 'Show', [:admin, rate]
+          = link_to 'Edit', edit_admin_rate_path(rate)
+          = link_to 'Destroy', [:admin, rate], :method => :delete, :data => { :confirm => 'Are you sure?' }
+

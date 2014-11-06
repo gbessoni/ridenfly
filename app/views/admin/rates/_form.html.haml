@@ -1,0 +1,18 @@
+= simple_form_for([:admin, @rate]) do |f|
+  = f.error_notification
+
+  = f.input :airport_id
+  = f.input :vehicle_type_passenger
+  = f.input :service_type
+  = f.input :base_rate
+  = f.input :additional_passenger
+  = f.input :zipcode
+  = f.input :hotel_landmark_name
+  = f.input :hotel_landmark_street
+  = f.input :hotel_landmark_city
+  = f.input :hotel_landmark_state
+  = f.input :trip_duration
+
+  = f.actions do |f|
+    = f.submit 'Save'
+    = f.action 'Back', admin_rates_path

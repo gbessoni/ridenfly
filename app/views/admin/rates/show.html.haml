@@ -1,0 +1,37 @@
+%p
+  %b Airport:
+  = @rate.airport_id
+%p
+  %b Vehicle type passenger:
+  = @rate.vehicle_type_passenger
+%p
+  %b Service type:
+  = @rate.service_type
+%p
+  %b Base rate:
+  = @rate.base_rate
+%p
+  %b Additional passenger:
+  = @rate.additional_passenger
+%p
+  %b Zipcode:
+  = @rate.zipcode
+%p
+  %b Hotel landmark name:
+  = @rate.hotel_landmark_name
+%p
+  %b Hotel landmark street:
+  = @rate.hotel_landmark_street
+%p
+  %b Hotel landmark city:
+  = @rate.hotel_landmark_city
+%p
+  %b Hotel landmark state:
+  = @rate.hotel_landmark_state
+%p
+  %b Trip duration:
+  = @rate.trip_duration
+
+= link_to 'Edit', edit_admin_rate_path(@rate)
+\|
+= link_to 'Back', admin_rates_path
