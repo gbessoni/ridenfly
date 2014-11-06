@@ -20,4 +20,9 @@ module User::Roles
   def company?
     roles.include?(COMPANY)
   end
+
+  def add_role(role)
+    raise "Invalid role '#{role}'" unless ROLES.include?(role)
+    self.roles = (roles << role).uniq
+  end
 end

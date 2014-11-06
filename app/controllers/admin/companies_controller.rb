@@ -28,6 +28,7 @@ class Admin::CompaniesController < Admin::ApplicationController
 
     respond_to do |format|
       if @company.save
+        @company.user.add_role User::COMPANY
         format.html { redirect_to [:admin, @company], notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
       else

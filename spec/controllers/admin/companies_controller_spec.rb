@@ -71,6 +71,11 @@ RSpec.describe Admin::CompaniesController do
         post :create, {:company => valid_attributes}, valid_session
         expect(response).to redirect_to([:admin, Company.last])
       end
+
+      it "assigns role 'COMPANY' to the created company user" do
+        post :create, {:company => valid_attributes}, valid_session
+        expect(assigns(:company).user).to be_company
+      end
     end
 
     describe "with invalid params" do

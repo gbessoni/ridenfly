@@ -9,6 +9,7 @@
 u = User.where(email: 'admin@ridenfly.com').first_or_initialize
 u.password = 'ridenfly.123'
 u.password_confirmation = 'ridenfly.123'
+u.roles = [User::ADMIN]
 u.save!
 
 companies_data = File.open(
