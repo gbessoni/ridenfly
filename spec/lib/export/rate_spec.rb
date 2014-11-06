@@ -9,14 +9,14 @@ RSpec.describe Export::Rate do
     let(:csv) { subject.to_csv }
 
     it "has header row" do
-      expect(csv).to match /"Airport\*"/
-      expect(csv).to match /"Trip duration"/
+      expect(csv).to match /Airport\*/
+      expect(csv).to match /Trip duration/
     end
 
     it "has one rate" do
-      expect(csv).to match /"25.5"/
-      expect(csv).to match /"60"/
-      expect(csv).to match /"0.0";"MyString"/
+      expect(csv).to match /25.5/
+      expect(csv).to match /60/
+      expect(csv).to match /0.0;MyString/
     end
   end
 end

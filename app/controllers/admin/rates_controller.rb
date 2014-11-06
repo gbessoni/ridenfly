@@ -4,7 +4,10 @@ class Admin::RatesController < Admin::ApplicationController
   # GET /admin/rates
   # GET /admin/rates.json
   def index
-    @rates = paginate_model Rate
+    respond_to do |format|
+      format.html { @rates = paginate_model Rate }
+      format.csv  { send_csv_file(Rate) }
+    end
   end
 
   # GET /admin/rates/1
