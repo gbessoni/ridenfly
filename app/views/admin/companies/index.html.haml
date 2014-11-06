@@ -1,4 +1,6 @@
-%h1 Listing companies
+%h1.page-header
+  Listing companies (#{@companies.total_entries})
+  = link_to_new 'New Company', new_admin_company_path
 
 %table.std
   %thead
@@ -21,6 +23,4 @@
           = link_to 'Edit', edit_admin_company_path(company)
           = link_to 'Destroy', [:admin, company], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Company', new_admin_company_path
+= will_paginate @companies

@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::ApplicationController
   # GET /admin/users
   # GET /admin/users.json
   def index
-    @users = User.all
+    @users = paginate_model User
   end
 
   # GET /admin/users/1
