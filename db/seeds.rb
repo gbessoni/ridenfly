@@ -47,7 +47,8 @@ YAML.load(companies_data).each do |company|
   c.website = [cc['web'], 'undefined'].reject(&:blank?).first
   c.description = [cc['description'], 'undefined'].reject(&:blank?).first
 
-  c.notification_fax = cc['fax'].present? # TO DO add fx field
+  c.notification_fax = cc['fax'].present?
+  c.fax = cc['fax']
   c.notification_email = true
 
   c.blackout_dates = cc['blackout']
