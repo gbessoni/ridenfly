@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :users
     resources :companies
     resources :rates
+
+    namespace :import do
+      resources :rates, :only => [:index, :create]
+    end
   end
 
   root 'admin/users#index'
