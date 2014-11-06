@@ -32,6 +32,7 @@ YAML.load(companies_data).each do |company|
   ).first_or_initialize
   c.user.password = 'ridenfly.123'
   c.user.password_confirmation = 'ridenfly.123'
+  c.user.roles = [User::COMPANY]
 
   c.name = cc['name']
   c.contact_first_name = cc['first_name']

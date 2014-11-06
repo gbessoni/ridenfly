@@ -9,5 +9,6 @@ FactoryGirl.define do
     sequence(:email)      { |n| "admin_#{n}@example.com" }
     password              "admin_password"
     password_confirmation "admin_password"
+    roles { [User::ADMIN] }
   end
 end
