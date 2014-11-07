@@ -84,6 +84,6 @@ class Admin::RatesController < Admin::ApplicationController
     end
 
     def set_rate_company
-      @rate.company = current_user.company if current_user.company?
+      @rate.company = current_user.company if current_user.company? && current_user.company.present?
     end
 end
