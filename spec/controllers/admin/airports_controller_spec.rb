@@ -16,11 +16,21 @@ RSpec.describe Admin::AirportsController do
     sign_in create(:admin)
   end
 
+  describe "admin role missing" do
+    before do
+      sign_in create(:user)
+      get :index
+    end
+
+    it { expect(response).to be_redirect }
+  end
+
   describe "GET index" do
     it "assigns all airports as @airports" do
       airport = Airport.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:airports)).to eq([airport])
+      expect(response).to be_success
     end
   end
 

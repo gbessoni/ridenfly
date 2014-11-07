@@ -1,5 +1,6 @@
 class Admin::CompaniesController < Admin::ApplicationController
   before_action :set_admin_company, only: [:show, :edit, :update, :destroy]
+  require_role :admin
 
   # GET /admin/companies
   # GET /admin/companies.json

@@ -1,5 +1,6 @@
 class Admin::AirportsController < Admin::ApplicationController
   before_action :set_admin_airport, only: [:show, :edit, :update, :destroy]
+  require_role :admin
 
   # GET /admin/airports
   # GET /admin/airports.json

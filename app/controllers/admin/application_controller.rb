@@ -1,4 +1,6 @@
 class Admin::ApplicationController < ApplicationController
+  include RequireRole
+
   before_action :authenticate_user!
 
   protected

@@ -19,6 +19,24 @@ RSpec.describe Admin::RatesController do
     sign_in admin
   end
 
+  describe "admin and company roles missing" do
+    before do
+      sign_in create(:user, roles: [])
+      get :index
+    end
+
+    it { expect(response).to be_redirect }
+  end
+
+  describe "user has company role" do
+    before do
+      sign_in create(:user, roles: [User::COMPANY])
+      get :index
+    end
+
+    it { expect(response).to be_success }
+  end
+
   describe "GET index" do
     it "assigns all rates as @rates" do
       rate = Rate.create! valid_attributes

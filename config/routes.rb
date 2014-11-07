@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     namespace :import do
       resources :rates, :only => [:index, :create]
     end
+
+    root 'welcome#index'
   end
 
   root 'admin/welcome#index'

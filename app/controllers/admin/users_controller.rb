@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
+  require_role :admin
 
   # GET /admin/users
   # GET /admin/users.json

@@ -44,7 +44,7 @@
 
     .container
       - flash.each do |name, msg|
-        = content_tag :div, class: "alert alert-#{[:error, :warn].include?(name) ? "danger" : "success" } alert-dismissable" do
+        = content_tag :div, class: "alert alert-#{%w[error warn].include?(name) ? "danger" : "success" } alert-dismissable" do
           %button.close{:type => "button", :data => {:dismiss => "alert"}, :aria => {:hidden => "true"} } &times;
           = msg
 
