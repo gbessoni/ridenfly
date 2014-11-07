@@ -1,0 +1,1365 @@
+--- 
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Albany, NY (ALB)
+    id: "1057"
+    code: ALB
+    zip: 
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Atlanta, GA (ATL)
+    id: "1060"
+    code: ATL
+    zip: 
+    state: GA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 3600 Presidential Blvd
+    city: Austin
+    name: Austin, TX (AUS)
+    id: "1061"
+    code: AUS
+    zip: "78719"
+    state: TX
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: Aviation Blvd & Elm Rd
+    city: BALTIMORE
+    name: Baltimore, MD (BWI)
+    id: "1062"
+    code: BWI
+    zip: "21240"
+    state: MD
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Birmingham, AL (BHM)
+    id: "1063"
+    code: BHM
+    zip: 
+    state: AL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 1 Harborside Dr
+    city: BOSTON
+    name: Boston, MA (BOS)
+    id: "1064"
+    code: BOS
+    zip: 02128
+    state: MA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Buffalo, NY (BUF)
+    id: "1065"
+    code: BUF
+    zip: 
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 2627 N Hollywood Way
+    city: BURBANK
+    name: Burbank, CA (BUR)
+    id: "1067"
+    code: BUR
+    zip: "91505"
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 5501 Rc Josh Birmingham Parkway
+    city: Charlotte
+    name: Charlotte, NC (CLT)
+    id: "1069"
+    code: CLT
+    zip: "28208"
+    state: NC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Chicago, IL/O'Hare (ORD)
+    id: "1071"
+    code: ORD
+    zip: 
+    state: IL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Chicago-Midway, IL (MDW)
+    id: "1072"
+    code: MDW
+    zip: 
+    state: IL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Cincinnati, OH (CVG)
+    id: "1073"
+    code: CVG
+    zip: 
+    state: OH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 5300 Riverside Dr
+    city: CLEVELAND
+    name: Cleveland, OH (CLE)
+    id: "1074"
+    code: CLE
+    zip: "44135"
+    state: OH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Columbus, OH (CMH)
+    id: "1076"
+    code: CMH
+    zip: 
+    state: OH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 3200 East Airfield Drive
+    city: DALLAS
+    name: Dallas, TX (DFW)
+    id: "1077"
+    code: DFW
+    zip: "75261"
+    state: TX
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 3600 Terminal Drive
+    city: Vandalia
+    name: Dayton, OH (DAY)
+    id: "1078"
+    code: DAY
+    zip: "45377"
+    state: OH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 6901 Tower Rd
+    city: Denver
+    name: Denver, CO (DEN)
+    id: "1079"
+    code: DEN
+    zip: "80249"
+    state: CO
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Detroit, MI (DTW)
+    id: "1081"
+    code: DTW
+    zip: 
+    state: MI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Flint, MI (FNT)
+    id: "1083"
+    code: FNT
+    zip: 
+    state: MI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Fort Lauderdale, FL (FLL)
+    id: "1084"
+    code: FLL
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Fort Myers, FL (RSW)
+    id: "1085"
+    code: RSW
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Hartford, CT (BDL)
+    id: "1086"
+    code: BDL
+    zip: 
+    state: CT
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Honolulu, HI (HNL)
+    id: "1087"
+    code: HNL
+    zip: 
+    state: HI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 2800 N Terminal Rd
+    city: HOUSTON
+    name: Houston, TX (IAH) Bush
+    id: "1088"
+    code: IAH
+    zip: "77205"
+    state: TX
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 7800 Airport Blvd
+    city: HOUSTON
+    name: Houston, TX (HOU) Hobby
+    id: "1089"
+    code: HOU
+    zip: "77061"
+    state: TX
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Indianapolis, IN (IND)
+    id: "1090"
+    code: IND
+    zip: 
+    state: IN
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Jacksonville, FL (JAX)
+    id: "1091"
+    code: JAX
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 601 Brasilia Avenue
+    city: Kansas City
+    name: Kansas City, MO (MCI)
+    id: "1092"
+    code: MCI
+    zip: "64153"
+    state: MO
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Kingsport, RI (TRI)
+    id: "1093"
+    code: TRI
+    zip: 
+    state: RI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Las Vegas, NV (LAS)
+    id: "1094"
+    code: LAS
+    zip: 
+    state: NV
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Lehigh Valley, PA (ABE)
+    id: "1095"
+    code: ABE
+    zip: 
+    state: PA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Little Rock, AR (LIT)
+    id: "1096"
+    code: LIT
+    zip: 
+    state: AR
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 1 WORLD WAY
+    city: LOS ANGELES
+    name: Los Angeles, CA (LAX)
+    id: "1097"
+    code: LAX
+    zip: "90045"
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Louisville, KY (SDF)
+    id: "1098"
+    code: SDF
+    zip: 
+    state: KY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 4100 E Donald Douglas Dr
+    city: LONG BEACH
+    name: Long Beach, CA (LGB)
+    id: "1099"
+    code: LGB
+    zip: "90808"
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Manchester, NH (MHT)
+    id: "1100"
+    code: MHT
+    zip: 
+    state: NH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Memphis, TN (MEM)
+    id: "1101"
+    code: MEM
+    zip: 
+    state: TN
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Miami, FL (MIA)
+    id: "1102"
+    code: MIA
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Milwaukee, WI (MKE)
+    id: "1103"
+    code: MKE
+    zip: 
+    state: WI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 4300 Glumack Dr
+    city: ST PAUL
+    name: Minn. St. Paul, MN (MSP)
+    id: "1104"
+    code: MSP
+    zip: "55111"
+    state: MN
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Nashville, TN (BNA)
+    id: "1105"
+    code: BNA
+    zip: 
+    state: TN
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: New Orleans, LA (MSY)
+    id: "1106"
+    code: MSY
+    zip: 
+    state: LA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 104-04 Ditmars Blvd
+    city: FLUSHING
+    name: New York, NY (LGA)
+    id: "1107"
+    code: LGA
+    zip: "11369"
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 148-18 134th Street
+    city: JAMAICA
+    name: New York, NY (JFK)
+    id: "1108"
+    code: JFK
+    zip: "11430"
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 10 Toler Place
+    city: NEWARK
+    name: Newark, NJ (EWR)
+    id: "1109"
+    code: EWR
+    zip: "07114"
+    state: NJ
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Norfolk, VA (ORF)
+    id: "1110"
+    code: ORF
+    zip: 
+    state: VA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Oakland, CA (OAK)
+    id: "1111"
+    code: OAK
+    zip: 
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Oklahoma City, OK (OKC)
+    id: "1112"
+    code: OKC
+    zip: 
+    state: OK
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Omaha, NE (OMA)
+    id: "1113"
+    code: OMA
+    zip: 
+    state: NE
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Ontario, CA (ONT)
+    id: "1114"
+    code: ONT
+    zip: 
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 18601 Airport Way
+    city: Santa Ana
+    name: Orange County, CA (SNA)
+    id: "1115"
+    code: SNA
+    zip: "92707"
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Orlando, FL (MCO)
+    id: "1116"
+    code: MCO
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Philadelphia, PA (PHL)
+    id: "1117"
+    code: PHL
+    zip: 
+    state: PA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Phoenix, AZ (PHX)
+    id: "1118"
+    code: PHX
+    zip: 
+    state: AZ
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Pittsburgh, PA (PIT)
+    id: "1119"
+    code: PIT
+    zip: 
+    state: PA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 7000 NE Airport Way
+    city: PORTLAND
+    name: Portland, OR (PDX)
+    id: "1120"
+    code: PDX
+    zip: "97218"
+    state: OR
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Providence, RI (PVD)
+    id: "1121"
+    code: PVD
+    zip: 
+    state: RI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Raleigh-Durham, NC (RDU)
+    id: "1122"
+    code: RDU
+    zip: 
+    state: NC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Reno, NV (RNO)
+    id: "1123"
+    code: RNO
+    zip: 
+    state: NV
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Richmond, VA (RIC)
+    id: "1124"
+    code: RIC
+    zip: 
+    state: VA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Sacramento, CA (SMF)
+    id: "1125"
+    code: SMF
+    zip: 
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Salt Lake City, UT (SLC)
+    id: "1126"
+    code: SLC
+    zip: 
+    state: UT
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: San Antonio, TX (SAT)
+    id: "1127"
+    code: SAT
+    zip: 
+    state: TX
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: San Diego, CA (SAN)
+    id: "1128"
+    code: SAN
+    zip: 
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: San Francisco, CA (SFO)
+    id: "1129"
+    code: SFO
+    zip: 
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: San Jose, CA (SJC)
+    id: "1130"
+    code: SJC
+    zip: 
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Seattle, WA (SEA)
+    id: "1131"
+    code: SEA
+    zip: 
+    state: WA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Spokane, WA (GEG)
+    id: "1132"
+    code: GEG
+    zip: 
+    state: WA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Springfield, IL (SGF)
+    id: "1133"
+    code: SGF
+    zip: 
+    state: IL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: St. Louis, MO (STL)
+    id: "1134"
+    code: STL
+    zip: 
+    state: MO
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 14700 Terminal Blvd
+    city: Clearwater
+    name: St. Petersburg, FL (PIE)
+    id: "1135"
+    code: PIE
+    zip: "33762"
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Syracuse, NY (SYR)
+    id: "1136"
+    code: SYR
+    zip: 
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Tampa, FL (TPA)
+    id: "1137"
+    code: TPA
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Toledo, OH (TOL)
+    id: "1138"
+    code: TOL
+    zip: 
+    state: OH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Toronto, ON (YYZ)
+    id: "1139"
+    code: YYZ
+    zip: 
+    state: "ON"
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Tucson, AZ (TUS)
+    id: "1140"
+    code: TUS
+    zip: 
+    state: AZ
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Tulsa, OK (TUL)
+    id: "1141"
+    code: TUL
+    zip: 
+    state: OK
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Vancouver, BC (YVR)
+    id: "1142"
+    code: YVR
+    zip: 
+    state: BC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Washington, DC (DCA) Reagan
+    id: "1143"
+    code: DCA
+    zip: 
+    state: DC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Washington, DC (IAD) Dulles
+    id: "1144"
+    code: IAD
+    zip: 
+    state: DC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: West Palm Beach, FL (PBI)
+    id: "1145"
+    code: PBI
+    zip: 
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Newport News/Williamsburg, VA (PHF)
+    id: "1146"
+    code: PHF
+    zip: 
+    state: VA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: White Plains, NY (HPN)
+    id: "1147"
+    code: HPN
+    zip: 
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 8008 Cedar Springs Road
+    city: DALLAS
+    name: Dallas, TX (DAL) Love
+    id: "1148"
+    code: DAL
+    zip: "75235"
+    state: TX
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Islip, NY (ISP)
+    id: "1150"
+    code: ISP
+    zip: 
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Detroit, MI (YIP)
+    id: "1151"
+    code: YIP
+    zip: 
+    state: MI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Kahului, HI (OGG)
+    id: "1152"
+    code: OGG
+    zip: 
+    state: HI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Kailua/Kona, HI (KOA)
+    id: "1153"
+    code: KOA
+    zip: 
+    state: HI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Lihue, HI (LIH)
+    id: "1154"
+    code: LIH
+    zip: 
+    state: HI
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Portland, ME (PWM)
+    id: "1155"
+    code: PWM
+    zip: 
+    state: ME
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Portsmouth, NH (PSM)
+    id: "1156"
+    code: PSM
+    zip: 
+    state: NH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Steamboat Springs, CO (HDN)
+    id: "1157"
+    code: HDN
+    zip: 
+    state: CO
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Wilmington, DE (ILG)
+    id: "1158"
+    code: ILG
+    zip: 
+    state: DE
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Worcester, MA (ORH)
+    id: "1159"
+    code: ORH
+    zip: 
+    state: MA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Beauvais, France (BVA)
+    id: "1160"
+    code: BVA
+    zip: 
+    state: 
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Edinburgh, Scotland (EDI)
+    id: "1161"
+    code: EDI
+    zip: 
+    state: 
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: London, England (LGW)
+    id: "1162"
+    code: LGW
+    zip: 
+    state: 
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: London, England (LHR)
+    id: "1163"
+    code: LHR
+    zip: 
+    state: 
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Paris, France (CDG)
+    id: "1164"
+    code: CDG
+    zip: 
+    state: 
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Paris, France (ORY)
+    id: "1165"
+    code: ORY
+    zip: 
+    state: 
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Toronto, ON (YYZ)
+    id: "1166"
+    code: YYZ
+    zip: 
+    state: "ON"
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 5803 S Sossaman Rd
+    city: MESA
+    name: Phoenix Mesa, AZ (AZA) Mesa Gateway
+    id: "1168"
+    code: AZA
+    zip: "85212"
+    state: AZ
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Washington, VA (IAD) Dulles
+    id: "1169"
+    code: IAD
+    zip: 
+    state: VA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Washington, VA (DCA) Reagan
+    id: "1170"
+    code: DCA
+    zip: 
+    state: VA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 
+    city: 
+    name: Newark, NY (EWR)
+    id: "1171"
+    code: EWR
+    zip: 
+    state: NY
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Washington, MD (DCA) Reagan
+    id: "1172"
+    code: DCA
+    zip: ""
+    state: MD
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Washington, MD (IAD) Dulles
+    id: "1173"
+    code: IAD
+    zip: ""
+    state: MD
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 5400 Lauby Road NW
+    city: North Canton
+    name: Akron/Canton, OH (CAK)
+    id: "1174"
+    code: CAK
+    zip: "44720"
+    state: OH
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Burlington, VT (BTV)
+    id: "1175"
+    code: BTV
+    zip: ""
+    state: VT
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Port of Tampa, FL (PTP) Cruise Ships
+    id: "1176"
+    code: PTP
+    zip: ""
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 2200 Sunport Blvd. SE
+    city: Albuquerque
+    name: Albuquerque, NM (ABQ) Sunport
+    id: "1177"
+    code: ABQ
+    zip: "87106"
+    state: NM
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 4600 Postmark Drive
+    city: Anchorage
+    name: Anchorage, AK (ANC)
+    id: "1178"
+    code: ANC
+    zip: "99502"
+    state: AK
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Charleston, SC (CHS)
+    id: "1179"
+    code: CHS
+    zip: ""
+    state: SC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 1740 Airport Blvd.
+    city: Wilmington
+    name: Wilmington, NC (ILM)
+    id: "1180"
+    code: 
+    zip: "28405"
+    state: NC
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 2299 Airport Road
+    city: Wichita
+    name: Wichita, KS (ICT)
+    id: "1181"
+    code: 
+    zip: "67209"
+    state: KS
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Eagle County, CO (EGE)
+    id: "1182"
+    code: 
+    zip: ""
+    state: ""
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Sarasota/Bradenton Airport (SRQ)
+    id: "1183"
+    code: SRQ
+    zip: ""
+    state: ""
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 711 Rio Grande Ave
+    city: Gunnison
+    name: Gunnison-Crested Butte, CO (GUC)
+    id: "1184"
+    code: GUC
+    zip: "81230"
+    state: CO
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: x
+    city: Orlando
+    name: Orlando Sanford, FL (SFB)
+    id: "1185"
+    code: SFB
+    zip: "32773"
+    state: FL
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Rapid City Regional Airport
+    id: "1186"
+    code: RAP
+    zip: ""
+    state: ""
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: x
+    city: x
+    name: Santa Barbara Airport
+    id: "1187"
+    code: SBA
+    zip: "33333"
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: ""
+    city: ""
+    name: Montrose Airport
+    id: "1188"
+    code: MTJ
+    zip: ""
+    state: ""
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: " 901 Airport Dr"
+    city: San Luis Obispo
+    name: "San Luis Obispo "
+    id: "1191"
+    code: (SBP)
+    zip: "93401"
+    state: CA
+  attributes_cache: {}
+
+- !ruby/object:Airport 
+  attributes: 
+    street_address: 3249 Terminal Dr
+    city: Santa Maria
+    name: Santa Maria (SMX)
+    id: "1192"
+    code: SMX
+    zip: "93455"
+    state: CA
+  attributes_cache: {}
+

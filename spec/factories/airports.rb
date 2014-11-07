@@ -1,11 +1,10 @@
 FactoryGirl.define do
   factory :airport do
-    name "MyString"
-street_address "MyString"
-city "MyString"
-state "MyString"
-zip "MyString"
-code "MyString"
+    name "JFK"
+    street_address "133 steet"
+    city "Washington"
+    state "NY"
+    zipcode "10019"
+    code "JFK"
   end
-
 end

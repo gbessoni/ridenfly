@@ -1,0 +1,22 @@
+%p
+  %b Name:
+  = @airport.name
+%p
+  %b Street address:
+  = @airport.street_address
+%p
+  %b City:
+  = @airport.city
+%p
+  %b State:
+  = @airport.state
+%p
+  %b Zip:
+  = @airport.zipcode
+%p
+  %b Code:
+  = @airport.code
+
+= link_to 'Edit', edit_admin_airport_path(@airport)
+\|
+= link_to 'Back', admin_airports_path

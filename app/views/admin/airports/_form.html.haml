@@ -1,0 +1,13 @@
+= simple_form_for([:admin, @airport]) do |f|
+  = f.error_notification
+
+  = f.input :name
+  = f.input :street_address
+  = f.input :city
+  = f.input :state
+  = f.input :zipcode
+  = f.input :code
+
+  = f.actions do |f|
+    = f.submit 'Save'
+    = f.action 'Back', admin_airports_path

@@ -73,4 +73,23 @@ YAML.load(companies_data).each do |company|
   c.other_vehicle_types = cc['upcharge_for_vehicle_upgrade']
 
   c.save!
+end if false
+
+airports_data = File.open(
+  Rails.root.join('db/legacy_data/airports.yml')
+){|f| f.read}
+airports_data.gsub!('!ruby/object:Airport', "")
+
+YAML.load(airports_data).each do |airport|
+  aa = airport['attributes']
+  p aa['name']
+
+  a = Airport.where(name: aa['name']).first_or_initialize
+  a.street_address = aa['street_address']
+  a.city  = aa['city']
+  a.name = aa['name']
+  a.code = aa['code'].try(:gsub, /\)|\(/, '')
+  a.zipcode  = aa['zip']
+  a.state = aa['state']
+  a.save(validate: false)
 end

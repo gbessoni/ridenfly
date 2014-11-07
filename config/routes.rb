@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users
     resources :companies
     resources :rates
+    resources :airports
 
     namespace :import do
       resources :rates, :only => [:index, :create]

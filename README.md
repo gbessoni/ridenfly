@@ -92,4 +92,10 @@ Some setup you must do manually if you haven't yet:
 
 ## Export yaml from old system
 
+  Active companies
+
     File.open('companies.yaml', 'w'){|f| f.write Company.all(:conditions => [ "id in (?)",  Rate.all(:select  => 'distinct(company_id)').map(&:company_id)]).to_yaml }
+
+  All airports
+
+    File.open('airports.yml', 'w')  {|f| f.write Airport.all.to_yaml }

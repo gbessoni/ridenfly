@@ -1,0 +1,29 @@
+%h1.page-header
+  Listing airports (#{@airports.total_entries})
+  = link_to_new 'New Airport', new_admin_airport_path
+
+%table.std
+  %thead
+    %tr
+      %th Name
+      %th Street address
+      %th City
+      %th State
+      %th Zip
+      %th Code
+      %th
+  %tbody
+    - @airports.each do |airport|
+      %tr
+        %td= airport.name
+        %td= airport.street_address
+        %td= airport.city
+        %td= airport.state
+        %td= airport.zipcode
+        %td= airport.code
+        %td
+          = link_to 'Show', [:admin, airport]
+          = link_to 'Edit', edit_admin_airport_path(airport)
+          = link_to 'Destroy', [:admin, airport], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= will_paginate @airports

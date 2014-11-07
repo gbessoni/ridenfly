@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141107095629) do
     t.string   "street_address"
     t.string   "city"
     t.string   "state",          limit: 2
-    t.string   "zip",            limit: 5
+    t.string   "zipcode",        limit: 5
     t.string   "code",           limit: 3
     t.datetime "created_at"
     t.datetime "updated_at"
