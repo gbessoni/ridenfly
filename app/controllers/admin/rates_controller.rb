@@ -1,5 +1,7 @@
 class Admin::RatesController < Admin::ApplicationController
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
+  before_action :set_rate_company, only: [:update, :create]
+
   require_role :admin, :company
 
   # GET /admin/rates
@@ -79,5 +81,9 @@ class Admin::RatesController < Admin::ApplicationController
         :zipcode, :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
         :hotel_landmark_state, :trip_duration
       )
+    end
+
+    def set_rate_company
+      @rate.company = current_user.company if current_user.company?
     end
 end
