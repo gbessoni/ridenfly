@@ -1,7 +1,5 @@
 class Admin::RatesController < Admin::ApplicationController
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
-  before_action :set_rate_company, only: [:update, :create]
-
   require_role :admin, :company
 
   # GET /admin/rates
@@ -32,6 +30,7 @@ class Admin::RatesController < Admin::ApplicationController
   # POST /admin/rates.json
   def create
     @rate = Rate.new(rate_params)
+    set_rate_company
 
     respond_to do |format|
       if @rate.save
@@ -47,6 +46,7 @@ class Admin::RatesController < Admin::ApplicationController
   # PATCH/PUT /admin/rates/1
   # PATCH/PUT /admin/rates/1.json
   def update
+    set_rate_company
     respond_to do |format|
       if @rate.update(rate_params)
         format.html { redirect_to [:admin, @rate], notice: 'Rate was successfully updated.' }
