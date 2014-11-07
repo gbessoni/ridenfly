@@ -1,7 +1,8 @@
 = simple_form_for([:admin, @rate]) do |f|
   = f.error_notification
 
-  = f.input :airport_id
+  = f.association :airport
+  = f.association :company if current_admin?
   = f.input :vehicle_type_passenger
   = f.input :service_type
   = f.input :base_rate

@@ -27,14 +27,17 @@
             = link_to "Ridenfly Admin", root_url, :class => "navbar-brand"
           .collapse.navbar-collapse
             %ul.nav.navbar-nav
-              %li
-                %a{:href => admin_users_url}= 'Users'
-              %li
-                %a{:href => admin_airports_url}= 'Airports'
-              %li
-                %a{:href => admin_companies_url}= 'Companis'
-              %li
-                %a{:href => admin_rates_url}= 'Rates'
+              - if current_admin?
+                %li
+                  %a{:href => admin_users_url}= 'Users'
+                %li
+                  %a{:href => admin_airports_url}= 'Airports'
+                %li
+                  %a{:href => admin_companies_url}= 'Companis'
+              - if current_company? || current_admin?
+                %li
+                  %a{:href => admin_rates_url}= 'Rates'
+
             %ul.nav.navbar-nav.navbar-right
               %li
                 = link_to 'logout', destroy_user_session_path, data: {method: :delete}
