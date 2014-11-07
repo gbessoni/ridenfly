@@ -4,9 +4,10 @@ class Admin::RatesController < Admin::ApplicationController
   # GET /admin/rates
   # GET /admin/rates.json
   def index
+    @q = Rate.ransack(params[:q])
     respond_to do |format|
-      format.html { @rates = paginate_model Rate }
-      format.csv  { send_csv_file(Rate) }
+      format.html { @rates = paginate_model @q.result }
+      format.csv  { send_csv_file(@q.result) }
     end
   end
 
