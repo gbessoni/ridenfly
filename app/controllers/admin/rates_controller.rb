@@ -73,7 +73,7 @@ class Admin::RatesController < Admin::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def rate_params
       params.require(:rate).permit(
-        :airport_id, :vehicle_type_passenger, :service_type, :base_rate, :additional_passenger,
+        :airport_id, :company_id, :vehicle_type_passenger, :service_type, :base_rate, :additional_passenger,
         :zipcode, :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
         :hotel_landmark_state, :trip_duration
       )

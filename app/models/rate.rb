@@ -1,6 +1,6 @@
 class Rate < ActiveRecord::Base
-  validates :base_rate, presence: true
-
   belongs_to :airport
   belongs_to :company
+
+  validates :base_rate, :airport, :company, presence: true
 end

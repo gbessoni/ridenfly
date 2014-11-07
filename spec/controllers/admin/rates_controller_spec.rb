@@ -1,19 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Admin::RatesController do
-
+  let(:admin)   { create(:admin) }
+  let(:airport) { create(:airport) }
+  let(:company) { create(:company, user: admin) }
   let(:valid_attributes) do
-    build(:rate).attributes
+    build(:rate).attributes.merge(
+      airport_id: airport.id,
+      company_id: company.id,
+    )
   end
-
   let(:invalid_attributes) do
     {base_rate: nil}
   end
-
   let(:valid_session) { {} }
 
   before do
-    sign_in create(:admin)
+    sign_in admin
   end
 
   describe "GET index" do
