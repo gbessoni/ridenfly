@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Export::Rate do
-  it { expect(described_class.columns.size).to eql 12 }
+  it { expect(described_class.columns.size).to eql 13 }
 
   subject { described_class.new [build(:rate)] }
 
@@ -9,6 +9,7 @@ RSpec.describe Export::Rate do
     let(:csv) { subject.to_csv }
 
     it "has header row" do
+      expect(csv).to match /ID/
       expect(csv).to match /Airport\*/
       expect(csv).to match /Trip duration/
     end

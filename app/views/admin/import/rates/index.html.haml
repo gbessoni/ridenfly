@@ -1,10 +1,18 @@
 %h1.page-header Rates import
 
-= simple_form_for [:admin, @import] do |f|
-  = f.error_notification
+- if @import.objects.blank?
 
-  = f.input :import_file, as: :file
+  = simple_form_for [:admin, @import] do |f|
+    = f.error_notification
 
-  = f.actions do |f|
-    = f.submit 'Import'
-    = f.action 'Back', admin_rates_path
+    = f.input :import_file, as: :file
+    = f.input :company_id, collection: Company.all if current_admin?
+
+    = f.actions do |f|
+      = f.submit 'Import'
+      = f.action 'Back', admin_rates_path
+
+- else
+
+  - @import.objects.each_with_index do |rate, i|
+    = render partial: 'admin/rates/form', locals: {rate: rate, idx: i}

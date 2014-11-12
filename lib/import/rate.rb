@@ -1,29 +1,33 @@
 require 'csv'
 
 class Import::Rate < Import::Base
-  AIRPORT                = 0
-  VEHICLE_TYPE_PASSENGER = 1
-  SERVICE_TYPE           = 2
-  BASE_RATE              = 3
-  ADDITIONAL_PASSENGER   = 4
-  ZIPCODE                = 5
-  HOTEL_LANDMARK_NAME    = 6
-  HOTEL_LANDMARK_STREET  = 7
-  HOTEL_LANDMARK_CITY    = 8
-  HOTEL_LANDMARK_STATE   = 9
-  TRIP_DURATION          = 10
-  PICKUP_TIMES           = 11
+  attribute :company_id, Integer
+
+  ID                     = 0
+  AIRPORT                = 1
+  VEHICLE_TYPE_PASSENGER = 2
+  SERVICE_TYPE           = 3
+  BASE_RATE              = 4
+  ADDITIONAL_PASSENGER   = 5
+  ZIPCODE                = 6
+  HOTEL_LANDMARK_NAME    = 7
+  HOTEL_LANDMARK_STREET  = 8
+  HOTEL_LANDMARK_CITY    = 9
+  HOTEL_LANDMARK_STATE   = 10
+  TRIP_DURATION          = 11
+  PICKUP_TIMES           = 12
 
   PICKUP_TIMES_SEP = '|'
 
   def perform
-    read do|row|
+    valid? && read do|row|
       objects << build_object(row)
     end
   end
 
   def build_object(row)
-    self.class.import_model.new(
+    o = self.class.import_model.where(id: row[ID]).first_or_initialize
+    o.assign_attributes(
       airport:                find_airport(row[AIRPORT]),
       vehicle_type_passenger: row[VEHICLE_TYPE_PASSENGER],
       service_type:           row[SERVICE_TYPE],
@@ -37,6 +41,7 @@ class Import::Rate < Import::Base
       trip_duration:          row[TRIP_DURATION],
       pickup_times:           pickup_times(row)
     )
+    o
   end
 
   def pickup_times(row)

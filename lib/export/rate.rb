@@ -1,5 +1,6 @@
 class Export::Rate < Export::Base
   self.columns = {
+    id: 'ID',
     airport_id: 'Airport*',
     vehicle_type_passenger: 'Vehicle Type / Passenger',
     service_type: 'Private or Shared',
