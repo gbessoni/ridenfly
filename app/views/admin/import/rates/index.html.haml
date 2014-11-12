@@ -1,2 +1,10 @@
-%h1.page-header Admin::Import::Rates#index
-%p Find me in app/views/admin/import/rates/index.html.haml
+%h1.page-header Rates import
+
+= simple_form_for [:admin, @import] do |f|
+  = f.error_notification
+
+  = f.input :import_file, as: :file
+
+  = f.actions do |f|
+    = f.submit 'Import'
+    = f.action 'Back', admin_rates_path

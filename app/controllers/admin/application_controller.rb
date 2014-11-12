@@ -6,8 +6,12 @@ class Admin::ApplicationController < ApplicationController
   protected
 
   def send_csv_file(model)
-    options = {filename: "#{model.to_s.underscore.pluralize}.csv", type: :csv}
-    send_data "Export::#{model}".constantize.new(model.all).to_csv, options
+    model_name = model.class.to_s.gsub('::ActiveRecord_Relation', '')
+    options = {filename: "#{model_name.underscore.pluralize}.csv", type: :csv}
+    send_data(
+      "::Export::#{model_name}".constantize.new(model.all).to_csv,
+      options
+    )
   end
 
   def paginate_model(model, options = {})
