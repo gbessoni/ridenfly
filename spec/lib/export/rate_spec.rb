@@ -16,7 +16,7 @@ RSpec.describe Export::Rate do
     it "has one rate" do
       expect(csv).to match /25.5/
       expect(csv).to match /60/
-      expect(csv).to match /0.0;MyString/
+      expect(csv).to match /0.0,MyString/
       expect(csv).to match /10:00AM|11:00PM/
     end
   end

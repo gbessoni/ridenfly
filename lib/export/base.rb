@@ -6,7 +6,7 @@ class Export::Base < Struct.new(:resources)
   end
 
   def export_options
-    {:col_sep => ';'}
+    {:col_sep => ','}
   end
 
   def generate(options = {})
