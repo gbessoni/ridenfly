@@ -11,6 +11,7 @@ class Export::Rate < Export::Base
     hotel_landmark_city: 'Hotel / Landmark city',
     hotel_landmark_state: 'Hotel / Landmark state',
     trip_duration: 'Trip duration',
+    pickup_times: 'Pickup times'
   }
 
   def to_csv
@@ -27,7 +28,9 @@ class Export::Rate < Export::Base
   end
 
   def build_row(resource)
-    resource.attributes.values_at(*columns)
+    attrs = resource.attributes.values_at(*columns)
+    attrs[-1] = attrs[-1].join(Import::Rate::PICKUP_TIMES_SEP)
+    attrs
   end
 
   def columns

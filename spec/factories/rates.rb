@@ -11,5 +11,6 @@ FactoryGirl.define do
     hotel_landmark_city "MyString"
     hotel_landmark_state "MyString"
     trip_duration 60
+    pickup_times ['10:00AM', '11:00PM']
   end
 end
