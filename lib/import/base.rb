@@ -4,6 +4,7 @@ class Import::Base
   extend ActiveModel::Naming
 
   attribute :import_file, ActionDispatch::Http::UploadedFile
+  attribute :objects, Array
 
   class << self
     def import_model

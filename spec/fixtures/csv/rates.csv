@@ -1,0 +1,2 @@
+Airport*,Vehicle Type / Passenger,Private or Shared,Base rate,Additional passenger,Zipcode*,Hotel / Landmark name*,Hotel / Landmark street address*,Hotel / Landmark city,Hotel / Landmark state,Trip duration,Pickup Times
+Cool JFK,shared,private,10.0,0.1,123133,Vega,Grabiszynska,Wroclaw,Dolnyslask,60,10:00PM|11:00AM
