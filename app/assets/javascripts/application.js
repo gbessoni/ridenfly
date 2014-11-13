@@ -19,8 +19,10 @@
 
 //= require ridenfly
 //= require_tree ./libs
+//= require ./controllers/base
 //= require_tree ./controllers
 //= require_tree ./views
+
 //= require_self
 
 $(document).ready(function(){

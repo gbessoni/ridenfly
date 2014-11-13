@@ -1,10 +1,14 @@
 window.Ridenfly =
   Models: {}
   Collections: {}
-  Views: {}
+  Views:
+    Admin: {}
+    Shared: {}
   Routers: {}
   Controllers:
-    Admin: {}
+    Admin:
+      Import:
+        Rates: {}
 
   initialize: ->
     factory = new Ridenfly.ClassFactory(gon.controller)
