@@ -8,10 +8,11 @@ class Admin::RatesController < Admin::ApplicationController
   # GET /admin/rates.json
   def index
     @q = rates_finder.ransack(params[:q])
-    @rates = @q.result
+    @rates = @q.result.includes(:airport)
+
     respond_to do |format|
       format.html { @rates = paginate_model @rates }
-      format.csv  { send_csv_file @rates }
+      format.csv  { send_csv_file 'Rate', @rates }
     end
   end
 

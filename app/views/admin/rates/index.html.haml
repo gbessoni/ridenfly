@@ -33,7 +33,7 @@
   %tbody
     - @rates.each do |rate|
       %tr
-        %td= rate.airport_id
+        %td= rate.airport.name
         %td= rate.vehicle_type_passenger
         %td= rate.service_type
         %td= rate.base_rate

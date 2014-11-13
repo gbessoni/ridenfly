@@ -1,9 +1,8 @@
 module SendCsvFile
-  def send_csv_file(model)
-    model_name = model.class.to_s.gsub('::ActiveRecord_Relation', '')
-    options = {filename: "#{model_name.underscore.pluralize}.csv", type: :csv}
+  def send_csv_file(model, scope)
+    options = {filename: "#{model.underscore.pluralize}.csv", type: :csv}
     send_data(
-      "::Export::#{model_name}".constantize.new(model.all).to_csv,
+      "::Export::#{model}".constantize.new(scope.all).to_csv,
       options
     )
   end
