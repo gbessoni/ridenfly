@@ -45,6 +45,14 @@ RSpec.describe Admin::RatesController do
     end
   end
 
+  describe "GET index as csv" do
+    it "assigns all rates as @rates" do
+      rate = Rate.create! valid_attributes
+      get :index, {format: :csv}, valid_session
+      expect(response).to be_success
+    end
+  end
+
   describe "GET show" do
     it "assigns the requested rate as @rate" do
       rate = Rate.create! valid_attributes
