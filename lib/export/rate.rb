@@ -15,6 +15,8 @@ class Export::Rate < Export::Base
     pickup_times: 'Pickup times'
   }
 
+  PICKUP_TIMES_SEP = Rate::PICKUP_TIMES_SEP
+
   def to_csv
     generate do |csv|
       csv << header
@@ -30,7 +32,7 @@ class Export::Rate < Export::Base
 
   def build_row(resource)
     attrs = resource.attributes.values_at(*columns)
-    attrs[-1] = attrs[-1].join(Import::Rate::PICKUP_TIMES_SEP)
+    attrs[-1] = attrs[-1].join(PICKUP_TIMES_SEP)
     attrs
   end
 

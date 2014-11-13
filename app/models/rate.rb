@@ -6,13 +6,13 @@ class Rate < ActiveRecord::Base
 
   serialize :pickup_times, JSON
 
-  PICKUP_TIMES_SEPARATOR = '|'
+  PICKUP_TIMES_SEP = '|'
 
   def pickup_time_list=(list)
-    self.pickup_times = list.split(PICKUP_TIMES_SEPARATOR)
+    self.pickup_times = list.split(PICKUP_TIMES_SEP)
   end
 
   def pickup_time_list
-    pickup_times.join(PICKUP_TIMES_SEPARATOR)
+    pickup_times.join(PICKUP_TIMES_SEP)
   end
 end
