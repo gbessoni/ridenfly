@@ -16,6 +16,8 @@
 %table.std
   %thead
     %tr
+      - if current_admin?
+        %th Company
       %th Airport
       %th Vehicle type passenger
       %th Service type
@@ -33,7 +35,9 @@
   %tbody
     - @rates.each do |rate|
       %tr
-        %td= rate.airport.name
+        - if current_admin?
+          %td= rate.company.name
+        %td= rate.airport_name
         %td= rate.vehicle_type_passenger
         %td= rate.service_type
         %td= rate.base_rate

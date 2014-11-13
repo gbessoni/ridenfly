@@ -1,7 +1,7 @@
 class Export::Rate < Export::Base
   self.columns = {
     id: 'ID',
-    airport_id: 'Airport*',
+    airport_name: 'Airport*',
     vehicle_type_passenger: 'Vehicle Type / Passenger',
     service_type: 'Private or Shared',
     base_rate: 'Base rate',
@@ -12,7 +12,7 @@ class Export::Rate < Export::Base
     hotel_landmark_city: 'Hotel / Landmark city',
     hotel_landmark_state: 'Hotel / Landmark state',
     trip_duration: 'Trip duration',
-    pickup_times: 'Pickup times'
+    pickup_time_list: 'Pickup times'
   }
 
   PICKUP_TIMES_SEP = Rate::PICKUP_TIMES_SEP
@@ -31,9 +31,7 @@ class Export::Rate < Export::Base
   end
 
   def build_row(resource)
-    attrs = resource.attributes.values_at(*columns)
-    attrs[-1] = attrs[-1].join(PICKUP_TIMES_SEP)
-    attrs
+    resource.as_json(methods: columns).values_at(*columns)
   end
 
   def columns

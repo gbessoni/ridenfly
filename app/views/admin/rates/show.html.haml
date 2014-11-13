@@ -1,6 +1,10 @@
+- if current_admin?
+  %p
+    %b Company:
+    = @rate.company.name
 %p
   %b Airport:
-  = @rate.airport.name
+  = @rate.airport_name
 %p
   %b Vehicle type passenger:
   = @rate.vehicle_type_passenger

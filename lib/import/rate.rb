@@ -27,7 +27,9 @@ class Import::Rate < Import::Base
   end
 
   def build_object(row)
-    o = self.class.import_model.where(id: row[ID]).first_or_initialize
+    o = self.class.import_model.where(
+      id: row[ID], company_id: company_id
+    ).first_or_initialize
     o.company = find_company
     o.update_attributes(
       airport:                find_airport(row[AIRPORT]),
@@ -41,13 +43,9 @@ class Import::Rate < Import::Base
       hotel_landmark_city:    row[HOTEL_LANDMARK_CITY],
       hotel_landmark_state:   row[HOTEL_LANDMARK_STATE],
       trip_duration:          row[TRIP_DURATION],
-      pickup_times:           pickup_times(row)
+      pickup_time_list:       row[PICKUP_TIMES]
     )
     o
-  end
-
-  def pickup_times(row)
-    row[PICKUP_TIMES].to_s.split(PICKUP_TIMES_SEP) || []
   end
 
   def read

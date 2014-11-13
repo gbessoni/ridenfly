@@ -15,4 +15,8 @@ class Rate < ActiveRecord::Base
   def pickup_time_list
     pickup_times.join(PICKUP_TIMES_SEP)
   end
+
+  def airport_name
+    airport.name
+  end
 end
