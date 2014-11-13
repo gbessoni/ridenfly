@@ -32,6 +32,10 @@
   %b Trip duration:
   = @rate.trip_duration
 
+%p
+  %b Pickup times:
+  = @rate.pickup_time_list
+
 = link_to 'Edit', edit_admin_rate_path(@rate)
 \|
 = link_to 'Back', admin_rates_path

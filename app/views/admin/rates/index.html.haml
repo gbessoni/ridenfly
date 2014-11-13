@@ -21,6 +21,7 @@
       %th Hotel landmark city
       %th Hotel landmark state
       %th Trip duration
+      %th Pickup times
       %th Actions
 
   %tbody
@@ -37,6 +38,7 @@
         %td= rate.hotel_landmark_city
         %td= rate.hotel_landmark_state
         %td= rate.trip_duration
+        %td= truncate rate.pickup_time_list, length: 16
         %td
           = link_to 'Show', [:admin, rate]
           = link_to 'Edit', edit_admin_rate_path(rate)

@@ -15,6 +15,7 @@
   = f.input :hotel_landmark_city
   = f.input :hotel_landmark_state
   = f.input :trip_duration
+  = f.input :pickup_time_list, as: :text, label: 'Pickup times', hint: 'pipe sparated values'
 
   = f.actions do |f|
     = f.submit 'Save'
