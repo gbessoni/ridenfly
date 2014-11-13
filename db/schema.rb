@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112131542) do
+ActiveRecord::Schema.define(version: 20141113134701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,28 @@ ActiveRecord::Schema.define(version: 20141112131542) do
     t.text     "pickup_times",                                   default: "[]"
   end
 
+  create_table "reservations", force: true do |t|
+    t.integer  "airport_id"
+    t.integer  "company_id"
+    t.datetime "flight_datetime"
+    t.datetime "pickup_datetime"
+    t.string   "passenger_name"
+    t.string   "phone"
+    t.integer  "num_of_passengers"
+    t.decimal  "net_fare",           precision: 8, scale: 2
+    t.decimal  "gratuity",           precision: 8, scale: 2, default: 0.0
+    t.string   "addresss"
+    t.string   "cross_street"
+    t.string   "airline"
+    t.integer  "luggage",                                    default: 0
+    t.string   "cancelation_reason"
+    t.string   "flight_number"
+    t.string   "status",                                     default: "pending"
+    t.string   "service_type",                               default: "to_airport"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",   null: false
     t.string   "encrypted_password",     default: "",   null: false
@@ -108,5 +130,8 @@ ActiveRecord::Schema.define(version: 20141112131542) do
 
   add_foreign_key "rates", "airports", name: "rates_airport_id_fk", dependent: :delete
   add_foreign_key "rates", "companies", name: "rates_company_id_fk", dependent: :delete
+
+  add_foreign_key "reservations", "airports", name: "reservations_airport_id_fk", dependent: :delete
+  add_foreign_key "reservations", "companies", name: "reservations_company_id_fk", dependent: :delete
 
 end
