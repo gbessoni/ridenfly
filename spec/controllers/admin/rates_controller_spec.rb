@@ -86,6 +86,11 @@ RSpec.describe Admin::RatesController do
         post :create, {:rate => valid_attributes}, valid_session
         expect(response).to redirect_to([:admin, Rate.last])
       end
+
+      it "renders success when ajax request" do
+        xhr :post, :create, {:rate => valid_attributes}, valid_session
+        expect(response).to render_template("shared/_success_message")
+      end
     end
 
     describe "with invalid params" do
@@ -98,45 +103,57 @@ RSpec.describe Admin::RatesController do
         post :create, {:rate => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
+
+      it "renders form with errors when ajax request" do
+        xhr :post, :create, {:rate => invalid_attributes}, valid_session
+        expect(response).to render_template("admin/rates/_form")
+      end
     end
   end
 
   describe "PUT update" do
+    let(:rate) { Rate.create! valid_attributes }
+
     describe "with valid params" do
       let(:new_attributes) do
         {base_rate: 75.5}
       end
 
       it "updates the requested rate" do
-        rate = Rate.create! valid_attributes
         put :update, {:id => rate.to_param, :rate => new_attributes}, valid_session
         expect(rate.reload.base_rate).to eql 75.5
       end
 
       it "assigns the requested rate as @rate" do
-        rate = Rate.create! valid_attributes
         put :update, {:id => rate.to_param, :rate => valid_attributes}, valid_session
         expect(assigns(:rate)).to eq(rate)
       end
 
       it "redirects to the rate" do
-        rate = Rate.create! valid_attributes
         put :update, {:id => rate.to_param, :rate => valid_attributes}, valid_session
         expect(response).to redirect_to([:admin, rate])
+      end
+
+      it "renders success when ajax request" do
+        xhr :put, :update, {:id => rate.to_param, :rate => valid_attributes}, valid_session
+        expect(response).to render_template("shared/_success_message")
       end
     end
 
     describe "with invalid params" do
       it "assigns the rate as @rate" do
-        rate = Rate.create! valid_attributes
         put :update, {:id => rate.to_param, :rate => invalid_attributes}, valid_session
         expect(assigns(:rate)).to eq(rate)
       end
 
       it "re-renders the 'edit' template" do
-        rate = Rate.create! valid_attributes
         put :update, {:id => rate.to_param, :rate => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
+      end
+
+      it "renders form with errors when ajax request" do
+        xhr :put, :update, {:id => rate.to_param, :rate => invalid_attributes}, valid_session
+        expect(response).to render_template("admin/rates/_form")
       end
     end
   end
