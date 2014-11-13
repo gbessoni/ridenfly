@@ -21,13 +21,15 @@ class Import::Rate < Import::Base
 
   def perform
     valid? && read do|row|
-      objects << build_object(row)
+      o = build_object(row)
+      (o.valid? ? valid_objects : invalid_objects) << o
     end
   end
 
   def build_object(row)
     o = self.class.import_model.where(id: row[ID]).first_or_initialize
-    o.assign_attributes(
+    o.company = find_company
+    o.update_attributes(
       airport:                find_airport(row[AIRPORT]),
       vehicle_type_passenger: row[VEHICLE_TYPE_PASSENGER],
       service_type:           row[SERVICE_TYPE],
@@ -62,5 +64,9 @@ class Import::Rate < Import::Base
     Airport.where(
       "name = ? OR zipcode = ? OR code = ?", name, name, name
     ).first
+  end
+
+  def find_company
+    @company ||= Company.where(id: company_id).first
   end
 end

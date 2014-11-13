@@ -5,7 +5,8 @@ class Import::Base
   extend ActiveModel::Naming
 
   attribute :import_file, ActionDispatch::Http::UploadedFile
-  attribute :objects, Array
+  attribute :invalid_objects, Array
+  attribute :valid_objects, Array
 
   validates :import_file, presence: true
   validates :company_id, presence: true, allow_nil: true
@@ -23,5 +24,9 @@ class Import::Base
   end
 
   def perform
+  end
+
+  def new?
+    valid_objects.blank? && invalid_objects.blank?
   end
 end

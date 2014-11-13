@@ -17,9 +17,9 @@ RSpec.describe Admin::Import::RatesController do
     context "success" do
       before do
         allow_any_instance_of(Import::Rate).to receive(:perform) { true }
-        allow_any_instance_of(Import::Rate).to receive(:objects) { [
-          build(:rate)
-        ] }
+        allow_any_instance_of(Import::Rate).to receive(:invalid_objects) do
+          [build(:rate)]
+        end
         post :create, import_rate: {import_file: double}
       end
 
