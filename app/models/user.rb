@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :company
+  has_many :rates, through: :company
 
   def password_required?
     new_record? || password.present? || password_confirmation.present?

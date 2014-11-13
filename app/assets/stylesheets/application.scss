@@ -21,6 +21,12 @@ body {
   display: block;
 }
 
+.search {
+  @extend .col-xs-6;
+  font-size: 10px;
+  padding: 15px 15px 0 0;
+}
+
 .form-group {
   textarea.text {
     height: 70px !important;

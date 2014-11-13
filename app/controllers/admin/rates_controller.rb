@@ -1,14 +1,17 @@
 class Admin::RatesController < Admin::ApplicationController
+  include Admin::CompanyRequired
+
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
   require_role :admin, :company
 
   # GET /admin/rates
   # GET /admin/rates.json
   def index
-    @q = Rate.ransack(params[:q])
+    @q = rates_finder.ransack(params[:q])
+    @rates = @q.result
     respond_to do |format|
-      format.html { @rates = paginate_model @q.result }
-      format.csv  { send_csv_file(@q.result) }
+      format.html { @rates = paginate_model @rates }
+      format.csv  { send_csv_file @rates }
     end
   end
 
@@ -79,7 +82,7 @@ class Admin::RatesController < Admin::ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rate
-      @rate = Rate.find(params[:id])
+      @rate = rates_finder.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -93,5 +96,9 @@ class Admin::RatesController < Admin::ApplicationController
 
     def set_rate_company
       @rate.company = current_user.company if current_user.company? && current_user.company.present?
+    end
+
+    def rates_finder
+      (current_user.admin? ? Rate : current_user.rates)
     end
 end

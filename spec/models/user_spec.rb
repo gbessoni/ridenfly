@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User do
   it { expect(subject).to have_one :company }
+  it { expect(subject).to have_many :rates }
 
   describe "roles" do
     context "admin" do

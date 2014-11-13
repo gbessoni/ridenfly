@@ -3,9 +3,15 @@
   = primary_btn_to 'New Rate', new_admin_rate_path
 
 
-= link_to 'Download CSV', admin_rates_url(format: :csv)
-|
+- if current_admin?
+  = render partial: 'search_form'
+
+- if !current_admin? || @q.company_id_eq.present?
+  = link_to 'Download CSV', admin_rates_url(format: :csv, q: params[:q])
+  |
+
 = link_to 'Import CSV', admin_import_rates_url
+
 
 %table.std
   %thead
@@ -43,4 +49,3 @@
           = link_to 'Show', [:admin, rate]
           = link_to 'Edit', edit_admin_rate_path(rate)
           = link_to 'Destroy', [:admin, rate], :method => :delete, :data => { :confirm => 'Are you sure?' }
-

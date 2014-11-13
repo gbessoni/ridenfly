@@ -4,6 +4,7 @@ class Company < ActiveRecord::Base
   include Company::Validations
 
   belongs_to :user
+  has_many :rates
 
   accepts_nested_attributes_for :user
 
