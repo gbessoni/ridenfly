@@ -14,4 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
+//= require underscore
+//= require backbone
+
+//= require ridenfly
+//= require_tree ./libs
+//= require_tree ./controllers
+//= require_tree ./views
+//= require_self
+
+$(document).ready(function(){
+  Ridenfly.initialize()
+});
