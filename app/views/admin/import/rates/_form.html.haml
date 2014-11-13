@@ -1,0 +1,11 @@
+- import ||= @import
+
+= simple_form_for [:admin, import] do |f|
+  = f.error_notification
+
+  = f.input :import_file, as: :file
+  = f.input :company_id, collection: Company.all if current_admin?
+
+  = f.actions do |f|
+    = f.submit 'Import'
+    = f.action 'Back', admin_rates_path

@@ -2,8 +2,8 @@ window.Ridenfly =
   Models: {}
   Collections: {}
   Views:
-    Admin: {}
-    Shared: {}
+    Admin:
+      Import: {}
   Routers: {}
   Controllers:
     Admin:

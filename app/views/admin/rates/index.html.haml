@@ -1,6 +1,6 @@
 %h1.page-header
   Listing rates (#{@rates.total_entries})
-  = link_to_new 'New Rate', new_admin_rate_path
+  = primary_btn_to 'New Rate', new_admin_rate_path
 
 
 = link_to 'Download CSV', admin_rates_url(format: :csv)

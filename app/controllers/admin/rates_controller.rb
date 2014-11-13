@@ -34,10 +34,14 @@ class Admin::RatesController < Admin::ApplicationController
 
     respond_to do |format|
       if @rate.save
-        format.html { redirect_to [:admin, @rate], notice: 'Rate was successfully created.' }
+        format.html {
+          html_success_response(@rate, 'Rate was successfully created.')
+        }
         format.json { render :show, status: :created, location: @rate }
       else
-        format.html { render :new }
+        format.html {
+          html_error_response(@rate, 'new')
+        }
         format.json { render json: @rate.errors, status: :unprocessable_entity }
       end
     end
@@ -49,10 +53,14 @@ class Admin::RatesController < Admin::ApplicationController
     set_rate_company
     respond_to do |format|
       if @rate.update(rate_params)
-        format.html { redirect_to [:admin, @rate], notice: 'Rate was successfully updated.' }
+        format.html {
+          html_success_response(@rate, 'Rate was successfully updated.')
+        }
         format.json { render :show, status: :ok, location: @rate }
       else
-        format.html { render :edit }
+        format.html {
+          html_error_response(@rate, 'edit')
+        }
         format.json { render json: @rate.errors, status: :unprocessable_entity }
       end
     end

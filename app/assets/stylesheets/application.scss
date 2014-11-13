@@ -18,6 +18,7 @@ body {
   @extend .form-horizontal;
   @extend .well;
   @extend .col-lg-8;
+  display: block;
 }
 
 .form-group {

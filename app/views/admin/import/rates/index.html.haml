@@ -1,18 +1,13 @@
 %h1.page-header Rates import
 
 - if @import.objects.blank?
-
-  = simple_form_for [:admin, @import] do |f|
-    = f.error_notification
-
-    = f.input :import_file, as: :file
-    = f.input :company_id, collection: Company.all if current_admin?
-
-    = f.actions do |f|
-      = f.submit 'Import'
-      = f.action 'Back', admin_rates_path
-
+  = render partial: 'admin/import/rates/form', locals: {import: @import}
 - else
+  .rate-forms.row
+    .col-xs-12
+      - @import.objects.each_with_index do |rate, i|
+        = render partial: 'admin/rates/form', locals: {rate: rate, idx: i}
 
-  - @import.objects.each_with_index do |rate, i|
-    = render partial: 'admin/rates/form', locals: {rate: rate, idx: i}
+  .row
+    .col-xs-12
+      = btn_to 'Back', admin_import_rates_url
