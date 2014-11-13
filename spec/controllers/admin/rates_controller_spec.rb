@@ -25,16 +25,30 @@ RSpec.describe Admin::RatesController do
       get :index
     end
 
-    it { expect(response).to be_redirect }
+    it { expect(response).to redirect_to(admin_root_url) }
   end
 
   describe "user has company role" do
-    before do
-      sign_in create(:user, roles: [User::COMPANY])
-      get :index
+    let(:user) { create(:user, roles: [User::COMPANY]) }
+
+    context "with company" do
+      before do
+        create(:company, user: user)
+        sign_in user
+        get :index
+      end
+
+      it { expect(response).to be_success }
     end
 
-    it { expect(response).to be_success }
+    context "without company" do
+      before do
+        sign_in user
+        get :index
+      end
+
+      it { expect(response).to redirect_to(admin_root_url) }
+    end
   end
 
   describe "GET index" do
