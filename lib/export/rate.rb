@@ -15,8 +15,6 @@ class Export::Rate < Export::Base
     pickup_time_list: 'Pickup times'
   }
 
-  PICKUP_TIMES_SEP = Rate::PICKUP_TIMES_SEP
-
   def to_csv
     generate do |csv|
       csv << header

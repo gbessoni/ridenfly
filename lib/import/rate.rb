@@ -17,8 +17,6 @@ class Import::Rate < Import::Base
   TRIP_DURATION          = 11
   PICKUP_TIMES           = 12
 
-  PICKUP_TIMES_SEP = Rate::PICKUP_TIMES_SEP
-
   def perform
     valid? && read do|row|
       o = build_object(row)
