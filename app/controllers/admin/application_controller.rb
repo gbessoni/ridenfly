@@ -5,6 +5,11 @@ class Admin::ApplicationController < ApplicationController
 
   before_action :authenticate_user!
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:error] = 'Record not found!'
+    redirect_to admin_root_url
+  end
+
   protected
 
   def paginate_model(model, options = {})
