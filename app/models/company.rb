@@ -9,6 +9,8 @@ class Company < ActiveRecord::Base
 
   accepts_nested_attributes_for :user
 
+  scope :asc_by_name, ->{ order(:name) }
+
   def vehicle_types
     list = read_attribute(:vehicle_types) || []
     if list.present?

@@ -5,6 +5,7 @@ class Admin::Import::RatesController < Admin::ApplicationController
 
   def create
     @import = ::Import::Rate.new params[:import_rate]
+    @import.company_id ||= current_user.company.try(:id)
     @import.perform
     set_messages
     render action: 'index'

@@ -44,3 +44,5 @@
           = link_to 'Show',[:admin, reservation]
           - if current_admin?
             = link_to 'Destroy', [:admin, reservation], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= will_paginate @reservations

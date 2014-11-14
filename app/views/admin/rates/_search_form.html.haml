@@ -1,6 +1,6 @@
 .row
   .col-xs-12
     = search_form_for @q, url: admin_rates_url do |f|
-      = f.input :company_id_eq, collection: Company.all, label: 'Company', hint: 'Select company to download CSV'
+      = f.input :company_id_eq, collection: Company.asc_by_name, label: 'Company', hint: 'Select company to download CSV'
       = f.actions do |f|
         = f.submit 'Search', class: 'btn btn-primary btn-xs'

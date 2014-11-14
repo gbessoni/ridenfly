@@ -53,3 +53,5 @@
           = link_to 'Show', [:admin, rate]
           = link_to 'Edit', edit_admin_rate_path(rate)
           = link_to 'Destroy', [:admin, rate], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= will_paginate @rates

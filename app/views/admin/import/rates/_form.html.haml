@@ -4,7 +4,7 @@
   = f.error_notification
 
   = f.input :import_file, as: :file
-  = f.input :company_id, collection: Company.all if current_admin?
+  = f.input :company_id, collection: Company.asc_by_name if current_admin?
 
   = f.actions do |f|
     = f.submit 'Import'
