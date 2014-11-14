@@ -37,15 +37,6 @@ class Admin::ReservationsController < Admin::ApplicationController
       @reservation = reservations_finder.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def reservation_params
-      params.require(:reservation).permit(:airport_id, :company_id, :flight_datetime,
-        :pickup_datetime, :passenger_name, :phone, :num_of_passengers, :net_fare,
-        :gratuity, :addresss, :cross_street, :airline, :luggage, :cancelation_reason,
-        :flight_number, :status, :service_type
-      )
-    end
-
     def reservations_finder
       current_user.admin? ? Reservation : current_user.reservations
     end
