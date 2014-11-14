@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20141113134701) do
     t.integer  "luggage",                                    default: 0
     t.string   "cancelation_reason"
     t.string   "flight_number"
-    t.string   "status",                                     default: "book_created"
+    t.string   "status",                                     default: "created"
     t.string   "service_type",                               default: "to_airport"
     t.datetime "created_at"
     t.datetime "updated_at"

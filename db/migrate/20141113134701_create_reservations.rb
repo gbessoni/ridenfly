@@ -16,7 +16,7 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :luggage, default: 0
       t.string :cancelation_reason
       t.string :flight_number
-      t.string :status, default: 'book_created'
+      t.string :status, default: 'created'
       t.string :service_type, default: 'to_airport'
 
       t.timestamps
