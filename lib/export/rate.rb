@@ -14,25 +14,4 @@ class Export::Rate < Export::Base
     trip_duration: 'Trip duration',
     pickup_time_list: 'Pickup times'
   }
-
-  def to_csv
-    generate do |csv|
-      csv << header
-      resources.each do |resource|
-        csv << build_row(resource)
-      end
-    end
-  end
-
-  def header
-    self.class.columns.values
-  end
-
-  def build_row(resource)
-    resource.as_json(methods: columns).values_at(*columns)
-  end
-
-  def columns
-    self.class.columns.keys.map(&:to_s)
-  end
 end

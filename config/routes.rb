@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  namespace :api, path: 'api/1', constraints: { format: 'json' } do
+    resources :reservations, only: [:create, :update, :show, :index]
+  end
+
   namespace :admin do
     resources :users
     resources :companies
     resources :rates
     resources :airports
+    resources :reservations, only: [:index, :show, :destroy] do
+      resource :cancel, only: [:create]
+    end
 
     namespace :import do
       resources :rates, :only => [:index, :create]

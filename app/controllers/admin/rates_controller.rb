@@ -100,6 +100,6 @@ class Admin::RatesController < Admin::ApplicationController
     end
 
     def rates_finder
-      (current_user.admin? ? Rate : current_user.rates)
+      current_user.admin? ? Rate : current_user.rates
     end
 end

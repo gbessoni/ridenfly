@@ -5,15 +5,15 @@
 
   = f.association :airport
   = f.association :company if current_admin?
-  = f.input :vehicle_type_passenger
-  = f.input :service_type
+  = f.input :vehicle_type_passenger, label: 'Vehicle Type / Passenger'
+  = f.input :service_type, label: 'Private or Shared'
   = f.input :base_rate
   = f.input :additional_passenger
   = f.input :zipcode
-  = f.input :hotel_landmark_name
-  = f.input :hotel_landmark_street
-  = f.input :hotel_landmark_city
-  = f.input :hotel_landmark_state
+  = f.input :hotel_landmark_name, label: 'Hotel / Landmark name'
+  = f.input :hotel_landmark_street, label: 'Hotel / Landmark street'
+  = f.input :hotel_landmark_city, label: 'Hotel / Landmark city'
+  = f.input :hotel_landmark_state, label: 'Hotel / Landmark state'
   = f.input :trip_duration
   = f.input :pickup_time_list, as: :text, label: 'Pickup times', hint: 'pipe sparated values'
 

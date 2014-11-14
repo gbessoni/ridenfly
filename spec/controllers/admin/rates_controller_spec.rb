@@ -28,10 +28,10 @@ RSpec.describe Admin::RatesController do
     it { expect(response).to redirect_to(admin_root_url) }
   end
 
-  describe "user has company role" do
+  describe "user role" do
     let(:user) { create(:user, roles: [User::COMPANY]) }
 
-    context "with company" do
+    context "company" do
       before do
         create(:company, user: user)
         sign_in user

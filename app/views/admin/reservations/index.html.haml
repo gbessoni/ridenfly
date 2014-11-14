@@ -1,0 +1,48 @@
+%h1 Listing reservations
+
+%table
+  %thead
+    %tr
+      %th Airport
+      %th Company
+      %th Flight datetime
+      %th Pickup datetime
+      %th Passenger name
+      %th Phone
+      %th Num of passengers
+      %th Net fare
+      %th Gratuity
+      %th Addresss
+      %th Cross street
+      %th Airline
+      %th Luggage
+      %th Cancelation reason
+      %th Flight number
+      %th Status
+      %th Service type
+      %th Actions
+
+  %tbody
+    - @reservations.each do |reservation|
+      %tr
+        %td= reservation.airport_id
+        %td= reservation.company_id
+        %td= reservation.flight_datetime
+        %td= reservation.pickup_datetime
+        %td= reservation.passenger_name
+        %td= reservation.phone
+        %td= reservation.num_of_passengers
+        %td= reservation.net_fare
+        %td= reservation.gratuity
+        %td= reservation.addresss
+        %td= reservation.cross_street
+        %td= reservation.airline
+        %td= reservation.luggage
+        %td= reservation.cancelation_reason
+        %td= reservation.flight_number
+        %td= reservation.status
+        %td= reservation.service_type
+        %td
+          = link_to 'Show',[:admin, reservation]
+          - if current_admin?
+            = link_to 'Destroy', [:admin, reservation], :method => :delete, :data => { :confirm => 'Are you sure?' }
