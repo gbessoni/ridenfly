@@ -1,29 +1,29 @@
 %p
   %b Airport:
-  = @reservation.airport_id
+  = @reservation.airport_name
 %p
   %b Company:
-  = @reservation.company_id
+  = @reservation.company.name
 %p
-  %b Flight datetime:
+  %b Arrival / Departure Time:
   = @reservation.flight_datetime
 %p
-  %b Pickup datetime:
+  %b Pickup Date / Time:
   = @reservation.pickup_datetime
 %p
-  %b Passenger name:
+  %b Name:
   = @reservation.passenger_name
 %p
   %b Phone:
   = @reservation.phone
 %p
-  %b Num of passengers:
+  %b # of passengers:
   = @reservation.num_of_passengers
 %p
   %b Net fare:
   = @reservation.net_fare
 %p
-  %b Gratuity:
+  %b Gratuity Collected:
   = @reservation.gratuity
 %p
   %b Addresss:
@@ -46,8 +46,5 @@
 %p
   %b Status:
   = @reservation.status
-%p
-  %b Service type:
-  = @reservation.service_type
 
 = link_to 'Back', admin_reservations_path

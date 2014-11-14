@@ -1,32 +1,33 @@
-%h1 Listing reservations
+%h1.page-header
+  Listing reservations (#{@reservations.total_entries})
 
-%table
+
+%table.std
   %thead
     %tr
-      %th Airport
+      %th Rez ID
       %th Company
-      %th Flight datetime
-      %th Pickup datetime
-      %th Passenger name
+      %th Airport (a-arrival d-departure)
+      %th Arrival / Departure Time
+      %th Pickup Date / Time
+      %th Name
       %th Phone
-      %th Num of passengers
+      %th # of Passengers
       %th Net fare
-      %th Gratuity
+      %th Gratuity Collected
       %th Addresss
       %th Cross street
       %th Airline
-      %th Luggage
-      %th Cancelation reason
       %th Flight number
       %th Status
-      %th Service type
       %th Actions
 
   %tbody
     - @reservations.each do |reservation|
       %tr
-        %td= reservation.airport_id
-        %td= reservation.company_id
+        %td= reservation.id
+        %td= reservation.company.name
+        %td= reservation.airport_name
         %td= reservation.flight_datetime
         %td= reservation.pickup_datetime
         %td= reservation.passenger_name
@@ -37,11 +38,8 @@
         %td= reservation.addresss
         %td= reservation.cross_street
         %td= reservation.airline
-        %td= reservation.luggage
-        %td= reservation.cancelation_reason
         %td= reservation.flight_number
         %td= reservation.status
-        %td= reservation.service_type
         %td
           = link_to 'Show',[:admin, reservation]
           - if current_admin?
