@@ -20,6 +20,9 @@ RSpec.describe Admin::Import::RatesController do
         allow_any_instance_of(Import::Rate).to receive(:invalid_objects) do
           [build(:rate)]
         end
+        allow_any_instance_of(Import::Rate).to receive(:valid_objects) do
+          [build(:rate)]
+        end
         post :create, import_rate: {import_file: double}
       end
 
