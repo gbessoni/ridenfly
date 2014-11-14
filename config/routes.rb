@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  namespace :api, path: 'api/1', constraints: { format: 'json' } do
+  namespace :api, path: 'api/1', defaults: { format: 'json' } do
     resources :reservations, only: [:create, :update, :show, :index]
   end
 
