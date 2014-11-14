@@ -4,7 +4,8 @@ class Api::ReservationsController < Api::ApplicationController
   # GET /api/reservations
   # GET /api/reservations.json
   def index
-    @reservations = Reservation.all
+    @q = Reservation.ransack(params[:q])
+    @reservations = paginate_model @q.result.includes(:airport, :company)
   end
 
   # GET /api/reservations/1
