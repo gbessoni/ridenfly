@@ -92,4 +92,26 @@ YAML.load(airports_data).each do |airport|
   a.zipcode  = aa['zip']
   a.state = aa['state']
   a.save(validate: false)
+end if false
+
+# Generate reservations
+27.times do |i|
+  t = rand(100).days.from_now
+  r = Reservation.new(
+    airport: Airport.order('random()').first,
+    company: Company.order('random()').first,
+    flight_datetime: t,
+    pickup_datetime: (t - 2.hours),
+    passenger_name: "User#{rand(100)} Name",
+    status: 'active',
+    phone: '+112312312' + rand(1000).to_s,
+    num_of_passengers: (rand(5) + 1),
+    gratuity: rand(10).to_f + (rand(100) / 100.0),
+    net_fare: rand(100).to_f + (rand(100) / 100.0),
+    addresss: rand(1000).to_s + ' test street',
+    cross_street: rand(1000).to_s + ' cross street',
+    airline: 'ABX Air',
+    flight_number: rand(1000)
+  )
+  r.save!
 end
