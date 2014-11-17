@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113134701) do
+ActiveRecord::Schema.define(version: 20141117100217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(version: 20141113134701) do
     t.string   "fax"
   end
 
+  create_table "rate_pickup_times", force: true do |t|
+    t.integer "pickup"
+    t.integer "rate_id"
+  end
+
   create_table "rates", force: true do |t|
     t.integer  "airport_id"
     t.string   "vehicle_type_passenger"
@@ -82,7 +87,6 @@ ActiveRecord::Schema.define(version: 20141113134701) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
-    t.text     "pickup_times",                                   default: "[]"
   end
 
   create_table "reservations", force: true do |t|
@@ -127,6 +131,8 @@ ActiveRecord::Schema.define(version: 20141113134701) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "companies", "users", name: "companies_user_id_fk", dependent: :delete
+
+  add_foreign_key "rate_pickup_times", "rates", name: "rate_pickup_times_rate_id_fk", dependent: :delete
 
   add_foreign_key "rates", "airports", name: "rates_airport_id_fk", dependent: :delete
   add_foreign_key "rates", "companies", name: "rates_company_id_fk", dependent: :delete
