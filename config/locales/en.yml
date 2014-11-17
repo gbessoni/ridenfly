@@ -221,7 +221,7 @@ en:
     errors:
       <<: *errors
       models:
-        rate/pickup_time:
+        rate:
           attributes:
-            pickup:
+            pickup_time_list:
               invalid_format: "has invalid format - use HH:MMAM or HH:MMPM"

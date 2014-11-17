@@ -31,7 +31,7 @@ RSpec.describe Rate::PickupTime do
         it "checks format of time '#{time}'" do
           subject.pickup_str = time
           expect(subject).not_to be_valid
-          expect(subject.errors[:pickup]).to include 'has invalid format - use HH:MMAM or HH:MMPM'
+          expect(subject.errors[:pickup]).to include 'has invalid format'
         end
       end
     end
