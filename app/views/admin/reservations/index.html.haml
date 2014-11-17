@@ -6,6 +6,8 @@
   %thead
     %tr
       %th Rez ID
+      %th Status
+      %th Service type
       %th Company
       %th Airport (a-arrival d-departure)
       %th Arrival / Departure Time
@@ -19,13 +21,14 @@
       %th Cross street
       %th Airline
       %th Flight number
-      %th Status
       %th Actions
 
   %tbody
     - @reservations.each do |reservation|
       %tr
         %td= reservation.id
+        %td= reservation.status
+        %td= reservation.service_type
         %td= reservation.company.name
         %td= reservation.airport_name
         %td= reservation.flight_datetime
@@ -39,7 +42,6 @@
         %td= reservation.cross_street
         %td= reservation.airline
         %td= reservation.flight_number
-        %td= reservation.status
         %td
           = link_to 'Show',[:admin, reservation]
           - if current_admin?

@@ -1,4 +1,13 @@
 %p
+  %b Rez ID:
+  = @reservation.id
+%p
+  %b Status:
+  = @reservation.status
+%p
+  %b Service type:
+  = @reservation.service_type
+%p
   %b Airport:
   = @reservation.airport_name
 %p
@@ -43,8 +52,5 @@
 %p
   %b Flight number:
   = @reservation.flight_number
-%p
-  %b Status:
-  = @reservation.status
 
 = link_to 'Back', admin_reservations_path
