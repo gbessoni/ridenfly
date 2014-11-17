@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, path: 'api/1', defaults: { format: 'json' } do
     resources :reservations, only: [:create, :update, :show, :index]
+    resources :availabilities, only: [:show, :index]
   end
 
   namespace :admin do
