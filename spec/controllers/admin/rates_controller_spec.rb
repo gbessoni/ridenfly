@@ -8,6 +8,9 @@ RSpec.describe Admin::RatesController do
     build(:rate).attributes.merge(
       airport_id: airport.id,
       company_id: company.id,
+      pickup_time_list: ['10:00AM', '11:00PM'].join(
+        Rate::PICKUP_TIMES_SEP
+      )
     )
   end
   let(:invalid_attributes) do
@@ -138,12 +141,13 @@ RSpec.describe Admin::RatesController do
 
     describe "with valid params" do
       let(:new_attributes) do
-        {base_rate: 75.5}
+        {base_rate: 75.5, pickup_time_list: '09:00PM'}
       end
 
       it "updates the requested rate" do
         put :update, {:id => rate.to_param, :rate => new_attributes}, valid_session
         expect(rate.reload.base_rate).to eql 75.5
+        expect(rate.pickup_times.map(&:pickup_str)).to include '09:00PM'
       end
 
       it "assigns the requested rate as @rate" do
