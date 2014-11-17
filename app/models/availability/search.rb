@@ -8,7 +8,7 @@ class Availability::Search
   INTERNATIONAL = 'international'
 
   attribute :airport, String
-  attribute :service_type, String, default: TO_AIRPORT
+  attribute :trip_direction, String, default: TO_AIRPORT
   attribute :to_airport_flight_time, Time
   attribute :from_airport_flight_time, Time
   attribute :flight_type, String, default: DOMESTIC
