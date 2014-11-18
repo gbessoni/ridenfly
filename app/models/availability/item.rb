@@ -1,9 +1,22 @@
 class Availability::Item < Rate
+  scope :by_airport, ->(s) do
+    joins(:airport).where(
+      "airports.name = ? OR airports.zipcode = ? OR airports.code = ?",
+      s.airport, s.airport, s.airport
+    )
+  end
+  scope :by_zipcode_or_hotel_landmark, ->(s) do
+    if s.zipcode.present?
+      where(zipcode: s.zipcode)
+    else
+      where Hash[Availability::Search::HOTEL_LANDMARK_ATTRS.map do |name|
+        [name, s.send(name)]
+      end]
+    end
+  end
+
   scope :by_search, ->(s) do
-    joins(:airport)
-      .where(
-        "airports.name = ? OR airports.zipcode = ? OR airports.code = ?",
-        s.airport, s.airport, s.airport)
+    by_airport(s).by_zipcode_or_hotel_landmark(s)
   end
 
   attr_accessor :search
