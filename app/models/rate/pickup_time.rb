@@ -14,6 +14,10 @@ class Rate::PickupTime < ActiveRecord::Base
     @pickup_str ||= TimeOfDayAttr.l(self.pickup)
   end
 
+  def to_time
+    Time.now.beginning_of_day + pickup.to_i
+  end
+
   protected
 
   def check_pickup_str_format

@@ -36,4 +36,13 @@ RSpec.describe Rate::PickupTime do
       end
     end
   end
+
+  describe "#to_time" do
+    before do
+      allow(Time).to receive(:now) { Time.local(2014, 11, 18, 21, 0, 1) }
+      subject.pickup = '9:00'
+    end
+
+    it { expect(subject.to_time).to eql(Time.parse('2014-11-18 09:00:00')) }
+  end
 end

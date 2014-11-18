@@ -5,6 +5,7 @@ class Availability::Item < Rate
       s.airport, s.airport, s.airport
     )
   end
+
   scope :by_zipcode_or_hotel_landmark, ->(s) do
     if s.zipcode.present?
       where(zipcode: s.zipcode)
@@ -18,6 +19,9 @@ class Availability::Item < Rate
   scope :by_search, ->(s) do
     by_airport(s).by_zipcode_or_hotel_landmark(s)
   end
+
+  FLIGHT_TIME_MARGIN = 2.hours
+  PICKUP_TIME_MARGIN = 1.hour
 
   attr_accessor :search
 
@@ -41,7 +45,11 @@ class Availability::Item < Rate
     base_rate + (additional_passenger * (adults - 1))
   end
 
-  def pickup_times
-    [OpenStruct.new(start_datetime: Time.now, end_datetime: Time.now)]
+  def avl_pickup_times
+    Availability::PickupTimeGenerator.new(
+      search.flight_time,
+      search,
+      self,
+    ).generate
   end
 end

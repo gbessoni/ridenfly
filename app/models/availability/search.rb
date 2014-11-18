@@ -16,8 +16,8 @@ class Availability::Search
 
   attribute :airport, String
   attribute :trip_direction, String, default: TO_AIRPORT
-  attribute :to_airport_flight_time, Time
-  attribute :from_airport_flight_time, Time
+  attribute :flight_time, Time
+  attribute :return_flight_time, Time
   attribute :flight_type, String, default: DOMESTIC
 
   attribute :hotel_landmark_name, String
@@ -36,5 +36,9 @@ class Availability::Search
       self[name] ||= list[i]
     end
     super(full_name)
+  end
+
+  def domestic?
+    flight_type == DOMESTIC
   end
 end
