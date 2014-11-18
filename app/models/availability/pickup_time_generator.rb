@@ -1,6 +1,6 @@
 class Availability::PickupTimeGenerator < Struct.new(:flight_time, :search, :rate)
-  DOMESTIC_TIME_MARGIN = 1.5.hours
-  INTERNATIONAL_TIME_MARGIN = 2.5.hours
+  DOMESTIC_TIME_MARGIN = 1.hour + 30.minutes
+  INTERNATIONAL_TIME_MARGIN = 2.hours + 30.minutes
 
   def generate
     if rate.pickup_times.present?
@@ -26,13 +26,13 @@ class Availability::PickupTimeGenerator < Struct.new(:flight_time, :search, :rat
 
   def domestic_pickup_times
     [time_attrs(
-      flight_time - (rate.trip_duration + DOMESTIC_TIME_MARGIN)
+      flight_time - (rate.trip_duration * 60 + DOMESTIC_TIME_MARGIN)
     )]
   end
 
   def internationals_pickup_times
     [time_attrs(
-      flight_time - (rate.trip_duration + INTERNATIONAL_TIME_MARGIN)
+      flight_time - (rate.trip_duration * 60 + INTERNATIONAL_TIME_MARGIN)
     )]
   end
 
