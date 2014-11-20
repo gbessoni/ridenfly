@@ -4,8 +4,12 @@ class Availability::Collection
   attribute :search, Availability::Search
 
   def items
-    Availability::Item.by_search(search).map do |avl|
-      avl.tap{|a| a.search = search}
+    rates.map do |rate|
+      Availability::Item.new(search: search, rate: rate)
     end
+  end
+
+  def rates
+    Rate.by_search(search)
   end
 end

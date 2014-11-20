@@ -8,9 +8,37 @@ class Rate < ActiveRecord::Base
   validates :trip_duration, presence: true, numericality: {only_integer: true, greater_than: 0}
   validate :check_pickup_times
 
+  accepts_nested_attributes_for :pickup_times, allow_destroy: true
+
   PICKUP_TIMES_SEP = '|'
 
-  accepts_nested_attributes_for :pickup_times, allow_destroy: true
+  HOTEL_LANDMARK_ATTRS = [
+    :hotel_landmark_name,
+    :hotel_landmark_street,
+    :hotel_landmark_city,
+    :hotel_landmark_state
+  ]
+
+  scope :by_airport, ->(airport) do
+    joins(:airport).where(
+      "airports.name = ? OR airports.zipcode = ? OR airports.code = ?",
+      airport, airport, airport
+    )
+  end
+
+  scope :by_zipcode_or_hotel_landmark, ->(s) do
+    if s.zipcode.present?
+      where(zipcode: s.zipcode)
+    else
+      where Hash[HOTEL_LANDMARK_ATTRS.map do |name|
+        [name, s.send(name)]
+      end]
+    end
+  end
+
+  scope :by_search, ->(search) do
+    by_airport(search.airport).by_zipcode_or_hotel_landmark(search)
+  end
 
   def pickup_time_list=(list)
     attrs = {}

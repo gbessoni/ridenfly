@@ -1,4 +1,4 @@
-class Availability::PickupTimeGenerator < Struct.new(:flight_time, :search, :rate)
+class Availability::TimeGenerator < Struct.new(:flight_time, :search, :rate)
   DOMESTIC_TIME_MARGIN = 1.hour + 30.minutes
   INTERNATIONAL_TIME_MARGIN = 2.hours + 30.minutes
 
