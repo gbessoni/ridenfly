@@ -49,7 +49,7 @@ end
 
 group :development, :test do
   gem 'oauth2'
-  gem 'pry'
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.1'
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers', require: false, git: 'https://github.com/thoughtbot/shoulda-matchers.git'
