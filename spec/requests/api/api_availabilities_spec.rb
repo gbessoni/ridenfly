@@ -7,18 +7,18 @@ RSpec.describe "Api::Availabilities" do
     create(:rate, zipcode: '10017', airport: airport, company: company)
   end
   let(:json_response) { JSON.parse response.body }
+  let(:params) do
+    { format: :json,
+      search: {
+        zipcode: rate.zipcode,
+        airport: airport.code,
+        flight_time: '2014-10-10 10:22:00',
+        adults: 2
+      }
+    }
+  end
 
   describe "GET /api/1/availabilities" do
-    let(:params) do
-      { format: :json,
-        search: {
-          zipcode: rate.zipcode,
-          airport: airport.code,
-          flight_time: '2014-10-10 10:22:00',
-          adults: 2
-        }
-      }
-    end
     let(:avls) { json_response['availabilities'] }
 
     context "from airport" do
@@ -84,6 +84,23 @@ RSpec.describe "Api::Availabilities" do
         ).to eql Availability::Search::FROM_AIRPORT
         expect(
           avls.first['rates'].last['trip_direction']
+        ).to eql Availability::Search::TO_AIRPORT
+      end
+    end
+  end
+
+  describe "GET /api/1/availabilities/:id" do
+    let(:avl) { json_response['availability'] }
+
+    context "to airport" do
+      before do
+        get api_availability_url(params.merge(id: rate.id))
+      end
+
+      it "returns to airport rate" do
+        expect(avl['airport']).to be_present
+        expect(
+          avl['rates'].first['trip_direction']
         ).to eql Availability::Search::TO_AIRPORT
       end
     end

@@ -3,13 +3,17 @@ class Availability::Collection
 
   attribute :search, Availability::Search
 
-  def items
-    rates.map do |rate|
+  def all(opts = {})
+    rates(opts).map do |rate|
       Availability::Item.new(search: search, rate: rate)
     end
   end
 
-  def rates
-    Rate.includes(:airport).by_search(search)
+  def find(id)
+    all(id: id.split('-').first).first
+  end
+
+  def rates(opts)
+    Rate.includes(:airport).by_search(search).where(opts)
   end
 end
