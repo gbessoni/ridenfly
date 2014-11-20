@@ -7,7 +7,11 @@ class Availability::Item
 
   delegate :adults, :trip_direction, to: :search
   delegate :service_type, :vehicle_type_passenger,
-    :base_rate, :additional_passenger, to: :rate
+    :base_rate, :additional_passenger, :airport, to: :rate
+
+  def id
+    rates.map(&:rate_id).join('-')
+  end
 
   def rate_id
     rate.id
@@ -28,16 +32,16 @@ class Availability::Item
   end
 
   def pickup_times
-    Availability::TimeGenerator.new(
+    Availability::TimesGenerator.new(
       flight_time,
       search,
-      self,
+      rate,
     ).generate
   end
 
   def first_leg
     self.class.new(
-      search: search,
+      search: search.first_leg,
       flight_time: search.flight_time,
       rate: rate,
     )

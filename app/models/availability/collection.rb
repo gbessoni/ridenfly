@@ -10,6 +10,6 @@ class Availability::Collection
   end
 
   def rates
-    Rate.by_search(search)
+    Rate.includes(:airport).by_search(search)
   end
 end

@@ -1,5 +1,8 @@
 class Availability::Search
   include Virtus.model
+  include ActiveModel::Validations
+
+  validates :airport, :adults, :flight_time, presence: true
 
   TO_AIRPORT = 'to_airport'
   FROM_AIRPORT = 'from_airport'
@@ -45,7 +48,17 @@ class Availability::Search
     return_flight_time.present?
   end
 
+  def first_leg
+    second_leg.second_leg
+  end
+
   def second_leg
-    self.dup.tap{ |s| s.trip_direction = FROM_AIRPORT }
+    self.dup.tap do |s|
+      if s.from_airport?
+        s.trip_direction = TO_AIRPORT
+      else
+        s.trip_direction = FROM_AIRPORT
+      end
+    end
   end
 end
