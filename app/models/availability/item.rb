@@ -27,7 +27,7 @@ class Availability::Item
     base_rate + (additional_passenger * (adults - 1))
   end
 
-  def avl_pickup_times
+  def pickup_times
     Availability::TimeGenerator.new(
       flight_time,
       search,
@@ -37,7 +37,7 @@ class Availability::Item
 
   def first_leg
     self.class.new(
-      search: search.first_leg,
+      search: search,
       flight_time: search.flight_time,
       rate: rate,
     )

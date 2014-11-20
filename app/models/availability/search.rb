@@ -36,4 +36,16 @@ class Availability::Search
   def domestic?
     flight_type == DOMESTIC
   end
+
+  def from_airport?
+    trip_direction == FROM_AIRPORT
+  end
+
+  def roundtrip?
+    return_flight_time.present?
+  end
+
+  def second_leg
+    self.dup.tap{ |s| s.trip_direction = FROM_AIRPORT }
+  end
 end
