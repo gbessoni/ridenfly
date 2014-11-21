@@ -16,6 +16,10 @@ json.rates do
     json.extract! rate, :rate_id, :description, :base_rate,
       :additional_passenger, :total_charge, :trip_direction
 
+    json.company do
+      json.extract! rate.company, :name, :description
+    end
+
     json.pickup_times do
       json.array! rate.pickup_times
     end

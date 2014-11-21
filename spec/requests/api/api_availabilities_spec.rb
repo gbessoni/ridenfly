@@ -33,6 +33,12 @@ RSpec.describe "Api::Availabilities" do
           avls.first['rates'].first['trip_direction']
         ).to eql Availability::Search::TO_AIRPORT
       end
+
+      it "has company" do
+        expect(avls.first['rates'].first['company']).to eql(
+          "name"=>"MyString", "description"=>"MyText"
+        )
+      end
     end
 
     context "to airport" do

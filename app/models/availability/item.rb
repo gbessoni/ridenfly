@@ -7,7 +7,7 @@ class Availability::Item
 
   delegate :adults, :trip_direction, to: :search
   delegate :service_type, :vehicle_type_passenger,
-    :base_rate, :additional_passenger, :airport, to: :rate
+    :base_rate, :additional_passenger, :airport, :company, to: :rate
 
   def id
     rates.map(&:rate_id).join('-')
