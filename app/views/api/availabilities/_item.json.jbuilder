@@ -12,7 +12,8 @@ json.rates do
       :hotel_landmark_state, :capacity
 
     json.company do
-      json.extract! rate.company, :name, :description
+      json.extract! rate.company, :name, :description,
+        :phone, :mobile, :dispatch_phone, :pickup_info
     end
 
     json.pickup_times do
