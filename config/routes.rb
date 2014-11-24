@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  use_doorkeeper do
+    controllers applications: 'admin/apps'
+    skip_controllers :authorized_applications, :token_info
+  end
+
   namespace :api, path: 'api/1', defaults: { format: 'json' } do
     resources :reservations, only: [:create, :update, :show, :index]
     resources :availabilities, only: [:show, :index]

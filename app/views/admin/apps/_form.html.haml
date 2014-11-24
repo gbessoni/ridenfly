@@ -1,0 +1,41 @@
+= form_for [:oauth, application], html: {class: 'form-horizontal', role: 'form'} do |f|
+
+  - if application.errors.any?
+    .alert.alert-danger{"data-alert" => ""}
+      %p Whoops! Check your form for possible errors
+
+  = content_tag :div, class: "form-group#{' has-error' if application.errors[:name].present?}" do
+    = f.label :name, class: 'col-sm-2 control-label', for: 'application_name'
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+      = doorkeeper_errors_for application, :name
+
+  = content_tag :div, class: "form-group#{' has-error' if application.errors[:uid].present?}" do
+    = f.label :uid, class: 'col-sm-2 control-label', for: 'application_uid'
+    .col-sm-10
+      = f.text_field :uid, class: 'form-control'
+      = doorkeeper_errors_for application, :uid
+
+  = content_tag :div, class: "form-group#{' has-error' if application.errors[:secret].present?}" do
+    = f.label :secret, class: 'col-sm-2 control-label', for: 'application_secret'
+    .col-sm-10
+      = f.text_field :secret, class: 'form-control'
+      = doorkeeper_errors_for application, :secret
+
+  = content_tag :div, class: "form-group#{' has-error' if application.errors[:redirect_uri].present?}" do
+    = f.label :redirect_uri, class: 'col-sm-2 control-label', for: 'application_redirect_uri'
+    .col-sm-10
+      = f.text_area :redirect_uri, class: 'form-control', value: Doorkeeper.configuration.native_redirect_uri, readonly: true
+      = doorkeeper_errors_for application, :redirect_uri
+      %span.help-block
+        Use one line per URI
+      - if Doorkeeper.configuration.native_redirect_uri
+        %span.help-block
+          Use
+          %code= Doorkeeper.configuration.native_redirect_uri
+          for local tests
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit 'Submit', class: "btn btn-primary"
+      = link_to "Cancel", oauth_applications_path, :class => "btn btn-default"
