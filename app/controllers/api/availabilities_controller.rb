@@ -1,5 +1,6 @@
 class Api::AvailabilitiesController < Api::ApplicationController
   before_action :validate_search, only: :index
+  after_action :log_json_response, only: [:index, :show]
 
   def index
     @items = collection.all
@@ -22,6 +23,7 @@ class Api::AvailabilitiesController < Api::ApplicationController
   def validate_search
     unless search.valid?
       render json: { errors: search.errors }
+      log_json_response
     end
   end
 end
