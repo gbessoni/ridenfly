@@ -9,7 +9,7 @@ class Availability::Item
   delegate :service_type, :vehicle_type_passenger,
     :base_rate, :additional_passenger, :airport, :company, :zipcode,
     :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
-    :hotel_landmark_state, to: :rate
+    :hotel_landmark_state, :capacity, to: :rate
 
   def id
     rates.map(&:rate_id).join('-')

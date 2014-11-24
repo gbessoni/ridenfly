@@ -19,6 +19,8 @@ class Rate < ActiveRecord::Base
     :hotel_landmark_state
   ]
 
+  CAPACITY = 4
+
   scope :by_airport, ->(airport) do
     joins(:airport).where(
       "airports.name = ? OR airports.zipcode = ? OR airports.code = ?",
@@ -66,6 +68,10 @@ class Rate < ActiveRecord::Base
 
   def airport_name
     airport.name
+  end
+
+  def capacity
+    CAPACITY
   end
 
   protected

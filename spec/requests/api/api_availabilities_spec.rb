@@ -92,6 +92,12 @@ RSpec.describe "Api::Availabilities" do
           avls.first['rates'].last['trip_direction']
         ).to eql Availability::Search::TO_AIRPORT
       end
+
+      it "has capacity eql to 4" do
+        expect(
+          avls.first['rates'].first['capacity']
+        ).to eql Rate::CAPACITY
+      end
     end
   end
 
