@@ -11,7 +11,10 @@ Doorkeeper.configure do
   end
 
   resource_owner_from_credentials do |routes|
-    p params
+    Doorkeeper::Application.where(
+      uid: params[:client_id] || params[:username],
+      secret: params[:client_secret] || params[:password]
+    ).first.try(:owner)
   end
 
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
@@ -46,7 +49,7 @@ Doorkeeper.configure do
   # Optional parameter :confirmation => true (default false) if you want to enforce ownership of
   # a registered application
   # Note: you must also run the rails g doorkeeper:application_owner generator to provide the necessary support
-  # enable_application_owner :confirmation => false
+  enable_application_owner :confirmation => true
 
   # Define access token scopes for your provider
   # For more information go to

@@ -27,6 +27,12 @@ Things you may want to cover:
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 
+## Ridenfly API
+
+Authorize: we don't need user so we can use client_id and client_secret from app as username and password
+
+curl -X POST -i http://ridenfly.dev/oauth/token.json -d '{"grant_type":"password","username":"client_id","password":"client_secret"}' -H "Content-Type: application/json"
+
 
 ## Devise
 

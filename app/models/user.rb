@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_one :company
   has_many :rates, through: :company
   has_many :reservations, through: :company
+  has_many :oauth_apps, class_name: 'Doorkeeper::Application', as: :owner
 
   def password_required?
     new_record? || password.present? || password_confirmation.present?

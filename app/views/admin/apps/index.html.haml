@@ -1,0 +1,24 @@
+%h1.page-header
+  Listing applications (#{@applications.total_entries})
+  = primary_btn_to 'New App', new_oauth_application_path
+
+%table.std
+  %thead
+    %tr
+      %th Name
+      %th App ID
+      %th App secret
+      %th Actions
+
+  %tbody
+    - @applications.each do |app|
+      %tr
+        %td= app.name
+        %td= app.uid
+        %td= app.secret
+        %td
+          = link_to 'Show', oauth_application_path(app)
+          = link_to 'Edit', edit_oauth_application_path(app)
+          = link_to 'Destroy', oauth_application_path(app), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= will_paginate @applications
