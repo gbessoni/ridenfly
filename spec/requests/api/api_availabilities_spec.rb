@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Api::Availabilities" do
+  let(:access_app) { create(:app, owner: create(:admin)) }
+  let(:access_token) { create(:access_token, application: access_app) }
+
   let(:company) { create(:company, user: create(:user)) }
   let(:airport) { create(:airport, code: 'JFK') }
   let(:rate) do
@@ -9,6 +12,7 @@ RSpec.describe "Api::Availabilities" do
   let(:json_response) { JSON.parse response.body }
   let(:params) do
     { format: :json,
+      access_token: access_token.token,
       search: {
         zipcode: rate.zipcode,
         airport: airport.code,

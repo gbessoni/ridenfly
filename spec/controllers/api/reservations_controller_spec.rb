@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Api::ReservationsController do
+  let(:user) { create(:user) }
+  let(:access_app) { create(:app, owner: user) }
+  let(:access_token) { create(:access_token, application: access_app) }
   let(:company) do
-    create(:company, user: create(:user))
+    create(:company, user: user)
   end
   let(:airport) do
     create(:airport)
@@ -17,7 +20,7 @@ RSpec.describe Api::ReservationsController do
     {net_fare: nil}
   end
   let(:valid_session) { {} }
-  let(:params) { {format: :json} }
+  let(:params) { {format: :json, access_token: access_token.token} }
   let(:reservation) do
     create(:reservation, valid_attributes)
   end
