@@ -98,8 +98,7 @@ end if false
 27.times do |i|
   t = rand(100).days.from_now
   r = Reservation.new(
-    airport: Airport.order('random()').first,
-    company: Company.order('random()').first,
+    rate: Rate.order('random()').first,
     flight_datetime: t,
     pickup_datetime: (t - 2.hours),
     passenger_name: "User#{rand(100)} Name",
