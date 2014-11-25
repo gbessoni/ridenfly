@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124120835) do
+ActiveRecord::Schema.define(version: 20141125084912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20141124120835) do
     t.string   "cancelation_reason"
     t.string   "flight_number"
     t.string   "status",                                     default: "created"
-    t.string   "service_type",                               default: "to_airport"
+    t.string   "trip_direction",                             default: "to_airport"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

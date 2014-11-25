@@ -7,7 +7,7 @@
     %tr
       %th Rez ID
       %th Status
-      %th Service type
+      %th Trip direction
       %th Company
       %th Airport (a-arrival d-departure)
       %th Arrival / Departure Time
@@ -28,7 +28,7 @@
       %tr
         %td= reservation.id
         %td= reservation.status
-        %td= reservation.service_type
+        %td= reservation.trip_direction
         %td= reservation.company.name
         %td= reservation.airport_name
         %td= reservation.flight_datetime
