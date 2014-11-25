@@ -30,23 +30,23 @@ RSpec.describe Availability::TimesGenerator do
 
     context "and domestic flight" do
       it "has one pair 1,5h before flight plus trip duration" do
-        expect(subject.generate).to eql([
-          { start_datetime: time('2014-10-11 19:00:00'),
+        expect(subject.generate).to include(
+          { start_datetime: time('2014-10-11 18:45:00'),
             end_datetime: time('2014-10-11 19:00:00'),
           }
-        ])
+        )
       end
     end
 
     context "and international flight" do
       before { search.flight_type = Availability::Search::INTERNATIONAL }
 
-      it "has one pair 1,5h before flight plus trip duration" do
-        expect(subject.generate).to eql([
-          { start_datetime: time('2014-10-11 18:00:00'),
+      it "has one pair 2,5h before flight plus trip duration" do
+        expect(subject.generate).to include(
+          { start_datetime: time('2014-10-11 17:45:00'),
             end_datetime: time('2014-10-11 18:00:00'),
           }
-        ])
+        )
       end
     end
   end
@@ -58,6 +58,27 @@ RSpec.describe Availability::TimesGenerator do
       expect(subject.generate).to eql([
         { start_datetime: time('2014-10-11 21:15:00'),
           end_datetime: time('2014-10-11 21:15:00'),
+        }
+      ])
+    end
+  end
+
+  context "#interval_times_attrs" do
+    let(:times) { subject.interval_times_attrs(time('2014-10-12 18:00')) }
+
+    it "returns 4 time pairs" do
+      expect(times).to eql([
+        { start_datetime: time('2014-10-12 17:45:00'),
+          end_datetime: time('2014-10-12 18:00:00'),
+        },
+        { start_datetime: time('2014-10-12 17:30:00'),
+          end_datetime: time('2014-10-12 17:45:00'),
+        },
+        { start_datetime: time('2014-10-12 17:15:00'),
+          end_datetime: time('2014-10-12 17:30:00'),
+        },
+        { start_datetime: time('2014-10-12 17:00:00'),
+          end_datetime: time('2014-10-12 17:15:00'),
         }
       ])
     end

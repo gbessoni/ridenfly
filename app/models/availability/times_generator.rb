@@ -37,19 +37,26 @@ class Availability::TimesGenerator < Struct.new(:flight_time, :search, :rate)
   end
 
   def domestic_pickup_times
-    [time_attrs(
+    interval_times_attrs(
       flight_time - (trip_duration_in_minutes + DOMESTIC_TIME_MARGIN)
-    )]
+    )
   end
 
   def internationals_pickup_times
-    [time_attrs(
+    interval_times_attrs(
       flight_time - (trip_duration_in_minutes + INTERNATIONAL_TIME_MARGIN)
-    )]
+    )
   end
 
-  def time_attrs(time)
-    { start_datetime: time, end_datetime: time }
+  def interval_times_attrs(time, interval=15.minutes)
+    t = time.dup
+    (0..3).to_a.map do |i|
+      time_attrs(t - (i + 1) * interval, t - i * interval)
+    end
+  end
+
+  def time_attrs(startt, endt = nil)
+    { start_datetime: startt, end_datetime: endt || startt }
   end
 
   def trip_duration_in_minutes
