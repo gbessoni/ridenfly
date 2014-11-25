@@ -36,7 +36,7 @@ gem 'haml-rails'
 gem 'nested-hstore'
 gem 'virtus'
 gem 'time_of_day_attr',  git: 'https://github.com/clemenst/time_of_day_attr.git'
-gem 'whenever'
+gem 'whenever', :require => false
 
 group :development do
   gem 'capistrano-rails'

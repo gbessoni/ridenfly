@@ -17,6 +17,7 @@ role :db,  %w{104.130.50.23}
 
 server '104.130.50.23', user: 'deployer', roles: %w{web app}
 
+set :rails_env, "staging"
 
 # Custom SSH Options
 # ==================
