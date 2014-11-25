@@ -2,6 +2,7 @@ class Rate < ActiveRecord::Base
   belongs_to :airport
   belongs_to :company
   has_many :pickup_times, class_name: 'Rate::PickupTime', dependent: :delete_all
+  has_many :reservations
 
   validates :airport, :company, presence: true
   validates :base_rate, :additional_passenger, presence: true, numericality: true

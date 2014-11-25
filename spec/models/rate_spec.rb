@@ -4,6 +4,7 @@ RSpec.describe Rate do
   it { expect(subject).to belong_to :airport }
   it { expect(subject).to belong_to :company }
   it { expect(subject).to have_many :pickup_times }
+  it { expect(subject).to have_many :reservations }
 
   describe "#pickup_time_list" do
     context "separator" do

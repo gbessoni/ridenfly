@@ -8,7 +8,9 @@ class Admin::ReservationsController < Admin::ApplicationController
   # GET /admin/reservations.json
   def index
     @q = reservations_finder.ransack(params[:q])
-    @reservations = @q.result.includes(:airport, :company)
+    @reservations = @q.result
+      .includes(rate: [:airport, :company])
+      .order('created_at desc')
 
     respond_to do |format|
       format.html { @reservations = paginate_model @reservations }

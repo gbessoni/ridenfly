@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125090603) do
+ActiveRecord::Schema.define(version: 20141125130046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,8 +132,6 @@ ActiveRecord::Schema.define(version: 20141125090603) do
   end
 
   create_table "reservations", force: true do |t|
-    t.integer  "airport_id"
-    t.integer  "company_id"
     t.datetime "flight_datetime"
     t.datetime "pickup_datetime"
     t.string   "passenger_name"
@@ -152,6 +150,7 @@ ActiveRecord::Schema.define(version: 20141125090603) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sibling_id"
+    t.integer  "rate_id"
   end
 
   create_table "users", force: true do |t|
@@ -180,8 +179,7 @@ ActiveRecord::Schema.define(version: 20141125090603) do
   add_foreign_key "rates", "airports", name: "rates_airport_id_fk", dependent: :delete
   add_foreign_key "rates", "companies", name: "rates_company_id_fk", dependent: :delete
 
-  add_foreign_key "reservations", "airports", name: "reservations_airport_id_fk", dependent: :delete
-  add_foreign_key "reservations", "companies", name: "reservations_company_id_fk", dependent: :delete
+  add_foreign_key "reservations", "rates", name: "reservations_rate_id_fk", dependent: :delete
   add_foreign_key "reservations", "reservations", name: "reservations_sibling_id_fk", column: "sibling_id", dependent: :delete
 
 end

@@ -3,7 +3,13 @@ require 'rails_helper'
 RSpec.describe Export::Reservation do
   it { expect(described_class.columns.size).to eql 13 }
 
-  subject { described_class.new [build(:reservation, airport: build(:airport))] }
+  subject do
+    described_class.new [
+      build(:reservation,
+        rate: build(:rate,
+          airport: build(:airport)))
+    ]
+  end
 
   describe "#to_csv" do
     let(:csv) { subject.to_csv }

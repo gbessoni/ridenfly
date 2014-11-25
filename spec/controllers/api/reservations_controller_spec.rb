@@ -10,10 +10,12 @@ RSpec.describe Api::ReservationsController do
   let(:airport) do
     create(:airport)
   end
+  let(:rate) do
+    create(:rate, airport: airport, company: company)
+  end
   let(:valid_attributes) do
     build(:reservation).attributes.merge(
-      company_id: company.id,
-      airport_id: airport.id
+      rate_id: rate.id
     )
   end
   let(:invalid_attributes) do
@@ -50,10 +52,11 @@ RSpec.describe Api::ReservationsController do
 
     it "assigns the requested reservation as @reservation" do
       expect(assigns(:reservation)).to eq(reservation)
+      expect(assigns(:reservations)).to include(reservation)
     end
 
     it "renders json" do
-      expect(json_response['reservation']).to include('id' => reservation.id)
+      expect(json_response['reservations'].first).to include('id' => reservation.id)
     end
   end
 
@@ -61,33 +64,33 @@ RSpec.describe Api::ReservationsController do
     describe "with valid params" do
       it "creates a new Reservation" do
         expect {
-          post :create, params.merge(reservation: valid_attributes), valid_session
+          post :create, params.merge(reservations: [valid_attributes]), valid_session
         }.to change(Reservation, :count).by(1)
       end
 
       it "assigns a newly created reservation as @reservation" do
-        post :create, params.merge(reservation: valid_attributes), valid_session
-        expect(assigns(:reservation)).to be_a(Reservation)
-        expect(assigns(:reservation)).to be_persisted
+        post :create, params.merge(reservations: [valid_attributes]), valid_session
+        expect(assigns(:reservations).first).to be_a(Reservation)
+        expect(assigns(:reservations).first).to be_persisted
       end
 
       it "renders json" do
-        post :create, params.merge(reservation: valid_attributes), valid_session
-        expect(json_response['reservation']).to include('id' => Reservation.last.id)
+        post :create, params.merge(reservations: [valid_attributes]), valid_session
+        expect(json_response['reservations'].last).to include('id' => Reservation.last.id)
       end
     end
 
     describe "with invalid params" do
       before do
-        post :create, params.merge(reservation: invalid_attributes), valid_session
+        post :create, params.merge(reservations: [invalid_attributes]), valid_session
       end
 
       it "assigns a newly created but unsaved reservation as @reservation" do
-        expect(assigns(:reservation)).to be_a_new(Reservation)
+        expect(assigns(:reservations).first).to be_a_new(Reservation)
       end
 
       it "renders json with errors" do
-        expect(json_response['reservation']['errors']).to be_present
+        expect(json_response['reservations'].first['errors']).to be_present
       end
     end
   end
@@ -111,7 +114,7 @@ RSpec.describe Api::ReservationsController do
       end
 
       it "renders json" do
-        expect(json_response['reservation']).to include('id' => reservation.id)
+        expect(json_response['reservations'].first).to include('id' => reservation.id)
       end
     end
 
@@ -125,7 +128,7 @@ RSpec.describe Api::ReservationsController do
       end
 
       it "renders json with errors" do
-        expect(json_response['reservation']['errors']).to be_present
+        expect(json_response['reservations'].first['errors']).to be_present
       end
     end
   end

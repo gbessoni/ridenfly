@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
 
   belongs_to :user
   has_many :rates
-  has_many :reservations
+  has_many :reservations, through: :rates
 
   accepts_nested_attributes_for :user
 

@@ -8,10 +8,12 @@ RSpec.describe Admin::ReservationsController do
   let(:airport) do
     create(:airport)
   end
+  let(:rate) do
+    create(:rate, airport: airport, company: company)
+  end
   let(:valid_attributes) do
     build(:reservation).attributes.merge(
-      company_id: company.id,
-      airport_id: airport.id
+      rate_id: rate.id
     )
   end
   let(:invalid_attributes) do

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Company do
   it { expect(subject).to belong_to :user }
   it { expect(subject).to have_many :rates }
+  it { expect(subject).to have_many :reservations }
 
   describe "validations" do
     described_class::REQUIRED_FIELDS.each do |name|
