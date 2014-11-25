@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125084912) do
+ActiveRecord::Schema.define(version: 20141125090603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,7 @@ ActiveRecord::Schema.define(version: 20141125084912) do
     t.string   "trip_direction",                             default: "to_airport"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sibling_id"
   end
 
   create_table "users", force: true do |t|
@@ -181,5 +182,6 @@ ActiveRecord::Schema.define(version: 20141125084912) do
 
   add_foreign_key "reservations", "airports", name: "reservations_airport_id_fk", dependent: :delete
   add_foreign_key "reservations", "companies", name: "reservations_company_id_fk", dependent: :delete
+  add_foreign_key "reservations", "reservations", name: "reservations_sibling_id_fk", column: "sibling_id", dependent: :delete
 
 end
