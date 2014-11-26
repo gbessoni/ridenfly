@@ -3,6 +3,9 @@ class Reservation < ActiveRecord::Base
   belongs_to :sibling, class_name: 'Reservation'
 
   validates :net_fare, presence: true, numericality: true
+  validates :rate, presence: true
+
+  before_validation :set_price
 
   def airport_name
     airport.try(:name)
@@ -18,5 +21,13 @@ class Reservation < ActiveRecord::Base
 
   def company
     rate.try(:company)
+  end
+
+  protected
+
+  def set_price
+    return if rate.blank? || net_fare.present?
+    self.net_fare = rate.base_rate +
+      (rate.additional_passenger * (num_of_passengers - 1))
   end
 end

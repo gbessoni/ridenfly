@@ -19,7 +19,7 @@ RSpec.describe Api::ReservationsController do
     )
   end
   let(:invalid_attributes) do
-    {net_fare: nil}
+    {rate_id: nil}
   end
   let(:valid_session) { {} }
   let(:params) { {format: :json, access_token: access_token.token} }
