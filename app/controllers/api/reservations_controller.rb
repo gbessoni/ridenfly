@@ -1,5 +1,6 @@
 class Api::ReservationsController < Api::ApplicationController
   before_action :set_reservation, only: [:show, :update]
+  after_action :log_json_response, only: [:index, :show, :create]
 
   # GET /api/reservations
   # GET /api/reservations.json
@@ -72,6 +73,6 @@ class Api::ReservationsController < Api::ApplicationController
     end
 
     def reservation_errors(reservations)
-      { reservations: reservations.map{|rez| {errors: rez.errors}} }
+      { errors: reservations.map{|r| r.errors.full_messages }.flatten }
     end
 end

@@ -90,7 +90,7 @@ RSpec.describe Api::ReservationsController do
       end
 
       it "renders json with errors" do
-        expect(json_response['reservations'].first['errors']).to be_present
+        expect(json_response['errors']).to be_present
       end
     end
   end
@@ -128,7 +128,7 @@ RSpec.describe Api::ReservationsController do
       end
 
       it "renders json with errors" do
-        expect(json_response['reservations'].first['errors']).to be_present
+        expect(json_response['errors']).to be_present
       end
     end
   end

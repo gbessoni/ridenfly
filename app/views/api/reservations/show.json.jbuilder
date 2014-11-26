@@ -1,3 +1,5 @@
+json.set! :id, @reservations.map(&:id).join('-')
+
 json.reservations do
   json.array! @reservations do |reservation|
     json.extract! reservation, :id, :airport_name, :flight_datetime,
