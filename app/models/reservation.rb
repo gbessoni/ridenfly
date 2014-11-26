@@ -1,4 +1,6 @@
 class Reservation < ActiveRecord::Base
+  include TripDirections
+
   belongs_to :rate
   belongs_to :sibling, class_name: 'Reservation'
 

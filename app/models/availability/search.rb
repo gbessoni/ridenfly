@@ -1,11 +1,9 @@
 class Availability::Search
   include Virtus.model
   include ActiveModel::Validations
+  include TripDirections
 
   validates :airport, :adults, :flight_time, presence: true
-
-  TO_AIRPORT = 'to_airport'
-  FROM_AIRPORT = 'from_airport'
 
   DOMESTIC = 'domestic'
   INTERNATIONAL = 'international'
@@ -38,10 +36,6 @@ class Availability::Search
 
   def domestic?
     flight_type == DOMESTIC
-  end
-
-  def from_airport?
-    trip_direction == FROM_AIRPORT
   end
 
   def roundtrip?

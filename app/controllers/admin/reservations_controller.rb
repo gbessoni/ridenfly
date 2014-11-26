@@ -4,6 +4,9 @@ class Admin::ReservationsController < Admin::ApplicationController
   before_action :set_reservation, only: [:show, :destroy]
   require_role :admin, :company
 
+  expose(:reservations) { @reservations.try(:decorate) }
+  expose(:reservation)  { @reservation.try(:decorate) }
+
   # GET /admin/reservations
   # GET /admin/reservations.json
   def index

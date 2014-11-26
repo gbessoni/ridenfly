@@ -1,5 +1,5 @@
 %h1.page-header
-  Listing reservations (#{@reservations.total_entries})
+  Listing reservations (#{reservations.total_entries})
 
 
 %table.std
@@ -10,8 +10,8 @@
       %th Trip direction
       %th Company
       %th Airport (a-arrival d-departure)
-      %th Arrival / Departure Time
       %th Pickup Date / Time
+      %th Arrival / Departure Time
       %th Name
       %th Phone
       %th # of Passengers
@@ -24,15 +24,15 @@
       %th Actions
 
   %tbody
-    - @reservations.each do |reservation|
+    - reservations.each do |reservation|
       %tr
         %td= reservation.id
         %td= reservation.status
         %td= reservation.trip_direction
         %td= reservation.company_name
         %td= reservation.airport_name
-        %td= reservation.flight_datetime
         %td= reservation.pickup_datetime
+        %td= reservation.flight_datetime
         %td= reservation.passenger_name
         %td= reservation.phone
         %td= reservation.num_of_passengers
@@ -47,4 +47,4 @@
           - if current_admin?
             = link_to 'Destroy', [:admin, reservation], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= will_paginate @reservations
+= will_paginate reservations
