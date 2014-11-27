@@ -28,6 +28,7 @@ class Api::ReservationsController < Api::ApplicationController
           @reservations.last.save!
           @reservations.first.update(sibling: @reservations.last)
         end
+        CustomerMailer.reservation_email(@reservations.first).deliver
         format.json { render :show, status: :created }
       else
         format.json { render json: reservation_errors(@reservations), status: :unprocessable_entity }

@@ -25,6 +25,26 @@ class Reservation < ActiveRecord::Base
     rate.try(:company)
   end
 
+  def email
+    "NOT IMPLEMENTED YET"
+  end
+
+  def rezid
+    ['RF', id].join
+  end
+
+  def total_passengers
+    num_of_passengers
+  end
+
+  def num_of_children
+    "NOT IMPLEMENTED YET"
+  end
+
+  def flight_type
+    "NOT IMPLEMENTED YET"
+  end
+
   protected
 
   def set_price
