@@ -43,6 +43,6 @@ RSpec.describe Rate::PickupTime do
       subject.pickup = '9:00'
     end
 
-    it { expect(subject.to_time).to eql(Time.parse('2014-11-18 09:00:00')) }
+    it { expect(subject.to_time).to eql(Time.zone.parse('2014-11-18 09:00:00')) }
   end
 end

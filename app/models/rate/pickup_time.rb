@@ -14,7 +14,7 @@ class Rate::PickupTime < ActiveRecord::Base
     @pickup_str ||= TimeOfDayAttr.l(self.pickup)
   end
 
-  def to_time(t = Time.now)
+  def to_time(t = Time.zone.now)
     t.beginning_of_day + pickup.to_i
   end
 
