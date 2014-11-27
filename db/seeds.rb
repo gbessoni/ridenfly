@@ -104,7 +104,7 @@ end if false
     passenger_name: "User#{rand(100)} Name",
     status: 'active',
     phone: '+112312312' + rand(1000).to_s,
-    num_of_passengers: (rand(5) + 1),
+    adults: (rand(5) + 1),
     gratuity: rand(10).to_f + (rand(100) / 100.0),
     net_fare: rand(100).to_f + (rand(100) / 100.0),
     addresss: rand(1000).to_s + ' test street',

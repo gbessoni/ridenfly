@@ -68,8 +68,9 @@ class Api::ReservationsController < Api::ApplicationController
 
     def reservation_allow_attrs
       [ :rate_id, :flight_datetime, :pickup_datetime, :passenger_name,
-        :phone, :num_of_passengers, :net_fare, :gratuity, :addresss, :cross_street,
-        :airline, :luggage, :flight_number, :trip_direction
+        :phone, :adults, :children, :flight_type, :email, :net_fare, :gratuity,
+        :addresss, :cross_street, :airline, :luggage, :flight_number,
+        :trip_direction
       ]
     end
 

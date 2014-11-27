@@ -24,13 +24,13 @@ RSpec.describe "Api::Reservations" do
     end
     let(:reservations) do
       [{"addresss"=>"11 test", "airline"=>"ABX Air", "cross_street"=>"cross street", "flight_datetime"=>"2014-11-27 10:00AM",
-        "flight_number"=>"12345", "gratuity"=>0.0, "luggage"=>0, "num_of_passengers"=>1,
+        "flight_number"=>"12345", "gratuity"=>0.0, "luggage"=>0, "adults"=>1, "flight_type"=>"international",
         "passenger_name"=>"test test", "phone"=>"(123) 123-1231", "pickup_datetime"=>"2014-11-27 05:45AM", "rate_id"=>rate.id,
-        "trip_direction"=>"to_airport"},
+        "trip_direction"=>"to_airport", "email"=>"test@text.com"},
        {"addresss"=>"11 test", "airline"=>"Aer Lingus", "cross_street"=>"cross street",
-        "flight_datetime"=>"2014-12-04 09:00PM", "flight_number"=>"54321", "gratuity"=>0.0, "luggage"=>0, "num_of_passengers"=>1,
+        "flight_datetime"=>"2014-12-04 09:00PM", "flight_number"=>"54321", "gratuity"=>0.0, "luggage"=>0, "adults"=>1, "flight_type"=>"international",
         "passenger_name"=>"test test", "phone"=>"(123) 123-1231", "pickup_datetime"=>"2014-12-04 10:00PM", "rate_id"=>rate.id,
-        "trip_direction"=>"from_airport"}
+        "trip_direction"=>"from_airport", "email"=>"test@text.com"}
       ]
     end
     let(:reservation) do

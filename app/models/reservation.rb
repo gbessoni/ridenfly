@@ -5,7 +5,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :sibling, class_name: 'Reservation'
 
   validates :net_fare, presence: true, numericality: true
-  validates :rate, presence: true
+  validates :rate, :email, presence: true
 
   before_validation :set_price
 
@@ -25,16 +25,12 @@ class Reservation < ActiveRecord::Base
     rate.try(:company)
   end
 
-  def email
-    "NOT IMPLEMENTED YET"
-  end
-
   def rezid
     ['RF', id].join
   end
 
-  def total_passengers
-    num_of_passengers
+  def num_of_passengers
+    adults + children
   end
 
   def num_of_children

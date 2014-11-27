@@ -23,11 +23,22 @@
   %b Name:
   = reservation.passenger_name
 %p
+  %b Email:
+  = reservation.email
+%p
   %b Phone:
   = reservation.phone
+
+%p
+  %b Adults:
+  = reservation.adults
+%p
+  %b Children:
+  = reservation.children
 %p
   %b # of passengers:
   = reservation.num_of_passengers
+
 %p
   %b Net fare:
   = reservation.net_fare
@@ -43,6 +54,9 @@
 %p
   %b Airline:
   = reservation.airline
+%p
+  %b Domestic/International:
+  = reservation.flight_type
 %p
   %b Luggage:
   = reservation.luggage
