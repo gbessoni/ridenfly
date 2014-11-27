@@ -12,11 +12,6 @@ class ReservationDecorator < Draper::Decorator
   end
 
   def full_address_location
-    [ addresss,
-      [ rate.zipcode,
-        rate.hotel_landmark_city
-      ].reject(&:blank?).join(' '),
-      rate.hotel_landmark_state
-    ].reject(&:blank?).join(', ')
+    address
   end
 end

@@ -9,7 +9,7 @@ FactoryGirl.define do
     email 'customer@test.com'
     net_fare 9.99
     gratuity 8.99
-    addresss "MyString"
+    address "MyString"
     cross_street "MyString"
     airline "MyString"
     flight_number "MyString"

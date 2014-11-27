@@ -107,7 +107,7 @@ end if false
     adults: (rand(5) + 1),
     gratuity: rand(10).to_f + (rand(100) / 100.0),
     net_fare: rand(100).to_f + (rand(100) / 100.0),
-    addresss: rand(1000).to_s + ' test street',
+    address: rand(1000).to_s + ' test street',
     cross_street: rand(1000).to_s + ' cross street',
     airline: 'ABX Air',
     flight_number: rand(1000)

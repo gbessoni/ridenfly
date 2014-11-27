@@ -37,10 +37,6 @@ class Reservation < ActiveRecord::Base
     "NOT IMPLEMENTED YET"
   end
 
-  def flight_type
-    "NOT IMPLEMENTED YET"
-  end
-
   protected
 
   def set_price

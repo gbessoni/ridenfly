@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127114236) do
+ActiveRecord::Schema.define(version: 20141127141636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,7 +139,7 @@ ActiveRecord::Schema.define(version: 20141127114236) do
     t.integer  "adults"
     t.decimal  "net_fare",           precision: 8, scale: 2
     t.decimal  "gratuity",           precision: 8, scale: 2, default: 0.0
-    t.string   "addresss"
+    t.string   "address"
     t.string   "cross_street"
     t.string   "airline"
     t.integer  "luggage",                                    default: 0

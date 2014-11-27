@@ -1,10 +1,10 @@
-%h3
+%h2
   - if reservation.from_airport?
     ARRIVAL
   - else
     DEPARTURE
 
-%h2
+%h3
   Pickup location
 
 %p
@@ -13,7 +13,7 @@
   - else
     = @reservation.full_address_location
 
-%h2
+%h3
   Dropoff location
 
 

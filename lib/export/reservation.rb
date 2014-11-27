@@ -9,7 +9,7 @@ class Export::Reservation < Export::Base
     num_of_passengers: '# of Passengers',
     gratuity: 'Gratuity Collected',
     net_fare: 'Net fare',
-    addresss: 'Addresss',
+    address: 'address',
     cross_street: 'Cross street',
     airline: 'Airline',
     flight_number: 'Flight Number'
