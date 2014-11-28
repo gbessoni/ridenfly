@@ -14,6 +14,8 @@ class Rate < ActiveRecord::Base
 
   CAPACITY = 4
 
+  before_save :set_hl_words
+
   def pickup_time_list=(list)
     attrs = {}
 
@@ -60,5 +62,11 @@ class Rate < ActiveRecord::Base
        hotel_landmark_city,
        hotel_landmark_state
     ].reject(&:blank?).join(', ')
+  end
+
+  protected
+
+  def set_hl_words
+    self.hl_words ||= Rate::WordsBuilder.new(hotel_landmark).words
   end
 end

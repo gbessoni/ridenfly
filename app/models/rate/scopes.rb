@@ -34,12 +34,15 @@ module Rate::Scopes
       )
     end
 
-    LEVENSHTEIN_DIV = 2
+    LEVENSHTEIN_THRESHOLD = 0.75
 
     scope :by_hotel_landmark_words, ->(words) do
-      size = words.size / LEVENSHTEIN_DIV
-      # select("rates.*, levenshtein(hl_words, '#{words}') as lev"). # DEBUG
-      where('levenshtein(hl_words, ?) < ?', words, size)
+      size = words.size * LEVENSHTEIN_THRESHOLD
+      where('levenshtein(hl_words, ?) < ?', words, size.round)
+    end
+
+    scope :levval, ->(words) do
+      select("rates.*, levenshtein(hl_words, '#{words}') as lev")
     end
   end
 end

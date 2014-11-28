@@ -8,7 +8,6 @@ module Rate::Validations
     validates :trip_duration, presence: true,
       numericality: {only_integer: true, greater_than: 0}
     validate :check_pickup_times, :check_lat_lng
-    before_save :set_hl_words
   end
 
   protected
@@ -23,9 +22,5 @@ module Rate::Validations
     if lat.blank? || lng.blank?
       errors.add(:lat_lng, :invalid) if hotel_landmark_name.present?
     end
-  end
-
-  def set_hl_words
-    self.hl_words ||= Rate::WordsBuilder.new(hotel_landmark).words
   end
 end

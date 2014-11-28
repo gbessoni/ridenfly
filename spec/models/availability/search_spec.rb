@@ -49,7 +49,7 @@ RSpec.describe Availability::Search do
   end
 
   describe "#distance" do
-    it { expect(subject.distance).to eql 100.0 }
+    it { expect(subject.distance).to eql 1000.0 }
   end
 
   describe "#roundtrip?" do
