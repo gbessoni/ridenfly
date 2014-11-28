@@ -4,6 +4,36 @@ RSpec.describe Availability::Search do
   it { expect(subject).to respond_to :airport }
   it { expect(subject.trip_direction).to eql described_class::TO_AIRPORT }
 
+  describe "validations" do
+    describe "zipcode blank" do
+      before do
+        subject.zipcode = ''
+        subject.distance = ''
+        subject.valid?
+      end
+
+      it "validates lat, lng and distance" do
+        expect(subject.errors[:lat]).to be_present
+        expect(subject.errors[:lng]).to be_present
+        expect(subject.errors[:distance]).to be_present
+      end
+    end
+
+    describe "zipcode present" do
+      before do
+        subject.zipcode = '10007'
+        subject.distance = ''
+        subject.valid?
+      end
+
+      it "validates lat, lng and distance" do
+        expect(subject.errors[:lat]).not_to be_present
+        expect(subject.errors[:lng]).not_to be_present
+        expect(subject.errors[:distance]).not_to be_present
+      end
+    end
+  end
+
   describe "#hotel_landmark" do
     let(:hotel_landmark) do
       'Vega,Grabiszynska,Wroclaw,Dolnyslask'

@@ -4,6 +4,7 @@ class Availability::Search
   include TripDirections
 
   validates :airport, :adults, :flight_time, presence: true
+  validates :lat, :lng, :distance, :hotel_landmark, presence: true, if: proc{|rec| rec.zipcode.blank?}
 
   DOMESTIC = 'domestic'
   INTERNATIONAL = 'international'
