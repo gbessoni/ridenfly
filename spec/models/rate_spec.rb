@@ -41,4 +41,69 @@ RSpec.describe Rate do
       subject.hl_words
     ).to eql '6 73 dolnyslask grabiszynska vega wroclaw' }
   end
+
+  describe "scopes" do
+    let(:airport) { create(:airport) }
+    let(:company) { create(:company, user: create(:user)) }
+
+    describe "#by_geo_and_distance" do
+      let(:rates) do
+        [ create(:rate, lat: 1.00090, lng: 1.00090, company: company, airport: airport),
+          create(:rate, lat: 1.00095, lng: 1.00095, company: company, airport: airport)
+        ]
+      end
+
+      before do
+        rates
+      end
+
+      it "returns 2 rates within 100meters" do
+        expect(
+          described_class.by_geo_and_distance(1.00093, 1.00093, 100).size
+        ).to eql 2
+      end
+
+      it "returns 1 rate within 10meters" do
+        expect(
+          described_class.by_geo_and_distance(1.000951, 1.000951, 5).size
+        ).to eql 1
+      end
+    end
+
+    describe "#by_hotel_landmark_words" do
+      let(:rate) do
+        create(:rate,
+          company: company,
+          airport: airport,
+          hl_words: '6 73 dolnyslask grabiszynska vega wroclaw'
+        )
+      end
+
+      before { rate }
+
+      it "returns hotel for '6 73 dolnyslask grabiszynska vega wroclaw'" do
+        expect(
+          described_class.by_hotel_landmark_words(
+            '6 73 dolnyslask grabiszynska vega wroclaw'
+          )
+        ).to be_present
+      end
+
+      it "returns hotel for '6 73 dolnyslask grabiszynska'" do
+        expect(
+          described_class.by_hotel_landmark_words(
+            '6 73 dolnyslask grabiszynska'
+          )
+        ).to be_present
+      end
+
+      it "does not return hotel for '6 73 dolnyslask'" do
+        expect(
+          described_class.by_hotel_landmark_words(
+            '6 73 dolnyslask'
+          )
+        ).not_to be_present
+      end
+    end
+  end
 end

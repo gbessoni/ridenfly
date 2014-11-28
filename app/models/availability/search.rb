@@ -8,6 +8,8 @@ class Availability::Search
   DOMESTIC = 'domestic'
   INTERNATIONAL = 'international'
 
+  DEFAULT_DISTANCE = 100 # in meters
+
   attribute :trip_direction, String, default: TO_AIRPORT
   attribute :flight_type, String, default: DOMESTIC
 
@@ -25,7 +27,7 @@ class Availability::Search
 
   attribute :lat, Float
   attribute :lng, Float
-  attribute :distance, Float, default: 100 # in meters
+  attribute :distance, Float, default: DEFAULT_DISTANCE
 
   attribute :adults, Integer
   attribute :children, Integer

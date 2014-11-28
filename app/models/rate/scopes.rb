@@ -29,13 +29,17 @@ module Rate::Scopes
 
     scope :by_geo_and_distance, ->(lat, lng, distance) do
       where(
-        "earth_box( ?, ?, ?) @> ll_to_earth(rates.lat, rates.lng)",
+        "earth_box(ll_to_earth(?, ?), ?) @> ll_to_earth(rates.lat, rates.lng)",
         lat, lng, distance
       )
     end
 
+    LEVENSHTEIN_DIV = 2
+
     scope :by_hotel_landmark_words, ->(words) do
-      where('')
+      size = words.size / LEVENSHTEIN_DIV
+      # select("rates.*, levenshtein(hl_words, '#{words}') as lev"). # DEBUG
+      where('levenshtein(hl_words, ?) < ?', words, size)
     end
   end
 end
