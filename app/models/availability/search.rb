@@ -23,6 +23,10 @@ class Availability::Search
   attribute :hotel_landmark, String
   attribute :zipcode, String
 
+  attribute :lat, Float
+  attribute :lng, Float
+  attribute :distance, Float, default: 100 # in meters
+
   attribute :adults, Integer
   attribute :children, Integer
 
@@ -32,6 +36,12 @@ class Availability::Search
       self[name] ||= list[i]
     end
     super(full_name)
+  end
+
+  def hotel_landmark
+    super || Rate::HOTEL_LANDMARK_ATTRS.map do |attr|
+      send(attr)
+    end.join(', ')
   end
 
   def domestic?
@@ -54,5 +64,9 @@ class Availability::Search
         s.trip_direction = FROM_AIRPORT
       end
     end
+  end
+
+  def hotel_landmark_words
+    @hotel_landmark_words ||= Rate::WordsBuilder.new(hotel_landmark).words
   end
 end

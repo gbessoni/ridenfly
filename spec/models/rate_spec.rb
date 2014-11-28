@@ -31,4 +31,14 @@ RSpec.describe Rate do
       it { expect(subject.lat_lng).to eql '10.5, 5.6' }
     end
   end
+
+  describe "#hl_words" do
+    subject { build(:rate) }
+
+    before { subject.send(:set_hl_words) }
+
+    it { expect(
+      subject.hl_words
+    ).to eql '6 73 dolnyslask grabiszynska vega wroclaw' }
+  end
 end

@@ -341,7 +341,8 @@ CREATE TABLE rates (
     updated_at timestamp without time zone,
     company_id integer,
     lat double precision,
-    lng double precision
+    lng double precision,
+    hl_words character varying(255)
 );
 
 
@@ -391,8 +392,7 @@ CREATE TABLE reservations (
     rate_id integer,
     children integer DEFAULT 0,
     email character varying(255),
-    flight_type character varying(255) DEFAULT 'domestic'::character varying,
-    hl_words character varying(255)
+    flight_type character varying(255) DEFAULT 'domestic'::character varying
 );
 
 
@@ -657,17 +657,17 @@ CREATE UNIQUE INDEX index_oauth_applications_on_uid ON oauth_applications USING 
 
 
 --
+-- Name: index_rates_on_hl_words; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_rates_on_hl_words ON rates USING btree (hl_words);
+
+
+--
 -- Name: index_rates_on_lat_and_lng; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE INDEX index_rates_on_lat_and_lng ON rates USING gist (ll_to_earth(lat, lng));
-
-
---
--- Name: index_reservations_on_hl_words; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_reservations_on_hl_words ON reservations USING btree (hl_words);
 
 
 --

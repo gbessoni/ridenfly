@@ -18,6 +18,10 @@ RSpec.describe Availability::Search do
     it { expect(subject.hotel_landmark_state).to eql 'Dolnyslask' }
   end
 
+  describe "#distance" do
+    it { expect(subject.distance).to eql 100.0 }
+  end
+
   describe "#roundtrip?" do
     context "when return flight time present" do
       before do

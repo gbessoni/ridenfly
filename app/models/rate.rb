@@ -1,6 +1,7 @@
 class Rate < ActiveRecord::Base
   include Rate::Relations
   include Rate::Validations
+  include Rate::Scopes
 
   PICKUP_TIMES_SEP = '|'
 
@@ -12,27 +13,6 @@ class Rate < ActiveRecord::Base
   ]
 
   CAPACITY = 4
-
-  scope :by_airport, ->(airport) do
-    joins(:airport).where(
-      "airports.name = ? OR airports.zipcode = ? OR airports.code = ?",
-      airport, airport, airport
-    )
-  end
-
-  scope :by_zipcode_or_hotel_landmark, ->(s) do
-    if s.zipcode.present?
-      where(zipcode: s.zipcode)
-    else
-      where Hash[HOTEL_LANDMARK_ATTRS.map do |name|
-        [name, s.send(name)]
-      end]
-    end
-  end
-
-  scope :by_search, ->(search) do
-    by_airport(search.airport).by_zipcode_or_hotel_landmark(search)
-  end
 
   def pickup_time_list=(list)
     attrs = {}
@@ -72,5 +52,13 @@ class Rate < ActiveRecord::Base
 
   def lat_lng=(arg)
     self.lat, self.lng = arg.to_s.split(',').map(&:strip)
+  end
+
+  def hotel_landmark
+    [  hotel_landmark_name,
+       hotel_landmark_street, 
+       hotel_landmark_city,
+       hotel_landmark_state
+    ].reject(&:blank?).join(', ')
   end
 end

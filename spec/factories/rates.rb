@@ -6,10 +6,10 @@ FactoryGirl.define do
     base_rate 25.5
     additional_passenger 0.0
     zipcode "MyString"
-    hotel_landmark_name "MyString"
-    hotel_landmark_street "MyString"
-    hotel_landmark_city "MyString"
-    hotel_landmark_state "MyString"
+    hotel_landmark_name "Vega"
+    hotel_landmark_street "Grabiszynska 73/6"
+    hotel_landmark_city "Wroclaw"
+    hotel_landmark_state "Dolnyslask"
     trip_duration 60
     pickup_time_list ['10:00AM', '11:00PM'].join(
       Rate::PICKUP_TIMES_SEP
