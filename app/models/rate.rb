@@ -1,15 +1,6 @@
 class Rate < ActiveRecord::Base
-  belongs_to :airport
-  belongs_to :company
-  has_many :pickup_times, class_name: 'Rate::PickupTime', dependent: :delete_all
-  has_many :reservations
-
-  validates :airport, :company, presence: true
-  validates :base_rate, :additional_passenger, presence: true, numericality: true
-  validates :trip_duration, presence: true, numericality: {only_integer: true, greater_than: 0}
-  validate :check_pickup_times
-
-  accepts_nested_attributes_for :pickup_times, allow_destroy: true
+  include Rate::Relations
+  include Rate::Validations
 
   PICKUP_TIMES_SEP = '|'
 
@@ -75,11 +66,11 @@ class Rate < ActiveRecord::Base
     CAPACITY
   end
 
-  protected
+  def lat_lng
+    [lat, lng].reject(&:blank?).join(', ')
+  end
 
-  def check_pickup_times
-    if pickup_times.any?{|pt| pt.errors.present?}
-      errors.add(:pickup_time_list, :invalid_format)
-    end
+  def lat_lng=(arg)
+    self.lat, self.lng = arg.to_s.split(',').map(&:strip)
   end
 end

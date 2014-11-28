@@ -16,6 +16,7 @@ class Import::Rate < Import::Base
   HOTEL_LANDMARK_STATE   = 10
   TRIP_DURATION          = 11
   PICKUP_TIMES           = 12
+  LAT_LNG                = 13
 
   def perform
     valid? && read do|row|
@@ -41,7 +42,8 @@ class Import::Rate < Import::Base
       hotel_landmark_city:    row[HOTEL_LANDMARK_CITY],
       hotel_landmark_state:   row[HOTEL_LANDMARK_STATE],
       trip_duration:          row[TRIP_DURATION],
-      pickup_time_list:       row[PICKUP_TIMES]
+      pickup_time_list:       row[PICKUP_TIMES],
+      lat_lng:                row[LAT_LNG]
     )
     o
   end

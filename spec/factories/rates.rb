@@ -14,5 +14,6 @@ FactoryGirl.define do
     pickup_time_list ['10:00AM', '11:00PM'].join(
       Rate::PICKUP_TIMES_SEP
     )
+    lat_lng '10.1,20.2'
   end
 end

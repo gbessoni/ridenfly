@@ -10,7 +10,8 @@ RSpec.describe Admin::RatesController do
       company_id: company.id,
       pickup_time_list: ['10:00AM', '11:00PM'].join(
         Rate::PICKUP_TIMES_SEP
-      )
+      ),
+      lat_lng: '13,21'
     )
   end
   let(:invalid_attributes) do

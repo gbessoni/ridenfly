@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Export::Rate do
-  it { expect(described_class.columns.size).to eql 13 }
+  it { expect(described_class.columns.size).to eql 14 }
 
   subject { described_class.new [build(:rate, airport: build(:airport))] }
 
@@ -12,6 +12,7 @@ RSpec.describe Export::Rate do
       expect(csv).to match /ID/
       expect(csv).to match /Airport\*/
       expect(csv).to match /Trip duration/
+      expect(csv).to match /Latitude, Longitude/
     end
 
     it "has one rate" do
@@ -20,6 +21,7 @@ RSpec.describe Export::Rate do
       expect(csv).to match /60/
       expect(csv).to match /0.0,MyString/
       expect(csv).to match /10:00AM|11:00PM/
+      expect(csv).to match /"10.1, 20.2"/
     end
   end
 end
