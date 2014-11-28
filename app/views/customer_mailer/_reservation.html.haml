@@ -9,34 +9,35 @@
 
 %p
   - if reservation.from_airport?
-    = @reservation.airport.name
+    = reservation.airport.name
   - else
-    = @reservation.full_address_location
+    = reservation.full_address_location
 
 %h3
   Dropoff location
 
-
 %p
   - if reservation.to_airport?
-    = @reservation.airport.name
+    = reservation.airport.name
   - else
-    = @reservation.full_address_location
-
-
-%p
-  Pick up time #{I18n.l @reservation.pickup_datetime, format: :long}
-%p
-  Airline #{@reservation.airline}
-%p
-  Flight # #{@reservation.flight_number}
-%p
-  Flight time #{I18n.l @reservation.flight_datetime, format: :long}
+    = reservation.full_address_location
 
 %p
-  Domestic/International: #{@reservation.flight_type}
+  Cross street/Comments: reservation.cross_street
 
 %p
-  Vehicle Type: #{@reservation.rate.vehicle_type_passenger}
+  Pick up time #{I18n.l reservation.pickup_datetime, format: :long}
 %p
-  Service Type: #{@reservation.trip_direction}
+  Airline #{reservation.airline}
+%p
+  Flight # #{reservation.flight_number}
+%p
+  Flight time #{I18n.l reservation.flight_datetime, format: :long}
+
+%p
+  Domestic/International: #{reservation.flight_type}
+
+%p
+  Vehicle Type: #{reservation.rate.vehicle_type_passenger}
+%p
+  Service Type: #{reservation.trip_direction}

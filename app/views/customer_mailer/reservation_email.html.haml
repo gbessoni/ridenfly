@@ -17,7 +17,7 @@
 
 - if @reservation.sibling.present?
 
-  = render partial: 'reservation', locals: {reservation: @reservation.sibling}
+  = render partial: 'reservation', locals: {reservation: @reservation.sibling.decorate}
 
 %h3
   Passengers:
@@ -34,7 +34,7 @@
   Luggage: #{@reservation.luggage}
 
 %h3
-  Total Billable: $#{@reservation.net_fare}
+  Total Billable: $#{@reservation.total_net_fare}
 
 %p
   Billable amount is the net amount minus percentage discount.

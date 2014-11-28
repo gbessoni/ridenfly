@@ -33,8 +33,8 @@ class Reservation < ActiveRecord::Base
     adults + children
   end
 
-  def num_of_children
-    "NOT IMPLEMENTED YET"
+  def total_net_fare
+    [net_fare, sibling.try(:net_fare)].compact.sum
   end
 
   protected
