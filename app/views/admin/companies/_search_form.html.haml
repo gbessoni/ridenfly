@@ -1,0 +1,7 @@
+.row
+  .col-xs-12
+    = search_form_for @q, url: admin_companies_url do |f|
+      = f.input :name_cont, label: 'Name', required: false
+      = f.input :user_email_cont, label: 'Email', required: false
+      = f.actions do |f|
+        = f.submit 'Search', class: 'btn btn-primary btn-xs'

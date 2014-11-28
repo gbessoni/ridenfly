@@ -2,6 +2,8 @@
   Listing companies (#{@companies.total_entries})
   = primary_btn_to 'New Company', new_admin_company_path
 
+= render partial: 'search_form'
+
 %table.std
   %thead
     %tr

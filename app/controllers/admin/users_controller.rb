@@ -5,7 +5,8 @@ class Admin::UsersController < Admin::ApplicationController
   # GET /admin/users
   # GET /admin/users.json
   def index
-    @users = paginate_model User.order(:email)
+    @q = User.ransack(params[:q])
+    @users = paginate_model @q.result.order(:email)
   end
 
   # GET /admin/users/1

@@ -2,6 +2,7 @@
   Listing users (#{@users.total_entries})
   = primary_btn_to 'New User', new_admin_user_path
 
+= render partial: 'search_form'
 
 %table.std
   %thead

@@ -5,7 +5,8 @@ class Admin::CompaniesController < Admin::ApplicationController
   # GET /admin/companies
   # GET /admin/companies.json
   def index
-    @companies = paginate_model Company.order(:name)
+    @q = Company.ransack(params[:q])
+    @companies = paginate_model @q.result.includes(:user).order(:name)
   end
 
   # GET /admin/companies/1
