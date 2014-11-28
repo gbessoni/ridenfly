@@ -4,6 +4,10 @@ RSpec.describe Availability::Search do
   it { expect(subject).to respond_to :airport }
   it { expect(subject.trip_direction).to eql described_class::TO_AIRPORT }
 
+  describe "#distance" do
+    it { expect(subject.distance).to eql 600.0 }
+  end
+
   describe "validations" do
     describe "zipcode blank" do
       before do
@@ -46,10 +50,6 @@ RSpec.describe Availability::Search do
     it { expect(subject.hotel_landmark_street).to eql 'Grabiszynska' }
     it { expect(subject.hotel_landmark_city).to eql 'Wroclaw' }
     it { expect(subject.hotel_landmark_state).to eql 'Dolnyslask' }
-  end
-
-  describe "#distance" do
-    it { expect(subject.distance).to eql 1000.0 }
   end
 
   describe "#roundtrip?" do
