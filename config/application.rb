@@ -25,6 +25,8 @@ module Ridenfly
       #{config.root}/app/validators
     )
 
+    config.active_record.schema_format = :sql
+
     config.generators do |g|
       g.test_framework :rspec, :fixture_replacement => 'factory_girl', :view_specs => false
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
