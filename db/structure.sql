@@ -52,6 +52,20 @@ COMMENT ON EXTENSION earthdistance IS 'calculate great-circle distances on the s
 
 
 --
+-- Name: fuzzystrmatch; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS fuzzystrmatch WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION fuzzystrmatch; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION fuzzystrmatch IS 'determine similarities and distance between strings';
+
+
+--
 -- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -377,7 +391,8 @@ CREATE TABLE reservations (
     rate_id integer,
     children integer DEFAULT 0,
     email character varying(255),
-    flight_type character varying(255) DEFAULT 'domestic'::character varying
+    flight_type character varying(255) DEFAULT 'domestic'::character varying,
+    hl_words character varying(255)
 );
 
 
@@ -649,6 +664,13 @@ CREATE INDEX index_rates_on_lat_and_lng ON rates USING gist (ll_to_earth(lat, ln
 
 
 --
+-- Name: index_reservations_on_hl_words; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_reservations_on_hl_words ON reservations USING btree (hl_words);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -774,4 +796,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141127114236');
 INSERT INTO schema_migrations (version) VALUES ('20141127141636');
 
 INSERT INTO schema_migrations (version) VALUES ('20141128070054');
+
+INSERT INTO schema_migrations (version) VALUES ('20141128085631');
 
