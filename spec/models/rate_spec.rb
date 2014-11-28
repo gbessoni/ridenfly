@@ -17,4 +17,18 @@ RSpec.describe Rate do
       end
     end
   end
+
+  describe "#lat_lng" do
+    subject { build(:rate) }
+
+    context "reader" do
+      it { expect(subject.lat_lng).to eql '10.1, 20.2' }
+    end
+
+    context "writer" do
+      before { subject.lat_lng = '10.5,5.6' }
+
+      it { expect(subject.lat_lng).to eql '10.5, 5.6' }
+    end
+  end
 end
