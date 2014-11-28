@@ -18,7 +18,7 @@ module Rate::Validations
 
   def check_lat_lng
     if lat.blank? || lng.blank?
-      errors.add(:lat_lng, :invalid)
+      errors.add(:lat_lng, :invalid) if hotel_landmark_name.present?
     end
   end
 end
