@@ -1,5 +1,5 @@
 %h1.page-header
-  Listing rates (#{@rates.total_entries})
+  Listing rates (#{rates.total_entries})
   = primary_btn_to 'New Rate', new_admin_rate_path
 
 
@@ -24,16 +24,14 @@
       %th Base rate
       %th Additional passenger
       %th Zipcode
-      %th Hotel / Landmark name
-      %th Hotel / Landmark street
-      %th Hotel / Landmark city
-      %th Hotel / Landmark state
+      %th Hotel / Landmark name, street, city, state
+      %th Lat,Lng
       %th Trip duration
       %th Pickup times
       %th Actions
 
   %tbody
-    - @rates.each do |rate|
+    - rates.each do |rate|
       %tr
         - if current_admin?
           %td= rate.company.name
@@ -43,10 +41,8 @@
         %td= rate.base_rate
         %td= rate.additional_passenger
         %td= rate.zipcode
-        %td= rate.hotel_landmark_name
-        %td= rate.hotel_landmark_street
-        %td= rate.hotel_landmark_city
-        %td= rate.hotel_landmark_state
+        %td= rate.hotel_landmark
+        %td= rate.lat_lng
         %td= rate.trip_duration
         %td= truncate rate.pickup_time_list, length: 16
         %td
@@ -54,4 +50,4 @@
           = link_to 'Edit', edit_admin_rate_path(rate)
           = link_to 'Destroy', [:admin, rate], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= will_paginate @rates
+= will_paginate rates

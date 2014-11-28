@@ -4,6 +4,8 @@ class Admin::RatesController < Admin::ApplicationController
   before_action :set_rate, only: [:show, :edit, :update, :destroy]
   require_role :admin, :company
 
+  expose(:rates) { @rates.try(:decorate) }
+
   # GET /admin/rates
   # GET /admin/rates.json
   def index
