@@ -1,0 +1,8 @@
+.row
+  .col-xs-12
+    = search_form_for @q, url: admin_reservations_url do |f|
+      = f.input :rate_airport_id_eq, collection: Airport.asc_by_name, label: 'Airport', required: false
+      = f.input :created_at_start_date_gteq, label: 'Created at start', required: false, as: :date_picker, input_html:{value: f.object.created_at_start_date_gteq.present? ? I18n.l(f.object.created_at_start_date_gteq.try(:to_date)) : nil}
+      = f.input :created_at_end_date_lteq, label: 'Created at end', required: false, as: :date_picker, input_html:{value: f.object.created_at_end_date_lteq.present? ? I18n.l(f.object.created_at_end_date_lteq.try(:to_date)) : nil}
+      = f.actions do |f|
+        = f.submit 'Search', class: 'btn btn-primary btn-xs'

@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/zpaulovics/datetimepicker-rails.git
-  revision: 21c2aebb917eba0c5d686749ee6754c769533402
+  revision: d0f8a68f30d7ffb34e505845a693df27467424f3
   specs:
     datetimepicker-rails (3.1.1)
 
@@ -52,6 +52,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    american_date (1.1.0)
     arel (5.0.1.20140414130214)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -308,6 +309,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  american_date
   backbone-rails
   bootstrap-generators
   bootstrap-sass

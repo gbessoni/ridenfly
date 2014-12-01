@@ -10,6 +10,10 @@ class Reservation < ActiveRecord::Base
 
   before_validation :set_price
 
+  scope :by_day, ->(date) do
+    where("created_at between ? AND ?", date.beginning_of_date, date.end_of_day)
+  end
+
   def airport_name
     airport.try(:name)
   end

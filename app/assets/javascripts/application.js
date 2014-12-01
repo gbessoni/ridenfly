@@ -18,7 +18,9 @@
 //= require backbone
 
 //= require ridenfly
+//= require ./libs/moment.min
 //= require_tree ./libs
+//= require pickers
 //= require ./controllers/base
 //= require_tree ./controllers
 //= require_tree ./views
@@ -28,3 +30,25 @@
 $(document).ready(function(){
   Ridenfly.initialize()
 });
+
+$(document).on('ready page:change', function() {
+  $('.datetimepicker').datetimepicker({
+      direction: 'bottom',
+      pickSeconds: false
+  });
+});
+
+// $(document).on('ready page:change', function() {
+//   $('.datepicker').datetimepicker({
+//       direction: 'bottom',
+//       pickTime: false
+//   });
+// });
+
+// $(document).on('ready page:change', function() {
+//   $('.timepicker').datetimepicker({
+//       direction: 'bottom',
+//       pickDate: false,
+//       pickSeconds: false
+//   });
+// });
