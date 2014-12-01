@@ -59,10 +59,23 @@ RSpec.describe "Api::Reservations" do
       }
     end
 
-    before do
-      post api_reservation_cancel_url(params)
+    context "successful" do
+      before do
+        post api_reservation_cancel_url(params)
+      end
+
+      it { expect(response).to be_success }
     end
 
-    it { expect(response).to be_success }
+    context "error" do
+      before do
+        post api_reservation_cancel_url(params.merge(reservation: {cancelation_reason: ''}))
+      end
+
+      it { expect(response).to be_success }
+      it { expect(
+        json_response['errors']
+      ).to include("Cancelation reason can't be blank") }
+    end
   end
 end
