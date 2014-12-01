@@ -3,6 +3,7 @@ FactoryGirl.define do
     name "MyString"
     contact_first_name "MyString"
     contact_last_name "MyString"
+    city "City"
     street "MyString"
     state "MyString"
     zipcode "123123"

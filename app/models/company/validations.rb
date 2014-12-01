@@ -3,7 +3,7 @@ module Company::Validations
 
   REQUIRED_FIELDS = [
     :name, :contact_first_name, :contact_last_name,
-    :street, :state, :zipcode, :phone,
+    :street, :city, :state, :zipcode, :phone,
     :dispatch_phone, :website, :description, :airports, :hours_of_operation,
     :pickup_info, :hours_in_advance_to_accept_rez
   ]

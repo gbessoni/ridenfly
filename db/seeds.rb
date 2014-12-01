@@ -40,6 +40,7 @@ YAML.load(companies_data).each do |company|
   c.contact_last_name = cc['last_name']
 
   c.street = 'undefined'
+  c.city = 'undefined'
   c.state = 'undefined'
   c.zipcode = 'undefined'
 
