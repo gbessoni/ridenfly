@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
 
   namespace :api, path: 'api/1', defaults: { format: 'json' } do
-    resources :reservations, only: [:create, :update, :show, :index]
+    resources :reservations, only: [:create, :update, :show, :index] do
+      resource :cancel, only: :create, controller: 'reservations/cancel'
+    end
     resources :availabilities, only: [:show, :index]
   end
 

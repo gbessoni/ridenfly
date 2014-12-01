@@ -4,6 +4,15 @@ RSpec.describe "Api::Reservations" do
   let(:access_app) { create(:app, owner: create(:admin)) }
   let(:access_token) { create(:access_token, application: access_app) }
   let(:json_response) { JSON.parse response.body }
+  let(:company) do
+    create(:company, user: create(:user))
+  end
+  let(:airport) do
+    create(:airport)
+  end
+  let(:rate) do
+    create(:rate, airport: airport, company: company, base_rate: 20)
+  end
 
   describe "GET /api/1/reservations" do
     it "works!" do
@@ -13,15 +22,6 @@ RSpec.describe "Api::Reservations" do
   end
 
   describe "POST /api/1/reservations" do
-    let(:company) do
-      create(:company, user: create(:user))
-    end
-    let(:airport) do
-      create(:airport)
-    end
-    let(:rate) do
-      create(:rate, airport: airport, company: company, base_rate: 20)
-    end
     let(:reservations) do
       [{"address"=>"11 test", "airline"=>"ABX Air", "cross_street"=>"cross street", "flight_datetime"=>"2014-11-27 10:00AM",
         "flight_number"=>"12345", "gratuity"=>0.0, "luggage"=>0, "adults"=>1, "flight_type"=>"international",
@@ -47,5 +47,22 @@ RSpec.describe "Api::Reservations" do
 
     it { expect(response).to have_http_status(201) }
     it { expect(json_response['reservations']).to be_present }
+  end
+
+  describe "POST /api/1/reservations/:reservation_id/cancel" do
+    let(:reservation) { create(:reservation, rate: rate) }
+    let(:params) do
+      { format: :json,
+        access_token: access_token.token,
+        reservation_id: reservation.id,
+        reservation:{ cancelation_reason: 'it was a test' }
+      }
+    end
+
+    before do
+      post api_reservation_cancel_url(params)
+    end
+
+    it { expect(response).to be_success }
   end
 end

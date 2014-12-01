@@ -50,12 +50,11 @@ class Api::ReservationsController < Api::ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_reservation
-      @reservation = Reservation.find(params[:id])
+      @reservation = Reservation.find(params[:id] || params[:reservation_id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def reservations_params
       params.require(:reservations).map do |reservation|
         reservation.permit(*reservation_allow_attrs)

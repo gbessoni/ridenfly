@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Admin::Reservations", :type => :request do
+RSpec.describe "Admin::Reservations" do
   before do
     sign_in_as_a_valid_user
   end

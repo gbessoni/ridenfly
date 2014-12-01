@@ -6,6 +6,7 @@ class Reservation < ActiveRecord::Base
 
   validates :net_fare, presence: true, numericality: true
   validates :rate, :email, presence: true
+  validates :cancelation_reason, presence: true, if: proc{|rec| rec.canceled?}
 
   before_validation :set_price
 
@@ -35,6 +36,15 @@ class Reservation < ActiveRecord::Base
 
   def total_net_fare
     [net_fare, sibling.try(:net_fare)].compact.sum
+  end
+
+  def cancel(params)
+    self.status = 'canceled'
+    self.update_attributes(params.slice(:cancelation_reason))
+  end
+
+  def canceled?
+    status.to_s == 'canceled'
   end
 
   protected
