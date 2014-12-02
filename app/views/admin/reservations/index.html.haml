@@ -27,7 +27,7 @@
   %tbody
     - reservations.each do |reservation|
       %tr
-        %td= reservation.id
+        %td= reservation.rezid
         %td= reservation.status
         %td= reservation.trip_direction
         %td= reservation.company_name
@@ -47,5 +47,13 @@
           = link_to 'Show',[:admin, reservation]
           - if current_admin?
             = link_to 'Destroy', [:admin, reservation], :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %tfoot
+    %tr
+      %td Total:
+      %td Active:
+      %td $#{@q.result.active.sum(:net_fare)}
+      %td Canceled:
+      %td $#{@q.result.canceled.sum(:net_fare)}
+      %td{colspan: 12}
 
 = will_paginate reservations

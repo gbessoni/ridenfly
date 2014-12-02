@@ -31,13 +31,13 @@
     Cross street/Comments: #{reservation.cross_street}
 
 %p
-  Pick up time: #{I18n.l reservation.pickup_datetime, format: :long}
+  Pick up time: #{I18n.l reservation.model.pickup_datetime, format: :long}
 %p
   Airline: #{reservation.airline}
 %p
   Flight #: #{reservation.flight_number}
 %p
-  Flight time: #{I18n.l reservation.flight_datetime, format: :long}
+  Flight time: #{I18n.l reservation.model.flight_datetime, format: :long}
 
 %p
   Domestic/International: #{reservation.flight_type}

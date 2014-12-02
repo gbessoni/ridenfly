@@ -14,4 +14,12 @@ class ReservationDecorator < Draper::Decorator
   def full_address_location
     address
   end
+
+  def pickup_datetime
+    I18n.l model.pickup_datetime, format: :std
+  end
+
+  def flight_datetime
+    I18n.l model.flight_datetime, format: :std
+  end
 end

@@ -14,6 +14,9 @@ class Reservation < ActiveRecord::Base
     where("created_at between ? AND ?", date.beginning_of_date, date.end_of_day)
   end
 
+  scope :active, ->{ where(status: 'active') }
+  scope :canceled, ->{ where(status: 'canceled') }
+
   def airport_name
     airport.try(:name)
   end
