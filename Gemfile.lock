@@ -52,6 +52,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    airbrake (4.0.0)
+      builder
+      multi_json
     american_date (1.1.0)
     arel (5.0.1.20140414130214)
     axiom-types (0.1.1)
@@ -309,6 +312,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   american_date
   backbone-rails
   bootstrap-generators
