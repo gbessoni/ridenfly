@@ -67,6 +67,8 @@ class Rate < ActiveRecord::Base
   protected
 
   def set_hl_words
-    self.hl_words = Rate::WordsBuilder.new(hotel_landmark).words
+    self.hl_words = Rate::WordsBuilder.new(
+      [hotel_landmark_name, hotel_landmark_street].join ' '
+    ).words
   end
 end

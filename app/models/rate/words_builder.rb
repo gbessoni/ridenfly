@@ -6,7 +6,7 @@ class Rate::WordsBuilder < Struct.new(:text)
   STOP_WORDS = ['the']
 
   def prepare(t)
-    t = t.gsub(/[\.,\,,\;,\',\",\\,\/,\-,0-9]/, ' ')
+    t = t.gsub(/[\.,\,,\;,\',\",\\,\/,\-,\&]/, ' ')
     STOP_WORDS.each{ |s| t.gsub!(s, ' ') }
     t.squeeze(' ').split(' ').uniq.sort.join(' ')
   end

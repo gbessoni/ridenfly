@@ -70,6 +70,8 @@ class Availability::Search
   end
 
   def hotel_landmark_words
-    @hotel_landmark_words ||= Rate::WordsBuilder.new(hotel_landmark).words
+    @hotel_landmark_words ||= Rate::WordsBuilder.new(
+      [hotel_landmark_name, hotel_landmark_street].join(' ')
+    ).words
   end
 end

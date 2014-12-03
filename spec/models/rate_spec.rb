@@ -39,7 +39,7 @@ RSpec.describe Rate do
 
     it { expect(
       subject.hl_words
-    ).to eql 'dolnyslask grabiszynska vega wroclaw' }
+    ).to eql '6 73 grabiszynska vega' }
   end
 
   describe "scopes" do
@@ -75,32 +75,33 @@ RSpec.describe Rate do
         create(:rate,
           company: company,
           airport: airport,
-          hl_words: 'dolnyslask grabiszynska vega wroclaw'
+          hotel_landmark_name: 'Vega',
+          hotel_landmark_street: 'Grabiszynska 73 / 6'
         )
       end
 
       before { rate }
 
-      it "returns hotel for 'dolnyslask grabiszynska vega wroclaw'" do
+      it "returns hotel for '6 73 grabiszynska vega'" do
         expect(
           described_class.by_hotel_landmark_words(
-            'dolnyslask grabiszynska vega wroclaw'
+            '6 73 grabiszynska vega'
           )
         ).to be_present
       end
 
-      it "returns hotel for 'dolnyslask grabiszynska'" do
+      it "does not return hotel for 'dolnyslask grabiszynska'" do
         expect(
           described_class.by_hotel_landmark_words(
             'dolnyslask grabiszynska'
           )
-        ).to be_present
+        ).to be_blank
       end
 
-      it "does not return hotel for 'dolnyslask'" do
+      it "does not return hotel for '6 73 vega'" do
         expect(
           described_class.by_hotel_landmark_words(
-            'dolnyslask'
+            '6 73 vega'
           )
         ).not_to be_present
       end

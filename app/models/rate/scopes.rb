@@ -34,7 +34,7 @@ module Rate::Scopes
       )
     end
 
-    LEVENSHTEIN_THRESHOLD = 0.70
+    LEVENSHTEIN_THRESHOLD = 0.40
 
     scope :by_hotel_landmark_words, ->(words) do
       size = words.size * LEVENSHTEIN_THRESHOLD
