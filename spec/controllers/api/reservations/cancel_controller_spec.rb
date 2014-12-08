@@ -21,6 +21,7 @@ RSpec.describe Api::Reservations::CancelController do
   describe "POST 'cancel'" do
     context "successful" do
       before do
+        ActionMailer::Base.deliveries.clear
         post :create, params
       end
 
@@ -28,6 +29,7 @@ RSpec.describe Api::Reservations::CancelController do
       it { expect(
         reservation.reload.cancelation_reason
       ).to eql 'it was a test' }
+      it { expect(ActionMailer::Base.deliveries.size).to eql 1 }
     end
   end
 end

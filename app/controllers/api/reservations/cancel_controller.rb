@@ -4,6 +4,7 @@ class Api::Reservations::CancelController < Api::ReservationsController
   def create
     respond_to do |format|
       if @reservation.cancel(reservation_params)
+        CustomerMailer.cancelation_email(@reservation).deliver
         @reservations = [@reservation]
         format.json { render :show, status: :ok }
       else
