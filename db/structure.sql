@@ -160,7 +160,8 @@ CREATE TABLE companies (
     updated_at timestamp without time zone,
     vehicle_types hstore[],
     fax character varying(255),
-    city character varying(255)
+    city character varying(255),
+    active boolean DEFAULT true
 );
 
 
@@ -801,4 +802,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141128070054');
 INSERT INTO schema_migrations (version) VALUES ('20141128085631');
 
 INSERT INTO schema_migrations (version) VALUES ('20141201072743');
+
+INSERT INTO schema_migrations (version) VALUES ('20141210133743');
 

@@ -14,6 +14,8 @@ class Availability::Collection
   end
 
   def rates(opts)
-    Rate.includes(:airport).includes(:company).by_search(search).where(opts)
+    Rate.includes(:airport).includes(:company)
+      .where('companies.active' => true)
+      .by_search(search).where(opts)
   end
 end
