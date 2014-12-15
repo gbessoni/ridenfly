@@ -19,5 +19,7 @@ json.rates do
     json.pickup_times do
       json.array! rate.pickup_times
     end
+
+    json.set! :rez_acceptance_message, rate.rez_acceptance_message
   end
 end

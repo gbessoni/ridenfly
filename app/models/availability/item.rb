@@ -9,7 +9,7 @@ class Availability::Item
   delegate :service_type, :vehicle_type_passenger,
     :base_rate, :additional_passenger, :airport, :company, :zipcode,
     :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
-    :hotel_landmark_state, :capacity, to: :rate
+    :hotel_landmark_state, :capacity, :company, to: :rate
 
   def id
     rates.map(&:rate_id).join('-')
@@ -34,11 +34,15 @@ class Availability::Item
   end
 
   def pickup_times
-    Availability::TimesGenerator.new(
-      flight_time,
-      search,
-      rate,
-    ).generate
+    if rez_acceptable?
+      Availability::TimesGenerator.new(
+        flight_time,
+        search,
+        rate,
+      ).generate
+    else
+      []
+    end
   end
 
   def first_leg
@@ -55,5 +59,15 @@ class Availability::Item
       flight_time: search.return_flight_time,
       rate: rate,
     ) if search.roundtrip?
+  end
+
+  def rez_acceptable?
+    rate.rez_acceptable?(search.flight_time)
+  end
+
+  def rez_acceptance_message
+    "We apologize, however we need #{company.hours_in_advance_to_accept_rez.to_i}" +
+    " hours advanced notice to make this reservation." +
+    " Hours of operation #{company.hours_of_operation}"
   end
 end

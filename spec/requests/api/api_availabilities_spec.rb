@@ -3,8 +3,12 @@ require 'rails_helper'
 RSpec.describe "Api::Availabilities" do
   let(:access_app) { create(:app, owner: create(:admin)) }
   let(:access_token) { create(:access_token, application: access_app) }
-
-  let(:company) { create(:company, user: create(:user)) }
+  let(:company) do
+    create(:company,
+      user: create(:user),
+      hours_in_advance_to_accept_rez: 4
+    )
+  end
   let(:airport) { create(:airport, code: 'JFK') }
   let(:rate) do
     create(:rate, zipcode: '10017', airport: airport, company: company)
@@ -16,7 +20,7 @@ RSpec.describe "Api::Availabilities" do
       search: {
         zipcode: rate.zipcode,
         airport: airport.code,
-        flight_time: '2014-10-10 10:22:00',
+        flight_time: 5.days.from_now,
         adults: 2
       }
     }
@@ -24,6 +28,19 @@ RSpec.describe "Api::Availabilities" do
 
   describe "GET /api/1/availabilities" do
     let(:avls) { json_response['availabilities'] }
+
+    context "to few hours in advance to make a rez" do
+      before do
+        params[:search][:flight_time] = 1.hour.from_now
+        get api_availabilities_url(params)
+      end
+
+      it "has reservation acceptance message" do
+        expect(
+          avls.first['rates'].first['rez_acceptance_message']
+        ).to match(/we need 4 hours advanced/)
+      end
+    end
 
     context "from airport" do
       before do
