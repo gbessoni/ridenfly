@@ -64,6 +64,13 @@ class Rate < ActiveRecord::Base
     ].reject(&:blank?).join(', ')
   end
 
+  def rez_acceptable?(time)
+    hours_in_advance = (
+      Time.zone.now + company.hours_in_advance_to_accept_rez.to_i.hours
+    )
+    time >= hours_in_advance
+  end
+
   protected
 
   def set_hl_words

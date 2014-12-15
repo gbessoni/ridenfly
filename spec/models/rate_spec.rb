@@ -107,4 +107,34 @@ RSpec.describe Rate do
       end
     end
   end
+
+  describe "#rez_acceptable?" do
+    subject do
+      build(:rate, company:
+        build(:company, hours_in_advance_to_accept_rez: 12)
+      )
+    end
+
+    before do
+      allow(Time).to receive(:now) { Time.local(2014,12,12,10, 10, 1) }
+    end
+
+    context "when flight 12.hours.from_now" do
+      it "returns true" do
+        expect(subject.rez_acceptable?(12.hours.from_now)).to eql true
+      end
+    end
+
+    context "when flight 13.hours.from_now" do
+      it "returns true" do
+        expect(subject.rez_acceptable?(13.hours.from_now)).to eql true
+      end
+    end
+
+    context "when flight 10.hours.from_now" do
+      it "returns false" do
+        expect(subject.rez_acceptable?(10.hours.from_now)).to eql false
+      end
+    end
+  end
 end
