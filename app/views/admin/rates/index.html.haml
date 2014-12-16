@@ -3,8 +3,7 @@
   = primary_btn_to 'New Rate', new_admin_rate_path
 
 
-- if current_admin?
-  = render partial: 'search_form'
+= render partial: 'search_form'
 
 - if !current_admin? || @q.company_id_eq.present?
   = link_to 'Download CSV', admin_rates_url(format: :csv, q: params[:q])

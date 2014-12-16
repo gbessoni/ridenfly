@@ -10,7 +10,7 @@ class Admin::RatesController < Admin::ApplicationController
   # GET /admin/rates.json
   def index
     @q = rates_finder.ransack(params[:q])
-    @rates = @q.result.includes(:airport, :company, :pickup_times)
+    @rates = @q.result.includes(:airport, :company, :pickup_times).order('zipcode, hotel_landmark_name')
 
     respond_to do |format|
       format.html { @rates = paginate_model @rates }

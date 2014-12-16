@@ -1,7 +1,8 @@
 .row
   .col-xs-12
     = search_form_for @q, url: admin_rates_url do |f|
-      = f.input :company_id_eq, collection: Company.asc_by_name, label: 'Company', hint: 'Select company to download CSV'
+      - if current_admin?
+        = f.input :company_id_eq, collection: Company.asc_by_name, label: 'Company', hint: 'Select company to download CSV'
       = f.input :airport_id_eq, collection: Airport.asc_by_name, label: 'Airport', required: false
       = f.input :hotel_landmark_name_or_hotel_landmark_street_cont, label: 'Hotel/Landmark', required: false
       = f.actions do |f|
