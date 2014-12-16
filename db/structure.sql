@@ -344,7 +344,8 @@ CREATE TABLE rates (
     company_id integer,
     lat double precision,
     lng double precision,
-    hl_words character varying(255)
+    hl_words character varying(255),
+    hotel_by_zipcode boolean DEFAULT false
 );
 
 
@@ -804,4 +805,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141128085631');
 INSERT INTO schema_migrations (version) VALUES ('20141201072743');
 
 INSERT INTO schema_migrations (version) VALUES ('20141210133743');
+
+INSERT INTO schema_migrations (version) VALUES ('20141216110314');
 

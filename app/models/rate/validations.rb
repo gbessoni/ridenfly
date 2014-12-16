@@ -8,6 +8,7 @@ module Rate::Validations
     validates :trip_duration, presence: true,
       numericality: {only_integer: true, greater_than: 0}
     validate :check_pickup_times, :check_lat_lng
+    validates :zipcode, presence: true, if: proc{|rec| rec.hotel_by_zipcode?}
   end
 
   protected

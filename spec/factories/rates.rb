@@ -5,7 +5,7 @@ FactoryGirl.define do
     service_type "MyString"
     base_rate 25.5
     additional_passenger 0.0
-    zipcode "MyString"
+    zipcode "90102"
     hotel_landmark_name "Vega"
     hotel_landmark_street "Grabiszynska 73/6"
     hotel_landmark_city "Wroclaw"
@@ -15,5 +15,6 @@ FactoryGirl.define do
       Rate::PICKUP_TIMES_SEP
     )
     lat_lng '10.1,20.2'
+    hotel_by_zipcode true
   end
 end

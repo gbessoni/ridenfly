@@ -6,6 +6,16 @@ RSpec.describe Rate do
   it { expect(subject).to have_many :pickup_times }
   it { expect(subject).to have_many :reservations }
 
+  describe "validations" do
+    before do
+      subject.hotel_by_zipcode = true
+    end
+
+    it "checks presence of zipcode when hotel_by_zipcode" do
+      expect { subject.valid? }.to change{ subject.errors[:zipcode] }
+    end
+  end
+
   describe "#pickup_time_list" do
     context "separator" do
       before do
