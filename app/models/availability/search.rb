@@ -24,6 +24,7 @@ class Availability::Search
   attribute :hotel_landmark_city, String
   attribute :hotel_landmark_state, String
   attribute :hotel_landmark, String
+  attribute :hotel_landmark_zipcode, String
   attribute :zipcode, String
 
   attribute :lat, Float
@@ -73,5 +74,9 @@ class Availability::Search
     @hotel_landmark_words ||= Rate::WordsBuilder.new(
       [hotel_landmark_name, hotel_landmark_street].join(' ')
     ).words
+  end
+
+  def hotel_landmark_zipcode?
+    hotel_landmark_zipcode.present?
   end
 end

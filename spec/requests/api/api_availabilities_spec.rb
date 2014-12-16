@@ -11,7 +11,12 @@ RSpec.describe "Api::Availabilities" do
   end
   let(:airport) { create(:airport, code: 'JFK') }
   let(:rate) do
-    create(:rate, zipcode: '10017', airport: airport, company: company)
+    create(:rate,
+      zipcode: '10017',
+      airport: airport,
+      company: company,
+      hotel_by_zipcode: true,
+    )
   end
   let(:json_response) { JSON.parse response.body }
   let(:params) do
@@ -28,6 +33,28 @@ RSpec.describe "Api::Availabilities" do
 
   describe "GET /api/1/availabilities" do
     let(:avls) { json_response['availabilities'] }
+
+    context "when hotel zipcode provided" do
+      let(:hotel_params) do
+        params.merge(
+          search: {
+            hotel_landmark: 'name, street, city, state',
+            hotel_landmark_zipcode: '10017',
+            airport: airport.code,
+            flight_time: 5.days.from_now,
+            adults: 2,
+            lat: 1,
+            lng: 0.1
+          }
+        )
+      end
+
+      before { get api_availabilities_url(hotel_params) }
+
+      it "returns hotel rates by zipcode" do
+        expect(avls.size).to eql 1
+      end
+    end
 
     context "to few hours in advance to make a rez" do
       before do

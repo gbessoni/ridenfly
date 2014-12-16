@@ -2,9 +2,10 @@ module Rate::Scopes
   extend ActiveSupport::Concern
 
   included do
-    scope :by_search, ->(search) do
-      by_airport(search.airport)
-        .by_zipcode_or_hotel_landmark(search)
+    scope :zipcode, ->(zipcode){ where(zipcode: zipcode) }
+
+    scope :by_hotel_as_zipcode, ->(zipcode) do
+      where(hotel_by_zipcode: true).zipcode(zipcode)
     end
 
     scope :by_airport, ->(airport) do
@@ -16,7 +17,7 @@ module Rate::Scopes
 
     scope :by_zipcode_or_hotel_landmark, ->(s) do
       if s.zipcode.present?
-        where(zipcode: s.zipcode)
+        zipcode(s.zipcode)
       else
         by_hotel_landmark(s)
       end
