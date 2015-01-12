@@ -14,6 +14,9 @@ json.rates do
     json.company do
       json.extract! rate.company, :name, :description,
         :phone, :mobile, :dispatch_phone, :pickup_info
+      if rate.company.image.present?
+        json.image_url image_url(rate.company.image_url, host: request.host)
+      end
     end
 
     json.pickup_times do

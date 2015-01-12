@@ -70,7 +70,7 @@
   = f.input :image, as: :file
   - if f.object.image.present?
     = f.input :uploaded, label: 'Uploaded image:' do
-      = image_tag f.object.image.url(:medium)
+      = image_tag f.object.image_url
 
   = f.actions do |f|
     = f.submit 'Save'

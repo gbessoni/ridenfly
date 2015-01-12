@@ -29,4 +29,8 @@ class Company < ActiveRecord::Base
     end
     write_attribute(:vehicle_types, vts)
   end
+
+  def image_url(size=:medium)
+    image.try(:url, size)
+  end
 end
