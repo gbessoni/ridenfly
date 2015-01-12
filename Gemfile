@@ -39,6 +39,7 @@ gem 'time_of_day_attr',  git: 'https://github.com/clemenst/time_of_day_attr.git'
 gem 'whenever', :require => false
 gem 'american_date'
 gem 'airbrake'
+gem 'paperclip', '~> 4.2'
 
 group :development do
   gem 'capistrano-rails'

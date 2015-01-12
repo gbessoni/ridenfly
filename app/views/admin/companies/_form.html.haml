@@ -67,6 +67,10 @@
             %td= vtf.text_field :num_of_passengers
 
   = f.input :other_vehicle_types
+  = f.input :image, as: :file
+  - if f.object.image.present?
+    = f.input :uploaded, label: 'Uploaded image:' do
+      = image_tag f.object.image.url(:medium)
 
   = f.actions do |f|
     = f.submit 'Save'

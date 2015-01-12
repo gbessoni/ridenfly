@@ -1,6 +1,8 @@
 class Company < ActiveRecord::Base
   store_accessor :reservation_notification, :notification_fax, :notification_email
 
+  has_attached_file :image, :styles => { :medium => "150x110>" }
+
   include Company::Validations
 
   belongs_to :user

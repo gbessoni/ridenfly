@@ -161,7 +161,11 @@ CREATE TABLE companies (
     vehicle_types hstore[],
     fax character varying(255),
     city character varying(255),
-    active boolean DEFAULT true
+    active boolean DEFAULT true,
+    image_file_name character varying(255),
+    image_content_type character varying(255),
+    image_file_size integer,
+    image_updated_at timestamp without time zone
 );
 
 
@@ -807,4 +811,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141201072743');
 INSERT INTO schema_migrations (version) VALUES ('20141210133743');
 
 INSERT INTO schema_migrations (version) VALUES ('20141216110314');
+
+INSERT INTO schema_migrations (version) VALUES ('20150112125329');
 

@@ -16,3 +16,4 @@
 /tmp
 coverage/*
 vendor/ruby_gems
+public/system/*

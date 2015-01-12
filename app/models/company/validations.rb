@@ -12,5 +12,6 @@ module Company::Validations
     validates *REQUIRED_FIELDS, presence: true
     validates :user, presence: true
     validates :phone, :dispatch_phone, phone_number_format: true
+    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   end
 end

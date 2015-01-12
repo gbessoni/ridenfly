@@ -113,6 +113,11 @@
   %b Other vehicle types:
   = @company.other_vehicle_types
 
+- if @company.image.present?
+  %p
+    %b Image:
+    = image_tag @company.image.url(:medium)
+
 = link_to 'Edit', edit_admin_company_path(@company)
 \|
 = link_to 'Back', admin_companies_path
