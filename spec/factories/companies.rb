@@ -16,7 +16,7 @@ FactoryGirl.define do
     notification_email "true"
     blackout_dates ""
     airports "MyText"
-    hours_of_operation "MyString"
+    hours_of_operation "0:00AM-23:59PM"
     hours_in_advance_to_accept_rez "MyString"
     pickup_info "MyText"
     after_hours_info "MyText"

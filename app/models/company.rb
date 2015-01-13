@@ -33,4 +33,16 @@ class Company < ActiveRecord::Base
   def image_url(size=:medium)
     image.try(:url, size)
   end
+
+  def hours_of_operation_list
+    hours_of_operation.split('-').map(&:strip)
+  end
+
+  def hoo_start
+    Time.parse(hours_of_operation_list.first) rescue nil
+  end
+
+  def hoo_end
+    Time.parse(hours_of_operation_list.last) rescue nil
+  end
 end

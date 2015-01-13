@@ -229,6 +229,11 @@ en:
     errors:
       <<: *errors
       models:
+        company:
+          attributes:
+            hours_of_operation:
+              invalid: "has invalid format, correct format is: HH:MMAM-HH:MMPM"
+              start_must_be_smaller_then_end: "start time must be smaller or equal to end time"
         rate:
           attributes:
             pickup_time_list:

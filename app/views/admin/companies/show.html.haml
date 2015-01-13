@@ -58,6 +58,8 @@
 %p
   %b Hours of operation:
   = @company.hours_of_operation
+  (parsed start time: #{@company.hoo_start.try(:strftime, "%I:%M%p")},
+  parsed end time: #{@company.hoo_end.try(:strftime, "%I:%M%p")})
 %p
   %b Hours in advance to accept rez:
   = @company.hours_in_advance_to_accept_rez
