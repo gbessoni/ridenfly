@@ -34,8 +34,6 @@
   Luggage: #{@reservation.luggage}
 
 %h3
-  Total Billable: $#{@reservation.total_net_fare}
-
+  $#{@reservation.total_net_fare} Total gross amount charged to customer.
 %p
-  Billable amount is the net amount minus percentage discount.
-  Additional charges must be authorized by Shuttlefare.com office.
+  *If there is a pricing discrepancy , please contact our office before the reservation service date.
