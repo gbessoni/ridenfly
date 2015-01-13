@@ -11,7 +11,7 @@
 %p
   Passenger Email: #{@reservation.email}
 %p
-  Reservation ID: #{@reservation.rezid}
+  Reservation ID: #{[@reservation.rezid, @reservation.sibling.try(:rezid)].compact.join(', ')}
 
 = render partial: 'reservation', locals: {reservation: @reservation}
 

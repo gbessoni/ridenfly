@@ -19,6 +19,20 @@ RSpec.describe CustomerMailer do
     it "has body" do
       expect(mail).to match /#{reservation.rezid}/
     end
+
+    it "has Total gross amount charged to customer" do
+      expect(mail).to match /Total gross amount charged to customer/
+    end
+
+    it "has rez id" do
+      expect(mail).to match /Reservation ID: RF123/
+    end
+
+    it "has passenger name in subject" do
+      expect(
+        described_class.reservation_email(reservation).subject
+      ).to eql('New reservation for passenger passenger name')
+    end
   end
 
   describe "#cancelation_email" do

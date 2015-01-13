@@ -5,7 +5,7 @@ class CustomerMailer < ActionMailer::Base
     @reservation = reservation.decorate
     mail(
       to: reservation.rate.company.user.email,
-      subject: "New reservation",
+      subject: "New reservation for passenger #{reservation.passenger_name}",
       sent_on: Time.now
     )
   end
