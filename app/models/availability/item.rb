@@ -35,14 +35,16 @@ class Availability::Item
 
   def pickup_times
     if rez_acceptable?
-      Availability::TimesGenerator.new(
-        flight_time,
-        search,
-        rate,
-      ).generate
+      possible_pickup_times
     else
       []
     end
+  end
+
+  def possible_pickup_times
+    @possible_pickup_times ||= Availability::TimesGenerator.new(
+      flight_time, search, rate,
+    ).generate
   end
 
   def first_leg
