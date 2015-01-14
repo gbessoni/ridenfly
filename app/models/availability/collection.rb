@@ -23,7 +23,7 @@ class Availability::Collection
   end
 
   def rates_scope
-    Rate.includes(:airport).includes(:company)
+    Rate.joins(:airport).joins(:company)
       .by_airport(search.airport)
       .where('companies.active' => true)
   end

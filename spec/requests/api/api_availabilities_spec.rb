@@ -67,7 +67,7 @@ RSpec.describe "Api::Availabilities" do
     end
 
     context "scheduled" do
-      let(:schd) { json_response['scheduled'] }
+      let(:schd) { avls.select{|a| a['scheduled']} }
 
       let(:schd_params) do
         params.merge(

@@ -3,8 +3,8 @@ class Api::AvailabilitiesController < Api::ApplicationController
   after_action :log_json_response, only: [:index, :show]
 
   def index
-    @std_items  = std_collection.all
-    @schd_items = schd_collection.all
+    @items  = std_collection.all + schd_collection.all
+    # ActiveRecord::Associations::Preloader.new(@items, [:company, :airport]).run
   end
 
   def show

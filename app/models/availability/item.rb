@@ -19,6 +19,10 @@ class Availability::Item
     rate.id
   end
 
+  def scheduled
+    distance.present?
+  end
+
   def description
     [ service_type,
       vehicle_type_passenger
