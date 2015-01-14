@@ -8,8 +8,8 @@ RSpec.describe Availability::PickupTime do
   describe "#working_hours?" do
     subject do
       described_class.new(
-        start_datetime: time('2:00AM'),
-        end_datetime:   time('2:15AM')
+        start_datetime: time('2015-01-10 2:00AM'),
+        end_datetime:   time('2015-01-10 2:15AM')
       )
     end
 
