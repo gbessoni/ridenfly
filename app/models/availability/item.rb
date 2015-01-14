@@ -35,7 +35,11 @@ class Availability::Item
 
   def pickup_times
     if rez_acceptable?
-      possible_pickup_times
+      filter_times(
+        possible_pickup_times,
+        company.hoo_start,
+        company.hoo_end,
+      ).map(&:as_json)
     else
       []
     end
@@ -71,5 +75,9 @@ class Availability::Item
     "We apologize, however we need #{company.hours_in_advance_to_accept_rez.to_i}" +
     " hours advanced notice to make this reservation." +
     " Hours of operation #{company.hours_of_operation}"
+  end
+
+  def filter_times(times, stime, etime)
+    times
   end
 end

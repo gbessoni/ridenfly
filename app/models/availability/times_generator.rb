@@ -56,7 +56,10 @@ class Availability::TimesGenerator < Struct.new(:flight_time, :search, :rate)
   end
 
   def time_attrs(startt, endt = nil)
-    { start_datetime: startt, end_datetime: endt || startt }
+    Availability::PickupTime.new(
+      start_datetime: startt,
+      end_datetime:   endt || startt
+    )
   end
 
   def trip_duration_in_minutes
