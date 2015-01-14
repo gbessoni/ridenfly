@@ -71,6 +71,10 @@ class Rate < ActiveRecord::Base
     time >= hours_in_advance
   end
 
+  def distance
+    attributes['distance']
+  end
+
   protected
 
   def set_hl_words

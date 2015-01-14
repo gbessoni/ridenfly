@@ -45,5 +45,20 @@ module Rate::Scopes
     scope :levval, ->(words) do
       select("rates.*, levenshtein(hl_words, '#{words}') as lev")
     end
+
+    SCHEDULED = 'Scheduled Shuttle Van'
+
+    scope :scheduled, -> do
+      where(vehicle_type_passenger: SCHEDULED)
+    end
+
+    scope :precise_by_geo_and_distance, ->(lat,  lng, distance) do
+      select(
+        "*, earth_distance(ll_to_earth(#{lat.to_f}, #{lng.to_f}), ll_to_earth(rates.lat, rates.lng)) as distance"
+      ).where(
+        'earth_distance(ll_to_earth(?, ?), ll_to_earth(rates.lat, rates.lng)) <= ?',
+        lat, lng, distance
+      )
+    end
   end
 end

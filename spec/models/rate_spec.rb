@@ -6,6 +6,9 @@ RSpec.describe Rate do
   it { expect(subject).to have_many :pickup_times }
   it { expect(subject).to have_many :reservations }
 
+  let(:airport) { create(:airport) }
+  let(:company) { create(:company, user: create(:user)) }
+
   describe "validations" do
     before do
       subject.hotel_by_zipcode = true
@@ -53,9 +56,6 @@ RSpec.describe Rate do
   end
 
   describe "scopes" do
-    let(:airport) { create(:airport) }
-    let(:company) { create(:company, user: create(:user)) }
-
     describe "#by_geo_and_distance" do
       let(:rates) do
         [ create(:rate, lat: 1.00090, lng: 1.00090, company: company, airport: airport),
@@ -144,6 +144,30 @@ RSpec.describe Rate do
     context "when flight 10.hours.from_now" do
       it "returns false" do
         expect(subject.rez_acceptable?(10.hours.from_now)).to eql false
+      end
+    end
+  end
+
+  describe "#distance" do
+    let(:rate) do
+      create(:rate, lat: 1.00090, lng: 1.00090, company: company, airport: airport)
+    end
+
+    context "when standard seearch" do
+      before { rate }
+
+      it "returns nil" do
+        expect(Rate.first.distance).to eql nil
+      end
+    end
+
+    context "when distance search" do
+      before { rate }
+
+      it "retuns distance value in meters" do
+        expect(
+          Rate.precise_by_geo_and_distance(1, 1, 1000).first.distance.to_i
+        ).to eql 141
       end
     end
   end
