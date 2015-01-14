@@ -10,6 +10,7 @@ class Availability::Search
   INTERNATIONAL = 'international'
 
   DEFAULT_DISTANCE = 600 # in meters
+  DEFAULT_SCHD_DISTANCE = 48_280.32 # in meters (30miles)
 
   attribute :trip_direction, String, default: TO_AIRPORT
   attribute :flight_type, String, default: DOMESTIC
@@ -30,6 +31,7 @@ class Availability::Search
   attribute :lat, Float
   attribute :lng, Float
   attribute :distance, Float, default: DEFAULT_DISTANCE
+  attribute :schd_distance, Float, default: DEFAULT_SCHD_DISTANCE
 
   attribute :adults, Integer
   attribute :children, Integer

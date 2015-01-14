@@ -3,17 +3,22 @@ class Api::AvailabilitiesController < Api::ApplicationController
   after_action :log_json_response, only: [:index, :show]
 
   def index
-    @items = collection.all
+    @std_items  = std_collection.all
+    @schd_items = schd_collection.all
   end
 
   def show
-    @item = collection.find(params[:id])
+    @item = std_collection.find(params[:id])
   end
 
   protected
 
-  def collection
-    @collection ||= Availability::Collection.new search: search
+  def std_collection
+    @std_collection ||= Availability::Collection.new search: search
+  end
+
+  def schd_collection
+    @schd_collection ||= Availability::Scheduled.new search: search
   end
 
   def search

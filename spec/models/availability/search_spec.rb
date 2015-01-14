@@ -8,6 +8,10 @@ RSpec.describe Availability::Search do
     it { expect(subject.distance).to eql 600.0 }
   end
 
+  describe "#schd_distance" do
+    it { expect(subject.schd_distance).to eql 48_280.32 }
+  end
+
   describe "validations" do
     describe "zipcode blank" do
       before do
