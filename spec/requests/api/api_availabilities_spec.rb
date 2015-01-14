@@ -66,6 +66,36 @@ RSpec.describe "Api::Availabilities" do
       end
     end
 
+    context "scheduled" do
+      let(:schd) { json_response['scheduled'] }
+
+      let(:schd_params) do
+        params.merge(
+          search: {
+            airport: airport.code,
+            flight_time: 5.days.from_now,
+            adults: 2,
+            lat: 2.1,
+            lng: 1.1
+          }
+        )
+      end
+
+      before do
+        create(:rate,
+          airport: airport,
+          company: company,
+          lat: 2.105, lng: 1.106,
+          vehicle_type_passenger: Rate::SCHEDULED
+        )
+        get api_availabilities_url(schd_params)
+      end
+
+      it "returns one scheduled rate" do
+        expect(schd.size).to eql 1
+      end
+    end
+
     context "to few hours in advance to make a rez" do
       before do
         params[:search][:flight_time] = 1.hour.from_now

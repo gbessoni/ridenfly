@@ -678,6 +678,13 @@ CREATE INDEX index_rates_on_lat_and_lng ON rates USING gist (ll_to_earth(lat, ln
 
 
 --
+-- Name: index_rates_on_vehicle_type_passenger; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_rates_on_vehicle_type_passenger ON rates USING btree (vehicle_type_passenger);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -813,4 +820,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141210133743');
 INSERT INTO schema_migrations (version) VALUES ('20141216110314');
 
 INSERT INTO schema_migrations (version) VALUES ('20150112125329');
+
+INSERT INTO schema_migrations (version) VALUES ('20150114122912');
 
