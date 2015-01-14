@@ -10,3 +10,5 @@ Ransack.configure do |config|
     validator: proc { |v| v.present? },
     type: :string
 end
+
+Ransack::Search.send :extend, ActiveModel::Naming
