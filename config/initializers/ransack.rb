@@ -11,4 +11,11 @@ Ransack.configure do |config|
     type: :string
 end
 
-Ransack::Search.send :extend, ActiveModel::Naming
+# Add missing model_name to Ransack
+module Ransack::Search::Naming
+  def model_name
+    OpenStruct.new(param_key: Ransack.options[:search_key])
+  end
+end
+
+Ransack::Search.send :include, Ransack::Search::Naming
