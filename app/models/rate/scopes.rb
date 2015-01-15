@@ -54,7 +54,7 @@ module Rate::Scopes
 
     scope :precise_by_geo_and_distance, ->(lat,  lng, distance) do
       select(
-        "*, earth_distance(ll_to_earth(#{lat.to_f}, #{lng.to_f}), ll_to_earth(rates.lat, rates.lng)) as distance"
+        "rates.*, earth_distance(ll_to_earth(#{lat.to_f}, #{lng.to_f}), ll_to_earth(rates.lat, rates.lng)) as distance"
       ).where(
         'earth_distance(ll_to_earth(?, ?), ll_to_earth(rates.lat, rates.lng)) <= ?',
         lat, lng, distance
