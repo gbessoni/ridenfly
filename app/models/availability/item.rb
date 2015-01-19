@@ -82,8 +82,9 @@ class Availability::Item
   end
 
   def filter_times(times, stime, etime)
-    times.select do |pt|
-      pt.in_working_hours?(stime, etime)
-    end
+    times
+    # times.select do |pt|
+    #   pt.in_working_hours?(stime, etime)
+    # end
   end
 end
