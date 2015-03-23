@@ -165,7 +165,8 @@ CREATE TABLE companies (
     image_file_name character varying(255),
     image_content_type character varying(255),
     image_file_size integer,
-    image_updated_at timestamp without time zone
+    image_updated_at timestamp without time zone,
+    no_pickup_message character varying
 );
 
 
@@ -822,4 +823,6 @@ INSERT INTO schema_migrations (version) VALUES ('20141216110314');
 INSERT INTO schema_migrations (version) VALUES ('20150112125329');
 
 INSERT INTO schema_migrations (version) VALUES ('20150114122912');
+
+INSERT INTO schema_migrations (version) VALUES ('20150323132328');
 

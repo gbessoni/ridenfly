@@ -73,7 +73,7 @@ class Admin::CompaniesController < Admin::ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       params.require(:company).permit(
-        :name, :contact_first_name, :contact_last_name, :email, :address, :street, :state, :zipcode,
+        :name, :contact_first_name, :contact_last_name, :email, :address, :street, :state, :zipcode, :no_pickup_message,
         :phone, :mobile, :dispatch_phone, :website, :description, :reservation_notification, :blackout_dates,
         :airports, :hours_of_operation, :hours_in_advance_to_accept_rez, :pickup_info, :after_hours_info,
         :excess_luggage_charge, :luggage_insured, :child_rate, :child_car_seats_included, :luggage_limitation_policy,
