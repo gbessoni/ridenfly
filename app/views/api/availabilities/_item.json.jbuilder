@@ -19,6 +19,8 @@ json.rates do
       if rate.company.image.present?
         json.image_url image_url(rate.company.image_url, host: request.host)
       end
+
+      json.set! :no_pickup_message, rate.company.no_pickup_message
     end
 
     json.pickup_times do

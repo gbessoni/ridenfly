@@ -126,7 +126,8 @@ RSpec.describe "Api::Availabilities" do
         expect(avls.first['rates'].first['company']).to eql(
           "name"=>"MyString", "description"=>"MyText", "phone"=>"1231231312",
           "mobile"=>"12312312322", "dispatch_phone"=>"12312312234",
-          "pickup_info"=>"MyText", "image_url"=>"http://www.example.com/system/image/test.png"
+          "pickup_info"=>"MyText", "image_url"=>"http://www.example.com/system/image/test.png",
+          "no_pickup_message"=>"We will call you one day before flight"
         )
       end
     end
