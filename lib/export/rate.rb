@@ -12,7 +12,8 @@ class Export::Rate < Export::Base
     hotel_landmark_city: 'Hotel / Landmark city',
     hotel_landmark_state: 'Hotel / Landmark state',
     trip_duration: 'Trip duration',
-    pickup_time_list: 'Pickup times',
+    to_airport_pickup_time_list: 'To airport pickup times',
     lat_lng: 'Latitude, Longitude',
+    from_airport_pickup_time_list: 'From airport pickup times',
   }
 end

@@ -11,6 +11,10 @@ body {
   @extend .table;
   @extend .table-striped;
   @extend .table-hover;
+  hr {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 /* forms */

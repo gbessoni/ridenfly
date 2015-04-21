@@ -14,8 +14,11 @@ module Rate::Validations
   protected
 
   def check_pickup_times
-    if pickup_times.any?{|pt| pt.errors.present?}
-      errors.add(:pickup_time_list, :invalid_format)
+    if from_airport_pickup_times.any?{|pt| pt.errors.present?}
+      errors.add(:from_airport_pickup_time_list, :invalid_format)
+    end
+    if to_airport_pickup_times.any?{|pt| pt.errors.present?}
+      errors.add(:to_airport_pickup_time_list, :invalid_format)
     end
   end
 

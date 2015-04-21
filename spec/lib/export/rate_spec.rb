@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Export::Rate do
-  it { expect(described_class.columns.size).to eql 14 }
+  it { expect(described_class.columns.size).to eql 15 }
 
   subject { described_class.new [build(:rate, airport: build(:airport))] }
 

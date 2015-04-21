@@ -14,7 +14,7 @@ RSpec.describe Availability::TimesGenerator do
   let(:times) { subject.generate.map(&:as_json) }
 
   context "when rate has pickup times" do
-    let(:rate) { build(:rate, pickup_time_list: '10:00AM|11:00PM') }
+    let(:rate) { build(:rate, to_airport_pickup_time_list: '10:00AM|11:00PM') }
 
     it "returns rate pickup times" do
       expect(times).to eql([
@@ -28,7 +28,7 @@ RSpec.describe Availability::TimesGenerator do
   end
 
   context "when rate has no pickup times" do
-    let(:rate) { build(:rate, trip_duration: 45, pickup_time_list: '') }
+    let(:rate) { build(:rate, trip_duration: 45, to_airport_pickup_time_list: '') }
 
     context "and domestic flight" do
       it "has one pair 1,5h before flight plus trip duration" do
@@ -54,14 +54,36 @@ RSpec.describe Availability::TimesGenerator do
   end
 
   context "when from_airport direction" do
-    before { search.trip_direction = Availability::Search::FROM_AIRPORT }
+    before do
+      search.trip_direction = Availability::Search::FROM_AIRPORT
+      rate.from_airport_pickup_times = []
+    end
 
-    it "returns flight time" do
-      expect(times).to eql([
-        { start_datetime: time('2014-10-11 21:15:00'),
-          end_datetime: time('2014-10-11 21:15:00'),
-        }
-      ])
+    context "when from airport is not set" do
+      it "returns flight time" do
+        expect(times).to eql([
+          { start_datetime: time('2014-10-11 21:15:00'),
+            end_datetime: time('2014-10-11 21:15:00'),
+          }
+        ])
+      end
+    end
+
+    context "when from airport pickup times present" do
+      before do
+        rate.from_airport_pickup_time_list = '10:00AM|11:00PM'
+      end
+
+      it "returns from airport pickup times" do
+        expect(times).to eql([
+          { start_datetime: time('2014-10-11 10:00:00'),
+            end_datetime: time('2014-10-11 10:00:00'),
+          },{
+            start_datetime: time('2014-10-11 23:00:00'),
+            end_datetime: time('2014-10-11 23:00:00'),
+          }
+        ])
+      end
     end
   end
 

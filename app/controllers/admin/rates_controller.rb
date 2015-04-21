@@ -10,7 +10,9 @@ class Admin::RatesController < Admin::ApplicationController
   # GET /admin/rates.json
   def index
     @q = rates_finder.ransack(params[:q])
-    @rates = @q.result.includes(:airport, :company, :pickup_times).order('zipcode, hotel_landmark_name')
+    @rates = @q.result.includes(
+      :airport, :company, :to_airport_pickup_times, :from_airport_pickup_times
+    ).order('zipcode, hotel_landmark_name')
 
     respond_to do |format|
       format.html { @rates = paginate_model @rates }
@@ -93,7 +95,8 @@ class Admin::RatesController < Admin::ApplicationController
       params.require(:rate).permit(
         :airport_id, :company_id, :vehicle_type_passenger, :service_type, :base_rate, :additional_passenger,
         :zipcode, :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
-        :hotel_landmark_state, :trip_duration, :pickup_time_list, :lat_lng, :hotel_by_zipcode
+        :hotel_landmark_state, :trip_duration, :to_airport_pickup_time_list,
+        :from_airport_pickup_time_list, :lat_lng, :hotel_by_zipcode
       )
     end
 

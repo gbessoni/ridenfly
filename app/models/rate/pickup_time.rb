@@ -1,4 +1,6 @@
 class Rate::PickupTime < ActiveRecord::Base
+  include TripDirections
+
   time_of_day_attr :pickup, format: :us
 
   FORMAT_REGEXP = /\d+{1,2}:\d{2}(AM|PM)/

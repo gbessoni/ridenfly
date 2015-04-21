@@ -37,7 +37,7 @@ RSpec.describe Import::Rate do
         expect(o.hotel_landmark_city).to eql 'Wroclaw'
         expect(o.hotel_landmark_state).to eql 'Dolnyslask'
         expect(o.trip_duration).to eql 60
-        expect(o.pickup_times.map(&:pickup_str)).to eql ["10:00PM", "11:00AM"]
+        expect(o.to_airport_pickup_times.map(&:pickup_str)).to eql ["10:00PM", "11:00AM"]
       end
     end
 

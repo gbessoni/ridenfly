@@ -17,7 +17,8 @@
   = f.input :hotel_landmark_state, label: 'Hotel / Landmark state'
   = f.input :lat_lng, label: 'Latitude, Longitude'
   = f.input :trip_duration
-  = f.input :pickup_time_list, as: :text, label: 'Pickup times', hint: 'pipe sparated values'
+  = f.input :to_airport_pickup_time_list, as: :text, label: 'To airport pickup times', hint: 'pipe sparated values'
+  = f.input :from_airport_pickup_time_list, as: :text, label: 'From airport pickup times', hint: 'pipe sparated values'
 
   = f.actions do |f|
     = f.submit 'Save'

@@ -44,8 +44,12 @@
   = @rate.trip_duration
 
 %p
-  %b Pickup times:
-  = @rate.pickup_time_list
+  %b To airport pickup times:
+  = @rate.to_airport_pickup_time_list
+
+%p
+  %b From airport pickup times:
+  = @rate.from_airport_pickup_time_list
 
 = link_to 'Edit', edit_admin_rate_path(@rate)
 \|

@@ -11,19 +11,23 @@ class Availability::TimesGenerator < Struct.new(:flight_time, :search, :rate)
   end
 
   def to_airport_pickup_times
-    if rate.pickup_times.present?
-      rate_pickup_times
+    if rate.to_airport_pickup_times.present?
+      rate_pickup_times(rate.to_airport_pickup_times)
     else
       std_pickup_times
     end
   end
 
   def from_airport_pickup_times
-    [time_attrs(flight_time)]
+    if rate.from_airport_pickup_times.present?
+      rate_pickup_times(rate.from_airport_pickup_times)
+    else
+      [time_attrs(flight_time)]
+    end
   end
 
-  def rate_pickup_times
-    rate.pickup_times.map do |pt|
+  def rate_pickup_times(pickup_times)
+    pickup_times.map do |pt|
       time_attrs pt.to_time(flight_time)
     end
   end

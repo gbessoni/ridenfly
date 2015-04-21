@@ -3,20 +3,21 @@ require 'csv'
 class Import::Rate < Import::Base
   attribute :company_id, Integer
 
-  ID                     = 0
-  AIRPORT                = 1
-  VEHICLE_TYPE_PASSENGER = 2
-  SERVICE_TYPE           = 3
-  BASE_RATE              = 4
-  ADDITIONAL_PASSENGER   = 5
-  ZIPCODE                = 6
-  HOTEL_LANDMARK_NAME    = 7
-  HOTEL_LANDMARK_STREET  = 8
-  HOTEL_LANDMARK_CITY    = 9
-  HOTEL_LANDMARK_STATE   = 10
-  TRIP_DURATION          = 11
-  PICKUP_TIMES           = 12
-  LAT_LNG                = 13
+  ID                        = 0
+  AIRPORT                   = 1
+  VEHICLE_TYPE_PASSENGER    = 2
+  SERVICE_TYPE              = 3
+  BASE_RATE                 = 4
+  ADDITIONAL_PASSENGER      = 5
+  ZIPCODE                   = 6
+  HOTEL_LANDMARK_NAME       = 7
+  HOTEL_LANDMARK_STREET     = 8
+  HOTEL_LANDMARK_CITY       = 9
+  HOTEL_LANDMARK_STATE      = 10
+  TRIP_DURATION             = 11
+  TO_AIRPORT_PICKUP_TIMES   = 12
+  LAT_LNG                   = 13
+  FROM_AIRPORT_PICKUP_TIMES = 12
 
   def perform
     valid? && read do|row|
@@ -31,19 +32,20 @@ class Import::Rate < Import::Base
     ).first_or_initialize
     o.company = find_company
     o.update_attributes(
-      airport:                find_airport(row[AIRPORT]),
-      vehicle_type_passenger: row[VEHICLE_TYPE_PASSENGER],
-      service_type:           row[SERVICE_TYPE],
-      base_rate:              row[BASE_RATE],
-      additional_passenger:   row[ADDITIONAL_PASSENGER],
-      zipcode:                row[ZIPCODE],
-      hotel_landmark_name:    row[HOTEL_LANDMARK_NAME],
-      hotel_landmark_street:  row[HOTEL_LANDMARK_STREET],
-      hotel_landmark_city:    row[HOTEL_LANDMARK_CITY],
-      hotel_landmark_state:   row[HOTEL_LANDMARK_STATE],
-      trip_duration:          row[TRIP_DURATION],
-      pickup_time_list:       row[PICKUP_TIMES],
-      lat_lng:                row[LAT_LNG]
+      airport:                     find_airport(row[AIRPORT]),
+      vehicle_type_passenger:        row[VEHICLE_TYPE_PASSENGER],
+      service_type:                  row[SERVICE_TYPE],
+      base_rate:                     row[BASE_RATE],
+      additional_passenger:          row[ADDITIONAL_PASSENGER],
+      zipcode:                       row[ZIPCODE],
+      hotel_landmark_name:           row[HOTEL_LANDMARK_NAME],
+      hotel_landmark_street:         row[HOTEL_LANDMARK_STREET],
+      hotel_landmark_city:           row[HOTEL_LANDMARK_CITY],
+      hotel_landmark_state:          row[HOTEL_LANDMARK_STATE],
+      trip_duration:                 row[TRIP_DURATION],
+      to_airport_pickup_time_list:   row[TO_AIRPORT_PICKUP_TIMES],
+      lat_lng:                       row[LAT_LNG],
+      from_airport_pickup_time_list: row[FROM_AIRPORT_PICKUP_TIMES],
     )
     o
   end

@@ -11,8 +11,8 @@ FactoryGirl.define do
     hotel_landmark_city "Wroclaw"
     hotel_landmark_state "Dolnyslask"
     trip_duration 60
-    pickup_time_list ['10:00AM', '11:00PM'].join(
-      Rate::PICKUP_TIMES_SEP
+    to_airport_pickup_time_list ['10:00AM', '11:00PM'].join(
+      Rate::PickupTimeMerger::PICKUP_TIMES_SEP
     )
     lat_lng '10.1,20.2'
     hotel_by_zipcode true

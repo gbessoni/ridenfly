@@ -3,8 +3,6 @@ class Rate < ActiveRecord::Base
   include Rate::Validations
   include Rate::Scopes
 
-  PICKUP_TIMES_SEP = '|'
-
   HOTEL_LANDMARK_ATTRS = [
     :hotel_landmark_name,
     :hotel_landmark_street,
@@ -16,28 +14,24 @@ class Rate < ActiveRecord::Base
 
   before_save :set_hl_words
 
-  def pickup_time_list=(list)
-    attrs = {}
-
-    list = (list || '').split(PICKUP_TIMES_SEP).uniq.map(&:strip)
-    list += [nil] * (pickup_times.size - list.size) if pickup_times.size > list.size
-
-    list.zip(pickup_times).each_with_index do |(t, obj), i|
-      oid = obj.try(:id) || i
-      attrs[oid] ||= {}
-      attrs[oid].merge!(id: oid) if obj.present?
-      if t.present?
-        attrs[oid].merge!(pickup_str: t)
-      else
-        attrs[oid].merge!(_destroy: 1)
-      end
-    end
-
-    self.pickup_times_attributes = attrs
+  def to_airport_pickup_time_list=(list)
+    self.to_airport_pickup_times_attributes = Rate::PickupTimeMerger.new(
+      list, to_airport_pickup_times
+    ).attrs
   end
 
-  def pickup_time_list
-    pickup_times.map(&:pickup_str).join(PICKUP_TIMES_SEP)
+  def from_airport_pickup_time_list=(list)
+    self.from_airport_pickup_times_attributes = Rate::PickupTimeMerger.new(
+      list, from_airport_pickup_times
+    ).attrs
+  end
+
+  def to_airport_pickup_time_list
+    to_airport_pickup_times.map(&:pickup_str).join(Rate::PickupTimeMerger::PICKUP_TIMES_SEP)
+  end
+
+  def from_airport_pickup_time_list
+    from_airport_pickup_times.map(&:pickup_str).join(Rate::PickupTimeMerger::PICKUP_TIMES_SEP)
   end
 
   def airport_name
@@ -58,7 +52,7 @@ class Rate < ActiveRecord::Base
 
   def hotel_landmark
     [  hotel_landmark_name,
-       hotel_landmark_street, 
+       hotel_landmark_street,
        hotel_landmark_city,
        hotel_landmark_state
     ].reject(&:blank?).join(', ')
