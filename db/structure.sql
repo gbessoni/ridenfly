@@ -304,7 +304,8 @@ ALTER SEQUENCE oauth_applications_id_seq OWNED BY oauth_applications.id;
 CREATE TABLE rate_pickup_times (
     id integer NOT NULL,
     pickup integer,
-    rate_id integer
+    rate_id integer,
+    direction character varying DEFAULT 'to_airport'::character varying
 );
 
 
@@ -825,4 +826,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150112125329');
 INSERT INTO schema_migrations (version) VALUES ('20150114122912');
 
 INSERT INTO schema_migrations (version) VALUES ('20150323132328');
+
+INSERT INTO schema_migrations (version) VALUES ('20150421113308');
 
