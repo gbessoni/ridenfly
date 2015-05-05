@@ -78,7 +78,8 @@ class Admin::CompaniesController < Admin::ApplicationController
         :airports, :hours_of_operation, :hours_in_advance_to_accept_rez, :pickup_info, :after_hours_info,
         :excess_luggage_charge, :luggage_insured, :child_rate, :child_car_seats_included, :luggage_limitation_policy,
         :company_reservation_policy, :company_cancellation_policy, :child_safety_policy, :pet_car_seat_policy,
-        :vehicle_types, :other_vehicle_types, :notification_fax, :notification_email, :city, :active, :fax, :image,
+        :vehicle_types, :other_vehicle_types, :notification_fax, :notification_email, :city, :active,
+        :active_to_airport, :active_from_airport, :fax, :image,
         {vehicle_types_attributes: [:how_many, :num_of_passengers, :id]},
         {user_attributes: [:email, :password, :password_confirmation, :id]}
       )

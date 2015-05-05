@@ -3,6 +3,8 @@
 
   = f.input :name, label: 'Company name'
   = f.input :active
+  = f.input :active_to_airport
+  = f.input :active_from_airport
   = f.input :contact_first_name
   = f.input :contact_last_name
 
@@ -26,7 +28,7 @@
     %table.std
       %thead
         %tr
-          %th 
+          %th
           %th Check all that apply
       %tbody
         %tr
@@ -57,7 +59,7 @@
     %table.std
       %thead
         %tr
-          %th 
+          %th
           %th How Many in Fleet
           %th Total Passenger Capacity
       %tbody
