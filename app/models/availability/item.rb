@@ -56,19 +56,23 @@ class Availability::Item
   end
 
   def first_leg
+    return nil if search.roundtrip? && !trip_direction_active?(search.second_leg)
+
     self.class.new(
       search: search.first_leg,
       flight_time: search.flight_time,
       rate: rate,
-    )
+    ) if trip_direction_active?(search.first_leg)
   end
 
   def second_leg
+    return nil unless search.roundtrip?
+
     self.class.new(
       search: search.second_leg,
       flight_time: search.return_flight_time,
       rate: rate,
-    ) if search.roundtrip?
+    ) if trip_direction_active?(search.second_leg) && trip_direction_active?(search.first_leg)
   end
 
   def rez_acceptable?
@@ -86,5 +90,10 @@ class Availability::Item
     # times.select do |pt|
     #   pt.in_working_hours?(stime, etime)
     # end
+  end
+
+  def trip_direction_active?(search)
+    (search.to_airport? && rate.company.active_to_airport) ||
+    (search.from_airport? && rate.company.active_from_airport)
   end
 end
