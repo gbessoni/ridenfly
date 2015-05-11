@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Availability::Item do
   subject { build(:availability_item, search: search, rate: rate) }
 
+  it { expect(described_class.new).not_to be_valid }
+
   describe "#pickup_times" do
     let(:rate) do
       build(:rate, company:

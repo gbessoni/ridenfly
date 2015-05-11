@@ -5,8 +5,9 @@ class Availability::Collection
 
   def all(opts = {})
     rates(opts).map do |rate|
-      Availability::Item.new(search: search, rate: rate)
-    end
+      item = Availability::Item.new(search: search, rate: rate)
+      item.valid? ? item : nil
+    end.compact
   end
 
   def find(id)

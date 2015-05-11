@@ -1,5 +1,6 @@
 class Availability::Item
   include Virtus.model
+  include ActiveModel::Validations
 
   attribute :search, Availability::Search
   attribute :rate, Rate
@@ -10,6 +11,8 @@ class Availability::Item
     :base_rate, :additional_passenger, :airport, :company, :zipcode,
     :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
     :hotel_landmark_state, :capacity, :company, :distance, to: :rate
+
+  validates :rates, presence: true
 
   def id
     rates.map(&:rate_id).join('-')
@@ -30,7 +33,7 @@ class Availability::Item
   end
 
   def rates
-    @rates ||= [first_leg, second_leg].compact
+    @rates ||= [first_leg, second_leg].compact if search.present?
   end
 
   def total_charge
