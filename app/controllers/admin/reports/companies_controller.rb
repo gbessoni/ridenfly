@@ -4,11 +4,13 @@ class Admin::Reports::CompaniesController < Admin::ApplicationController
   expose(:companies) { @companies }
 
   def index
-    @q = Reservation.ransack(params[:q])
+    @q = Rate.ransack(params[:q])
     @companies = paginate_model @q.result
-      .select('reservations.*, companies.name as company_name')
-      .select('SUM(net_fare) as net_fare_total')
-      .group('rates.company_id, reservations.id, companies.name')
+      .select("COUNT(*) as count")
+      .select("companies.name as company_name")
+      .select("SUM(reservations.net_fare) as net_fare_total")
       .joins(:company)
+      .joins(:reservations)
+      .group('rates.company_id, companies.name')
   end
 end
