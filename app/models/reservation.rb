@@ -3,6 +3,7 @@ class Reservation < ActiveRecord::Base
 
   belongs_to :rate
   belongs_to :sibling, class_name: 'Reservation'
+  has_one :company, through: :rate
 
   validates :net_fare, presence: true, numericality: true
   validates :rate, :email, presence: true

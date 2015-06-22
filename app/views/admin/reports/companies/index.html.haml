@@ -1,0 +1,14 @@
+%h1.page-header
+  Listing companies (#{companies.total_entries})
+
+= render partial: 'search_form'
+
+%table.std
+  %thead
+    %tr
+      %th Company name
+
+  %tbody
+    - companies.each do |company|
+      %tr
+        %td= company.company_name

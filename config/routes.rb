@@ -26,6 +26,10 @@ Rails.application.routes.draw do
       resources :rates, :only => [:index, :create]
     end
 
+    namespace :reports do
+      resources :companies, only: :index
+    end
+
     root 'welcome#index'
   end
 
