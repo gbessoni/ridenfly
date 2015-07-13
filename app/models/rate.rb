@@ -14,6 +14,8 @@ class Rate < ActiveRecord::Base
 
   before_save :set_hl_words
 
+  has_many :reservations
+
   def to_airport_pickup_time_list=(list)
     self.to_airport_pickup_times_attributes = Rate::PickupTimeMerger.new(
       list, to_airport_pickup_times
