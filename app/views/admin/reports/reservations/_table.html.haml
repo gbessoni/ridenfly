@@ -1,0 +1,21 @@
+%table.std
+  %thead
+    %tr
+      %th Created at
+      %th Pickup date
+      %th Confirmation #
+      %th Passenger name
+      %th Passengers
+      %th Price
+      %th Status
+
+  %tbody
+    - reservations.each do |reservation|
+      %tr
+        %td= l reservation.created_at, format: :std
+        %td= l reservation.pickup_datetime, format: :std
+        %td= reservation.id
+        %td= reservation.passenger_name
+        %td= reservation.num_of_passengers
+        %td= number_to_currency reservation.net_fare
+        %td= reservation.status

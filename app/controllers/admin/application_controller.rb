@@ -3,6 +3,7 @@ class Admin::ApplicationController < ApplicationController
   include SendCsvFile
   include HtmlResponse
   include ModelPaginator
+  include JsonResponse
 
   before_action :authenticate_user!
 

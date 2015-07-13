@@ -1,7 +1,6 @@
 class Ridenfly.RemoteLink
   constructor: (selector, @callback) ->
     @$el = $(selector)
-    console.log @$el
     @$el.on 'click', @action
 
   action: (e) =>
@@ -18,9 +17,11 @@ class Ridenfly.RemoteLink
       cache: false
       processData: false
       success: (data, textStatus, jqXHR) =>
-        @response data, target
+        paresedData = $.parseJSON(data)
+        @response paresedData, target
       error: (jqXHR, textStatus, errorThrown) =>
-        @response jqXHR.responseText, target
+        paresedData = $.parseJSON(jqXHR.responseText)
+        @response paresedData, target
 
   response: (data, elem) ->
     @callback(data) if typeof @callback == 'function'

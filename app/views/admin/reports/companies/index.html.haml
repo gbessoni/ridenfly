@@ -8,14 +8,12 @@
     %tr
       %th Company name
       %th Net fare total
-      %th Reservations status
 
   %tbody
     - companies.each do |company|
       %tr
         %td
-          = link_to company.company_name, admin_reports_reservations_url(q: {company_id_eq: company.id}), data: {company_id: company.id}
+          = link_to company.company_name, admin_reports_reservations_url(q: {company_id_eq: company.id, pickup_datetime_start_date_gteq: q.pickup_datetime_start, pickup_datetime_end_date_lteq: q.pickup_datetime_end}), data: {company_id: company.id}
         %td= number_to_currency company.net_fare_total
-        %td= company.reservation_status
       %tr
-        %td{colspan: 3, data: {reservations_company_id: company.id}}
+        %td{colspan: 2, data: {reservations_company_id: company.id}}
