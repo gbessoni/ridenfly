@@ -7,8 +7,10 @@
   %thead
     %tr
       %th Company name
+      %th Net fare total
 
   %tbody
     - companies.each do |company|
       %tr
         %td= company.company_name
+        %td= number_to_currency company.net_fare_total
