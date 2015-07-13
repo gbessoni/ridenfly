@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
     namespace :reports do
       resources :companies, only: :index
+      resources :reservations, only: :index
     end
 
     root 'welcome#index'

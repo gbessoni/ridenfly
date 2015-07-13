@@ -8,9 +8,14 @@
     %tr
       %th Company name
       %th Net fare total
+      %th Reservations status
 
   %tbody
     - companies.each do |company|
       %tr
-        %td= company.company_name
+        %td
+          = link_to company.company_name, admin_reports_reservations_url(q: {company_id_eq: company.id}), data: {company_id: company.id}
         %td= number_to_currency company.net_fare_total
+        %td= company.reservation_status
+      %tr
+        %td{colspan: 3, data: {reservations_company_id: company.id}}

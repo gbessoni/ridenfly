@@ -1,9 +1,9 @@
 .row
   .col-xs-12
-    = search_form_for @q, url: admin_reports_companies_url do |f|
-      = f.input :reservations_pickup_datetime_start_date_gteq, label: 'Pickup start date', required: false, as: :date_picker, input_html:{value: f.object.reservations_pickup_datetime_start_date_gteq.present? ? l(f.object.reservations_pickup_datetime_start_date_gteq.try(:to_date)) : nil}
+    = search_form_for q, url: admin_reports_companies_url do |f|
+      = f.input :reservations_pickup_datetime_start_date_gteq, label: 'Pickup start date', required: false, as: :date_picker, input_html:{value: f.object.pickup_datetime_start}
 
-      = f.input :reservations_pickup_datetime_end_date_lteq, label: 'Pickup end date', required: false, as: :date_picker, input_html:{value: f.object.reservations_pickup_datetime_end_date_lteq.present? ? l(f.object.reservations_pickup_datetime_end_date_lteq.try(:to_date)) : nil}
+      = f.input :reservations_pickup_datetime_end_date_lteq, label: 'Pickup end date', required: false, as: :date_picker, input_html:{value: f.object.pickup_datetime_end}
 
       = f.actions do |f|
         = f.submit 'Search', class: 'btn btn-primary btn-xs'
