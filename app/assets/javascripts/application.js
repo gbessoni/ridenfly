@@ -17,25 +17,24 @@
 //= require underscore
 //= require backbone
 
-//= require ridenfly
-//= require ./libs/moment.min
-//= require_tree ./libs
+//= require moment
+//= require bootstrap-datetimepicker
 //= require pickers
+
+//= require ridenfly
+//= require_tree ./libs
 //= require ./controllers/base
 //= require_tree ./controllers
 //= require_tree ./views
 
 //= require_self
 
-$(document).ready(function(){
+$(document).on('ready', function() {
   Ridenfly.initialize()
 });
 
-$(document).on('ready page:change', function() {
-  $('.datetimepicker').datetimepicker({
-      direction: 'bottom',
-      pickSeconds: false
-  });
+$(document).on('page:load', function() {
+  Ridenfly.initialize()
 });
 
 // $(document).on('ready page:change', function() {
