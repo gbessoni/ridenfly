@@ -16,7 +16,7 @@ class Payment < ActiveRecord::Base
   end
 
   def prepare_amount
-    self.amount = reservations.sum(:net_fare)
+    self.amount = reservations.active.sum(:net_fare)
   end
 
   def check_company_payment_conflict
