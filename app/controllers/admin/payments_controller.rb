@@ -14,9 +14,14 @@ class Admin::PaymentsController < Admin::ApplicationController
     end
   end
 
+  def update
+    payment = find_payment
+    payment.update_attributes paid: payment_params[:paid]
+    json_response_success message: 'Payment has been updated.'
+  end
+
   def destroy
-    payment = Payment.where(id: params[:id]).first
-    if payment.try(:destroy)
+    if find_payment.try(:destroy)
       flash[:notice] = 'Payment removed.'
     end
     redirect_to admin_payments_url
@@ -24,7 +29,11 @@ class Admin::PaymentsController < Admin::ApplicationController
 
   protected
 
+  def find_payment
+    Payment.where(id: params[:id]).first
+  end
+
   def payment_params
-    params.require(:payment).permit(:company_id, :from, :to)
+    params.require(:payment).permit(:company_id, :from, :to, :paid)
   end
 end

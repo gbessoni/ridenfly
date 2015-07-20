@@ -20,7 +20,7 @@ class Payment < ActiveRecord::Base
   end
 
   def check_company_payment_conflict
-    return if from.blank? || to.blank?
+    return if from.blank? || to.blank? || persisted?
 
     if self.class
       .where(company_id: company_id)

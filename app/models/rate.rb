@@ -73,10 +73,10 @@ class Rate < ActiveRecord::Base
     attributes['distance']
   end
 
-  def payment_present?(from, to)
+  def payment(from, to)
     payments.select do |pay|
       from.to_date == pay.from.to_date && pay.to.to_date == to.to_date
-    end.present?
+    end.first
   end
 
   protected

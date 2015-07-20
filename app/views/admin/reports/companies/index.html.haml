@@ -21,9 +21,11 @@
         %td= q.pickup_datetime_end
         %td= number_to_currency company.net_fare_total
         %td
-          - if company.payment_present?(q.pickup_datetime_start, q.pickup_datetime_end)
-            = label_tag 'Paid?'
-            = check_box_tag ''
+          - payment = company.payment(q.pickup_datetime_start, q.pickup_datetime_end)
+          - if payment.present?
+            = label_tag "payment_#{company.id}", 'Paid?'
+            = hidden_field_tag "payment", "0", id: "hidden_payment_#{company.id}"
+            = check_box_tag "payment", "1", payment.paid, id: "payment_#{company.id}", data: {payment_url: admin_payment_url(payment.id)}
           - else
             = link_to 'Create payment', admin_payments_url(payment: {company_id: company.id, from: q.pickup_datetime_start, to: q.pickup_datetime_end}), data: {company_id: company.id, action: 'create-payment', remote_method: 'POST'}, class: 'btn btn-primary btn-xs'
       %tr
