@@ -16,10 +16,10 @@
     - companies.each do |company|
       %tr
         %td
-          = link_to company.company_name, admin_reports_reservations_url(q: {company_id_eq: company.id, pickup_datetime_start_date_gteq: q.pickup_datetime_start, pickup_datetime_end_date_lteq: q.pickup_datetime_end}), data: {company_id: company.id}
+          = link_to company.company_name, admin_reports_reservations_url(q: {company_id_eq: company.id, pickup_datetime_start_date_gteq: q.pickup_datetime_start, pickup_datetime_end_date_lteq: q.pickup_datetime_end}), data: {company_id: company.id, action: 'show-reservations'}
         %td= q.pickup_datetime_start
         %td= q.pickup_datetime_end
         %td= number_to_currency company.net_fare_total
-        %td= link_to 'Create payment', '#', class: 'btn btn-primary btn-xs'
+        %td= link_to 'Create payment', admin_payments_url(payment: {company_id: company.id}), class: 'btn btn-primary btn-xs', data: {company_id: company.id, action: 'create-payment', remote_method: 'POST'}
       %tr
         %td{colspan: 6, data: {reservations_company_id: company.id}}

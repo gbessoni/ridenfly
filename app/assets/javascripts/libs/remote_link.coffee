@@ -19,9 +19,11 @@ class Ridenfly.RemoteLink
       success: (data, textStatus, jqXHR) =>
         paresedData = $.parseJSON(data)
         @response paresedData, target
+        Ridenfly.Flash.success paresedData.message if paresedData.message?
       error: (jqXHR, textStatus, errorThrown) =>
         paresedData = $.parseJSON(jqXHR.responseText)
         @response paresedData, target
+        Ridenfly.Flash.error paresedData.message if paresedData.message?
 
   response: (data, elem) ->
     @callback(data) if typeof @callback == 'function'
