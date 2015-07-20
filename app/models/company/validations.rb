@@ -17,6 +17,9 @@ module Company::Validations
     validates :hours_of_operation, format: HOURS_OF_OPERATION_FORMAT_REGEXP, allow_blank: true
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
     validate :check_hoo_times
+    validates :commission, numericality: {
+      greater_than_or_equal_to: 0.0, :less_than_or_equal_to => 100.0
+    }, allow_nil: true
 
     before_validation :strip_hours_of_operation
   end
