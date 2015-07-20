@@ -300,6 +300,42 @@ ALTER SEQUENCE oauth_applications_id_seq OWNED BY oauth_applications.id;
 
 
 --
+-- Name: payments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE payments (
+    id integer NOT NULL,
+    company_id integer,
+    "from" timestamp without time zone,
+    "to" timestamp without time zone,
+    amount numeric(8,2),
+    paid boolean DEFAULT false,
+    net_commission numeric(8,2),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: payments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE payments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: payments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE payments_id_seq OWNED BY payments.id;
+
+
+--
 -- Name: rate_pickup_times; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -515,6 +551,13 @@ ALTER TABLE ONLY oauth_applications ALTER COLUMN id SET DEFAULT nextval('oauth_a
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY payments ALTER COLUMN id SET DEFAULT nextval('payments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY rate_pickup_times ALTER COLUMN id SET DEFAULT nextval('rate_pickup_times_id_seq'::regclass);
 
 
@@ -577,6 +620,14 @@ ALTER TABLE ONLY oauth_access_tokens
 
 ALTER TABLE ONLY oauth_applications
     ADD CONSTRAINT oauth_applications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: payments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY payments
+    ADD CONSTRAINT payments_pkey PRIMARY KEY (id);
 
 
 --
@@ -718,6 +769,14 @@ ALTER TABLE ONLY companies
 
 
 --
+-- Name: payments_company_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY payments
+    ADD CONSTRAINT payments_company_id_fk FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE;
+
+
+--
 -- Name: rate_pickup_times_rate_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -832,4 +891,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150323132328');
 INSERT INTO schema_migrations (version) VALUES ('20150421113308');
 
 INSERT INTO schema_migrations (version) VALUES ('20150505124513');
+
+INSERT INTO schema_migrations (version) VALUES ('20150720064254');
 

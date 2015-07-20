@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  get 'payments/index'
+  end
+
   devise_for :users
 
   use_doorkeeper do
