@@ -1,4 +1,6 @@
 class Admin::PaymentsController < Admin::ApplicationController
+  require_role :admin
+
   expose(:payments) { @payments }
 
   def new
