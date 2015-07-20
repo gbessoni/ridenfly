@@ -1,2 +1,17 @@
-%h1 Admin::Payments::Owed#index
-%p Find me in app/views/admin/payments/owed/index.html.haml
+%h1.page-header Payments owed
+
+%table.std
+  %thead
+    %tr
+      %th Company
+      %th Payment owed
+      %th Unpaid payments
+      %th Total
+
+  %tbody
+    - payments.each do |payment|
+      %tr
+        %td= payment.company.name
+        %td
+        %td
+        %td= number_to_currency payment.total

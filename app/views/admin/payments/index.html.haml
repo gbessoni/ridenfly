@@ -7,6 +7,7 @@
   = f.actions do |f|
     = f.submit 'Generate', class: 'btn btn-primary btn-xs'
 
+
 %table.std
   %thead
     %tr
@@ -30,3 +31,5 @@
           = check_box_tag "payment", "1", payment.paid, id: "payment_#{payment.id}", data: {payment_url: admin_payment_url(payment.id)}
         %td= link_to 'Companies', admin_reports_companies_url(payment: {from: payment.from.to_date, to: payment.to.to_date})
         %td= link_to 'Destroy', [:admin, payment], method: :delete, data: {confirm: 'Are you sure?'}
+
+= link_to 'Payments owed', admin_payments_owed_index_url, class: 'btn btn-primary btn-xs'

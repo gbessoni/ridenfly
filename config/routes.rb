@@ -18,14 +18,14 @@ Rails.application.routes.draw do
     resources :companies
     resources :rates
     resources :airports
-    resources :payments
     resources :reservations, only: [:index, :show, :destroy] do
       resource :cancel, only: [:create]
     end
 
     namespace :payments do
-      resources :owed, only: :index, controller: 'payments/owed'
+      resources :owed, only: :index, controller: 'owed'
     end
+    resources :payments
 
     namespace :import do
       resources :rates, only: [:index, :create]
