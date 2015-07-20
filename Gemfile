@@ -41,6 +41,7 @@ gem 'whenever', :require => false
 gem 'american_date'
 gem 'airbrake'
 gem 'paperclip', '~> 4.2'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'capistrano-rails'
