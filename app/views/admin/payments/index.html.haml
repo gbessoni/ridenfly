@@ -1,2 +1,21 @@
-%h1 Admin::Payments#index
-%p Find me in app/views/admin/payments/index.html.haml
+%h1.page-header
+  Listing payments (#{payments.total_entries})
+
+%table.std
+  %thead
+    %tr
+      %th Company
+      %th From
+      %th To
+      %th Amount
+      %th Paid?
+      %th
+  %tbody
+    - payments.each do |payment|
+      %tr
+        %td= payment.company.name
+        %td= l payment.from.to_date
+        %td= l payment.to.to_date
+        %td= number_to_currency payment.amount
+        %td= payment.paid
+        %td= link_to 'Destroy', [:admin, payment], method: :delete, data: {confirm: 'Are you sure?'}

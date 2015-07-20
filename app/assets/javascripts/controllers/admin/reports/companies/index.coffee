@@ -7,4 +7,4 @@ class Ridenfly.Controllers.Admin.Reports.Companies.Index extends Ridenfly.Contro
     $("td[data-reservations-company-id=#{data.company_id}]").html data.html
 
   onCreatePayment: (data) ->
-    console.log data
+    location.reload() if data.reload?

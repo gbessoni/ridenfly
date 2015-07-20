@@ -22,4 +22,22 @@ RSpec.describe Payment, type: :model do
 
     it { expect(subject.amount.to_f).to eql 0.0 }
   end
+
+  describe "#check_company_payment_conflict" do
+    let(:company) do
+      create(:company, user: create(:user))
+    end
+    let(:payment_params) do
+      { company: company, from: '2015-10-09 12:00', to: '2015-10-11 15:32' }
+    end
+
+    before do
+      create(:payment, payment_params)
+    end
+
+    it "adds error" do
+      payment = build(:payment, payment_params)
+      expect(payment).to be_invalid
+    end
+  end
 end

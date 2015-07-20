@@ -6,6 +6,7 @@ class Payment < ActiveRecord::Base
   }, through: :company
 
   validates :company, :from, :to, :amount, presence: true
+  validate :check_company_payment_conflict
 
   before_validation :prepare_from_and_to, :prepare_amount
 
@@ -16,5 +17,17 @@ class Payment < ActiveRecord::Base
 
   def prepare_amount
     self.amount = reservations.sum(:net_fare)
+  end
+
+  def check_company_payment_conflict
+    return if from.blank? || to.blank?
+
+    if self.class
+      .where(company_id: company_id)
+      .where('"from" BETWEEN :from AND :to OR "to" BETWEEN :from AND :to',
+        from: from, to: to
+      ).present?
+      errors.add(:base, :payment_conflict)
+    end
   end
 end

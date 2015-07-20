@@ -14,6 +14,8 @@ class Rate < ActiveRecord::Base
 
   before_save :set_hl_words
 
+  belongs_to :company
+  has_many :payments, through: :company
   has_many :reservations
 
   def to_airport_pickup_time_list=(list)
@@ -69,6 +71,12 @@ class Rate < ActiveRecord::Base
 
   def distance
     attributes['distance']
+  end
+
+  def payment_present?(from, to)
+    payments.select do |pay|
+      from.to_date == pay.from.to_date && pay.to.to_date == to.to_date
+    end.present?
   end
 
   protected

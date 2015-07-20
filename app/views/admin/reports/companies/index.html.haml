@@ -10,7 +10,7 @@
       %th Date from
       %th Date to
       %th Net fare total
-      %th Action
+      %th
 
   %tbody
     - companies.each do |company|
@@ -20,6 +20,11 @@
         %td= q.pickup_datetime_start
         %td= q.pickup_datetime_end
         %td= number_to_currency company.net_fare_total
-        %td= link_to 'Create payment', admin_payments_url(payment: {company_id: company.id}), class: 'btn btn-primary btn-xs', data: {company_id: company.id, action: 'create-payment', remote_method: 'POST'}
+        %td
+          - if company.payment_present?(q.pickup_datetime_start, q.pickup_datetime_end)
+            = label_tag 'Paid?'
+            = check_box_tag ''
+          - else
+            = link_to 'Create payment', admin_payments_url(payment: {company_id: company.id, from: q.pickup_datetime_start, to: q.pickup_datetime_end}), data: {company_id: company.id, action: 'create-payment', remote_method: 'POST'}, class: 'btn btn-primary btn-xs'
       %tr
         %td{colspan: 6, data: {reservations_company_id: company.id}}

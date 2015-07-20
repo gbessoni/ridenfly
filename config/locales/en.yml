@@ -238,3 +238,7 @@ en:
           attributes:
             pickup_time_list:
               invalid_format: "has invalid format - use HH:MMAM or HH:MMPM"
+        payment:
+          attributes:
+            base:
+              payment_conflict: "Payment for similar dates already exists"
