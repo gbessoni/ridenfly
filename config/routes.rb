@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-  get 'payments/index'
-  end
-
   devise_for :users
 
   use_doorkeeper do
@@ -27,8 +23,12 @@ Rails.application.routes.draw do
       resource :cancel, only: [:create]
     end
 
+    namespace :payments do
+      resources :owed, only: :index, controller: 'payments/owed'
+    end
+
     namespace :import do
-      resources :rates, :only => [:index, :create]
+      resources :rates, only: [:index, :create]
     end
 
     namespace :reports do
