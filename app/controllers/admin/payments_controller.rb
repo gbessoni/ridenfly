@@ -40,6 +40,6 @@ class Admin::PaymentsController < Admin::ApplicationController
   end
 
   def payment_params
-    params.require(:payment).permit(:company_id, :from, :to, :paid)
+    params.fetch(:payment, {}).permit(:company_id, :from, :to, :paid)
   end
 end
