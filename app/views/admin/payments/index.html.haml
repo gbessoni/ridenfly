@@ -1,6 +1,12 @@
 %h1.page-header
   Listing payments (#{payments.total_entries})
 
+= simple_form_for Payment.new, url: admin_reports_companies_url, method: :get do |f|
+  = f.input :from, as: :date_picker
+  = f.input :to, as: :date_picker
+  = f.actions do |f|
+    = f.submit 'Generate', class: 'btn btn-primary btn-xs'
+
 %table.std
   %thead
     %tr
@@ -17,5 +23,8 @@
         %td= l payment.from.to_date
         %td= l payment.to.to_date
         %td= number_to_currency payment.amount
-        %td= payment.paid
+        %td
+          = label_tag "payment_#{payment.id}", 'Yes/No'
+          = hidden_field_tag "payment", "0", id: "hidden_payment_#{payment.id}"
+          = check_box_tag "payment", "1", payment.paid, id: "payment_#{payment.id}", data: {payment_url: admin_payment_url(payment.id)}
         %td= link_to 'Destroy', [:admin, payment], method: :delete, data: {confirm: 'Are you sure?'}

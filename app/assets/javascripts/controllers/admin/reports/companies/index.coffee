@@ -2,19 +2,9 @@ class Ridenfly.Controllers.Admin.Reports.Companies.Index extends Ridenfly.Contro
   initialize: ->
     new Ridenfly.RemoteLink "a[data-action=show-reservations]", @onShowReservations
     new Ridenfly.RemoteLink "a[data-action=create-payment]", @onCreatePayment
-    $("input[data-payment-url]").on 'change', @onPaidChange
 
   onShowReservations: (data) ->
     $("td[data-reservations-company-id=#{data.company_id}]").html data.html
 
   onCreatePayment: (data) ->
-    location.reload() if data.reload?
-
-  onPaidChange: (e) ->
-    target = $(e.currentTarget)
-    $.ajax
-      url: target.attr('data-payment-url')
-      type: 'PUT'
-      data:
-        payment:
-          paid: target.is(':checked')
+    window.location = data.reload if data.reload?

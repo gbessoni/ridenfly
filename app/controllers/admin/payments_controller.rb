@@ -1,6 +1,10 @@
 class Admin::PaymentsController < Admin::ApplicationController
   expose(:payments) { @payments }
 
+  def new
+    @payment = Payment.new payment_params
+  end
+
   def index
     @payments = Payment.paginate page: params[:page], per_page: 20
   end
@@ -8,7 +12,7 @@ class Admin::PaymentsController < Admin::ApplicationController
   def create
     @payment = Payment.new payment_params
     if @payment.save
-      json_response_success message: 'Payment has been created', reload: true
+      json_response_success message: 'Payment has been created', reload: admin_payments_url
     else
       json_response_error message: @payment.errors.full_messages.join(', ')
     end
