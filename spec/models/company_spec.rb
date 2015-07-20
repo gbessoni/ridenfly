@@ -4,6 +4,7 @@ RSpec.describe Company do
   it { expect(subject).to belong_to :user }
   it { expect(subject).to have_many :rates }
   it { expect(subject).to have_many :reservations }
+  it { expect(subject).to have_many :payments }
 
   describe "validations" do
     described_class::REQUIRED_FIELDS.each do |name|
