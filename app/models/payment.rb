@@ -8,7 +8,7 @@ class Payment < ActiveRecord::Base
   validates :company, :from, :to, :amount, presence: true
   validate :check_company_payment_conflict
 
-  before_validation :prepare_from_and_to, :prepare_amount
+  before_validation :prepare_from_and_to, :prepare_amount, :prepare_net_commission
 
   scope :by_times, ->(from, to) do
     where('"from" >= :from AND "to" <= :to', from: from, to: to)
@@ -21,6 +21,10 @@ class Payment < ActiveRecord::Base
 
   def prepare_amount
     self.amount = reservations.active.sum(:net_fare)
+  end
+
+  def prepare_net_commission
+    self.net_commission = reservations.active.sum(:net_fare) * (company.commission || 0.0) / 100.0
   end
 
   def check_company_payment_conflict

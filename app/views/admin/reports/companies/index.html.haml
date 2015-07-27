@@ -10,6 +10,7 @@
       %th Date from
       %th Date to
       %th Net fare total
+      %th Net commission total
       %th
 
   %tbody
@@ -20,6 +21,7 @@
         %td= q.pickup_datetime_start
         %td= q.pickup_datetime_end
         %td= number_to_currency company.net_fare_total
+        %td= number_to_currency company.net_commission_total
         %td
           - payment = company.payment(q.pickup_datetime_start, q.pickup_datetime_end)
           - if payment.present?

@@ -12,6 +12,7 @@ class Admin::Reports::CompaniesController < Admin::ApplicationController
       .select("companies.name as company_name")
       .select("reservations.status as reservation_status")
       .select("SUM(reservations.net_fare) as net_fare_total")
+      .select("SUM(reservations.net_fare / 100.0 * companies.commission) as net_commission_total")
       .joins(:company)
       .joins(:reservations)
       .includes(:payments)

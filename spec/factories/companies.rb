@@ -31,5 +31,6 @@ FactoryGirl.define do
     pet_car_seat_policy "MyText"
     other_vehicle_types "MyText"
     no_pickup_message 'We will call you one day before flight'
+    commission 10
   end
 end

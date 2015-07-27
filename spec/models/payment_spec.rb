@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
+  let(:company) { build(:company) }
+  subject { build(:payment, company: company) }
+
   it { expect(subject).to belong_to(:company) }
   it { expect(subject).to have_many(:reservations) }
 
-  subject { build(:payment) }
-
   describe "#prepare_from_and_to" do
     subject do
-      build(:payment, from: '2015-10-10 12:30', to: '2015-10-12 15:32')
+      build(:payment, from: '2015-10-10 12:30', to: '2015-10-12 15:32', company: company)
     end
 
     before { subject.valid? }
