@@ -10,6 +10,10 @@ class Payment < ActiveRecord::Base
 
   before_validation :prepare_from_and_to, :prepare_amount
 
+  scope :by_times, ->(from, to) do
+    where('"from" >= :from AND "to" <= :to', from: from, to: to)
+  end
+
   def prepare_from_and_to
     self.from = from.to_date.beginning_of_day if from.present?
     self.to   = to.to_date.end_of_day if to.present?
@@ -29,5 +33,13 @@ class Payment < ActiveRecord::Base
       ).present?
       errors.add(:base, :payment_conflict)
     end
+  end
+
+  def owed_amount
+    self.class.where(paid: true).by_times(from, to).sum(:amount)
+  end
+
+  def unpaid_amount
+    self.class.where(paid: false).by_times(from, to).sum(:amount)
   end
 end

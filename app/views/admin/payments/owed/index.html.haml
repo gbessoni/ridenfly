@@ -12,6 +12,6 @@
     - payments.each do |payment|
       %tr
         %td= payment.company.name
-        %td
-        %td
+        %td= number_to_currency payment.owed_amount
+        %td= number_to_currency payment.unpaid_amount
         %td= number_to_currency payment.total
