@@ -3,7 +3,9 @@ class Admin::Payments::OwedController < Admin::ApplicationController
 
   def index
     @payments = Payment
-      .select('payments.company_id, SUM(amount) as total, MIN("from") as "from", MAX("to") as "to"')
+      .select('payments.company_id')
+      .select('SUM(payments.amount - payments.net_commission) as owed_total')
+      .select('MIN("from") as "from", MAX("to") as "to"')
       .includes(:company)
       .group('payments.company_id')
   end

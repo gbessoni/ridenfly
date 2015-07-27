@@ -14,6 +14,20 @@ class Payment < ActiveRecord::Base
     where('"from" >= :from AND "to" <= :to', from: from, to: to)
   end
 
+  def owed_unpaid
+    scoped = self.class.where(paid: false, company_id: company_id)
+      .by_times(from, to)
+    scoped.sum(:amount) - scoped.sum(:net_commission)
+  end
+
+  def owed_paid
+    scoped = self.class.where(company_id: company_id)
+      .by_times(from, to)
+    scoped.sum(:amount) - scoped.sum(:net_commission)
+  end
+
+  protected
+
   def prepare_from_and_to
     self.from = from.to_date.beginning_of_day if from.present?
     self.to   = to.to_date.end_of_day if to.present?
@@ -37,13 +51,5 @@ class Payment < ActiveRecord::Base
       ).present?
       errors.add(:base, :payment_conflict)
     end
-  end
-
-  def owed_amount
-    self.class.where(paid: true).by_times(from, to).sum(:amount)
-  end
-
-  def unpaid_amount
-    self.class.where(paid: false).by_times(from, to).sum(:amount)
   end
 end
