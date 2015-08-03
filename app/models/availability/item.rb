@@ -6,7 +6,7 @@ class Availability::Item
   attribute :rate, Rate
   attribute :flight_time, Time
 
-  delegate :adults, :trip_direction, to: :search
+  delegate :num_of_passengers, :trip_direction, to: :search
   delegate :service_type, :vehicle_type_passenger,
     :base_rate, :additional_passenger, :airport, :company, :zipcode,
     :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
@@ -37,7 +37,7 @@ class Availability::Item
   end
 
   def total_charge
-    base_rate + (additional_passenger * (adults - 1))
+    base_rate + (additional_passenger * (num_of_passengers - 1))
   end
 
   def pickup_times

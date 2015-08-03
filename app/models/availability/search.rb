@@ -81,4 +81,8 @@ class Availability::Search
   def hotel_landmark_zipcode?
     hotel_landmark_zipcode.present?
   end
+
+  def num_of_passengers
+    adults + children.to_i
+  end
 end
