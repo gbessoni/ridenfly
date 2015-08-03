@@ -1,5 +1,5 @@
 %h1.page-header
-  Listing companies (#{companies.total_entries})
+  Listing companies (#{companies.size})
 
 = render partial: 'search_form'
 
@@ -30,5 +30,3 @@
             = link_to 'Create payment', admin_payments_url(payment: {company_id: company.id, from: q.pickup_datetime_start, to: q.pickup_datetime_end}), data: {company_id: company.id, action: 'create-payment', remote_method: 'POST'}, class: 'btn btn-primary btn-xs'
       %tr
         %td{colspan: 6, data: {reservations_company_id: company.id}}
-
-= will_paginate companies

@@ -8,7 +8,7 @@ class Admin::PaymentsController < Admin::ApplicationController
   end
 
   def index
-    @payments = Payment.paginate page: params[:page], per_page: 20
+    @payments = paginate_model Payment
   end
 
   def create

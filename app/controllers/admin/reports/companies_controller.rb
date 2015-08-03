@@ -6,7 +6,7 @@ class Admin::Reports::CompaniesController < Admin::ApplicationController
 
   def index
     @q = Rate.ransack(query_params)
-    @companies = paginate_model @q.result
+    @companies = @q.result
       .select("rates.company_id as id")
       .select("rates.company_id as company_id")
       .select("companies.name as company_name")

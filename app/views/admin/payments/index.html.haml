@@ -34,4 +34,7 @@
         %td= link_to 'Companies', admin_reports_companies_url(payment: {from: payment.from.to_date, to: payment.to.to_date})
         %td= link_to 'Destroy', [:admin, payment], method: :delete, data: {confirm: 'Are you sure?'}
 
-= link_to 'Payments owed', admin_payments_owed_index_url, class: 'btn btn-primary btn-xs'
+= will_paginate payments
+
+.col-md-12
+  = link_to 'Payments owed', admin_payments_owed_index_url, class: 'btn btn-primary btn-xs'
