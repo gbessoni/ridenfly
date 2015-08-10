@@ -79,7 +79,7 @@ class Admin::CompaniesController < Admin::ApplicationController
         :excess_luggage_charge, :luggage_insured, :child_rate, :child_car_seats_included, :luggage_limitation_policy,
         :company_reservation_policy, :company_cancellation_policy, :child_safety_policy, :pet_car_seat_policy,
         :vehicle_types, :other_vehicle_types, :notification_fax, :notification_email, :city, :active,
-        :active_to_airport, :active_from_airport, :fax, :image, :commission,
+        :active_to_airport, :active_from_airport, :fax, :image, :commission, :payment_type,
         {vehicle_types_attributes: [:how_many, :num_of_passengers, :id]},
         {user_attributes: [:email, :password, :password_confirmation, :id]}
       )

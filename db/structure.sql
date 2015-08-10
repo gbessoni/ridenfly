@@ -169,7 +169,8 @@ CREATE TABLE companies (
     no_pickup_message character varying,
     active_to_airport boolean DEFAULT true,
     active_from_airport boolean DEFAULT true,
-    commission numeric(8,2) DEFAULT 0.0
+    commission numeric(8,2) DEFAULT 0.0,
+    payment_type character varying
 );
 
 
@@ -896,4 +897,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150505124513');
 INSERT INTO schema_migrations (version) VALUES ('20150720064254');
 
 INSERT INTO schema_migrations (version) VALUES ('20150720120031');
+
+INSERT INTO schema_migrations (version) VALUES ('20150810095448');
 
