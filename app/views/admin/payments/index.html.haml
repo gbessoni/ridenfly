@@ -16,6 +16,7 @@
       %th To
       %th Amount
       %th Net commission
+      %th Payment type
       %th Paid?
       %th
       %th
@@ -27,6 +28,7 @@
         %td= l payment.to.to_date
         %td= number_to_currency payment.amount
         %td= number_to_currency payment.net_commission
+        %td= payment.company.payment_type
         %td
           = label_tag "payment_#{payment.id}", 'Yes/No'
           = hidden_field_tag "payment", "0", id: "hidden_payment_#{payment.id}"

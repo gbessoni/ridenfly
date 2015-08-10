@@ -8,7 +8,7 @@ class Admin::PaymentsController < Admin::ApplicationController
   end
 
   def index
-    @payments = paginate_model Payment
+    @payments = paginate_model Payment.includes(:company)
   end
 
   def create
