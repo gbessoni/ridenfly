@@ -10,6 +10,7 @@ class Admin::Reports::CompaniesController < Admin::ApplicationController
       .select("rates.company_id as id")
       .select("rates.company_id as company_id")
       .select("companies.name as company_name")
+      .select("companies.payment_type as payment_type")
       .select("reservations.status as reservation_status")
       .select("SUM(reservations.net_fare) as net_fare_total")
       .select("SUM(reservations.net_fare / 100.0 * companies.commission) as net_commission_total")
@@ -17,7 +18,7 @@ class Admin::Reports::CompaniesController < Admin::ApplicationController
       .joins(:reservations)
       .includes(:payments)
       .where('reservations.status' => 'active')
-      .group('rates.company_id, companies.name, reservations.status')
+      .group('rates.company_id, companies.name, companies.payment_type, reservations.status')
       .order('companies.name ASC')
   end
 

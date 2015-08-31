@@ -9,6 +9,7 @@
       %th Company name
       %th Date from
       %th Date to
+      %th Payment type
       %th Net fare total
       %th Net commission total
       %th
@@ -21,6 +22,7 @@
           = link_to company.company_name, admin_reports_reservations_url(q: {company_id_eq: company.id, pickup_datetime_start_date_gteq: q.pickup_datetime_start, pickup_datetime_end_date_lteq: q.pickup_datetime_end}), data: {company_id: company.id, action: 'show-reservations'}
         %td= q.pickup_datetime_start
         %td= q.pickup_datetime_end
+        %td= company.payment_type
         %td= number_to_currency company.net_fare_total
         %td= number_to_currency company.net_commission_total
         %td= number_to_currency(company.net_fare_total - company.net_commission_total)
@@ -31,4 +33,4 @@
           - else
             = link_to 'Create payment', admin_payments_url(payment: {company_id: company.id, from: q.pickup_datetime_start, to: q.pickup_datetime_end}), data: {company_id: company.id, action: 'create-payment', remote_method: 'POST'}, class: 'btn btn-primary btn-xs'
       %tr
-        %td{colspan: 7, data: {reservations_company_id: company.id}}
+        %td{colspan: 10, data: {reservations_company_id: company.id}}
