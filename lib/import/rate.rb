@@ -18,7 +18,7 @@ class Import::Rate < Import::Base
   TO_AIRPORT_PICKUP_TIMES   = 12
   LAT_LNG                   = 13
   FROM_AIRPORT_PICKUP_TIMES = 12
-  HOTEL_BY_ZIPCODE          = 14
+  HOTEL_BY_ZIPCODE          = 15
 
   def perform
     valid? && read do|row|
