@@ -32,11 +32,14 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 set :whenever_roles, :app
 set :whenever_environment, ->{ fetch(:rails_env) }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:rails_env)}" }
+
+set :rvm_type, :user
+set :rvm_ruby_version, '2.3.0'
 
 namespace :deploy do
 
