@@ -56,7 +56,8 @@ YAML.load(companies_data).each do |company|
 
   c.blackout_dates = cc['blackout']
   c.airports = [cc['airports_serviced'], 'undefined'].reject(&:blank?).first
-  c.hours_of_operation = [cc['biz_hours_start'], cc['biz_hours_end']].join(' - ')
+
+  c.hours_of_operation = '00:00AM-23:59PM'
   c.hours_in_advance_to_accept_rez = cc['hours_in_advance']
   c.pickup_info = [cc['arrival_and_airport_pickup_info'], 'undefined'].reject(&:blank?).first
   c.after_hours_info = cc['after_hour_and_waiting_time']
@@ -114,4 +115,4 @@ end if false
     flight_number: rand(1000)
   )
   r.save!
-end
+end if false
