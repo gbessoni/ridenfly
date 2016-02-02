@@ -14,7 +14,7 @@ class Availability::PickupTime
     start_t = update_date(start_datetime, start_t)
     end_t   = update_date(end_datetime,   end_t)
 
-    (start_t <= start_datetime && end_t >= start_datetime) ||
+    (start_t <= start_datetime && end_t >= start_datetime) &&
     (start_t <= end_datetime && end_t >= end_datetime)
   end
 

@@ -84,11 +84,11 @@ RSpec.describe Company do
     end
 
     context "hours of operation start" do
-      it { expect(subject.hoo_start).to eql(Time.now.beginning_of_day + 5.hour) }
+      it { expect(subject.hoo_start).to eql(Time.current.beginning_of_day + 5.hour) }
     end
 
     context "hours of operation end" do
-      it { expect(subject.hoo_end).to eql(Time.now.beginning_of_day + 6.hour) }
+      it { expect(subject.hoo_end).to eql(Time.current.beginning_of_day + 6.hour) }
     end
   end
 end

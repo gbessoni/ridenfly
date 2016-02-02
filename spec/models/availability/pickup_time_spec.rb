@@ -22,11 +22,11 @@ RSpec.describe Availability::PickupTime do
     )).to eql true }
 
     it { expect(subject.in_working_hours?(
-      time('2:15AM'), time('8:00AM')
+      time('2:00AM'), time('8:00AM')
     )).to eql true }
 
     it { expect(subject.in_working_hours?(
-      time('0:00AM'), time('2:00AM')
+      time('0:00AM'), time('2:15AM')
     )).to eql true }
 
     it { expect(subject.in_working_hours?(

@@ -40,10 +40,10 @@ class Company < ActiveRecord::Base
   end
 
   def hoo_start
-    Time.parse(hours_of_operation_list.first) rescue nil
+    Time.zone.parse(hours_of_operation_list.first) rescue nil
   end
 
   def hoo_end
-    Time.parse(hours_of_operation_list.last) rescue nil
+    Time.zone.parse(hours_of_operation_list.last) rescue nil
   end
 end
