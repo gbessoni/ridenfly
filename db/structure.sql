@@ -98,7 +98,8 @@ CREATE TABLE airports (
     zipcode character varying(5),
     code character varying(3),
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    timezone character varying
 );
 
 
@@ -899,4 +900,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150720064254');
 INSERT INTO schema_migrations (version) VALUES ('20150720120031');
 
 INSERT INTO schema_migrations (version) VALUES ('20150810095448');
+
+INSERT INTO schema_migrations (version) VALUES ('20160310083752');
 

@@ -55,6 +55,16 @@ class Reservation < ActiveRecord::Base
     status.to_s == 'canceled'
   end
 
+  def flight_datetime
+    return read_attribute(:flight_datetime) if airport&.timezone.nil?
+    read_attribute(:flight_datetime).in_time_zone(airport&.timezone)
+  end
+
+  def pickup_datetime
+    return read_attribute(:pickup_datetime) if airport&.timezone.nil?
+    read_attribute(:pickup_datetime).in_time_zone(airport&.timezone)
+  end
+
   protected
 
   def set_price
