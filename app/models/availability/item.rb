@@ -44,8 +44,8 @@ class Availability::Item
     if rez_acceptable?
       filter_times(
         possible_pickup_times,
-        company.hoo_start,
-        company.hoo_end,
+        hoo_in_timezone(company.hoo_start, airport&.timezone),
+        hoo_in_timezone(company.hoo_end, airport&.timezone),
       ).map(&:as_json)
     else
       []
@@ -97,5 +97,10 @@ class Availability::Item
   def trip_direction_active?(search)
     (search.to_airport? && rate.company.active_to_airport) ||
     (search.from_airport? && rate.company.active_from_airport)
+  end
+
+  def hoo_in_timezone(hoo_time, timezone)
+    return hoo_time if timezone.nil?
+    ActiveSupport::TimeZone[timezone].parse(hoo_time.asctime)
   end
 end
