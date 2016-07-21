@@ -36,6 +36,15 @@ class Admin::ReservationsController < Admin::ApplicationController
     end
   end
 
+  def resend_confirmation_email
+    @reservation = reservations_finder.find(params[:reservation_id])
+    CustomerMailer.reservation_email(@reservation).deliver_now
+    respond_to do |format|
+      format.html { redirect_to admin_reservations_url, notice: 'Reservation email resend correctly.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reservation

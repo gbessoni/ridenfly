@@ -19,9 +19,9 @@ Rails.application.routes.draw do
     resources :rates
     resources :airports
     resources :reservations, only: [:index, :show, :destroy] do
+      get '/resend_confirmation_email', to: 'reservations#resend_confirmation_email', as: 'resend_confirmation_email'
       resource :cancel, only: [:create]
     end
-
     namespace :payments do
       resources :owed, only: :index, controller: 'owed'
     end

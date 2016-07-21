@@ -47,6 +47,7 @@
           = link_to 'Show',[:admin, reservation]
           - if current_admin?
             = link_to 'Destroy', [:admin, reservation], :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to 'Resend confirmation email', admin_reservation_resend_confirmation_email_path(reservation), :data => { :confirm => 'Are you sure?' }
   %tfoot
     %tr
       %td Total:
