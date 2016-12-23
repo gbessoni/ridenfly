@@ -83,7 +83,7 @@ airport_timezones:
   RAP: "America/Denver"
   JAX: "Asia/Tehran"
   SDF: "America/Edmonton"
-  CVG: "Africa/Lagos"
+  CVG: "Eastern Time (US & Canada)"
   SBA: "America/Sao_Paulo"
   PUJ: "America/Santo_Domingo"
   SDQ: "America/Puerto_Rico"
