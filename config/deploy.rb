@@ -41,6 +41,11 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:rails_env)}" }
 set :rvm_type, :user
 set :rvm_ruby_version, '2.3.0'
 
+set :rollbar_token, '54973eddc73a4ded88f772fd62e9c4cf'
+set :rollbar_env, proc { fetch :stage }
+set :rollbar_role, proc { :app }
+
+
 namespace :deploy do
 
   desc 'Restart application'

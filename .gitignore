@@ -18,3 +18,5 @@ coverage/*
 vendor/ruby_gems
 public/system/*
 .ruby-version
+*.swp
+*.swo
