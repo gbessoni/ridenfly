@@ -12,6 +12,7 @@ window.Ridenfly =
       Import:
         Rates: {}
       Payments: {}
+      Reservations: {}
 
   initialize: ->
     factory = new Ridenfly.ClassFactory(gon.controller)
