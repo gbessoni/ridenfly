@@ -1,6 +1,8 @@
 .row
   .col-xs-12
     = search_form_for @q, url: admin_reservations_url do |f|
+      = f.input :id_eq, label: 'REZ ID', required: false
+
       - if current_admin?
         = f.input :rate_company_id_eq, collection: Company.asc_by_name, label: 'Company', required: false
 
@@ -9,6 +11,10 @@
       = f.input :pickup_datetime_start_date_gteq, label: 'Pickup start date', required: false, as: :date_picker, input_html:{value: f.object.pickup_datetime_start_date_gteq.present? ? I18n.l(f.object.pickup_datetime_start_date_gteq.try(:to_date)) : nil}
 
       = f.input :pickup_datetime_end_date_lteq, label: 'Pickup end date', required: false, as: :date_picker, input_html:{value: f.object.pickup_datetime_end_date_lteq.present? ? I18n.l(f.object.pickup_datetime_end_date_lteq.try(:to_date)) : nil}
+
+      = f.input :passenger_name_cont, label: 'Passenger name', required: false
+      = f.input :phone_cont, label: 'Phone', required: false
+      = f.input :email_cont, label: 'Email', required: false
 
       = f.actions do |f|
         = f.submit 'Search', class: 'btn btn-primary btn-xs'

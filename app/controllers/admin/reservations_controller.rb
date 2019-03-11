@@ -10,6 +10,10 @@ class Admin::ReservationsController < Admin::ApplicationController
   # GET /admin/reservations
   # GET /admin/reservations.json
   def index
+    if params[:q] && params[:q]['id_eq'].present?
+      params[:q]['id_eq'].sub!(/[^\d]+/, '')
+    end
+
     @q = reservations_finder.ransack(params[:q])
     @reservations = @q.result
       .includes(rate: [:airport, :company])
