@@ -42,6 +42,7 @@ gem 'american_date'
 gem 'paperclip', '~> 4.2'
 gem 'newrelic_rpm'
 gem 'rollbar'
+gem 'enumerize'
 
 group :development do
   gem 'capistrano-rails'

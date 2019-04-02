@@ -152,6 +152,8 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
+    enumerize (2.2.2)
+      activesupport (>= 3.2)
     equalizer (0.0.9)
     erubis (2.7.0)
     eventmachine (1.0.4)
@@ -370,6 +372,7 @@ DEPENDENCIES
   devise
   doorkeeper
   draper
+  enumerize
   factory_girl_rails
   foreigner
   gon
