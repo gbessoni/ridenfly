@@ -51,6 +51,7 @@ group :development do
   gem 'spring'
   gem 'thin'
   gem 'quiet_assets'
+  gem 'annotate'
 end
 
 group :development, :test do
