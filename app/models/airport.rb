@@ -5,6 +5,7 @@ class Airport < ActiveRecord::Base
   scope :asc_by_name, ->{ order('name asc') }
 end
 
+
 # == Schema Information
 #
 # Table name: airports
@@ -19,5 +20,10 @@ end
 #  created_at     :datetime
 #  updated_at     :datetime
 #  timezone       :string
+#
+# Indexes
+#
+#  index_airports_on_name            (name) UNIQUE
+#  index_airports_on_state_and_code  (state,code) UNIQUE
 #
 

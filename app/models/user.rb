@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -33,5 +34,10 @@ end
 #  created_at             :datetime
 #  updated_at             :datetime
 #  roles                  :string          default("[]")
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 

@@ -1,7 +1,10 @@
 class Rate < ActiveRecord::Base
+  extend Enumerize
+
   include Rate::Relations
   include Rate::Validations
   include Rate::Scopes
+
 
   HOTEL_LANDMARK_ATTRS = [
     :hotel_landmark_name,
@@ -11,6 +14,14 @@ class Rate < ActiveRecord::Base
   ]
 
   CAPACITY = 4
+
+  VEHICLES_TYPES_CAPACITY = {
+    sedan: 4,
+    mini_van: 10,
+    limousine: 12
+  }.freeze
+
+  enumerize :vehicle_capacity_type, in: VEHICLES_TYPES_CAPACITY.keys
 
   before_save :set_hl_words
 
@@ -88,6 +99,7 @@ class Rate < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: rates
@@ -112,5 +124,11 @@ end
 #  hl_words               :string
 #  hotel_by_zipcode       :boolean         default("false")
 #  vehicle_capacity_type  :string
+#
+# Indexes
+#
+#  index_rates_on_hl_words                (hl_words)
+#  index_rates_on_vehicle_capacity_type   (vehicle_capacity_type)
+#  index_rates_on_vehicle_type_passenger  (vehicle_type_passenger)
 #
 

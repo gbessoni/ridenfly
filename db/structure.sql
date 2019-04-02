@@ -741,6 +741,13 @@ CREATE INDEX index_rates_on_lat_and_lng ON public.rates USING gist (public.ll_to
 
 
 --
+-- Name: index_rates_on_vehicle_capacity_type; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_rates_on_vehicle_capacity_type ON public.rates USING btree (vehicle_capacity_type);
+
+
+--
 -- Name: index_rates_on_vehicle_type_passenger; Type: INDEX; Schema: public; Owner: -
 --
 
