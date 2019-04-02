@@ -25,7 +25,7 @@ class Availability::Collection
 
   def rates_scope
     Rate.joins(:airport).joins(:company)
-    .by_vehicle_capacity(search.adults.to_i + search.childs.to_i)
+    .by_vehicle_capacity(search.adults.to_i + search.children.to_i)
       .by_airport(search.airport)
       .where('companies.active' => true)
   end

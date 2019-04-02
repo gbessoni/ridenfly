@@ -63,9 +63,9 @@ module Rate::Scopes
 
     scope :by_vehicle_capacity, ->(passengers) do
       suitable_types =
-        VEHICLES_TYPES_CAPACITY
+        Rate::VEHICLES_TYPES_CAPACITY
           .select { |k, v| v <= passengers }
-          .keys
+          .keys.map(&:to_s)
       where(vehicle_capacity_type: suitable_types + [nil])
     end
   end
