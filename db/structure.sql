@@ -2,12 +2,18 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.6.12
+-- Dumped by pg_dump version 9.6.12
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -79,21 +85,19 @@ CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
 COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
 
 
-SET search_path = public, pg_catalog;
-
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: airports; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: airports; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE airports (
+CREATE TABLE public.airports (
     id integer NOT NULL,
-    name character varying(255),
-    street_address character varying(255),
-    city character varying(255),
+    name character varying,
+    street_address character varying,
+    city character varying,
     state character varying(2),
     zipcode character varying(5),
     code character varying(3),
@@ -107,7 +111,7 @@ CREATE TABLE airports (
 -- Name: airports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE airports_id_seq
+CREATE SEQUENCE public.airports_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -119,37 +123,37 @@ CREATE SEQUENCE airports_id_seq
 -- Name: airports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE airports_id_seq OWNED BY airports.id;
+ALTER SEQUENCE public.airports_id_seq OWNED BY public.airports.id;
 
 
 --
--- Name: companies; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: companies; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE companies (
+CREATE TABLE public.companies (
     id integer NOT NULL,
     user_id integer,
-    name character varying(255),
-    contact_first_name character varying(255),
-    contact_last_name character varying(255),
-    street character varying(255),
-    state character varying(255),
-    zipcode character varying(255),
-    phone character varying(255),
-    mobile character varying(255),
-    dispatch_phone character varying(255),
-    website character varying(255),
+    name character varying,
+    contact_first_name character varying,
+    contact_last_name character varying,
+    street character varying,
+    state character varying,
+    zipcode character varying,
+    phone character varying,
+    mobile character varying,
+    dispatch_phone character varying,
+    website character varying,
     description text,
-    reservation_notification hstore,
+    reservation_notification public.hstore,
     blackout_dates text,
     airports text,
-    hours_of_operation character varying(255),
-    hours_in_advance_to_accept_rez character varying(255),
+    hours_of_operation character varying,
+    hours_in_advance_to_accept_rez character varying,
     pickup_info text,
     after_hours_info text,
-    excess_luggage_charge character varying(255),
+    excess_luggage_charge character varying,
     luggage_insured boolean DEFAULT false,
-    child_rate character varying(255),
+    child_rate character varying,
     child_car_seats_included boolean DEFAULT false,
     luggage_limitation_policy text,
     company_reservation_policy text,
@@ -159,12 +163,12 @@ CREATE TABLE companies (
     other_vehicle_types text,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    vehicle_types hstore[],
-    fax character varying(255),
-    city character varying(255),
+    vehicle_types public.hstore[],
+    fax character varying,
+    city character varying,
     active boolean DEFAULT true,
-    image_file_name character varying(255),
-    image_content_type character varying(255),
+    image_file_name character varying,
+    image_content_type character varying,
     image_file_size integer,
     image_updated_at timestamp without time zone,
     no_pickup_message character varying,
@@ -179,7 +183,7 @@ CREATE TABLE companies (
 -- Name: companies_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE companies_id_seq
+CREATE SEQUENCE public.companies_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -191,23 +195,23 @@ CREATE SEQUENCE companies_id_seq
 -- Name: companies_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE companies_id_seq OWNED BY companies.id;
+ALTER SEQUENCE public.companies_id_seq OWNED BY public.companies.id;
 
 
 --
--- Name: oauth_access_grants; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: oauth_access_grants; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE oauth_access_grants (
+CREATE TABLE public.oauth_access_grants (
     id integer NOT NULL,
     resource_owner_id integer NOT NULL,
     application_id integer NOT NULL,
-    token character varying(255) NOT NULL,
+    token character varying NOT NULL,
     expires_in integer NOT NULL,
     redirect_uri text NOT NULL,
     created_at timestamp without time zone NOT NULL,
     revoked_at timestamp without time zone,
-    scopes character varying(255)
+    scopes character varying
 );
 
 
@@ -215,7 +219,7 @@ CREATE TABLE oauth_access_grants (
 -- Name: oauth_access_grants_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE oauth_access_grants_id_seq
+CREATE SEQUENCE public.oauth_access_grants_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -227,23 +231,23 @@ CREATE SEQUENCE oauth_access_grants_id_seq
 -- Name: oauth_access_grants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE oauth_access_grants_id_seq OWNED BY oauth_access_grants.id;
+ALTER SEQUENCE public.oauth_access_grants_id_seq OWNED BY public.oauth_access_grants.id;
 
 
 --
--- Name: oauth_access_tokens; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: oauth_access_tokens; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE oauth_access_tokens (
+CREATE TABLE public.oauth_access_tokens (
     id integer NOT NULL,
     resource_owner_id integer,
     application_id integer,
-    token character varying(255) NOT NULL,
-    refresh_token character varying(255),
+    token character varying NOT NULL,
+    refresh_token character varying,
     expires_in integer,
     revoked_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
-    scopes character varying(255)
+    scopes character varying
 );
 
 
@@ -251,7 +255,7 @@ CREATE TABLE oauth_access_tokens (
 -- Name: oauth_access_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE oauth_access_tokens_id_seq
+CREATE SEQUENCE public.oauth_access_tokens_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -263,23 +267,23 @@ CREATE SEQUENCE oauth_access_tokens_id_seq
 -- Name: oauth_access_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE oauth_access_tokens_id_seq OWNED BY oauth_access_tokens.id;
+ALTER SEQUENCE public.oauth_access_tokens_id_seq OWNED BY public.oauth_access_tokens.id;
 
 
 --
--- Name: oauth_applications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: oauth_applications; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE oauth_applications (
+CREATE TABLE public.oauth_applications (
     id integer NOT NULL,
-    name character varying(255) NOT NULL,
-    uid character varying(255) NOT NULL,
-    secret character varying(255) NOT NULL,
+    name character varying NOT NULL,
+    uid character varying NOT NULL,
+    secret character varying NOT NULL,
     redirect_uri text NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     owner_id integer,
-    owner_type character varying(255)
+    owner_type character varying
 );
 
 
@@ -287,7 +291,7 @@ CREATE TABLE oauth_applications (
 -- Name: oauth_applications_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE oauth_applications_id_seq
+CREATE SEQUENCE public.oauth_applications_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -299,14 +303,14 @@ CREATE SEQUENCE oauth_applications_id_seq
 -- Name: oauth_applications_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE oauth_applications_id_seq OWNED BY oauth_applications.id;
+ALTER SEQUENCE public.oauth_applications_id_seq OWNED BY public.oauth_applications.id;
 
 
 --
--- Name: payments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: payments; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE payments (
+CREATE TABLE public.payments (
     id integer NOT NULL,
     company_id integer,
     "from" timestamp without time zone,
@@ -323,7 +327,7 @@ CREATE TABLE payments (
 -- Name: payments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE payments_id_seq
+CREATE SEQUENCE public.payments_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -335,14 +339,14 @@ CREATE SEQUENCE payments_id_seq
 -- Name: payments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE payments_id_seq OWNED BY payments.id;
+ALTER SEQUENCE public.payments_id_seq OWNED BY public.payments.id;
 
 
 --
--- Name: rate_pickup_times; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: rate_pickup_times; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE rate_pickup_times (
+CREATE TABLE public.rate_pickup_times (
     id integer NOT NULL,
     pickup integer,
     rate_id integer,
@@ -354,7 +358,7 @@ CREATE TABLE rate_pickup_times (
 -- Name: rate_pickup_times_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE rate_pickup_times_id_seq
+CREATE SEQUENCE public.rate_pickup_times_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -366,33 +370,34 @@ CREATE SEQUENCE rate_pickup_times_id_seq
 -- Name: rate_pickup_times_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE rate_pickup_times_id_seq OWNED BY rate_pickup_times.id;
+ALTER SEQUENCE public.rate_pickup_times_id_seq OWNED BY public.rate_pickup_times.id;
 
 
 --
--- Name: rates; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: rates; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE rates (
+CREATE TABLE public.rates (
     id integer NOT NULL,
     airport_id integer,
-    vehicle_type_passenger character varying(255),
-    service_type character varying(255),
+    vehicle_type_passenger character varying,
+    service_type character varying,
     base_rate numeric(8,2),
     additional_passenger numeric(8,2) DEFAULT 0.0,
-    zipcode character varying(255),
-    hotel_landmark_name character varying(255),
-    hotel_landmark_street character varying(255),
-    hotel_landmark_city character varying(255),
-    hotel_landmark_state character varying(255),
+    zipcode character varying,
+    hotel_landmark_name character varying,
+    hotel_landmark_street character varying,
+    hotel_landmark_city character varying,
+    hotel_landmark_state character varying,
     trip_duration integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     company_id integer,
     lat double precision,
     lng double precision,
-    hl_words character varying(255),
-    hotel_by_zipcode boolean DEFAULT false
+    hl_words character varying,
+    hotel_by_zipcode boolean DEFAULT false,
+    vehicle_capacity_type character varying
 );
 
 
@@ -400,7 +405,7 @@ CREATE TABLE rates (
 -- Name: rates_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE rates_id_seq
+CREATE SEQUENCE public.rates_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -412,37 +417,37 @@ CREATE SEQUENCE rates_id_seq
 -- Name: rates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE rates_id_seq OWNED BY rates.id;
+ALTER SEQUENCE public.rates_id_seq OWNED BY public.rates.id;
 
 
 --
--- Name: reservations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: reservations; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE reservations (
+CREATE TABLE public.reservations (
     id integer NOT NULL,
     flight_datetime timestamp without time zone,
     pickup_datetime timestamp without time zone,
-    passenger_name character varying(255),
-    phone character varying(255),
+    passenger_name character varying,
+    phone character varying,
     adults integer,
     net_fare numeric(8,2),
     gratuity numeric(8,2) DEFAULT 0.0,
-    address character varying(255),
-    cross_street character varying(255),
-    airline character varying(255),
+    address character varying,
+    cross_street character varying,
+    airline character varying,
     luggage integer DEFAULT 0,
-    cancelation_reason character varying(255),
-    flight_number character varying(255),
-    status character varying(255) DEFAULT 'active'::character varying,
-    trip_direction character varying(255) DEFAULT 'to_airport'::character varying,
+    cancelation_reason character varying,
+    flight_number character varying,
+    status character varying DEFAULT 'active'::character varying,
+    trip_direction character varying DEFAULT 'to_airport'::character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     sibling_id integer,
     rate_id integer,
     children integer DEFAULT 0,
-    email character varying(255),
-    flight_type character varying(255) DEFAULT 'domestic'::character varying
+    email character varying,
+    flight_type character varying DEFAULT 'domestic'::character varying
 );
 
 
@@ -450,7 +455,7 @@ CREATE TABLE reservations (
 -- Name: reservations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE reservations_id_seq
+CREATE SEQUENCE public.reservations_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -462,27 +467,27 @@ CREATE SEQUENCE reservations_id_seq
 -- Name: reservations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE reservations_id_seq OWNED BY reservations.id;
+ALTER SEQUENCE public.reservations_id_seq OWNED BY public.reservations.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE schema_migrations (
-    version character varying(255) NOT NULL
+CREATE TABLE public.schema_migrations (
+    version character varying NOT NULL
 );
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
-CREATE TABLE users (
+CREATE TABLE public.users (
     id integer NOT NULL,
-    email character varying(255) DEFAULT ''::character varying NOT NULL,
-    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
-    reset_password_token character varying(255),
+    email character varying DEFAULT ''::character varying NOT NULL,
+    encrypted_password character varying DEFAULT ''::character varying NOT NULL,
+    reset_password_token character varying,
     reset_password_sent_at timestamp without time zone,
     remember_created_at timestamp without time zone,
     sign_in_count integer DEFAULT 0 NOT NULL,
@@ -492,7 +497,7 @@ CREATE TABLE users (
     last_sign_in_ip inet,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    roles character varying(255) DEFAULT '[]'::character varying
+    roles character varying DEFAULT '[]'::character varying
 );
 
 
@@ -500,7 +505,7 @@ CREATE TABLE users (
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE users_id_seq
+CREATE SEQUENCE public.users_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -512,318 +517,318 @@ CREATE SEQUENCE users_id_seq
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE users_id_seq OWNED BY users.id;
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: airports id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY airports ALTER COLUMN id SET DEFAULT nextval('airports_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY companies ALTER COLUMN id SET DEFAULT nextval('companies_id_seq'::regclass);
+ALTER TABLE ONLY public.airports ALTER COLUMN id SET DEFAULT nextval('public.airports_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: companies id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY oauth_access_grants ALTER COLUMN id SET DEFAULT nextval('oauth_access_grants_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY oauth_access_tokens ALTER COLUMN id SET DEFAULT nextval('oauth_access_tokens_id_seq'::regclass);
+ALTER TABLE ONLY public.companies ALTER COLUMN id SET DEFAULT nextval('public.companies_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: oauth_access_grants id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY oauth_applications ALTER COLUMN id SET DEFAULT nextval('oauth_applications_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY payments ALTER COLUMN id SET DEFAULT nextval('payments_id_seq'::regclass);
+ALTER TABLE ONLY public.oauth_access_grants ALTER COLUMN id SET DEFAULT nextval('public.oauth_access_grants_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: oauth_access_tokens id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY rate_pickup_times ALTER COLUMN id SET DEFAULT nextval('rate_pickup_times_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY rates ALTER COLUMN id SET DEFAULT nextval('rates_id_seq'::regclass);
+ALTER TABLE ONLY public.oauth_access_tokens ALTER COLUMN id SET DEFAULT nextval('public.oauth_access_tokens_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: oauth_applications id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY reservations ALTER COLUMN id SET DEFAULT nextval('reservations_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+ALTER TABLE ONLY public.oauth_applications ALTER COLUMN id SET DEFAULT nextval('public.oauth_applications_id_seq'::regclass);
 
 
 --
--- Name: airports_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: payments id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY airports
+ALTER TABLE ONLY public.payments ALTER COLUMN id SET DEFAULT nextval('public.payments_id_seq'::regclass);
+
+
+--
+-- Name: rate_pickup_times id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.rate_pickup_times ALTER COLUMN id SET DEFAULT nextval('public.rate_pickup_times_id_seq'::regclass);
+
+
+--
+-- Name: rates id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.rates ALTER COLUMN id SET DEFAULT nextval('public.rates_id_seq'::regclass);
+
+
+--
+-- Name: reservations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.reservations ALTER COLUMN id SET DEFAULT nextval('public.reservations_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- Name: airports airports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.airports
     ADD CONSTRAINT airports_pkey PRIMARY KEY (id);
 
 
 --
--- Name: companies_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: companies companies_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY companies
+ALTER TABLE ONLY public.companies
     ADD CONSTRAINT companies_pkey PRIMARY KEY (id);
 
 
 --
--- Name: oauth_access_grants_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: oauth_access_grants oauth_access_grants_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY oauth_access_grants
+ALTER TABLE ONLY public.oauth_access_grants
     ADD CONSTRAINT oauth_access_grants_pkey PRIMARY KEY (id);
 
 
 --
--- Name: oauth_access_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: oauth_access_tokens oauth_access_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY oauth_access_tokens
+ALTER TABLE ONLY public.oauth_access_tokens
     ADD CONSTRAINT oauth_access_tokens_pkey PRIMARY KEY (id);
 
 
 --
--- Name: oauth_applications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: oauth_applications oauth_applications_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY oauth_applications
+ALTER TABLE ONLY public.oauth_applications
     ADD CONSTRAINT oauth_applications_pkey PRIMARY KEY (id);
 
 
 --
--- Name: payments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: payments payments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY payments
+ALTER TABLE ONLY public.payments
     ADD CONSTRAINT payments_pkey PRIMARY KEY (id);
 
 
 --
--- Name: rate_pickup_times_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: rate_pickup_times rate_pickup_times_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY rate_pickup_times
+ALTER TABLE ONLY public.rate_pickup_times
     ADD CONSTRAINT rate_pickup_times_pkey PRIMARY KEY (id);
 
 
 --
--- Name: rates_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: rates rates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY rates
+ALTER TABLE ONLY public.rates
     ADD CONSTRAINT rates_pkey PRIMARY KEY (id);
 
 
 --
--- Name: reservations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: reservations reservations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY reservations
+ALTER TABLE ONLY public.reservations
     ADD CONSTRAINT reservations_pkey PRIMARY KEY (id);
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY users
+ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
 --
--- Name: index_airports_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_airports_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE UNIQUE INDEX index_airports_on_name ON airports USING btree (name);
-
-
---
--- Name: index_airports_on_state_and_code; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_airports_on_state_and_code ON airports USING btree (state, code);
+CREATE UNIQUE INDEX index_airports_on_name ON public.airports USING btree (name);
 
 
 --
--- Name: index_oauth_access_grants_on_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_airports_on_state_and_code; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE UNIQUE INDEX index_oauth_access_grants_on_token ON oauth_access_grants USING btree (token);
-
-
---
--- Name: index_oauth_access_tokens_on_refresh_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_oauth_access_tokens_on_refresh_token ON oauth_access_tokens USING btree (refresh_token);
+CREATE UNIQUE INDEX index_airports_on_state_and_code ON public.airports USING btree (state, code);
 
 
 --
--- Name: index_oauth_access_tokens_on_resource_owner_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_oauth_access_grants_on_token; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_oauth_access_tokens_on_resource_owner_id ON oauth_access_tokens USING btree (resource_owner_id);
-
-
---
--- Name: index_oauth_access_tokens_on_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_oauth_access_tokens_on_token ON oauth_access_tokens USING btree (token);
+CREATE UNIQUE INDEX index_oauth_access_grants_on_token ON public.oauth_access_grants USING btree (token);
 
 
 --
--- Name: index_oauth_applications_on_owner_id_and_owner_type; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_oauth_access_tokens_on_refresh_token; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_oauth_applications_on_owner_id_and_owner_type ON oauth_applications USING btree (owner_id, owner_type);
-
-
---
--- Name: index_oauth_applications_on_uid; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_oauth_applications_on_uid ON oauth_applications USING btree (uid);
+CREATE UNIQUE INDEX index_oauth_access_tokens_on_refresh_token ON public.oauth_access_tokens USING btree (refresh_token);
 
 
 --
--- Name: index_rates_on_hl_words; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_oauth_access_tokens_on_resource_owner_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_rates_on_hl_words ON rates USING btree (hl_words);
-
-
---
--- Name: index_rates_on_lat_and_lng; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_rates_on_lat_and_lng ON rates USING gist (ll_to_earth(lat, lng));
+CREATE INDEX index_oauth_access_tokens_on_resource_owner_id ON public.oauth_access_tokens USING btree (resource_owner_id);
 
 
 --
--- Name: index_rates_on_vehicle_type_passenger; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_oauth_access_tokens_on_token; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_rates_on_vehicle_type_passenger ON rates USING btree (vehicle_type_passenger);
-
-
---
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
+CREATE UNIQUE INDEX index_oauth_access_tokens_on_token ON public.oauth_access_tokens USING btree (token);
 
 
 --
--- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_oauth_applications_on_owner_id_and_owner_type; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
-
-
---
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+CREATE INDEX index_oauth_applications_on_owner_id_and_owner_type ON public.oauth_applications USING btree (owner_id, owner_type);
 
 
 --
--- Name: companies_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: index_oauth_applications_on_uid; Type: INDEX; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY companies
-    ADD CONSTRAINT companies_user_id_fk FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE;
-
-
---
--- Name: payments_company_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY payments
-    ADD CONSTRAINT payments_company_id_fk FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE;
+CREATE UNIQUE INDEX index_oauth_applications_on_uid ON public.oauth_applications USING btree (uid);
 
 
 --
--- Name: rate_pickup_times_rate_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: index_rates_on_hl_words; Type: INDEX; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY rate_pickup_times
-    ADD CONSTRAINT rate_pickup_times_rate_id_fk FOREIGN KEY (rate_id) REFERENCES rates(id) ON DELETE CASCADE;
-
-
---
--- Name: rates_airport_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY rates
-    ADD CONSTRAINT rates_airport_id_fk FOREIGN KEY (airport_id) REFERENCES airports(id) ON DELETE CASCADE;
+CREATE INDEX index_rates_on_hl_words ON public.rates USING btree (hl_words);
 
 
 --
--- Name: rates_company_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: index_rates_on_lat_and_lng; Type: INDEX; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY rates
-    ADD CONSTRAINT rates_company_id_fk FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE;
-
-
---
--- Name: reservations_rate_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY reservations
-    ADD CONSTRAINT reservations_rate_id_fk FOREIGN KEY (rate_id) REFERENCES rates(id) ON DELETE CASCADE;
+CREATE INDEX index_rates_on_lat_and_lng ON public.rates USING gist (public.ll_to_earth(lat, lng));
 
 
 --
--- Name: reservations_sibling_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: index_rates_on_vehicle_type_passenger; Type: INDEX; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY reservations
-    ADD CONSTRAINT reservations_sibling_id_fk FOREIGN KEY (sibling_id) REFERENCES reservations(id) ON DELETE CASCADE;
+CREATE INDEX index_rates_on_vehicle_type_passenger ON public.rates USING btree (vehicle_type_passenger);
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_users_on_email ON public.users USING btree (email);
+
+
+--
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING btree (reset_password_token);
+
+
+--
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX unique_schema_migrations ON public.schema_migrations USING btree (version);
+
+
+--
+-- Name: companies companies_user_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.companies
+    ADD CONSTRAINT companies_user_id_fk FOREIGN KEY (user_id) REFERENCES public.users(id) ON DELETE CASCADE;
+
+
+--
+-- Name: payments payments_company_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.payments
+    ADD CONSTRAINT payments_company_id_fk FOREIGN KEY (company_id) REFERENCES public.companies(id) ON DELETE CASCADE;
+
+
+--
+-- Name: rate_pickup_times rate_pickup_times_rate_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.rate_pickup_times
+    ADD CONSTRAINT rate_pickup_times_rate_id_fk FOREIGN KEY (rate_id) REFERENCES public.rates(id) ON DELETE CASCADE;
+
+
+--
+-- Name: rates rates_airport_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.rates
+    ADD CONSTRAINT rates_airport_id_fk FOREIGN KEY (airport_id) REFERENCES public.airports(id) ON DELETE CASCADE;
+
+
+--
+-- Name: rates rates_company_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.rates
+    ADD CONSTRAINT rates_company_id_fk FOREIGN KEY (company_id) REFERENCES public.companies(id) ON DELETE CASCADE;
+
+
+--
+-- Name: reservations reservations_rate_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.reservations
+    ADD CONSTRAINT reservations_rate_id_fk FOREIGN KEY (rate_id) REFERENCES public.rates(id) ON DELETE CASCADE;
+
+
+--
+-- Name: reservations reservations_sibling_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.reservations
+    ADD CONSTRAINT reservations_sibling_id_fk FOREIGN KEY (sibling_id) REFERENCES public.reservations(id) ON DELETE CASCADE;
 
 
 --
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO "$user", public;
 
 INSERT INTO schema_migrations (version) VALUES ('20141031075156');
 
@@ -902,4 +907,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150720120031');
 INSERT INTO schema_migrations (version) VALUES ('20150810095448');
 
 INSERT INTO schema_migrations (version) VALUES ('20160310083752');
+
+INSERT INTO schema_migrations (version) VALUES ('20190302165152');
 
