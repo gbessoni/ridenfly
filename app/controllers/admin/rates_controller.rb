@@ -96,7 +96,8 @@ class Admin::RatesController < Admin::ApplicationController
         :airport_id, :company_id, :vehicle_type_passenger, :service_type, :base_rate, :additional_passenger,
         :zipcode, :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
         :hotel_landmark_state, :trip_duration, :to_airport_pickup_time_list,
-        :from_airport_pickup_time_list, :lat_lng, :hotel_by_zipcode
+        :from_airport_pickup_time_list, :lat_lng, :hotel_by_zipcode,
+        :vehicle_capacity_type,
       )
     end
 
