@@ -87,3 +87,30 @@ class Rate < ActiveRecord::Base
     ).words
   end
 end
+
+# == Schema Information
+#
+# Table name: rates
+#
+#  id                     :integer         not null, primary key
+#  airport_id             :integer
+#  vehicle_type_passenger :string
+#  service_type           :string
+#  base_rate              :decimal(8, 2)
+#  additional_passenger   :decimal(8, 2)   default("0.0")
+#  zipcode                :string
+#  hotel_landmark_name    :string
+#  hotel_landmark_street  :string
+#  hotel_landmark_city    :string
+#  hotel_landmark_state   :string
+#  trip_duration          :integer
+#  created_at             :datetime
+#  updated_at             :datetime
+#  company_id             :integer
+#  lat                    :float
+#  lng                    :float
+#  hl_words               :string
+#  hotel_by_zipcode       :boolean         default("false")
+#  vehicle_capacity_type  :string
+#
+

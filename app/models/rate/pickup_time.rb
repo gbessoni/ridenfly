@@ -26,3 +26,14 @@ class Rate::PickupTime < ActiveRecord::Base
     errors.add(:pickup, :invalid_format) unless pickup_str =~ FORMAT_REGEXP
   end
 end
+
+# == Schema Information
+#
+# Table name: rate_pickup_times
+#
+#  id        :integer         not null, primary key
+#  pickup    :integer
+#  rate_id   :integer
+#  direction :string          default("to_airport")
+#
+

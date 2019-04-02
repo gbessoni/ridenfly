@@ -46,3 +46,14 @@ RSpec.describe Rate::PickupTime do
     it { expect(subject.to_time).to eql(Time.zone.parse('2014-11-18 09:00:00')) }
   end
 end
+
+# == Schema Information
+#
+# Table name: rate_pickup_times
+#
+#  id        :integer         not null, primary key
+#  pickup    :integer
+#  rate_id   :integer
+#  direction :string          default("to_airport")
+#
+

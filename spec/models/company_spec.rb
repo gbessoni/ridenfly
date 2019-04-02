@@ -92,3 +92,55 @@ RSpec.describe Company do
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: companies
+#
+#  id                             :integer         not null, primary key
+#  user_id                        :integer
+#  name                           :string
+#  contact_first_name             :string
+#  contact_last_name              :string
+#  street                         :string
+#  state                          :string
+#  zipcode                        :string
+#  phone                          :string
+#  mobile                         :string
+#  dispatch_phone                 :string
+#  website                        :string
+#  description                    :text
+#  reservation_notification       :hstore
+#  blackout_dates                 :text
+#  airports                       :text
+#  hours_of_operation             :string
+#  hours_in_advance_to_accept_rez :string
+#  pickup_info                    :text
+#  after_hours_info               :text
+#  excess_luggage_charge          :string
+#  luggage_insured                :boolean         default("false")
+#  child_rate                     :string
+#  child_car_seats_included       :boolean         default("false")
+#  luggage_limitation_policy      :text
+#  company_reservation_policy     :text
+#  company_cancellation_policy    :text
+#  child_safety_policy            :text
+#  pet_car_seat_policy            :text
+#  other_vehicle_types            :text
+#  created_at                     :datetime
+#  updated_at                     :datetime
+#  vehicle_types                  :hstore
+#  fax                            :string
+#  city                           :string
+#  active                         :boolean         default("true")
+#  image_file_name                :string
+#  image_content_type             :string
+#  image_file_size                :integer
+#  image_updated_at               :datetime
+#  no_pickup_message              :string
+#  active_to_airport              :boolean         default("true")
+#  active_from_airport            :boolean         default("true")
+#  commission                     :decimal(8, 2)   default("0.0")
+#  payment_type                   :string
+#
+

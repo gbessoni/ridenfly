@@ -53,3 +53,19 @@ class Payment < ActiveRecord::Base
     end
   end
 end
+
+# == Schema Information
+#
+# Table name: payments
+#
+#  id             :integer         not null, primary key
+#  company_id     :integer
+#  from           :datetime
+#  to             :datetime
+#  amount         :decimal(8, 2)
+#  paid           :boolean         default("false")
+#  net_commission :decimal(8, 2)
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
