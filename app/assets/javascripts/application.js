@@ -20,6 +20,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require cocoon
 
 //= require ridenfly
 //= require_tree ./libs

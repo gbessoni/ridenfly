@@ -43,6 +43,8 @@ gem 'paperclip', '~> 4.2'
 gem 'newrelic_rpm'
 gem 'rollbar'
 gem 'enumerize'
+gem "cocoon"
+gem 'awesome_print'
 
 group :development do
   gem 'capistrano-rails'

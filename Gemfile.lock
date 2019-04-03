@@ -79,6 +79,7 @@ GEM
     american_date (1.1.0)
     annotate (2.4.0)
     arel (6.0.3)
+    awesome_print (1.8.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -117,6 +118,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.5)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.12)
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -358,6 +360,7 @@ PLATFORMS
 DEPENDENCIES
   american_date
   annotate
+  awesome_print
   backbone-rails
   bootstrap-generators
   bootstrap-sass
@@ -366,6 +369,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano3-unicorn
+  cocoon
   coffee-rails (~> 4.0.0)
   datetimepicker-rails!
   decent_exposure
