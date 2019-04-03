@@ -14,21 +14,14 @@ class Company < ActiveRecord::Base
 
   scope :asc_by_name, ->{ order(:name) }
 
-  def vehicle_types
-    list = read_attribute(:vehicle_types) || []
-    if list.present?
-      list.map{ |vt| Company::VehicleType.new(vt) }
-    else
-      Company::VehicleType.predefined
-    end
-  end
+  has_many :vehicle_types,
+           class_name: 'VehicleType',
+           dependent: :destroy,
+           inverse_of: :company
+  accepts_nested_attributes_for :vehicle_types
 
-  def vehicle_types_attributes=(list)
-    vts = vehicle_types.map(&:attributes)
-    list.each do |id, attrs|
-      vts[id.to_i].merge! attrs.symbolize_keys
-    end
-    write_attribute(:vehicle_types, vts)
+  def vehicle_types
+    super.present? ? super : super.build(Company::VehicleType.predefined)
   end
 
   def image_url(size=:medium)

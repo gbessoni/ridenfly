@@ -68,8 +68,11 @@
         = f.fields_for :vehicle_types do |vtf|
           %tr
             %td= vtf.object.name
+            %td= vtf.hidden_field :name
             %td= vtf.text_field :how_many
             %td= vtf.text_field :num_of_passengers
+    .links
+      = link_to_add_association 'Add Vehicle Type', f, :vehicle_types
 
   = f.input :other_vehicle_types
   = f.input :image, as: :file

@@ -1,10 +1,5 @@
-class Company::VehicleType
-  include Virtus.model
-
-  attribute :id,               Integer
-  attribute :name,             String
-  attribute :how_many,         String
-  attribute :num_of_passengers, String
+class Company::VehicleType < ActiveRecord::Base
+  belongs_to :company
 
   PREDEFINED = [
     'Shared-Ride Shuttle Van',
@@ -15,17 +10,28 @@ class Company::VehicleType
     'Private Limousine',
     'Private Min-van',
     'Scheduled Bus Service'
-  ]
+  ].freeze
 
   class << self
     def predefined
-      PREDEFINED.each_with_index.map do |name, i|
-        new(name: name, id: i)
-      end
+      PREDEFINED.each.map { |name| { name: name } }
     end
   end
-
-  def persisted?
-    true
-  end
 end
+
+
+# == Schema Information
+#
+# Table name: company_vehicle_types
+#
+#  id                :integer         not null, primary key
+#  company_id        :integer
+#  name              :string
+#  how_many          :string
+#  num_of_passengers :string
+#
+# Indexes
+#
+#  index_company_vehicle_types_on_company_id  (company_id)
+#
+

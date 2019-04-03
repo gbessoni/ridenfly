@@ -199,6 +199,38 @@ ALTER SEQUENCE public.companies_id_seq OWNED BY public.companies.id;
 
 
 --
+-- Name: company_vehicle_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.company_vehicle_types (
+    id integer NOT NULL,
+    company_id integer,
+    name character varying,
+    how_many character varying,
+    num_of_passengers character varying
+);
+
+
+--
+-- Name: company_vehicle_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.company_vehicle_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: company_vehicle_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.company_vehicle_types_id_seq OWNED BY public.company_vehicle_types.id;
+
+
+--
 -- Name: oauth_access_grants; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -535,6 +567,13 @@ ALTER TABLE ONLY public.companies ALTER COLUMN id SET DEFAULT nextval('public.co
 
 
 --
+-- Name: company_vehicle_types id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.company_vehicle_types ALTER COLUMN id SET DEFAULT nextval('public.company_vehicle_types_id_seq'::regclass);
+
+
+--
 -- Name: oauth_access_grants id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -604,6 +643,14 @@ ALTER TABLE ONLY public.airports
 
 ALTER TABLE ONLY public.companies
     ADD CONSTRAINT companies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: company_vehicle_types company_vehicle_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.company_vehicle_types
+    ADD CONSTRAINT company_vehicle_types_pkey PRIMARY KEY (id);
 
 
 --
@@ -682,6 +729,13 @@ CREATE UNIQUE INDEX index_airports_on_name ON public.airports USING btree (name)
 --
 
 CREATE UNIQUE INDEX index_airports_on_state_and_code ON public.airports USING btree (state, code);
+
+
+--
+-- Name: index_company_vehicle_types_on_company_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_company_vehicle_types_on_company_id ON public.company_vehicle_types USING btree (company_id);
 
 
 --
@@ -781,6 +835,14 @@ CREATE UNIQUE INDEX unique_schema_migrations ON public.schema_migrations USING b
 
 ALTER TABLE ONLY public.companies
     ADD CONSTRAINT companies_user_id_fk FOREIGN KEY (user_id) REFERENCES public.users(id) ON DELETE CASCADE;
+
+
+--
+-- Name: company_vehicle_types company_vehicle_types_company_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.company_vehicle_types
+    ADD CONSTRAINT company_vehicle_types_company_id_fk FOREIGN KEY (company_id) REFERENCES public.companies(id) ON DELETE CASCADE;
 
 
 --
@@ -916,4 +978,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150810095448');
 INSERT INTO schema_migrations (version) VALUES ('20160310083752');
 
 INSERT INTO schema_migrations (version) VALUES ('20190302165152');
+
+INSERT INTO schema_migrations (version) VALUES ('20190303114352');
 
