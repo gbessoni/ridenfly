@@ -53,29 +53,6 @@ RSpec.describe Company do
     it { expect(subject.notification_email).to eql 'true' }
   end
 
-  describe "#vehicle_types" do
-    it "returns predefined list" do
-      expect(
-        subject.vehicle_types.map(&:attributes)
-      ).to eql(described_class::VehicleType.predefined.map(&:attributes))
-    end
-  end
-
-  describe "#vehicle_types_attributes=" do
-    let(:attrs) do
-      {'1' => { 'how_many' => '1', 'num_of_passengers' => '2' }}
-    end
-    let(:vehicle_type) { subject.vehicle_types.find{|vt| vt.id == 1} }
-
-    before { subject.vehicle_types_attributes = attrs }
-
-    it "has new values" do
-      expect(vehicle_type.id).to eql 1
-      expect(vehicle_type.how_many).to eql '1'
-      expect(vehicle_type.num_of_passengers).to eql '2'
-    end
-  end
-
   describe "hours_of_operation" do
     subject do
       build(:company,
