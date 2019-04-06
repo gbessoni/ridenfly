@@ -61,16 +61,19 @@
     %table.std
       %thead
         %tr
-          %th
+          %th Vehicle type
           %th How Many in Fleet
           %th Total Passenger Capacity
+          %th Del?
       %tbody
         = f.fields_for :vehicle_types do |vtf|
           %tr
-            %td= vtf.object.name
-            %td= vtf.hidden_field :name
+            %td
+              = vtf.object.name
+              = vtf.hidden_field :name
             %td= vtf.text_field :how_many
             %td= vtf.text_field :num_of_passengers
+            %td= link_to_remove_association "X", f
     .links
       = link_to_add_association 'Add Vehicle Type', f, :vehicle_types
 
