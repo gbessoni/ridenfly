@@ -28,10 +28,11 @@ end
 #  company_id        :integer
 #  name              :string
 #  how_many          :string
-#  num_of_passengers :string
+#  num_of_passengers :integer
 #
 # Indexes
 #
-#  index_company_vehicle_types_on_company_id  (company_id)
+#  index_company_vehicle_types_on_company_id         (company_id)
+#  index_company_vehicle_types_on_num_of_passengers  (num_of_passengers)
 #
 

@@ -207,7 +207,7 @@ CREATE TABLE public.company_vehicle_types (
     company_id integer,
     name character varying,
     how_many character varying,
-    num_of_passengers character varying
+    num_of_passengers integer
 );
 
 
@@ -739,6 +739,13 @@ CREATE INDEX index_company_vehicle_types_on_company_id ON public.company_vehicle
 
 
 --
+-- Name: index_company_vehicle_types_on_num_of_passengers; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_company_vehicle_types_on_num_of_passengers ON public.company_vehicle_types USING btree (num_of_passengers);
+
+
+--
 -- Name: index_oauth_access_grants_on_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -980,4 +987,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160310083752');
 INSERT INTO schema_migrations (version) VALUES ('20190302165152');
 
 INSERT INTO schema_migrations (version) VALUES ('20190303114352');
+
+INSERT INTO schema_migrations (version) VALUES ('20190408013011');
 
