@@ -15,14 +15,6 @@ class Rate < ActiveRecord::Base
 
   CAPACITY = 4
 
-  VEHICLES_TYPES_CAPACITY = {
-    sedan: 4,
-    mini_van: 10,
-    limousine: 12
-  }.freeze
-
-  enumerize :vehicle_capacity_type, in: VEHICLES_TYPES_CAPACITY.keys
-
   before_save :set_hl_words
 
   belongs_to :company

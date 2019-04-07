@@ -14,14 +14,14 @@ class Company < ActiveRecord::Base
 
   scope :asc_by_name, ->{ order(:name) }
 
-  has_many :vehicle_types,
+  has_many :vehicle_types,  -> { order(:num_of_passengers) },
            class_name: 'VehicleType',
            dependent: :destroy,
            inverse_of: :company
   accepts_nested_attributes_for :vehicle_types, allow_destroy: true
 
   def vehicle_types
-    super.present? ? super : super.build(Company::VehicleType.predefined)
+    super.present? ? super : super.build(VehicleType.predefined)
   end
 
   def image_url(size=:medium)

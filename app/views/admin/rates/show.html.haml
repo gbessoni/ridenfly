@@ -10,7 +10,7 @@
   = @rate.vehicle_type_passenger
 %p
   %b Vehicle Capacity Type:
-  = vehicle_capacity_type_humanize(@rate.vehicle_capacity_type)
+  = vehicle_capacity_type_humanize(@rate.company, @rate.vehicle_capacity_type)
 %p
   %b Private or Shared:
   = @rate.service_type

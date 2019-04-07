@@ -121,6 +121,7 @@
         %th Total Passenger Capacity
     %tbody
       - @company.vehicle_types.each do |vehicle_type|
+        - next if vehicle_type.name.blank? || vehicle_type.num_of_passengers.blank?
         %tr
           %td= vehicle_type.name
           %td= vehicle_type.how_many

@@ -1,8 +1,19 @@
 module Admin::RatesHelper
-  def vehicle_capacity_type_humanize(vehicle_capacity_type)
-    if vehicle_capacity_type.present?
-      vehicle_capacity_type.to_s.titleize + ' ' +
-      "(#{Rate::VEHICLES_TYPES_CAPACITY[vehicle_capacity_type.to_sym]} passengers)"
+  def vehicle_capacity_types_list(company)
+    company.vehicle_types.map do |vt|
+      if vt.name.present? && vt.num_of_passengers.present?
+        [
+          "#{vt.name.titleize} (#{vt.num_of_passengers} passengers)",
+          vt.id
+        ]
+      end
+    end.compact
+  end
+
+  def vehicle_capacity_type_humanize(company, id)
+    name = company.vehicle_types.find_by(id: id)&.name
+    if name.present? && capacity.present?
+      "#{name.titleize} (#{pluralize(capacity, 'passenger')})"
     else
       'unknown'
     end
