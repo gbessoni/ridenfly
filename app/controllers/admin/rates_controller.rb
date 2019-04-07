@@ -97,7 +97,7 @@ class Admin::RatesController < Admin::ApplicationController
         :zipcode, :hotel_landmark_name, :hotel_landmark_street, :hotel_landmark_city,
         :hotel_landmark_state, :trip_duration, :to_airport_pickup_time_list,
         :from_airport_pickup_time_list, :lat_lng, :hotel_by_zipcode,
-        :vehicle_capacity_type,
+        :vehicle_capacity_type_id,
       )
     end
 

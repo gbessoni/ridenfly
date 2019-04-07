@@ -10,12 +10,13 @@ module Admin::RatesHelper
     end.compact
   end
 
-  def vehicle_capacity_type_humanize(company, id)
-    name = company.vehicle_types.find_by(id: id)&.name
+  def vehicle_capacity_type_humanize(vehicle_type)
+    return 'unknown' unless vehicle_type
+
+    name = vehicle_type.name
+    capacity = vehicle_type.num_of_passengers
     if name.present? && capacity.present?
-      "#{name.titleize} (#{pluralize(capacity, 'passenger')})"
-    else
-      'unknown'
+      "#{name.titleize} (#{capacity} passengers)"
     end
   end
 end

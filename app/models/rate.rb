@@ -13,12 +13,10 @@ class Rate < ActiveRecord::Base
     :hotel_landmark_state
   ]
 
-  CAPACITY = 4
-
   before_save :set_hl_words
 
   belongs_to :company
-  belongs_to :vehicle_capacity, class_name: 'Company::VehicleType'
+  belongs_to :vehicle_capacity_type, class_name: 'Company::VehicleType'
   has_many :payments, through: :company
   has_many :reservations
 
@@ -47,7 +45,7 @@ class Rate < ActiveRecord::Base
   end
 
   def capacity
-    CAPACITY
+    vehicle_capacity_type&.num_of_passengers
   end
 
   def lat_lng
