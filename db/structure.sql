@@ -429,7 +429,7 @@ CREATE TABLE public.rates (
     lng double precision,
     hl_words character varying,
     hotel_by_zipcode boolean DEFAULT false,
-    vehicle_capacity_type character varying
+    vehicle_capacity_type_id integer
 );
 
 
@@ -802,10 +802,10 @@ CREATE INDEX index_rates_on_lat_and_lng ON public.rates USING gist (public.ll_to
 
 
 --
--- Name: index_rates_on_vehicle_capacity_type; Type: INDEX; Schema: public; Owner: -
+-- Name: index_rates_on_vehicle_capacity_type_id; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_rates_on_vehicle_capacity_type ON public.rates USING btree (vehicle_capacity_type);
+CREATE INDEX index_rates_on_vehicle_capacity_type_id ON public.rates USING btree (vehicle_capacity_type_id);
 
 
 --
@@ -989,4 +989,6 @@ INSERT INTO schema_migrations (version) VALUES ('20190302165152');
 INSERT INTO schema_migrations (version) VALUES ('20190303114352');
 
 INSERT INTO schema_migrations (version) VALUES ('20190408013011');
+
+INSERT INTO schema_migrations (version) VALUES ('20190408020411');
 
