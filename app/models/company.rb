@@ -18,7 +18,7 @@ class Company < ActiveRecord::Base
            class_name: 'VehicleType',
            dependent: :destroy,
            inverse_of: :company
-  accepts_nested_attributes_for :vehicle_types
+  accepts_nested_attributes_for :vehicle_types, allow_destroy: true
 
   def vehicle_types
     super.present? ? super : super.build(Company::VehicleType.predefined)
