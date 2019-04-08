@@ -2,7 +2,7 @@
 lock '3.2.1'
 
 set :application, 'ridenfly'
-set :repo_url, 'git@bitbucket.org:kraft001/ridenfly.git'
+set :repo_url, 'git@bitbucket.org:railss/ridenfly.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
