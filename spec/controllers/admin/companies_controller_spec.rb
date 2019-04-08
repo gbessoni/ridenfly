@@ -9,7 +9,7 @@ RSpec.describe Admin::CompaniesController do
         password: 'somepassword',
         password_confirmation: 'somepassword'
       }
-    )
+    ).except('vehicle_types')
   end
 
   let(:invalid_attributes) do
@@ -24,7 +24,6 @@ RSpec.describe Admin::CompaniesController do
 
   describe "GET index" do
     it "assigns all companies as @companies" do
-      byebug
       company = Company.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:companies)).to eq([company])

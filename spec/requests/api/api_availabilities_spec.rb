@@ -187,7 +187,7 @@ RSpec.describe "Api::Availabilities" do
       it "has capacity eql to 4" do
         expect(
           avls.first['rates'].first['capacity']
-        ).to eql Rate::CAPACITY
+        ).to eql 4
       end
     end
   end

@@ -6,7 +6,7 @@
   = f.association :airport
   = f.association :company if current_admin?
   = f.input :vehicle_type_passenger, label: 'Vehicle Type / Passenger'
-  = f.input :vehicle_capacity_type_id, collection: vehicle_capacity_types_list(@rate.company)
+  = f.input :vehicle_capacity_type_id, collection: vehicle_capacity_types_list(f.object.company)
   = f.input :service_type, label: 'Private or Shared'
   = f.input :base_rate
   = f.input :additional_passenger

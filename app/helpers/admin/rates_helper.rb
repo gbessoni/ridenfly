@@ -1,5 +1,6 @@
 module Admin::RatesHelper
   def vehicle_capacity_types_list(company)
+    return [] unless company
     company.vehicle_types.map do |vt|
       if vt.name.present? && vt.num_of_passengers.present?
         [

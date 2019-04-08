@@ -14,7 +14,7 @@ class Company::VehicleType < ActiveRecord::Base
 
   class << self
     def predefined
-      PREDEFINED.each.map { |name| { name: name } }
+      PREDEFINED.map { |name| { name: name } }
     end
   end
 end
