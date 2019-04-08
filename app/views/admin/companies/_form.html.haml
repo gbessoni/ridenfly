@@ -67,7 +67,7 @@
           %th Del?
       %tbody
         = f.fields_for :vehicle_types do |vtf|
-          %tr
+          %tr.nested-fields
             %td
               = vtf.object.name
               = vtf.hidden_field :name
