@@ -14,6 +14,7 @@ class Rate < ActiveRecord::Base
   ]
 
   before_save :set_hl_words
+  before_save :fix_zipcode
 
   belongs_to :company
   belongs_to :vehicle_capacity_type, class_name: 'Company::VehicleType'
@@ -88,10 +89,11 @@ class Rate < ActiveRecord::Base
       [hotel_landmark_name, hotel_landmark_street].join ' '
     ).words
   end
+
+  def fix_zipcode
+    self.zipcode = zipcode.delete(' ')
+  end
 end
-
-
-
 
 
 # == Schema Information
