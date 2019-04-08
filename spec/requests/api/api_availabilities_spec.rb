@@ -4,7 +4,7 @@ RSpec.describe "Api::Availabilities" do
   let(:access_app) { create(:app, owner: create(:admin)) }
   let(:access_token) { create(:access_token, application: access_app) }
   let(:company) do
-    create(:company,
+    create(:company, :with_vehicle_capacity_types,
       user: create(:user),
       hours_in_advance_to_accept_rez: 4
     )
@@ -187,7 +187,36 @@ RSpec.describe "Api::Availabilities" do
       it "has capacity eql to 4" do
         expect(
           avls.first['rates'].first['capacity']
-        ).to eql 4
+        ).to be_blank
+      end
+    end
+
+    context 'with rates with vehicle capacity type' do
+      before do
+        rate.dup.tap{ |r| r.vehicle_capacity_type = company.vehicle_types[0] }.save
+        rate.dup.tap{ |r| r.vehicle_capacity_type = company.vehicle_types[1] }.save
+      end
+
+      context 'filter by 2 adults and 1 child' do
+        before do
+          params[:search].merge!(adults: 2, children: 1)
+          get api_availabilities_url(params)
+        end
+
+        it 'show ' do
+          expect(avls.size).to eql(company.rates.count)
+        end
+      end
+
+      context 'filter by 6 adults' do
+        before do
+          params[:search].merge!(adults: 6, children: 0)
+          get api_availabilities_url(params)
+        end
+
+        it 'show ' do
+          expect(avls.size).to eql(2)
+        end
       end
     end
   end

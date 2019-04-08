@@ -64,7 +64,7 @@ module Rate::Scopes
     scope :by_vehicle_capacity, ->(passengers) do
       suitable_types =
         Company::VehicleType
-          .where('num_of_passengers <= ?', passengers.to_i)
+          .where('num_of_passengers >= ?', passengers.to_i)
           .ids
       where(vehicle_capacity_type_id: suitable_types + [nil])
     end
