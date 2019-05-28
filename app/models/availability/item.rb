@@ -37,7 +37,11 @@ class Availability::Item
   end
 
   def total_charge
-    base_rate + (additional_passenger * (num_of_passengers - 1))
+    res = base_rate + (additional_passenger * (num_of_passengers - 1))
+    if search.from_airport?
+      res += company.airport_pickup_fee
+    end
+    res
   end
 
   def pickup_times

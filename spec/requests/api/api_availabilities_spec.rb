@@ -6,7 +6,8 @@ RSpec.describe "Api::Availabilities" do
   let(:company) do
     create(:company, :with_vehicle_capacity_types,
       user: create(:user),
-      hours_in_advance_to_accept_rez: 4
+      hours_in_advance_to_accept_rez: 4,
+      airport_pickup_fee: 2.1,
     )
   end
   let(:airport) { create(:airport, code: 'JFK') }
@@ -120,6 +121,8 @@ RSpec.describe "Api::Availabilities" do
         expect(
           avls.first['rates'].first['trip_direction']
         ).to eql Availability::Search::TO_AIRPORT
+        expect(avls.first['rates'].first['base_rate']).to    eql "25.5"
+        expect(avls.first['rates'].first['total_charge']).to eql "25.5"
       end
 
       it "has company" do
@@ -143,6 +146,8 @@ RSpec.describe "Api::Availabilities" do
         expect(
           avls.first['rates'].first['trip_direction']
         ).to eql Availability::Search::FROM_AIRPORT
+        expect(avls.first['rates'].first['base_rate']).to    eql "25.5"
+        expect(avls.first['rates'].first['total_charge']).to eql "27.6"
       end
     end
 

@@ -175,7 +175,8 @@ CREATE TABLE public.companies (
     active_to_airport boolean DEFAULT true,
     active_from_airport boolean DEFAULT true,
     commission numeric(8,2) DEFAULT 0.0,
-    payment_type character varying
+    payment_type character varying,
+    airport_pickup_fee numeric(8,2) DEFAULT 0.0
 );
 
 
@@ -991,4 +992,6 @@ INSERT INTO schema_migrations (version) VALUES ('20190303114352');
 INSERT INTO schema_migrations (version) VALUES ('20190408013011');
 
 INSERT INTO schema_migrations (version) VALUES ('20190408020411');
+
+INSERT INTO schema_migrations (version) VALUES ('20190527142211');
 
