@@ -32,6 +32,7 @@ FactoryGirl.define do
     no_pickup_message           'We will call you one day before flight'
     commission                   10
     hours_in_advance_to_accept_rez 'MyString'
+    confirmation_emails         'test@test.com,test2@test.com'
 
     trait :with_vehicle_capacity_types do
       after(:create) do |company, evaluator|

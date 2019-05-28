@@ -44,6 +44,7 @@ RSpec.describe "Api::Availabilities" do
 
   describe "GET /api/1/availabilities" do
     let(:avls) { json_response['availabilities'] }
+    let(:first_rate) { avls.first['rates'].first }
 
     context "when hotel zipcode provided" do
       let(:hotel_params) do
@@ -118,15 +119,14 @@ RSpec.describe "Api::Availabilities" do
       it "returns to airport rate" do
         expect(avls.size).to eql(1)
         expect(avls.first['airport']).to be_present
-        expect(
-          avls.first['rates'].first['trip_direction']
-        ).to eql Availability::Search::TO_AIRPORT
-        expect(avls.first['rates'].first['base_rate']).to    eql "25.5"
-        expect(avls.first['rates'].first['total_charge']).to eql "25.5"
+
+        expect(first_rate['trip_direction']).to eql Availability::Search::TO_AIRPORT
+        expect(first_rate['base_rate']).to      eql "25.5"
+        expect(first_rate['total_charge']).to   eql "25.5"
       end
 
       it "has company" do
-        expect(avls.first['rates'].first['company']).to eql(
+        expect(first_rate['company']).to eql(
           "name"=>"MyString", "description"=>"MyText", "phone"=>"1231231312",
           "mobile"=>"12312312322", "dispatch_phone"=>"12312312234",
           "pickup_info"=>"MyText", "image_url"=>"http://www.example.com/system/image/test.png",
@@ -143,11 +143,9 @@ RSpec.describe "Api::Availabilities" do
 
       it "returns to airport rate" do
         expect(avls.size).to eql(1)
-        expect(
-          avls.first['rates'].first['trip_direction']
-        ).to eql Availability::Search::FROM_AIRPORT
-        expect(avls.first['rates'].first['base_rate']).to    eql "25.5"
-        expect(avls.first['rates'].first['total_charge']).to eql "27.6"
+        expect(first_rate['trip_direction']).to eql Availability::Search::FROM_AIRPORT
+        expect(first_rate['base_rate']).to      eql "25.5"
+        expect(first_rate['total_charge']).to   eql "27.6"
       end
     end
 

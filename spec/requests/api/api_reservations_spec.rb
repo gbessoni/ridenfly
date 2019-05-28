@@ -4,12 +4,9 @@ RSpec.describe "Api::Reservations" do
   let(:access_app) { create(:app, owner: create(:admin)) }
   let(:access_token) { create(:access_token, application: access_app) }
   let(:json_response) { JSON.parse response.body }
-  let(:company) do
-    create(:company, user: create(:user))
-  end
-  let(:airport) do
-    create(:airport)
-  end
+  let(:company_user) { create(:user) }
+  let(:company) { create(:company, user: company_user) }
+  let(:airport) { create(:airport) }
   let(:rate) do
     create(:rate, airport: airport, company: company, base_rate: 20)
   end
@@ -47,6 +44,13 @@ RSpec.describe "Api::Reservations" do
 
     it { expect(response).to have_http_status(201) }
     it { expect(json_response['reservations']).to be_present }
+
+    it 'send confirmation mails' do
+      last_mail = ActionMailer::Base.deliveries.last
+
+      expect(last_mail.to).to eql([company_user.email])
+      expect(last_mail.bcc).to eql(['test@test.com', 'test2@test.com'])
+    end
   end
 
   describe "POST /api/1/reservations/:reservation_id/cancel" do

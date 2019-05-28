@@ -80,6 +80,7 @@ class Admin::CompaniesController < Admin::ApplicationController
         :company_reservation_policy, :company_cancellation_policy, :child_safety_policy, :pet_car_seat_policy,
         :vehicle_types, :other_vehicle_types, :notification_fax, :notification_email, :city, :active,
         :active_to_airport, :active_from_airport, :fax, :image, :commission, :payment_type, :airport_pickup_fee,
+        :confirmation_emails,
         vehicle_types_attributes: [
           :id, :name, :how_many, :num_of_passengers, :_destroy
         ],

@@ -5,6 +5,7 @@ class CustomerMailer < ActionMailer::Base
     @reservation = reservation.decorate
     mail(
       to: reservation.rate.company.user.email,
+      bcc: reservation.rate.company.confirmation_emails&.split(',')&.map(&:strip),
       subject: "New reservation for passenger #{reservation.passenger_name}",
       sent_on: Time.now
     )
@@ -14,6 +15,7 @@ class CustomerMailer < ActionMailer::Base
     @reservation = reservation.decorate
     mail(
       to: reservation.rate.company.user.email,
+      bcc: reservation.rate.company.confirmation_emails.split(',').map(&:strip),
       subject: "Reservation #{reservation.rezid} canceled",
       sent_on: Time.now
     )
