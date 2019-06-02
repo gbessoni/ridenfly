@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
   store_accessor :reservation_notification, :notification_fax, :notification_email
 
-  has_attached_file :image, :styles => { :medium => "150x110>" }
+  has_attached_file :image#, :styles => { :medium => "150x110>" }
 
   include Company::Validations
 
@@ -24,7 +24,7 @@ class Company < ActiveRecord::Base
     super.present? ? super : super.build(VehicleType.predefined)
   end
 
-  def image_url(size=:medium)
+  def image_url(size=:original)
     image.try(:url, size)
   end
 
