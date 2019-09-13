@@ -41,29 +41,15 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:rails_env)}" }
 set :rvm_type, :user
 set :rvm_ruby_version, '2.3.1'
 
-# set :rollbar_token, '54973eddc73a4ded88f772fd62e9c4cf'
-# set :rollbar_env, proc { fetch :stage }
-# set :rollbar_role, proc { :app }
+set :rollbar_token, '54973eddc73a4ded88f772fd62e9c4cf'
+set :rollbar_env, proc { fetch :stage }
+set :rollbar_role, proc { :app }
 
+set :unicorn_config_path,-> { "#{current_path}/config/unicorn.rb" }
 
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-
-  desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
+    invoke 'unicorn:legacy_restart'
   end
-
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
 end
