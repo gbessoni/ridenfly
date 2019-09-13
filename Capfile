@@ -15,13 +15,12 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails
 #
 require 'capistrano/rvm'
-# require 'capistrano/rbenv'
-# require 'capistrano/chruby'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require "whenever/capistrano"
-require 'rollbar/capistrano3'
+require 'capistrano3/unicorn'
+# require 'rollbar/capistrano3'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }

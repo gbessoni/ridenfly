@@ -8,7 +8,7 @@ set :repo_url, 'git@bitbucket.org:railss/ridenfly.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/var/www/ridenfly.com"
+set :deploy_to, "/home/deployer/ridenfly.com"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -39,11 +39,11 @@ set :whenever_environment, ->{ fetch(:rails_env) }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:rails_env)}" }
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.3.0'
+set :rvm_ruby_version, '2.3.1'
 
-set :rollbar_token, '54973eddc73a4ded88f772fd62e9c4cf'
-set :rollbar_env, proc { fetch :stage }
-set :rollbar_role, proc { :app }
+# set :rollbar_token, '54973eddc73a4ded88f772fd62e9c4cf'
+# set :rollbar_env, proc { fetch :stage }
+# set :rollbar_role, proc { :app }
 
 
 namespace :deploy do

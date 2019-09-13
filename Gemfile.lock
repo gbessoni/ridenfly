@@ -192,6 +192,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.6)
     jwt (1.0.0)
+    kgio (2.11.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -264,6 +265,7 @@ GEM
       activesupport (= 4.2.5.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    raindrops (0.19.0)
     rake (10.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
@@ -340,6 +342,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unicorn (5.5.1)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
     virtus (1.0.2)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -409,10 +414,11 @@ DEPENDENCIES
   time_of_day_attr!
   turbolinks
   uglifier
+  unicorn
   virtus
   webmock
   whenever
   will_paginate (~> 3.0)
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
