@@ -8,7 +8,7 @@ set :repo_url, 'git@bitbucket.org:railss/ridenfly.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/var/www/ridenfly.com"
+set :deploy_to, "/home/deployer/ridenfly.com"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -39,31 +39,17 @@ set :whenever_environment, ->{ fetch(:rails_env) }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:rails_env)}" }
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.3.0'
+set :rvm_ruby_version, '2.3.1'
 
 set :rollbar_token, '54973eddc73a4ded88f772fd62e9c4cf'
 set :rollbar_env, proc { fetch :stage }
 set :rollbar_role, proc { :app }
 
+set :unicorn_config_path,-> { "#{current_path}/config/unicorn.rb" }
 
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-
-  desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
+    invoke 'unicorn:legacy_restart'
   end
-
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
 end
