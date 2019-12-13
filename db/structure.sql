@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.6.12
--- Dumped by pg_dump version 9.6.12
+-- Dumped from database version 11.5 (Ubuntu 11.5-3.pgdg18.04+1)
+-- Dumped by pg_dump version 11.5 (Ubuntu 11.5-3.pgdg18.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -12,22 +12,9 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
-
---
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
 
 --
 -- Name: cube; Type: EXTENSION; Schema: -; Owner: -
@@ -112,6 +99,7 @@ CREATE TABLE public.airports (
 --
 
 CREATE SEQUENCE public.airports_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -186,6 +174,7 @@ CREATE TABLE public.companies (
 --
 
 CREATE SEQUENCE public.companies_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -218,6 +207,7 @@ CREATE TABLE public.company_vehicle_types (
 --
 
 CREATE SEQUENCE public.company_vehicle_types_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -254,6 +244,7 @@ CREATE TABLE public.oauth_access_grants (
 --
 
 CREATE SEQUENCE public.oauth_access_grants_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -290,6 +281,7 @@ CREATE TABLE public.oauth_access_tokens (
 --
 
 CREATE SEQUENCE public.oauth_access_tokens_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -326,6 +318,7 @@ CREATE TABLE public.oauth_applications (
 --
 
 CREATE SEQUENCE public.oauth_applications_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -362,6 +355,7 @@ CREATE TABLE public.payments (
 --
 
 CREATE SEQUENCE public.payments_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -393,6 +387,7 @@ CREATE TABLE public.rate_pickup_times (
 --
 
 CREATE SEQUENCE public.rate_pickup_times_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -440,6 +435,7 @@ CREATE TABLE public.rates (
 --
 
 CREATE SEQUENCE public.rates_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -481,7 +477,8 @@ CREATE TABLE public.reservations (
     rate_id integer,
     children integer DEFAULT 0,
     email character varying,
-    flight_type character varying DEFAULT 'domestic'::character varying
+    flight_type character varying DEFAULT 'domestic'::character varying,
+    additional_notes character varying
 );
 
 
@@ -490,6 +487,7 @@ CREATE TABLE public.reservations (
 --
 
 CREATE SEQUENCE public.reservations_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -540,6 +538,7 @@ CREATE TABLE public.users (
 --
 
 CREATE SEQUENCE public.users_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -997,4 +996,6 @@ INSERT INTO schema_migrations (version) VALUES ('20190408020411');
 INSERT INTO schema_migrations (version) VALUES ('20190527142211');
 
 INSERT INTO schema_migrations (version) VALUES ('20190527164811');
+
+INSERT INTO schema_migrations (version) VALUES ('20191213141600');
 

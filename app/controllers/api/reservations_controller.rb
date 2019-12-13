@@ -69,7 +69,7 @@ class Api::ReservationsController < Api::ApplicationController
       [ :rate_id, :flight_datetime, :pickup_datetime, :passenger_name,
         :phone, :adults, :children, :flight_type, :email, :net_fare, :gratuity,
         :address, :cross_street, :airline, :luggage, :flight_number,
-        :trip_direction
+        :trip_direction, :additional_notes
       ]
     end
 
