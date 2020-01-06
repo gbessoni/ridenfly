@@ -3,8 +3,8 @@
 = simple_form_for([:admin, rate]) do |f|
   = f.error_notification
 
-  = f.association :airport
-  = f.association :company if current_admin?
+  = f.association :airport, collection: Airport.asc_by_name
+  = f.association(:company, collection: Company.asc_by_name) if current_admin?
   = f.input :vehicle_type_passenger, label: 'Vehicle Type / Passenger'
   = f.input :vehicle_capacity_type_id, collection: vehicle_capacity_types_list(f.object.company)
   = f.input :service_type, label: 'Private or Shared'
