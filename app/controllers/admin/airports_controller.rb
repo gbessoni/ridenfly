@@ -70,6 +70,8 @@ class Admin::AirportsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def airport_params
-      params.require(:airport).permit(:name, :street_address, :city, :state, :zipcode, :code)
+      params.
+        require(:airport).
+        permit(:name, :street_address, :city, :state, :zipcode, :code, :timezone)
     end
 end
