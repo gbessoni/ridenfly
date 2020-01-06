@@ -11,6 +11,7 @@
       %th State
       %th Zip
       %th Code
+      %th Timezone
       %th
   %tbody
     - @airports.each do |airport|
@@ -21,6 +22,7 @@
         %td= airport.state
         %td= airport.zipcode
         %td= airport.code
+        %td= airport.timezone
         %td
           = link_to 'Show', [:admin, airport]
           = link_to 'Edit', edit_admin_airport_path(airport)
