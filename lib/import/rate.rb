@@ -33,7 +33,7 @@ class Import::Rate < Import::Base
     ).first_or_initialize
     o.company = find_company
     o.update_attributes(
-      airport:                     find_airport(row[AIRPORT]),
+      airport:                       find_airport(row[AIRPORT]),
       vehicle_type_passenger:        row[VEHICLE_TYPE_PASSENGER],
       service_type:                  row[SERVICE_TYPE],
       base_rate:                     row[BASE_RATE],

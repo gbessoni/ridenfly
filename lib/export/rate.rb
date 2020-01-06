@@ -15,6 +15,7 @@ class Export::Rate < Export::Base
     to_airport_pickup_time_list: 'To airport pickup times',
     lat_lng: 'Latitude, Longitude',
     from_airport_pickup_time_list: 'From airport pickup times',
-    hotel_by_zipcode: 'Hotel by Zipcode'
+    hotel_by_zipcode: 'Hotel by Zipcode',
+    capacity: 'Vehicle Capacity'
   }
 end
