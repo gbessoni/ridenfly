@@ -50,6 +50,10 @@ class Reservation < ActiveRecord::Base
     [net_fare, sibling.try(:net_fare)].compact.sum
   end
 
+  def amount_due
+    total_net_fare * (100 - company.comission.to_f)/100
+  end
+
   def cancel(params)
     self.status = 'canceled'
     self.update_attributes(params.slice(:cancelation_reason))
