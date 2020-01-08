@@ -4,6 +4,7 @@
 %p
   %b Status:
   = reservation.status
+  = " / #{reservation.sub_status}" if reservation.active?
 %p
   %b Trip direction:
   = reservation.trip_direction
@@ -75,3 +76,6 @@
 %p
   %b Additional Notes:
   = reservation.additional_notes
+%p
+  %b Notes:
+  = reservation.notes
