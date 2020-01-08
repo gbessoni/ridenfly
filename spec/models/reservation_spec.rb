@@ -24,6 +24,7 @@ RSpec.describe Reservation do
   end
 end
 
+
 # == Schema Information
 #
 # Table name: reservations
@@ -51,5 +52,8 @@ end
 #  children           :integer         default("0")
 #  email              :string
 #  flight_type        :string          default("domestic")
+#  additional_notes   :string
+#  sub_status         :string
+#  notes              :string
 #
 

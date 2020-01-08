@@ -1,0 +1,9 @@
+= simple_form_for([:admin, @reservation]) do |f|
+  = f.error_notification
+
+  = f.input :sub_status
+  = f.input :notes, as: :text
+
+  = f.actions do |f|
+    = f.submit 'Save'
+    = f.action 'Back', admin_reservations_path

@@ -96,6 +96,7 @@ class Rate < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: rates
@@ -120,11 +121,5 @@ end
 #  hl_words                 :string
 #  hotel_by_zipcode         :boolean         default("false")
 #  vehicle_capacity_type_id :integer
-#
-# Indexes
-#
-#  index_rates_on_hl_words                  (hl_words)
-#  index_rates_on_vehicle_capacity_type_id  (vehicle_capacity_type_id)
-#  index_rates_on_vehicle_type_passenger    (vehicle_type_passenger)
 #
 

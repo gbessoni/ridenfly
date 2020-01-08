@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :companies
     resources :rates
     resources :airports
-    resources :reservations, only: [:index, :show, :destroy] do
+    resources :reservations, only: [:index, :show, :edit, :update, :destroy] do
       get '/resend_confirmation_email', to: 'reservations#resend_confirmation_email', as: 'resend_confirmation_email'
       resource :cancel, only: [:create]
     end

@@ -41,6 +41,7 @@ class Company < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: companies
@@ -90,5 +91,7 @@ end
 #  active_from_airport            :boolean         default("true")
 #  commission                     :decimal(8, 2)   default("0.0")
 #  payment_type                   :string
+#  airport_pickup_fee             :decimal(8, 2)   default("0.0")
+#  confirmation_emails            :string
 #
 

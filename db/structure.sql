@@ -478,7 +478,9 @@ CREATE TABLE public.reservations (
     children integer DEFAULT 0,
     email character varying,
     flight_type character varying DEFAULT 'domestic'::character varying,
-    additional_notes character varying
+    additional_notes character varying,
+    sub_status character varying,
+    notes character varying
 );
 
 
@@ -998,4 +1000,6 @@ INSERT INTO schema_migrations (version) VALUES ('20190527142211');
 INSERT INTO schema_migrations (version) VALUES ('20190527164811');
 
 INSERT INTO schema_migrations (version) VALUES ('20191213141600');
+
+INSERT INTO schema_migrations (version) VALUES ('20200108055948');
 

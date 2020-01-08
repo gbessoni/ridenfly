@@ -1,7 +1,7 @@
 class Admin::ReservationsController < Admin::ApplicationController
   include Admin::CompanyRequired
 
-  before_action :set_reservation, only: [:show, :destroy]
+  before_action :set_reservation, only: [:show, :destroy, :edit, :update]
   require_role :admin, :company
 
   expose(:reservations) { @reservations.try(:decorate) }
@@ -28,6 +28,24 @@ class Admin::ReservationsController < Admin::ApplicationController
   # GET /admin/reservations/1
   # GET /admin/reservations/1.json
   def show
+  end
+
+  # PATCH/PUT /admin/reservations/1
+  # PATCH/PUT /admin/reservations/1.json
+  def update
+    respond_to do |format|
+      if @reservation.update(reservation_params)
+        format.html { redirect_to [:admin, @reservation], notice: 'reservation was successfully updated.' }
+        format.json { render :show, status: :ok, location: @reservation }
+      else
+        format.html { render :edit }
+        format.json { render json: @reservation.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # GET /admin/reservations/1/edit
+  def edit
   end
 
   # DELETE /admin/reservations/1
@@ -57,5 +75,10 @@ class Admin::ReservationsController < Admin::ApplicationController
 
     def reservations_finder
       current_user.admin? ? Reservation : current_user.reservations
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def reservation_params
+      params.require(:reservation).permit(:sub_status, :notes)
     end
 end

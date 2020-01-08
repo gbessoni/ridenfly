@@ -20,6 +20,7 @@ class Company::VehicleType < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: company_vehicle_types
@@ -29,10 +30,5 @@ end
 #  name              :string
 #  how_many          :string
 #  num_of_passengers :integer
-#
-# Indexes
-#
-#  index_company_vehicle_types_on_company_id         (company_id)
-#  index_company_vehicle_types_on_num_of_passengers  (num_of_passengers)
 #
 

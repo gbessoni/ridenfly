@@ -28,7 +28,9 @@
     - reservations.each do |reservation|
       %tr
         %td= reservation.rezid
-        %td= reservation.status
+        %td
+          = reservation.status
+          = " / #{reservation.sub_status}" if reservation.active?
         %td= reservation.trip_direction
         %td= reservation.company_name
         %td= reservation.airport_name
@@ -44,7 +46,9 @@
         %td= reservation.airline
         %td= reservation.flight_number
         %td
-          = link_to 'Show',[:admin, reservation]
+          = link_to 'Show', [:admin, reservation]
+          - if reservation.active?
+            = link_to 'Edit', edit_admin_reservation_path(reservation)
           - if current_admin?
             = link_to 'Destroy', [:admin, reservation], :method => :delete, :data => { :confirm => 'Are you sure?' }
             = link_to 'Resend confirmation email', admin_reservation_resend_confirmation_email_path(reservation), :data => { :confirm => 'Are you sure?' }

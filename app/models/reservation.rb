@@ -1,9 +1,16 @@
 class Reservation < ActiveRecord::Base
   include TripDirections
+  extend Enumerize
 
   belongs_to :rate
   belongs_to :sibling, class_name: 'Reservation'
   has_one :company, through: :rate
+
+  STATUSES = %w[active canceled]
+  enumerize :status, in: STATUSES, predicates: true, scope: :shallow
+
+  SUB_STATUSES = %w[completed no_show]
+  enumerize :sub_status, in: SUB_STATUSES
 
   validates :net_fare, presence: true, numericality: true
   validates :rate, :email, presence: true
@@ -14,9 +21,6 @@ class Reservation < ActiveRecord::Base
   scope :by_day, ->(date) do
     where("created_at between ? AND ?", date.beginning_of_date, date.end_of_day)
   end
-
-  scope :active, ->{ where(status: 'active') }
-  scope :canceled, ->{ where(status: 'canceled') }
 
   def airport_name
     airport.try(:name)
@@ -51,10 +55,6 @@ class Reservation < ActiveRecord::Base
     self.update_attributes(params.slice(:cancelation_reason))
   end
 
-  def canceled?
-    status.to_s == 'canceled'
-  end
-
   def flight_datetime
     return read_attribute(:flight_datetime) if airport&.timezone.nil?
     read_attribute(:flight_datetime).in_time_zone(airport&.timezone)
@@ -73,6 +73,7 @@ class Reservation < ActiveRecord::Base
       (rate.additional_passenger * (num_of_passengers - 1))
   end
 end
+
 
 # == Schema Information
 #
@@ -101,5 +102,8 @@ end
 #  children           :integer         default("0")
 #  email              :string
 #  flight_type        :string          default("domestic")
+#  additional_notes   :string
+#  sub_status         :string
+#  notes              :string
 #
 
