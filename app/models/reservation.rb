@@ -51,7 +51,7 @@ class Reservation < ActiveRecord::Base
   end
 
   def amount_due
-    total_net_fare * (100 - company.comission.to_f)/100
+    total_net_fare * (100 - company.commission.to_f)/100
   end
 
   def cancel(params)
