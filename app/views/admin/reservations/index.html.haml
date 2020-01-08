@@ -60,6 +60,6 @@
       %td Canceled:
       %td $#{@q.result.canceled.sum(:net_fare)}
       %td Amount due:
-      %td $#{@q.result.where(sub_status: Reservation::SUB_STATUSES).all.sum(&:amount_due)}
+      %td $#{@q.result.where(sub_status: Reservation::SUB_STATUSES).map(&:amount_due)}.sum
 
 = will_paginate reservations
