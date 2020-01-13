@@ -7,6 +7,8 @@
   = render partial: 'reservation', locals: {reservation: reservation.sibling.decorate}
 
 - if reservation.active?
+  = link_to 'Cancel the Reservation', cancel_admin_reservation_path(reservation), method: :put
+  \|
   = link_to 'Edit', edit_admin_reservation_path(reservation)
   \|
 = link_to 'Back', admin_reservations_path

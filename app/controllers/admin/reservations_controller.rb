@@ -1,7 +1,7 @@
 class Admin::ReservationsController < Admin::ApplicationController
   include Admin::CompanyRequired
 
-  before_action :set_reservation, only: [:show, :destroy, :edit, :update]
+  before_action :set_reservation, only: [:show, :cancel, :edit, :update]
   require_role :admin, :company
 
   expose(:reservations) { @reservations.try(:decorate) }
@@ -48,13 +48,11 @@ class Admin::ReservationsController < Admin::ApplicationController
   def edit
   end
 
-  # DELETE /admin/reservations/1
-  # DELETE /admin/reservations/1.json
-  def destroy
-    @reservation.destroy
+  def cancel
+    @reservation.update status: :canceled
     respond_to do |format|
-      format.html { redirect_to admin_reservations_url, notice: 'Reservation was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to [:admin, @reservation], notice: 'Reservation was successfully cancelled.' }
+      format.json { render :show, status: :ok, location: @reservation }
     end
   end
 
