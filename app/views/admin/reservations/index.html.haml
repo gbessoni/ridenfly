@@ -29,8 +29,10 @@
       %tr
         %td= reservation.rezid
         %td
-          = reservation.status
-          = " / #{reservation.sub_status}" if reservation.active?
+          - if reservation.active? && reservation.sub_status.present?
+            = "#{reservation.sub_status} / #{reservation.notes}"
+          - else
+            = reservation.status
         %td= reservation.trip_direction
         %td= reservation.company_name
         %td= reservation.airport_name
