@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 11.5 (Ubuntu 11.5-3.pgdg18.04+1)
--- Dumped by pg_dump version 11.5 (Ubuntu 11.5-3.pgdg18.04+1)
+-- Dumped from database version 11.6 (Ubuntu 11.6-1.pgdg18.04+1)
+-- Dumped by pg_dump version 11.6 (Ubuntu 11.6-1.pgdg18.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -90,7 +90,8 @@ CREATE TABLE public.airports (
     code character varying(3),
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    timezone character varying
+    timezone character varying,
+    deleted_at timestamp without time zone
 );
 
 
@@ -165,7 +166,8 @@ CREATE TABLE public.companies (
     commission numeric(8,2) DEFAULT 0.0,
     payment_type character varying,
     airport_pickup_fee numeric(8,2) DEFAULT 0.0,
-    confirmation_emails character varying
+    confirmation_emails character varying,
+    deleted_at timestamp without time zone
 );
 
 
@@ -198,7 +200,8 @@ CREATE TABLE public.company_vehicle_types (
     company_id integer,
     name character varying,
     how_many character varying,
-    num_of_passengers integer
+    num_of_passengers integer,
+    deleted_at timestamp without time zone
 );
 
 
@@ -346,7 +349,8 @@ CREATE TABLE public.payments (
     paid boolean DEFAULT false,
     net_commission numeric(8,2),
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    deleted_at timestamp without time zone
 );
 
 
@@ -426,7 +430,8 @@ CREATE TABLE public.rates (
     lng double precision,
     hl_words character varying,
     hotel_by_zipcode boolean DEFAULT false,
-    vehicle_capacity_type_id integer
+    vehicle_capacity_type_id integer,
+    deleted_at timestamp without time zone
 );
 
 
@@ -480,7 +485,8 @@ CREATE TABLE public.reservations (
     flight_type character varying DEFAULT 'domestic'::character varying,
     additional_notes character varying,
     sub_status character varying,
-    notes character varying
+    notes character varying,
+    deleted_at timestamp without time zone
 );
 
 
@@ -531,7 +537,8 @@ CREATE TABLE public.users (
     last_sign_in_ip inet,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    roles character varying DEFAULT '[]'::character varying
+    roles character varying DEFAULT '[]'::character varying,
+    deleted_at timestamp without time zone
 );
 
 
@@ -721,6 +728,13 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: index_airports_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_airports_on_deleted_at ON public.airports USING btree (deleted_at);
+
+
+--
 -- Name: index_airports_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -735,10 +749,24 @@ CREATE UNIQUE INDEX index_airports_on_state_and_code ON public.airports USING bt
 
 
 --
+-- Name: index_companies_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_companies_on_deleted_at ON public.companies USING btree (deleted_at);
+
+
+--
 -- Name: index_company_vehicle_types_on_company_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_company_vehicle_types_on_company_id ON public.company_vehicle_types USING btree (company_id);
+
+
+--
+-- Name: index_company_vehicle_types_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_company_vehicle_types_on_deleted_at ON public.company_vehicle_types USING btree (deleted_at);
 
 
 --
@@ -791,6 +819,20 @@ CREATE UNIQUE INDEX index_oauth_applications_on_uid ON public.oauth_applications
 
 
 --
+-- Name: index_payments_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_payments_on_deleted_at ON public.payments USING btree (deleted_at);
+
+
+--
+-- Name: index_rates_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_rates_on_deleted_at ON public.rates USING btree (deleted_at);
+
+
+--
 -- Name: index_rates_on_hl_words; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -816,6 +858,20 @@ CREATE INDEX index_rates_on_vehicle_capacity_type_id ON public.rates USING btree
 --
 
 CREATE INDEX index_rates_on_vehicle_type_passenger ON public.rates USING btree (vehicle_type_passenger);
+
+
+--
+-- Name: index_reservations_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reservations_on_deleted_at ON public.reservations USING btree (deleted_at);
+
+
+--
+-- Name: index_users_on_deleted_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_users_on_deleted_at ON public.users USING btree (deleted_at);
 
 
 --
@@ -1002,4 +1058,6 @@ INSERT INTO schema_migrations (version) VALUES ('20190527164811');
 INSERT INTO schema_migrations (version) VALUES ('20191213141600');
 
 INSERT INTO schema_migrations (version) VALUES ('20200108055948');
+
+INSERT INTO schema_migrations (version) VALUES ('20200120064330');
 

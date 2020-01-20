@@ -1,4 +1,6 @@
 class Company::VehicleType < ActiveRecord::Base
+  acts_as_paranoid
+
   belongs_to :company
 
   PREDEFINED = [
@@ -21,6 +23,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: company_vehicle_types
@@ -30,5 +33,6 @@ end
 #  name              :string
 #  how_many          :string
 #  num_of_passengers :integer
+#  deleted_at        :datetime
 #
 

@@ -3,6 +3,7 @@ class Company < ActiveRecord::Base
 
   has_attached_file :image#, :styles => { :medium => "150x110>" }
 
+  acts_as_paranoid
   include Company::Validations
 
   belongs_to :user
@@ -40,6 +41,7 @@ class Company < ActiveRecord::Base
     Time.zone.parse(hours_of_operation_list.last) rescue nil
   end
 end
+
 
 
 # == Schema Information
@@ -93,5 +95,6 @@ end
 #  payment_type                   :string
 #  airport_pickup_fee             :decimal(8, 2)   default("0.0")
 #  confirmation_emails            :string
+#  deleted_at                     :datetime
 #
 

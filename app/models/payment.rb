@@ -1,4 +1,6 @@
 class Payment < ActiveRecord::Base
+  acts_as_paranoid
+
   belongs_to :company
   has_many :reservations, ->(payment){
     where("reservations.pickup_datetime >= :from", from: payment.from)
@@ -54,6 +56,7 @@ class Payment < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: payments
@@ -67,5 +70,6 @@ end
 #  net_commission :decimal(8, 2)
 #  created_at     :datetime
 #  updated_at     :datetime
+#  deleted_at     :datetime
 #
 

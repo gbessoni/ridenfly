@@ -2,6 +2,8 @@ class Reservation < ActiveRecord::Base
   include TripDirections
   extend Enumerize
 
+  acts_as_paranoid
+
   belongs_to :rate
   belongs_to :sibling, class_name: 'Reservation'
   has_one :company, through: :rate
@@ -79,6 +81,7 @@ class Reservation < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: reservations
@@ -109,5 +112,6 @@ end
 #  additional_notes   :string
 #  sub_status         :string
 #  notes              :string
+#  deleted_at         :datetime
 #
 

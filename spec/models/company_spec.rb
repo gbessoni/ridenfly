@@ -71,6 +71,7 @@ RSpec.describe Company do
 end
 
 
+
 # == Schema Information
 #
 # Table name: companies
@@ -122,5 +123,6 @@ end
 #  payment_type                   :string
 #  airport_pickup_fee             :decimal(8, 2)   default("0.0")
 #  confirmation_emails            :string
+#  deleted_at                     :datetime
 #
 

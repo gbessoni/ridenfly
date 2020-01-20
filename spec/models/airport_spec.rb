@@ -10,6 +10,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: airports
@@ -24,5 +25,6 @@ end
 #  created_at     :datetime
 #  updated_at     :datetime
 #  timezone       :string
+#  deleted_at     :datetime
 #
 

@@ -179,6 +179,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: rates
@@ -203,5 +204,6 @@ end
 #  hl_words                 :string
 #  hotel_by_zipcode         :boolean         default("false")
 #  vehicle_capacity_type_id :integer
+#  deleted_at               :datetime
 #
 

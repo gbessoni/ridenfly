@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  acts_as_paranoid
   include User::Roles
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
     new_record? || password.present? || password_confirmation.present?
   end
 end
+
 
 
 
@@ -35,5 +37,6 @@ end
 #  created_at             :datetime
 #  updated_at             :datetime
 #  roles                  :string          default("[]")
+#  deleted_at             :datetime
 #
 

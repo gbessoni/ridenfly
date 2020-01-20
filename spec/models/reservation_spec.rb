@@ -25,6 +25,7 @@ RSpec.describe Reservation do
 end
 
 
+
 # == Schema Information
 #
 # Table name: reservations
@@ -55,5 +56,6 @@ end
 #  additional_notes   :string
 #  sub_status         :string
 #  notes              :string
+#  deleted_at         :datetime
 #
 

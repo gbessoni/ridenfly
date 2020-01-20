@@ -1,9 +1,11 @@
 class Airport < ActiveRecord::Base
+  acts_as_paranoid
   validates :name, presence: true, uniqueness: true
   validates :code, presence: true, length: {is: 3}, uniqueness: {scope: :state}
 
   scope :asc_by_name, ->{ order('name asc') }
 end
+
 
 
 
@@ -21,5 +23,6 @@ end
 #  created_at     :datetime
 #  updated_at     :datetime
 #  timezone       :string
+#  deleted_at     :datetime
 #
 

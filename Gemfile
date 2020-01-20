@@ -45,6 +45,8 @@ gem 'rollbar'
 gem 'enumerize'
 gem "cocoon"
 gem 'awesome_print'
+# ActiveRecord plugin allowing you to hide and restore records without actually deleting them.
+gem 'acts_as_paranoid'
 
 group :development do
   gem 'capistrano-rails'

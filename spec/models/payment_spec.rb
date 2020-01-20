@@ -43,6 +43,7 @@ RSpec.describe Payment, type: :model do
   end
 end
 
+
 # == Schema Information
 #
 # Table name: payments
@@ -56,5 +57,6 @@ end
 #  net_commission :decimal(8, 2)
 #  created_at     :datetime
 #  updated_at     :datetime
+#  deleted_at     :datetime
 #
 
