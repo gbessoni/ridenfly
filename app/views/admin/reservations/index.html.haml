@@ -49,7 +49,8 @@
           = link_to 'Show', [:admin, reservation]
           - if reservation.active?
             = link_to 'Edit', edit_admin_reservation_path(reservation)
-            = link_to 'Cancel', cancel_admin_reservation_path(reservation), method: :put
+            = link_to 'Cancel', cancel_admin_reservation_path(reservation), method: :put,
+              data: { prompt: { message: 'Enter cancelation reason', default: 'Reason', param: 'cancelation_reason' } }
           - if current_admin?
             = link_to 'Resend confirmation email', admin_reservation_resend_confirmation_email_path(reservation), :data => { :confirm => 'Are you sure?' }
   %tfoot

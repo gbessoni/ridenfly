@@ -49,7 +49,7 @@ class Admin::ReservationsController < Admin::ApplicationController
   end
 
   def cancel
-    @reservation.update status: :canceled
+    @reservation.cancel params.permit(:cancelation_reason)
     respond_to do |format|
       format.html { redirect_to [:admin, @reservation], notice: 'Reservation was successfully cancelled.' }
       format.json { render :show, status: :ok, location: @reservation }

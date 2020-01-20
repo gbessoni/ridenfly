@@ -28,6 +28,8 @@
 //= require_tree ./controllers
 //= require_tree ./views
 
+//= require jquery_ujs.prompt
+
 //= require_self
 
 $(document).on('ready', function() {

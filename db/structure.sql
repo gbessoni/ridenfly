@@ -17,6 +17,20 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+--
 -- Name: cube; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -82,9 +96,9 @@ SET default_with_oids = false;
 
 CREATE TABLE public.airports (
     id integer NOT NULL,
-    name character varying,
-    street_address character varying,
-    city character varying,
+    name character varying(255),
+    street_address character varying(255),
+    city character varying(255),
     state character varying(2),
     zipcode character varying(5),
     code character varying(3),
@@ -100,7 +114,6 @@ CREATE TABLE public.airports (
 --
 
 CREATE SEQUENCE public.airports_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -122,27 +135,27 @@ ALTER SEQUENCE public.airports_id_seq OWNED BY public.airports.id;
 CREATE TABLE public.companies (
     id integer NOT NULL,
     user_id integer,
-    name character varying,
-    contact_first_name character varying,
-    contact_last_name character varying,
-    street character varying,
-    state character varying,
-    zipcode character varying,
-    phone character varying,
-    mobile character varying,
-    dispatch_phone character varying,
-    website character varying,
+    name character varying(255),
+    contact_first_name character varying(255),
+    contact_last_name character varying(255),
+    street character varying(255),
+    state character varying(255),
+    zipcode character varying(255),
+    phone character varying(255),
+    mobile character varying(255),
+    dispatch_phone character varying(255),
+    website character varying(255),
     description text,
     reservation_notification public.hstore,
     blackout_dates text,
     airports text,
-    hours_of_operation character varying,
-    hours_in_advance_to_accept_rez character varying,
+    hours_of_operation character varying(255),
+    hours_in_advance_to_accept_rez character varying(255),
     pickup_info text,
     after_hours_info text,
-    excess_luggage_charge character varying,
+    excess_luggage_charge character varying(255),
     luggage_insured boolean DEFAULT false,
-    child_rate character varying,
+    child_rate character varying(255),
     child_car_seats_included boolean DEFAULT false,
     luggage_limitation_policy text,
     company_reservation_policy text,
@@ -153,11 +166,11 @@ CREATE TABLE public.companies (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     vehicle_types public.hstore[],
-    fax character varying,
-    city character varying,
+    fax character varying(255),
+    city character varying(255),
     active boolean DEFAULT true,
-    image_file_name character varying,
-    image_content_type character varying,
+    image_file_name character varying(255),
+    image_content_type character varying(255),
     image_file_size integer,
     image_updated_at timestamp without time zone,
     no_pickup_message character varying,
@@ -176,7 +189,6 @@ CREATE TABLE public.companies (
 --
 
 CREATE SEQUENCE public.companies_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -210,7 +222,6 @@ CREATE TABLE public.company_vehicle_types (
 --
 
 CREATE SEQUENCE public.company_vehicle_types_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -233,12 +244,12 @@ CREATE TABLE public.oauth_access_grants (
     id integer NOT NULL,
     resource_owner_id integer NOT NULL,
     application_id integer NOT NULL,
-    token character varying NOT NULL,
+    token character varying(255) NOT NULL,
     expires_in integer NOT NULL,
     redirect_uri text NOT NULL,
     created_at timestamp without time zone NOT NULL,
     revoked_at timestamp without time zone,
-    scopes character varying
+    scopes character varying(255)
 );
 
 
@@ -247,7 +258,6 @@ CREATE TABLE public.oauth_access_grants (
 --
 
 CREATE SEQUENCE public.oauth_access_grants_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -270,12 +280,12 @@ CREATE TABLE public.oauth_access_tokens (
     id integer NOT NULL,
     resource_owner_id integer,
     application_id integer,
-    token character varying NOT NULL,
-    refresh_token character varying,
+    token character varying(255) NOT NULL,
+    refresh_token character varying(255),
     expires_in integer,
     revoked_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
-    scopes character varying
+    scopes character varying(255)
 );
 
 
@@ -284,7 +294,6 @@ CREATE TABLE public.oauth_access_tokens (
 --
 
 CREATE SEQUENCE public.oauth_access_tokens_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -305,14 +314,14 @@ ALTER SEQUENCE public.oauth_access_tokens_id_seq OWNED BY public.oauth_access_to
 
 CREATE TABLE public.oauth_applications (
     id integer NOT NULL,
-    name character varying NOT NULL,
-    uid character varying NOT NULL,
-    secret character varying NOT NULL,
+    name character varying(255) NOT NULL,
+    uid character varying(255) NOT NULL,
+    secret character varying(255) NOT NULL,
     redirect_uri text NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     owner_id integer,
-    owner_type character varying
+    owner_type character varying(255)
 );
 
 
@@ -321,7 +330,6 @@ CREATE TABLE public.oauth_applications (
 --
 
 CREATE SEQUENCE public.oauth_applications_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -359,7 +367,6 @@ CREATE TABLE public.payments (
 --
 
 CREATE SEQUENCE public.payments_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -391,7 +398,6 @@ CREATE TABLE public.rate_pickup_times (
 --
 
 CREATE SEQUENCE public.rate_pickup_times_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -413,22 +419,22 @@ ALTER SEQUENCE public.rate_pickup_times_id_seq OWNED BY public.rate_pickup_times
 CREATE TABLE public.rates (
     id integer NOT NULL,
     airport_id integer,
-    vehicle_type_passenger character varying,
-    service_type character varying,
+    vehicle_type_passenger character varying(255),
+    service_type character varying(255),
     base_rate numeric(8,2),
     additional_passenger numeric(8,2) DEFAULT 0.0,
-    zipcode character varying,
-    hotel_landmark_name character varying,
-    hotel_landmark_street character varying,
-    hotel_landmark_city character varying,
-    hotel_landmark_state character varying,
+    zipcode character varying(255),
+    hotel_landmark_name character varying(255),
+    hotel_landmark_street character varying(255),
+    hotel_landmark_city character varying(255),
+    hotel_landmark_state character varying(255),
     trip_duration integer,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     company_id integer,
     lat double precision,
     lng double precision,
-    hl_words character varying,
+    hl_words character varying(255),
     hotel_by_zipcode boolean DEFAULT false,
     vehicle_capacity_type_id integer,
     deleted_at timestamp without time zone
@@ -440,7 +446,6 @@ CREATE TABLE public.rates (
 --
 
 CREATE SEQUENCE public.rates_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -463,26 +468,26 @@ CREATE TABLE public.reservations (
     id integer NOT NULL,
     flight_datetime timestamp without time zone,
     pickup_datetime timestamp without time zone,
-    passenger_name character varying,
-    phone character varying,
+    passenger_name character varying(255),
+    phone character varying(255),
     adults integer,
     net_fare numeric(8,2),
     gratuity numeric(8,2) DEFAULT 0.0,
-    address character varying,
-    cross_street character varying,
-    airline character varying,
+    address character varying(255),
+    cross_street character varying(255),
+    airline character varying(255),
     luggage integer DEFAULT 0,
-    cancelation_reason character varying,
-    flight_number character varying,
-    status character varying DEFAULT 'active'::character varying,
-    trip_direction character varying DEFAULT 'to_airport'::character varying,
+    cancelation_reason character varying(255),
+    flight_number character varying(255),
+    status character varying(255) DEFAULT 'active'::character varying,
+    trip_direction character varying(255) DEFAULT 'to_airport'::character varying,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     sibling_id integer,
     rate_id integer,
     children integer DEFAULT 0,
-    email character varying,
-    flight_type character varying DEFAULT 'domestic'::character varying,
+    email character varying(255),
+    flight_type character varying(255) DEFAULT 'domestic'::character varying,
     additional_notes character varying,
     sub_status character varying,
     notes character varying,
@@ -495,7 +500,6 @@ CREATE TABLE public.reservations (
 --
 
 CREATE SEQUENCE public.reservations_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -515,7 +519,7 @@ ALTER SEQUENCE public.reservations_id_seq OWNED BY public.reservations.id;
 --
 
 CREATE TABLE public.schema_migrations (
-    version character varying NOT NULL
+    version character varying(255) NOT NULL
 );
 
 
@@ -525,9 +529,9 @@ CREATE TABLE public.schema_migrations (
 
 CREATE TABLE public.users (
     id integer NOT NULL,
-    email character varying DEFAULT ''::character varying NOT NULL,
-    encrypted_password character varying DEFAULT ''::character varying NOT NULL,
-    reset_password_token character varying,
+    email character varying(255) DEFAULT ''::character varying NOT NULL,
+    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
+    reset_password_token character varying(255),
     reset_password_sent_at timestamp without time zone,
     remember_created_at timestamp without time zone,
     sign_in_count integer DEFAULT 0 NOT NULL,
@@ -537,7 +541,7 @@ CREATE TABLE public.users (
     last_sign_in_ip inet,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    roles character varying DEFAULT '[]'::character varying,
+    roles character varying(255) DEFAULT '[]'::character varying,
     deleted_at timestamp without time zone
 );
 
@@ -547,7 +551,6 @@ CREATE TABLE public.users (
 --
 
 CREATE SEQUENCE public.users_id_seq
-    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -837,13 +840,6 @@ CREATE INDEX index_rates_on_deleted_at ON public.rates USING btree (deleted_at);
 --
 
 CREATE INDEX index_rates_on_hl_words ON public.rates USING btree (hl_words);
-
-
---
--- Name: index_rates_on_lat_and_lng; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_rates_on_lat_and_lng ON public.rates USING gist (public.ll_to_earth(lat, lng));
 
 
 --
