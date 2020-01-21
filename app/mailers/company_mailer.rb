@@ -1,15 +1,13 @@
 class CompanyMailer < ActionMailer::Base
   default from: "admin@ridenfly.com"
 
-  def reminder(reservation, recipient = nil)
-    @reservation = reservation.decorate
-    company = reservation.company
+  def reminder(company, recipient = nil)
     recipient ||= company.user.email
 
     mail(
       to: recipient,
       bcc: company.confirmation_emails&.split(',')&.map(&:strip),
-      subject: "Reservation Reminder #{reservation.rezid}",
+      subject: 'You have at least 1 ride scheduled for tomorrow',
     )
   end
 end

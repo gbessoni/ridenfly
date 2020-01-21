@@ -1,13 +1,12 @@
 %h2
-  RESERVATION REMINDER - #{@reservation.rezid}
-
-%h3
-  Reservation Agent - Shuttlefare.com (Pre-paid credit card)
-
-= render partial: 'shared/mail/name'
+  RESERVATION REMINDER
 
 %p
-  Reservation ID: #{@reservation.rezid}
-
-= render partial: 'shared/mail/reservation', locals: { reservation: @reservation }
-= render partial: 'shared/mail/passengers'
+  Please log into your account to view upcoming rides booked on
+  = link_to 'https://shuttlefare.com', 'Shuttlefare.com'
+%p
+  = link_to new_user_session_url, 'Click here'
+%p
+  Email
+  = mail_to 'gbessoni@shuttlefare.com', 'gbessoni@shuttlefare.com'
+  if you have any questions.
