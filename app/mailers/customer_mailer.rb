@@ -4,8 +4,8 @@ class CustomerMailer < ActionMailer::Base
   def reservation_email(reservation)
     @reservation = reservation.decorate
     mail(
-      to: reservation.rate.company.user.email,
-      bcc: reservation.rate.company.confirmation_emails&.split(',')&.map(&:strip),
+      to: reservation.company.user.email,
+      bcc: reservation.company.confirmation_emails&.split(',')&.map(&:strip),
       subject: "New reservation for passenger #{reservation.passenger_name}",
       sent_on: Time.now
     )
@@ -14,8 +14,8 @@ class CustomerMailer < ActionMailer::Base
   def cancelation_email(reservation)
     @reservation = reservation.decorate
     mail(
-      to: reservation.rate.company.user.email,
-      bcc: reservation.rate.company.confirmation_emails&.split(',')&.map(&:strip),
+      to: reservation.company.user.email,
+      bcc: reservation.company.confirmation_emails&.split(',')&.map(&:strip),
       subject: "Reservation #{reservation.rezid} canceled",
       sent_on: Time.now
     )

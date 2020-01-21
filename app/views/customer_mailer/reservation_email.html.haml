@@ -4,34 +4,18 @@
 %h3
   Reservation Agent - Shuttlefare.com (Pre-paid credit card)
 
-%p
-  Passenger's Name: #{@reservation.passenger_name}
-%p
-  Passenger Phone: #{@reservation.phone}
-%p
-  Passenger Email: #{@reservation.email}
+= render partial: 'shared/mail/name'
+
 %p
   Reservation ID: #{[@reservation.rezid, @reservation.sibling.try(:rezid)].compact.join(', ')}
 
-= render partial: 'reservation', locals: {reservation: @reservation}
+= render partial: 'shared/mail_reservation', locals: { reservation: @reservation }
 
 - if @reservation.sibling.present?
 
-  = render partial: 'reservation', locals: {reservation: @reservation.sibling.decorate}
+  = render partial: 'shared/mail_reservation', locals: { reservation: @reservation.sibling.decorate }
 
-%h3
-  Passengers:
-
-%p
-  Adults: #{@reservation.adults}
-
-%p
-  Children: #{@reservation.children}
-%p  
-  Passengers in total: #{@reservation.num_of_passengers}
-
-%p
-  Luggage: #{@reservation.luggage}
+= render partial: 'shared/mail/passengers'
 
 %h3
   $#{@reservation.total_net_fare} Total gross amount charged to customer.
