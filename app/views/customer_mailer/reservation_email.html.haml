@@ -9,11 +9,11 @@
 %p
   Reservation ID: #{[@reservation.rezid, @reservation.sibling.try(:rezid)].compact.join(', ')}
 
-= render partial: 'shared/mail_reservation', locals: { reservation: @reservation }
+= render partial: 'shared/mail/reservation', locals: { reservation: @reservation }
 
 - if @reservation.sibling.present?
 
-  = render partial: 'shared/mail_reservation', locals: { reservation: @reservation.sibling.decorate }
+  = render partial: 'shared/mail/reservation', locals: { reservation: @reservation.sibling.decorate }
 
 = render partial: 'shared/mail/passengers'
 
