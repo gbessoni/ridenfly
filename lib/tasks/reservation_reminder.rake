@@ -8,6 +8,6 @@ task reservation_reminder: :environment do
       where(pickup_datetime: start_time..start_time.end_of_hour)
 
   reservations.each do |reservation|
-    ComapnyMailer.reminder(reservation).deliver_now
+    CompanyMailer.reminder(reservation).deliver_now
   end
 end

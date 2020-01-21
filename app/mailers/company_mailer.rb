@@ -1,4 +1,4 @@
-class CustomerMailer < ActionMailer::Base
+class CompanyMailer < ActionMailer::Base
   default from: "admin@ridenfly.com"
 
   def reminder(reservation, recipient = nil)
@@ -8,7 +8,7 @@ class CustomerMailer < ActionMailer::Base
 
     mail(
       to: recipient,
-      bcc: reservation.company.confirmation_emails&.split(',')&.map(&:strip),
+      bcc: company.confirmation_emails&.split(',')&.map(&:strip),
       subject: "Reservation Reminder #{reservation.rezid}",
     )
   end
