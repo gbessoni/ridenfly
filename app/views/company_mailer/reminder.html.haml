@@ -2,11 +2,22 @@
   RESERVATION REMINDER
 
 %p
-  Please log into your account to view upcoming rides booked on
-  = link_to 'https://shuttlefare.com', 'Shuttlefare.com'
+  Please log into your account to view upcoming rides
 %p
   = link_to 'Click here', new_user_session_url
 %p
-  Email
+  If required, please contact the guest directly for any pickup time changes or
+  other details that you wish to communicate directly with the passenger.
+%p
+  Please contact
+  = link_to 'Shuttlefare.com', 'https://shuttlefare.com'
+  directly if there are pricing issues/adjustments required,
+  potential service issues, or other inquires.
+%p
+  Email Support:
+  = mail_to 'customerservice@shuttlefare.com', 'customerservice@shuttlefare.com'
+%p
+  Account related issues:
   = mail_to 'gbessoni@shuttlefare.com', 'gbessoni@shuttlefare.com'
-  if you have any questions.
+%p
+  (860) 788-4608

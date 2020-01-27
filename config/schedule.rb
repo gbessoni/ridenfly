@@ -23,6 +23,6 @@ every 1.day, at: '2pm' do
   rake 'doorkeeper:tokens:cleanup'
 end
 
-every 1.day, at: '1pm' do
+every 1.day, at: '9pm' do
   rake 'reservation_reminder'
 end
