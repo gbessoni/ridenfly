@@ -57,7 +57,7 @@ module Rate::Scopes
         "rates.*, earth_distance(ll_to_earth(#{lat.to_f}, #{lng.to_f}), ll_to_earth(rates.lat, rates.lng)) as distance"
       ).where(
         'earth_distance(ll_to_earth(?, ?), ll_to_earth(rates.lat, rates.lng)) <= ?',
-        lat, lng, distance
+        lat.to_f, lng.to_f, distance
       )
     end
 
