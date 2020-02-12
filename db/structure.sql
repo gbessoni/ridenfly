@@ -759,6 +759,13 @@ CREATE INDEX index_companies_on_deleted_at ON public.companies USING btree (dele
 
 
 --
+-- Name: index_companies_on_user_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_companies_on_user_id ON public.companies USING btree (user_id);
+
+
+--
 -- Name: index_company_vehicle_types_on_company_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -822,10 +829,52 @@ CREATE UNIQUE INDEX index_oauth_applications_on_uid ON public.oauth_applications
 
 
 --
+-- Name: index_payments_on_company_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_payments_on_company_id ON public.payments USING btree (company_id);
+
+
+--
 -- Name: index_payments_on_deleted_at; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_payments_on_deleted_at ON public.payments USING btree (deleted_at);
+
+
+--
+-- Name: index_payments_on_from; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_payments_on_from ON public.payments USING btree ("from");
+
+
+--
+-- Name: index_payments_on_to; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_payments_on_to ON public.payments USING btree ("to");
+
+
+--
+-- Name: index_rate_pickup_times_on_rate_id_and_direction; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_rate_pickup_times_on_rate_id_and_direction ON public.rate_pickup_times USING btree (rate_id, direction);
+
+
+--
+-- Name: index_rates_on_airport_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_rates_on_airport_id ON public.rates USING btree (airport_id);
+
+
+--
+-- Name: index_rates_on_company_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_rates_on_company_id ON public.rates USING btree (company_id);
 
 
 --
@@ -857,10 +906,38 @@ CREATE INDEX index_rates_on_vehicle_type_passenger ON public.rates USING btree (
 
 
 --
+-- Name: index_reservations_on_created_at; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reservations_on_created_at ON public.reservations USING btree (created_at DESC);
+
+
+--
 -- Name: index_reservations_on_deleted_at; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_reservations_on_deleted_at ON public.reservations USING btree (deleted_at);
+
+
+--
+-- Name: index_reservations_on_pickup_datetime; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reservations_on_pickup_datetime ON public.reservations USING btree (pickup_datetime);
+
+
+--
+-- Name: index_reservations_on_rate_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reservations_on_rate_id ON public.reservations USING btree (rate_id);
+
+
+--
+-- Name: index_reservations_on_sibling_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_reservations_on_sibling_id ON public.reservations USING btree (sibling_id);
 
 
 --
@@ -1056,4 +1133,6 @@ INSERT INTO schema_migrations (version) VALUES ('20191213141600');
 INSERT INTO schema_migrations (version) VALUES ('20200108055948');
 
 INSERT INTO schema_migrations (version) VALUES ('20200120064330');
+
+INSERT INTO schema_migrations (version) VALUES ('20200212044543');
 

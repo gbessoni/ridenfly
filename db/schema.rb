@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200120064330) do
+ActiveRecord::Schema.define(version: 20200212044543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20200120064330) do
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "company_vehicle_types", force: :cascade do |t|
     t.integer  "company_id"
@@ -155,13 +156,18 @@ ActiveRecord::Schema.define(version: 20200120064330) do
     t.datetime "deleted_at"
   end
 
+  add_index "payments", ["company_id"], name: "index_payments_on_company_id", using: :btree
   add_index "payments", ["deleted_at"], name: "index_payments_on_deleted_at", using: :btree
+  add_index "payments", ["from"], name: "index_payments_on_from", using: :btree
+  add_index "payments", ["to"], name: "index_payments_on_to", using: :btree
 
   create_table "rate_pickup_times", force: :cascade do |t|
     t.integer "pickup"
     t.integer "rate_id"
     t.string  "direction", default: "to_airport"
   end
+
+  add_index "rate_pickup_times", ["rate_id", "direction"], name: "index_rate_pickup_times_on_rate_id_and_direction", using: :btree
 
   create_table "rates", force: :cascade do |t|
     t.integer  "airport_id"
@@ -186,6 +192,8 @@ ActiveRecord::Schema.define(version: 20200120064330) do
     t.datetime "deleted_at"
   end
 
+  add_index "rates", ["airport_id"], name: "index_rates_on_airport_id", using: :btree
+  add_index "rates", ["company_id"], name: "index_rates_on_company_id", using: :btree
   add_index "rates", ["deleted_at"], name: "index_rates_on_deleted_at", using: :btree
   add_index "rates", ["hl_words"], name: "index_rates_on_hl_words", using: :btree
   add_index "rates", ["vehicle_capacity_type_id"], name: "index_rates_on_vehicle_capacity_type_id", using: :btree
@@ -220,7 +228,11 @@ ActiveRecord::Schema.define(version: 20200120064330) do
     t.datetime "deleted_at"
   end
 
+  add_index "reservations", ["created_at"], name: "index_reservations_on_created_at", order: {"created_at"=>:desc}, using: :btree
   add_index "reservations", ["deleted_at"], name: "index_reservations_on_deleted_at", using: :btree
+  add_index "reservations", ["pickup_datetime"], name: "index_reservations_on_pickup_datetime", using: :btree
+  add_index "reservations", ["rate_id"], name: "index_reservations_on_rate_id", using: :btree
+  add_index "reservations", ["sibling_id"], name: "index_reservations_on_sibling_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",   null: false
