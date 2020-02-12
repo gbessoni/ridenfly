@@ -77,6 +77,11 @@ class Admin::ReservationsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:sub_status, :notes)
+      params.require(:reservation).permit(
+        :sub_status, :notes,
+        :flight_datetime, :pickup_datetime,
+        :airline, :flight_number,
+        :passenger_name, :phone
+      )
     end
 end

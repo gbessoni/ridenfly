@@ -1,6 +1,13 @@
 = simple_form_for([:admin, @reservation]) do |f|
   = f.error_notification
 
+  = f.input :flight_datetime, as: :datetime_picker
+  = f.input :pickup_datetime, as: :datetime_picker
+  = f.input :airline
+  = f.input :flight_number
+  = f.input :passenger_name
+  = f.input :phone
+
   = f.input :sub_status
   = f.input :notes, as: :text
 
